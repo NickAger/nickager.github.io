@@ -119,7 +119,9 @@ sudo vim /etc/monit/monitrc
 first need to edit:
 `sudo vim /etc/default/monit`
 and then set the line so that `startup` is set to `1`:
-> startup=1`
+```
+startup=1`
+```
 
 Check the syntax (only on Ubuntu):
 ```bash
