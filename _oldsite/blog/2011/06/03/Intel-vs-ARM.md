@@ -23,7 +23,7 @@ In 2011 we will see Intel and ARM go head-to-head. Intel will have a [part](http
 
 ![](/blog-images/intel-vs-arm/intel-inside.jpg")
 
-##David vs Goliath or Gullivar's travels
+##David vs Goliath or Gullivar vs Lilliputians travels
 If this were a straight battle between Intel and ARM you'd expect a biblical twist with Goliath thrashing a helpless David. However ARM's ecosystem has changed the terms of engagement, so it's more like a battle between Gulliver and the Lilliputians. Will the giant Intel be able to fend-off attacks from all sides launched by it's diminutive, nimble competitors; the massed army of ARM licensees? 
 
 Intel has traditionally enjoyed high margins. As the ARM ecosystem begins to move into Intel’s markets, Intel will see it's profit margins eroded as it’s forced to compete on price. Will Intel be able to, or want to, transform itself into a higher volume, lower profit company in-order to engage in the large mobile devices market? The [Arstechnica article](http://arstechnica.com/business/news/2011/02/nvidia-30-and-the-riscification-of-x86.ars) instead sees Intel retreating to a smaller high-margin, high-performance niche. This retreat to the profitable hills is well documented in the anecdotes in [Innovator's Dilemma](http://www.amazon.co.uk/gp/product/0875845851?ie=UTF8&tag=nickagercom-21&linkCode=as2&camp=1634&creative=6738&creativeASIN=087584585). Remember what happened to the incumbents as the technology changed from mainframe to mini-computer followed by mini-computer to microcomputer and the latest disruption; discrete microprocessor to system-on-chip.
@@ -42,7 +42,7 @@ Intel is also experimenting with alternative business models at the fringes:
 
 It's going to be fascinating to see how this story evolves. In one future, assuming ARM significantly erodes Intel's market share, Intel could demerge it's manufacturing capacity from it's CPU design capability. One company would run it's market leading silicon fabs and provide manufacturing capability to all comers, including the ARM ecosystem, while the other company would design high-end x86 based CPUs. Alternatively Intel could crush all comers and we'll all end up with "Intel Inside" stickers on our phones. Perhaps ARM will be purchased by one of it's partners, resulting in a contracting ARM ecosystem. 
 
-Whatever the final outcome the next few years competition is going to keep prices down
+Whatever the final outcome competition is going to keep prices down
 
 ---
 
