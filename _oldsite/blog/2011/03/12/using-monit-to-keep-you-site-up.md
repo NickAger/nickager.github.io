@@ -6,6 +6,8 @@ date: 2011-03-12
 ### sudo apt-get install monit
 ```bash
 $ sudo apt-get install monit
+```
+```
 Reading package lists... Done
 Building dependency tree       
 Reading state information... Done
@@ -35,6 +37,8 @@ Starting daemon monitor: monit won't be started/stopped
 On AWS Linux:
 ```bash
 $ sudo yum install monit
+```
+```
 Loaded plugins: fastestmirror, security
 Determining fastest mirrors
 amzn                                                     | 2.1 kB     00:00     
@@ -79,25 +83,26 @@ Complete!
 
 ```$ sudo vim /etc/monit.d/gemstone```
 
-> check process nginx with pidfile /var/run/nginx.pid
->  start program = "/etc/init.d/nginx start"
->  stop program  = "/etc/init.d/nginx stop"
->
-> check process WAFastCGIAdaptor_gem9001 with pidfile /opt/gemstone/product/seaside/data/WAFastCGIAdaptor_server-9001.pid
->  start program = "/opt/gemstone/product/seaside/bin/startSeasideGems30 9001" as uid seasideuser
->  stop program = "/opt/gemstone/product/seaside/bin/stopSeasideGems30 9001" as uid seasideuser
->  group seasideuser
->
-> check process maintenance_gem with pidfile /opt/gemstone/product/seaside/data/maintenance_gem.pid
->  start program = "/opt/gemstone/product/seaside/bin/startMaintenanceGem30" as uid seasideuser
->  stop program = "/opt/gemstone/product/seaside/bin/stopMaintenanceGem30" as uid seasideuser
->  group seasideuser
->
-> check process service_gem with pidfile /opt/gemstone/product/seaside/data/service.pid
->  start program = "/opt/gemstone/product/seaside/bin/startServiceGem30" as uid seasideuser
->  stop program = "/opt/gemstone/product/seaside/bin/stopServiceGem30" as uid seasideuser
->  group seasideuser
+```
+check process nginx with pidfile /var/run/nginx.pid
+  start program = "/etc/init.d/nginx start"
+  stop program  = "/etc/init.d/nginx stop"
 
+check process WAFastCGIAdaptor_gem9001 with pidfile /opt/gemstone/product/seaside/data/WAFastCGIAdaptor_server-9001.pid
+  start program = "/opt/gemstone/product/seaside/bin/startSeasideGems30 9001" as uid seasideuser
+  stop program = "/opt/gemstone/product/seaside/bin/stopSeasideGems30 9001" as uid seasideuser
+  group seasideuser
+
+check process maintenance_gem with pidfile /opt/gemstone/product/seaside/data/maintenance_gem.pid
+  start program = "/opt/gemstone/product/seaside/bin/startMaintenanceGem30" as uid seasideuser
+  stop program = "/opt/gemstone/product/seaside/bin/stopMaintenanceGem30" as uid seasideuser
+  group seasideuser
+
+check process service_gem with pidfile /opt/gemstone/product/seaside/data/service.pid
+  start program = "/opt/gemstone/product/seaside/bin/startServiceGem30" as uid seasideuser
+  stop program = "/opt/gemstone/product/seaside/bin/stopServiceGem30" as uid seasideuser
+  group seasideuser
+```
 
 restart:
 ```bash
@@ -124,17 +129,24 @@ $ sudo /etc/init.d/monit syntax
 ###Monit log
 ####AWS Linux
 In the default `/etc/monit.conf` on AWS Linux there's a line:
-> include /etc/monit.d/*
+```
+include /etc/monit.d/*
+```
+
 By default this pulls in `/etc/monit.d/logging` which includes the line:
-> set logfile /var/log/monit.log
+```
+set logfile /var/log/monit.log
+```
 
 ####Ubuntu
 I've added the line:
-> set logfile /var/log/monit.log
+```
+set logfile /var/log/monit.log
+```
 to `/etc/monit/monitrc`
 
 ####Debugging tips
-- Be aware that scripts called from Monit don't contain the same environment variables as the shell
+* Be aware that scripts called from Monit don't contain the same environment variables as the shell
 
 ####Re-enabling after disable
 ```bash
