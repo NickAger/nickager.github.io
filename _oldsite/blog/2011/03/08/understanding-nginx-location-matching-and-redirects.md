@@ -1,3 +1,9 @@
+---
+title: "Understanding Nginx location matching and redirects"
+tags: "Nginx sysadmin"
+date: 2011-03-08
+---
+
 !!Understanding location matching
 There are three items to consider in-order to understand Nginx location matching:
 -What does the location syntax match against?
