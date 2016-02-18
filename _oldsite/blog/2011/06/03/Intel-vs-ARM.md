@@ -7,7 +7,7 @@ As mobile devices become ever more powerful they are starting to encroach  on th
 
 This presents multiple problems for Intel (supplier of 90% PC processors):
 * The growth in their major market is slowing.
-* The rapidly growing smartphone/tablet market is currently dominated (95%) by CPUs licensed from *ARM>http://arm.com/*. 
+* The rapidly growing smartphone/tablet market is currently dominated (95%) by CPUs licensed from [ARM](http://arm.com/). 
 * Intel is late to the party. They will launch their first competitive smartphone CPU in [Q3 2011](http://www.slashgear.com/intel-medfield-smartphonesmids-on-sale-q3-2011-tip-insiders-23135340/). 
 * The [next generation](http://www.electronicsweekly.com/Articles/2010/09/09/49414/Update-ARM-Cortex-A15.htm) of ARM based CPUs will encroach on Intel's market of PCs and servers, by offering cheaper, low-power parts.
 * Intel is a single (although admittedly massive) company up against an ecosystem of ARM partners including most of the major silicon vendors - [Samsung](http://www.engadget.com/2010/09/07/samsungs-orion-is-the-1ghz-dual-core-arm-cortex-a9-weve-all-be/), [TI](http://pandaboard.org), [NVidia](http://blogs.nvidia.com/2011/01/project-denver-processor-to-usher-in-new-era-of-computing/), [Qualcomm](http://www.qualcomm.com/news/releases/2011/02/14/qualcomm-announces-quad-core-snapdragon-next-generation-tablets-and), [ST-Ericsson](http://www.stericsson.com/platforms/U8500.jsp), etc.
