@@ -1,74 +1,86 @@
 ---
 title: "Installing Gemstone on an Amazon EC2 Linux instance"
-date: 2011-02-01
+date: 2011-01-02
 layout: post
 tags: Gemstone sysadmin EC2
 ---
 This entry describes how to install and configure Gemstone on an Amazon EC2 Linux instance to create an EC2 deployment target for a Seaside application.
 
-""Note:"" These instructions are based on connecting from a MacOS client to an Amazon EC2 instance; they should be relevant for other Unix clients. For a Windows client you'll probably need to download either or both of:
--*PuTTY>http://www.chiark.greenend.org.uk/~sgtatham/putty/*
--*Cygwin>http://www.cygwin.com/*
+**Note:** These instructions are based on connecting from a MacOS client to an Amazon EC2 instance; they should be relevant for other Unix clients. For a Windows client you'll probably need to download either or both of:
+* [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/)
+* [Cygwin](http://www.cygwin.com/)
 and modify the instructions accordingly.
 
-!!!Creating an EC2 instance
-Head over to *http://aws.amazon.com* and sign-up. Once signed-in you'll be able to navigate to the dashboard screen:
-{{{<div><img src="/blog-images/ec2fromscratch/EC2Dashboard2.gif"></div>}}}
--From the region drop-down, choose the region closest to you.
--Click the ''Launch Instance'' button to open the ''Request Instance Wizard''
+###Creating an EC2 instance
+Head over to http://aws.amazon.com and sign-up. Once signed-in you'll be able to navigate to the dashboard screen:
 
+![](EC2Dashboard2.gif)
 
+* From the region drop-down, choose the region closest to you.
+* Click the ''Launch Instance'' button to open the ''Request Instance Wizard''
 
-Gemstone requires a 64bit OS; select the 64bit *Amazon Linux>http://aws.amazon.com/amazon-linux-ami/* instance:
-{{{<div><img src="/blog-images/ec2fromscratch/RequestInstanceWizard1.gif"></div>}}}
+Gemstone requires a 64bit OS; select the 64bit [Amazon Linux](http://aws.amazon.com/amazon-linux-ami/) instance:
 
+![](RequestInstanceWizard1.gif)
 
-Select the ''micro instance'' if you want to take up Amazon on their *free>http://aws.amazon.com/free/* offer. Amazon *describes>http://aws.amazon.com/ec2/instance-types/* micro instances as:
-{{{<blockquote>Instances of this family provide a small amount of consistent CPU resources and allow you to burst CPU capacity when additional cycles are available. They are well suited for lower throughput applications and web sites that consume significant compute cycles periodically.</blockquote>}}}
-{{{<div><img src="/blog-images/ec2fromscratch/RequestInstanceWizard2.gif"></div>}}}
+Select the __micro instance__ if you want to take up Amazon on their [free](http://aws.amazon.com/free/) offer. Amazon [describes](http://aws.amazon.com/ec2/instance-types/) micro instances as:
 
+> Instances of this family provide a small amount of consistent CPU resources and allow you to burst CPU capacity when additional cycles are available. They are well suited for lower throughput applications and web sites that consume significant compute cycles periodically.
 
+![](RequestInstanceWizard2.gif)
 
-Next we pass an RSA public key to the EC2 instance which will allow SSH access. The key is generated using ==ssh-keygen==:
-=$ ssh-keygen -t rsa
-=Generating public/private rsa key pair.
-=Enter file in which to save the key (/Users/nickager/.ssh/id_rsa): 
-=Enter passphrase (empty for no passphrase): 
-=Enter same passphrase again: 
-=Your identification has been saved in /Users/nickager/.ssh/id_rsa.
-=Your public key has been saved in /Users/nickager/.ssh/id_rsa.pub.
+Next we pass an RSA public key to the EC2 instance which will allow SSH access. The key is generated using `ssh-keygen`:
 
-Then grab your public key from ==~/.ssh/id_rsa.pub== and pass it to the instance in the user data field in the following format:
-=#cloud-config
-=ssh_authorized_keys:
-=  - ssh-rsa AAAAB3NzaC1y........
-=disable_ec2_metadata: true
-format: *CloudInit>https://help.ubuntu.com/community/CloudInit* (*syntax>http://bazaar.launchpad.net/%7Ecloud-init-dev/cloud-init/trunk/annotate/head%3A/doc/examples/cloud-config.txt*)
-{{{<div><img src="/blog-images/ec2fromscratch/RequestInstanceWizard2-1.gif"></div>}}}
+```
+$ ssh-keygen -t rsa
+Generating public/private rsa key pair.
+Enter file in which to save the key (/Users/nickager/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /Users/nickager/.ssh/id_rsa.
+Your public key has been saved in /Users/nickager/.ssh/id_rsa.pub.
+```
+
+Then grab your public key from `~/.ssh/id_rsa.pub` and pass it to the instance in the user data field in the following format:
+
+```
+#cloud-config
+ssh_authorized_keys:
+  - ssh-rsa AAAAB3NzaC1y........
+disable_ec2_metadata: true
+```
+
+format: [CloudInit](https://help.ubuntu.com/community/CloudInit) ([syntax](http://bazaar.launchpad.net/%7Ecloud-init-dev/cloud-init/trunk/annotate/head%3A/doc/examples/cloud-config.txt))
+
+![](RequestInstanceWizard2-1.gif)
 
 No need to pass any key/value pairs:
-{{{<div><img src="/blog-images/ec2fromscratch/RequestInstanceWizard2-2.gif"></div>}}}
+
+![](RequestInstanceWizard2-2.gif)
 
 
 As we've passed an SSH key in the user data step above, there's no need to specify a key pair:
-{{{<div><img src="/blog-images/ec2fromscratch/RequestInstanceWizard3.gif"></div>}}}
 
+![](RequestInstanceWizard3.gif)
 
 Configure the firewall by opening port 22 (SSH) and port 80 (HTTP):
-{{{<div><img src="/blog-images/ec2fromscratch/RequestInstanceWizard4.gif"></div>}}}
+
+![](RequestInstanceWizard4.gif)
 
 
 Finally launch and wait for the instance to boot:
-{{{<div><img src="/blog-images/ec2fromscratch/RequestInstanceWizard5.gif"></div>}}}
+
+![](RequestInstanceWizard5.gif)
 
 
 Once the instance is booted, copy the public DNS of your new instance:
-{{{<div><img src="/blog-images/ec2fromscratch/LaunchedInstance.gif"></div>}}}
 
+![](LaunchedInstance.gif)
 
-Use the public DNS to ssh into the newly created instance, with the user ==ec2-user==:
-{{{<blockquote><pre>
-$ ssh <b>ec2-user</b>@ec2-46-51-165-46.eu-west-1.compute.amazonaws.com
+Use the public DNS to ssh into the newly created instance, with the user `ec2-user`:
+
+```
+$ ssh **ec2-user**@ec2-46-51-165-46.eu-west-1.compute.amazonaws.com
 
        __|  __|_  )  Amazon Linux AMI
        _|  (     /     Beta
@@ -76,71 +88,103 @@ $ ssh <b>ec2-user</b>@ec2-46-51-165-46.eu-west-1.compute.amazonaws.com
 
 See /etc/image-release-notes for latest release notes. :-)
 [ec2-user@ip-10-234-159-73 ~]$ 
-</pre></blockquote>}}}
+```
 
-!!!Configure the Instance
+###Configure the Instance
 
 Create a new user:
-=sudo adduser seasideuser
-=sudo passwd -d seasideuser
+```
+sudo adduser seasideuser
+sudo passwd -d seasideuser
+```
 
-Then edit ==/etc/sudoers==:
-=sudo vim /etc/sudoers
+Then edit `/etc/sudoers`:
+```
+sudo vim /etc/sudoers
+```
 and add:
-=seasideuser ALL = NOPASSWD: ALL
+```
+seasideuser ALL = NOPASSWD: ALL
+```
 
 login as the new user:
-=su - seasideuser
-again edit ==/etc/sudoers== and this time remove references to ==ec2-user==
+```
+su - seasideuser
+```
+again edit `/etc/sudoers` and this time remove references to `ec2-user`
 
-edit ==/etc/ssh/sshd_config==:
-=sudo vim /etc/ssh/sshd_config 
+edit `/etc/ssh/sshd_config`:
+```
+sudo vim /etc/ssh/sshd_config 
+```
 and modify the following lines as:
-=#PermitRootLogin forced-commands-only
-=#UsePAM yes
-=AllowUsers seasideuser
+```
+#PermitRootLogin forced-commands-only
+#UsePAM yes
+AllowUsers seasideuser
+```
 
 Now copy the ssh key file:
-=mkdir ~/.ssh
-=sudo cp /home/ec2-user/.ssh/authorized_keys ~/.ssh/
-=sudo chown seasideuser ~/.ssh/authorized_keys 
-=sudo chgrp seasideuser ~/.ssh/authorized_keys 
-=chmod 700 ~/.ssh/
-=chmod 600 ~/.ssh/authorized_keys
+```
+mkdir ~/.ssh
+sudo cp /home/ec2-user/.ssh/authorized_keys ~/.ssh/
+sudo chown seasideuser ~/.ssh/authorized_keys 
+sudo chgrp seasideuser ~/.ssh/authorized_keys 
+chmod 700 ~/.ssh/
+chmod 600 ~/.ssh/authorized_keys
+```
 
 restart the ssh daemon:
-=sudo /etc/init.d/sshd restart
+```
+sudo /etc/init.d/sshd restart
+```
 
 Now logout:
-=exit
+```
+exit
+```
 
-..and log back-in as ==seasideuser==:
-{{{<pre>ssh <b>seasideruser</b>@ec2-46-51-165-46.eu-west-1.compute.amazonaws.com</pre>}}}
+..and log back-in as `seasideuser`:
 
-delete the default ==ec2-user==:
-=sudo userdel ec2-user
-=sudo rm -rf /home/ec2-user/
+```
+ssh **seasideruser**@ec2-46-51-165-46.eu-west-1.compute.amazonaws.com
+```
 
-!!!Install Gemstone
-=cd
-=wget http://seaside.gemstone.com/scripts/installGemstone.sh
-=chmod +x installGemstone.sh
-=./installGemstone.sh
+delete the default `ec2-user`:
+```
+sudo userdel ec2-user
+sudo rm -rf /home/ec2-user/
+```
 
-setup the Gemstone environment by editing ==.bash_profile==
-=vim .bash_profile
+###Install Gemstone
+```
+cd
+wget http://seaside.gemstone.com/scripts/installGemstone.sh
+chmod +x installGemstone.sh
+./installGemstone.sh
+```
+
+setup the Gemstone environment by editing `.bash_profile`
+```
+vim .bash_profile
+```
 
 add the following line:
-=source /opt/gemstone/product/seaside/defSeaside
+```
+source /opt/gemstone/product/seaside/defSeaside
+```
 
-install the *new key>http://seaside.gemstone.com/docs/GLASS-Announcement.htm* file:
-=cd /opt/gemstone/product/seaside/etc
-=wget http://seaside.gemstone.com/etc/gemstone.key-GLASS-Linux-2CPU.txt
-=mv gemstone.key gemstone.key.orginal
-=mv gemstone.key-GLASS-Linux-2CPU.txt gemstone.key
+install the [new key](http://seaside.gemstone.com/docs/GLASS-Announcement.htm) file:
+```
+cd /opt/gemstone/product/seaside/etc
+wget http://seaside.gemstone.com/etc/gemstone.key-GLASS-Linux-2CPU.txt
+mv gemstone.key gemstone.key.orginal
+mv gemstone.key-GLASS-Linux-2CPU.txt gemstone.key
+```
 
-check ==/opt/gemstone/product/seaside/bin/startSeaside30_Adaptor== the end of which should read:
-{{{<blockquote><pre>run
+check `/opt/gemstone/product/seaside/bin/startSeaside30_Adaptor` the end of which should read:
+```
+run
 GemToGemAnnouncement uninstallStaticHandler.
 System beginTransaction.
 (ObjectLogEntry
@@ -150,24 +194,34 @@ System beginTransaction.
 
    'pid: ', (System gemVersionReport at: 'processId') printString) addToLog.
 System commitTransaction.
-%</pre></blockquote>}}}
+%
+```
 
 remove the installation downloads:
-=rm ~/*  
+```
+rm ~/*  
+```
 
 logout and login and check the environment:
-=set | grep gem
+```
+set | grep gem
+```
 
 test your Gemstone installation:
 
-=startGemstone
+```
+startGemstone
+```
 
-!!!!Creating system startup scripts for Gemstone
-The following ==/etc/init.d/gemstone== script is based a *template>http://www.cyberciti.biz/tips/linux-write-sys-v-init-script-to-start-stop-service.html*. It seems to work, but I'm sure can be improved.
+####Creating system startup scripts for Gemstone
+The following `/etc/init.d/gemstone` script is based a [template](http://www.cyberciti.biz/tips/linux-write-sys-v-init-script-to-start-stop-service.html). It seems to work, but I'm sure can be improved.
 
-=sudo vim /etc/init.d/gemstone
+```
+sudo vim /etc/init.d/gemstone
+```
 
-{{{<bockquote><pre>#!/bin/bash
+```
+#!/bin/bash
 #
 # chkconfig: 345 86 14
 # description: Gemstone server
@@ -242,16 +296,23 @@ case "$1" in
 esac
 
 exit 0
-</pre></blockquote>}}}
+```
 
 Make the startup script executable:
-=sudo chmod +x /etc/init.d/gemstone
-=sudo chkconfig --add gemstone
+```
+sudo chmod +x /etc/init.d/gemstone
+sudo chkconfig --add gemstone
+```
 
 Check the startup script has been installed:
-=sudo chkconfig --list
+```
+sudo chkconfig --list
+```
 you should see gemstone listed as:
-{{{<blockquote><pre>gemstone       	0:off	1:off	2:off	3:on	4:on	5:on	6:off</pre></blockquote>}}}
+```
+gemstone       	0:off	1:off	2:off	3:on	4:on	5:on	6:off<
+```
+
 
 !!!!Adding Gemstone background service task
 Now to install the *ServiceVM>http://code.google.com/p/glassdb/wiki/ServiceVMExample*, which is *described>http://code.google.com/p/glassdb/wiki/ServiceVMExample* as:
