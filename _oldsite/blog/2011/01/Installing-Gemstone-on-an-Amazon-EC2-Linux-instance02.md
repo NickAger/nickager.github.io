@@ -319,7 +319,7 @@ Now to install the [ServiceVM](http://code.google.com/p/glassdb/wiki/ServiceVMEx
 
 > The Service VM example is intended to provide example code for creating and using a separate "Service VM" for offloading work that in a Squeak/Pharo Seaside application, you would have forked of a thread to do the work.
 > 
-> The prototypical example would be to obtain a token from an external web-service (i.e., sending an HTTP request to obtain a token or other data). You would not want to defer the response to the user in this case, especially if the request can take several minutes to complete (or fail as the case may be).</blockquote>}}}
+> The prototypical example would be to obtain a token from an external web-service (i.e., sending an HTTP request to obtain a token or other data). You would not want to defer the response to the user in this case, especially if the request can take several minutes to complete (or fail as the case may be).
 
 ```
 cd /opt/gemstone/product/seaside/bin
