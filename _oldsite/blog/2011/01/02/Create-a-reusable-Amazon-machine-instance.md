@@ -44,12 +44,15 @@ With the instance you want to reuse selected, choose 'Create Image' from the Ins
 ![](CreateAnImageMenu.gif)
 
 Give your image a name and a description:
+
 ![](AMIDialog.gif)
 
 Which will create your own AMI (Amazon Machine Image): 
+
 ![](AMIList.gif)
 
 The 'Permissions' button allows you to make that image publicly visible:
+
 ![](RequestInstanceWizardCustom.gif)
 
 which allows you to share and create as many instances of your image as you desire.
