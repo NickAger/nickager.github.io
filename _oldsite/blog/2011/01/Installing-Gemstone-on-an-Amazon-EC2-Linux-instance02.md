@@ -623,7 +623,7 @@ WAGemStoneRunSeasideGems restartGems.
 ###Test all the moving parts
 Point your browser at the public DNS address of your server, eg `http://ec2-46-51-165-46.eu-west-1.compute.amazonaws.com`  and you should see the familar Seaside welcome screen:
 
-[]("/blog-images/ec2fromscratch/SeasideWelcome.gif)
+[](/blog-images/ec2fromscratch/SeasideWelcome.gif)
 
 ###Improvements
 * I've yet to configure any [monitoring software](http://mmonit.com/monit/).
