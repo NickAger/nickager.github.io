@@ -612,7 +612,7 @@ Gofer project load: 'PierAddOns2' group: 'ALL'.
 ```
 
 Once Seaside is loaded, configure the Gemstone FastCGI adaptor and the three serving Gems, by executing the following script, in the GemTools workspace:
-```
+```Smalltalk
 WAGemStoneRunSeasideGems default
 	name: 'FastCGI';
 	adaptorClass: WAFastCGIAdaptor;
