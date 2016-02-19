@@ -5,9 +5,9 @@ date: 2016-02-19
 ---
 
 
-https://itunes.apple.com/us/app/idiff-view/id1084386974?mt=8
 
-<img src="/images/iDiffView/iDiffViewIcon.svg" width="250" height="250"/>
 
-<img src="/images/apple-marketing-images/App_Store_Badge_US-UK_135x40.svg" width="135" height="40"/>
+[<img src="/images/iDiffView/iDiffViewIcon.svg" width="250" height="250"/>](https://itunes.apple.com/us/app/idiff-view/id1084386974?mt=8)
+
+[<img src="/images/apple-marketing-images/App_Store_Badge_US-UK_135x40.svg" width="135" height="40"/>](https://itunes.apple.com/us/app/idiff-view/id1084386974?mt=8)
 
