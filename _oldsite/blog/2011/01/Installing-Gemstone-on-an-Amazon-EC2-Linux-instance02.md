@@ -314,42 +314,50 @@ gemstone       	0:off	1:off	2:off	3:on	4:on	5:on	6:off<
 ```
 
 
-!!!!Adding Gemstone background service task
-Now to install the *ServiceVM>http://code.google.com/p/glassdb/wiki/ServiceVMExample*, which is *described>http://code.google.com/p/glassdb/wiki/ServiceVMExample* as:
-{{{<blockquote>The Service VM example is intended to provide example code for creating and using a separate "Service VM" for offloading work that in a Squeak/Pharo Seaside application, you would have forked of a thread to do the work.
+####Adding Gemstone background service task
+Now to install the [ServiceVM](http://code.google.com/p/glassdb/wiki/ServiceVMExample), which is [described](http://code.google.com/p/glassdb/wiki/ServiceVMExample) as:
 
-The prototypical example would be to obtain a token from an external web-service (i.e., sending an HTTP request to obtain a token or other data). You would not want to defer the response to the user in this case, especially if the request can take several minutes to complete (or fail as the case may be).</blockquote>}}}
+> The Service VM example is intended to provide example code for creating and using a separate "Service VM" for offloading work that in a Squeak/Pharo Seaside application, you would have forked of a thread to do the work.
+> 
+> The prototypical example would be to obtain a token from an external web-service (i.e., sending an HTTP request to obtain a token or other data). You would not want to defer the response to the user in this case, especially if the request can take several minutes to complete (or fail as the case may be).</blockquote>}}}
 
-=cd /opt/gemstone/product/seaside/bin
+```
+cd /opt/gemstone/product/seaside/bin
+```
 
-create ==/opt/gemstone/product/seaside/bin/startServiceVM30== by copying the contents of: *http://code.google.com/p/glassdb/wiki/ServiceVMExampleStartServiceVM30Script*
+create `/opt/gemstone/product/seaside/bin/startServiceVM30` by copying the contents of: http://code.google.com/p/glassdb/wiki/ServiceVMExampleStartServiceVM30Script
 
 set script as executable:
-=chmod +x startServiceVM30
+```
+chmod +x startServiceVM30
+```
 
-modify ==/opt/gemstone/product/seaside/bin/runSeasideGems30== to match *http://code.google.com/p/glassdb/wiki/ServiceVMExampleRunSeasideGems30Script*
+modify `/opt/gemstone/product/seaside/bin/runSeasideGems30` to match http://code.google.com/p/glassdb/wiki/ServiceVMExampleRunSeasideGems30Script
 
-!!!!Test your Gemstone installation
-=sudo /etc/init.d/gemstone restart
+####Test your Gemstone installation
+```
+sudo /etc/init.d/gemstone restart
+```
 
-!!!Configuring a webserver
-A *variety>http://code.google.com/p/glassdb/wiki/SeasideConfiguration* of webservers have been used with Gemstone:
--*Apache>http://httpd.apache.org/*
--*Lighttpd>http://www.lighttpd.net/*
--*Cherokee>http://www.cherokee-project.com/*
--*Nginx>http://www.nginx.org/*
+###Configuring a webserver
+A [variety](http://code.google.com/p/glassdb/wiki/SeasideConfiguration) of webservers have been used with Gemstone:
+* [Apache](http://httpd.apache.org/)
+* [Lighttpd](http://www.lighttpd.net/)
+* [Cherokee](http://www.cherokee-project.com/)
+* [Ngin](>http://www.nginx.org/)
 
-I've chosen *Nginx>http://www.nginx.org/* as it's a *popular>http://news.netcraft.com/archives/category/web-server-survey/*, fast, scalable server. It also supports *https reverse proxy>http://www.monkeysnatchbanana.com/posts/2010/06/23/reverse-proxying-to-seaside-with-nginx.html*, allowing server code to access https resources even though Gemstone doesn't support https directly.
+I've chosen [Nginx](http://www.nginx.org/) as it's a [popular](http://news.netcraft.com/archives/category/web-server-survey/), fast, scalable server. It also supports [https reverse proxy](http://www.monkeysnatchbanana.com/posts/2010/06/23/reverse-proxying-to-seaside-with-nginx.html), allowing server code to access https resources even though Gemstone doesn't support https directly.
 
-{{{<a name="configuringNginx"></a>}}}
-!!!!Configuring Nginx
+####Configuring Nginx
 
 Install Nginx:
-=sudo yum install nginx
+```
+sudo yum install nginx
+```
 
-then configure ==/etc/nginx/nginx.conf== as:
+then configure `/etc/nginx/nginx.conf` as:
 
-{{{<blockquote><pre>
+```
 #######################################################################
 #
 # This is the main Nginx configuration file.  
@@ -462,39 +470,49 @@ http {
          proxy_pass https://svcs.sandbox.paypal.com;
         }
     }
-}</pre></blockquote>}}}
+}
+```
 
 Create the directories which will be used for serving static files:
-=cd /var
-=sudo mkdir www
-=sudo chown seasideuser:seasideuser www
-=cd www
-=mkdir errors
-=cd errors
+```
+cd /var
+sudo mkdir www
+sudo chown seasideuser:seasideuser www
+cd www
+mkdir errors
+cd errors
+```
 
-create error pages: ==404.html== ==403.html== and ==50x.html==. 
+create error pages: `404.html` `403.html` and `50x.htmk`. 
 
-create the ==log== directory:
+create the `log` directory:
 
-=cd /var/log
-=sudo mkdir nginx
-=sudo chown seasideuser:seasideuser nginx
+```
+cd /var/log
+sudo mkdir nginx
+sudo chown seasideuser:seasideuser nginx
+```
 
 Restart Nginx:
-=sudo /etc/init.d/nginx restart
+```
+sudo /etc/init.d/nginx restart
+```
 
-!!!!About the Nginx configuration
+####About the Nginx configuration
 
 Nginx proxies requests to Gemstone, with three Gems listening on ports 9001, 9002 and 9003 to FastCGI requests from the Nginx.
 
 The lines:
-{{{<blockquote><pre>location / {
+```
+location / {
             try_files $uri @seaside;
-        }</pre></blockquote>}}}
+        }
+```
 instruct the webserver to fulfill a request by first attempting to serve a file from the file-system, if no file is found then the request is forwarded to Gemstone.
 
 The lines:
-{{{<blockquote><pre> location /config {
+```
+location /config {
          allow 127.0.0.1;
          deny all;
          try_files $uri @seaside;
@@ -504,97 +522,120 @@ The lines:
          allow 127.0.0.1;
          deny all;
          try_files $uri @seaside;
-       }</pre></blockquote>}}}
+       }
+```
 
-ensure that ==/config== and ==/tools== are not visible to world; they are only visible from localhost (see later).
+ensure that `/config` and `/tools` are not visible to world; they are only visible from localhost (see later).
 
-""See also:"" *Sean Allen's >http://www.monkeysnatchbanana.com/* Nginx configuration *documentation>http://www.monkeysnatchbanana.com/posts/2010/08/17/using-fastcgi-with-nginx-and-seaside.html*
+**See also:** [Sean Allen's ](http://www.monkeysnatchbanana.com/) Nginx configuration [documentation](http://www.monkeysnatchbanana.com/posts/2010/08/17/using-fastcgi-with-nginx-and-seaside.html)
 
-!!!Configuring GemTools
-*GemTools>http://code.google.com/p/glassdb/wiki/GemTools* is a *Pharo>http://www.pharo-project.org/* environment which allows you to connect to Gemstone, load and modify code, and perform administrative activities from a GUI environment (such as starting and stopping servers, backing-up and restoring the database etc). This section borrows heavily from Ramon Leon's blog post: *''Faster Remote Gemstone''>http://onsmalltalk.com/2010-10-23-faster-remote-gemstone*
+###Configuring GemTools
+[GemTools](http://code.google.com/p/glassdb/wiki/GemTools) is a [Pharo](http://www.pharo-project.org/) environment which allows you to connect to Gemstone, load and modify code, and perform administrative activities from a GUI environment (such as starting and stopping servers, backing-up and restoring the database etc). This section borrows heavily from Ramon Leon's blog post: ['Faster Remote Gemstone'](http://onsmalltalk.com/2010-10-23-faster-remote-gemstone)
 
 Download and unpack the GemTools distribution:
-=wget http://seaside.gemstone.com/squeak/GemTools-1.0-beta.8-244x.app.zip
-=unzip GemTools-1.0-beta.8-244x.app.zip
-=rm __MACOSX -rf
-=rm GemTools-1.0-beta.8-244x.app.zip
+```
+wget http://seaside.gemstone.com/squeak/GemTools-1.0-beta.8-244x.app.zip
+unzip GemTools-1.0-beta.8-244x.app.zip
+rm __MACOSX -rf
+rm GemTools-1.0-beta.8-244x.app.zip
+```
 
 Install 32bit support libraries:
-=sudo yum install xauth mesa-libGL.i686 libXrender.i686 libSM.i686 freetype.i686 libstdc++.i686
+```
+sudo yum install xauth mesa-libGL.i686 libXrender.i686 libSM.i686 freetype.i686 libstdc++.i686
+```
 
 Create a helper script:
-=vim ~/gemtools.sh
+```
+vim ~/gemtools.sh
+```
 
-{{{<blockquote><pre>#! /bin/bash
+```
+#! /bin/bash
 cd ~/GemTools-1.0-beta.8-244x.app
-./GemTools.sh &</pre></blockquote>}}}
+./GemTools.sh &
+```
 
-=chmod +x gemtools.sh
+```
+chmod +x gemtools.sh
+```
 
 Logout and log back in with:
-=ssh -X -C -L 8888:127.0.0.1:80 seasideruser@ec2-46-51-165-46.eu-west-1.compute.amazonaws.com
-The ==-X== parameter enables X11-forwarding, ==-C== compression, ==-L 8888:127.0.0.1:80== forwards ==localhost== on the server to ==localhost:8888== on your client enabling access to ==http://localhost:8888/config== and ==http://localhost:8888/tools== 
+```
+ssh -X -C -L 8888:127.0.0.1:80 seasideruser@ec2-46-51-165-46.eu-west-1.compute.amazonaws.com
+```
+The `-X` parameter enables X11-forwarding, `-C` compression, `-L 8888:127.0.0.1:80` forwards `localhost` on the server to `localhost:8888` on your client enabling access to `http://localhost:8888/config` and `http://localhost:8888/tools`
 
 start GemTools with:
-=~/gemtools.sh
+```
+~/gemtools.sh
+``
 
 GemTools should then launch within an X11-window on your desktop:
-{{{<div><img src="/blog-images/ec2fromscratch/FreshGemTools.gif"></div>}}}
+
+![](FreshGemTools.gif)
 
 Open a standard Workspace in the GemTools image and execute the following script:
-{{{<blockquote><pre>	| hostname |
-	hostname := 'localhost'.
-	OGLauncherNode addSessionWithDescription:
-		(OGStandardSessionDescription new
-			name: 'Standard';
-			stoneHost: hostname;
-			stoneName: 'seaside';
-			gemHost: hostname;
-			netLDI: '50377';
-			userId: 'DataCurator';
-			password: 'swordfish';
-			backupDirectory: '';
-			yourself).</pre></blockquote>}}}
+```Smalltalk
+| hostname |
+hostname := 'localhost'.
+OGLauncherNode addSessionWithDescription:
+    (OGStandardSessionDescription new
+    name: 'Standard';
+    stoneHost: hostname;
+    stoneName: 'seaside';
+    gemHost: hostname;
+    netLDI: '50377';
+    userId: 'DataCurator';
+    password: 'swordfish';
+    backupDirectory: '';
+    yourself).
 
-The GemTools launcher doesn't automatically refresh with the new configuration. To force a refresh, close the launcher and open a new launcher by executing ==OGLauncher open== in a Workspace
+The GemTools launcher doesn't automatically refresh with the new configuration. To force a refresh, close the launcher and open a new launcher by executing `OGLauncher open` in a Workspace
 
-Now with ''Standard'' highlighted in the top pane, connect to Gemstone with the Login button:
-{{{<div><img src="/blog-images/ec2fromscratch/FreshGemToolsConfigured.gif"></div>}}}
+Now with 'Standard' highlighted in the top pane, connect to Gemstone with the Login button:
+
+![](FreshGemToolsConfigured.gif)
 
 
-See *GemTools Launcher Guide>http://code.google.com/p/glassdb/wiki/GemTools* for more information.
+See [GemTools Launcher Guide](http://code.google.com/p/glassdb/wiki/GemTools) for more information.
 
-Before loading Seaside you should update both GemTools and GLASS versions using the ''Update'' button on the launcher. See GemToolsUpdate wiki *entry>http://code.google.com/p/glassdb/wiki/GemToolsUpdate*.
+Before loading Seaside you should update both GemTools and GLASS versions using the ''Update'' button on the launcher. See GemToolsUpdate wiki [entry](http://code.google.com/p/glassdb/wiki/GemToolsUpdate).
 
-!!!Load the latest Seaside and Pier into Gemstone
-Before loading any code ensure the menu option under ''Admin->Commit on Almost out of memory'' is selected, also open a Transcript window open. Then in a GemTools workspace execute the following:
-{{{<blockquote><pre>Gofer project load: 'Seaside30' group: 'ALL'.
+###Load the latest Seaside and Pier into Gemstone
+Before loading any code ensure the menu option under 'Admin->Commit on Almost out of memory' is selected, also open a Transcript window open. Then in a GemTools workspace execute the following:
+```
+Gofer project load: 'Seaside30' group: 'ALL'.
 Gofer project load: 'Pier2'.
-Gofer project load: 'PierAddOns2' group: 'ALL'.</pre></blockquote>}}}
+Gofer project load: 'PierAddOns2' group: 'ALL'.
+```
 
 Once Seaside is loaded, configure the Gemstone FastCGI adaptor and the three serving Gems, by executing the following script, in the GemTools workspace:
-{{{<blockquote><pre>WAGemStoneRunSeasideGems default
+```
+WAGemStoneRunSeasideGems default
 	name: 'FastCGI';
 	adaptorClass: WAFastCGIAdaptor;
 	ports: #(9001 9002 9003).
-WAGemStoneRunSeasideGems restartGems.</pre></blockquote>}}}
+WAGemStoneRunSeasideGems restartGems.
+```
 
-!!!Test all the moving parts
-Point your browser at the public DNS address of your server, eg ==http://ec2-46-51-165-46.eu-west-1.compute.amazonaws.com==  and you should see the familar Seaside welcome screen:
-{{{<div><img src="/blog-images/ec2fromscratch/SeasideWelcome.gif"></div>}}}
+###Test all the moving parts
+Point your browser at the public DNS address of your server, eg `http://ec2-46-51-165-46.eu-west-1.compute.amazonaws.com`  and you should see the familar Seaside welcome screen:
 
-!!!Improvements
-#I've yet to configure any *monitoring software>http://mmonit.com/monit/*.
-#There's nothing to restart Gems if they crash.
-#There's no scheduled backup of the database occurring.
+[]("/blog-images/ec2fromscratch/SeasideWelcome.gif)
 
-The *Glass Daemon Tools documentation>http://code.google.com/p/glassdb/wiki/GLASSDaemonTools* shows one route to implement these improvements. 
+###Improvements
+* I've yet to configure any [monitoring software](http://mmonit.com/monit/).
+* There's nothing to restart Gems if they crash.
+* There's no scheduled backup of the database occurring.
+
+The [Glass Daemon Tools documentation](http://code.google.com/p/glassdb/wiki/GLASSDaemonTools) shows one route to implement these improvements. 
 
 All suggestions for improvements welcome.
 
-!!!Acknowledgements and References
-- *Glass wiki>http://code.google.com/p/glassdb/wiki/TableOfContents*, specifically  *BuildYourOwnGLASSAppliance>http://code.google.com/p/glassdb/wiki/BuildYourOwnGLASSAppliance*
-- Ramon Leon's *blog>http://onsmalltalk.com/* specifically *Installing a Gemstone Seaside Server on Ubuntu 10.10>http://onsmalltalk.com/2010-10-30-installing-a-gemstone-seaside-server-on-ubuntu-10.10* and *Faster Remote Gemstone>http://onsmalltalk.com/2010-10-23-faster-remote-gemstone*
-- James Foster's blog article *Setting up GLASS on Slicehost>http://programminggems.wordpress.com/2008/09/05/setting-up-glass-on-slicehost/*
-- Sean Allan's *blog>http://www.monkeysnatchbanana.com/* specifically *Using FastCGI with Nginx and Seaside>http://www.monkeysnatchbanana.com/posts/2010/08/17/using-fastcgi-with-nginx-and-seaside.html* and *Reverse Proxying to Seaside with Nginx>http://www.monkeysnatchbanana.com/posts/2010/06/23/reverse-proxying-to-seaside-with-nginx.html*
-- Norbert Hartl's blog post: *Easy remote gemstone>http://selfish.org/blog/easy%20remote%20gemstone*
+###Acknowledgements and References
+* [Glass wiki](http://code.google.com/p/glassdb/wiki/TableOfContents), specifically  [BuildYourOwnGLASSAppliance](http://code.google.com/p/glassdb/wiki/BuildYourOwnGLASSAppliance)
+* Ramon Leon's [blog](http://onsmalltalk.com/) specifically [Installing a Gemstone Seaside Server on Ubuntu 10.10](http://onsmalltalk.com/2010-10-30-installing-a-gemstone-seaside-server-on-ubuntu-10.10) and [Faster Remote Gemstone](http://onsmalltalk.com/2010-10-23-faster-remote-gemstone)
+* James Foster's blog article [Setting up GLASS on Slicehost](http://programminggems.wordpress.com/2008/09/05/setting-up-glass-on-slicehost/)
+* Sean Allan's [blog](http://www.monkeysnatchbanana.com/) specifically [Using FastCGI with Nginx and Seaside](http://www.monkeysnatchbanana.com/posts/2010/08/17/using-fastcgi-with-nginx-and-seaside.html) and [Reverse Proxying to Seaside with Nginx](http://www.monkeysnatchbanana.com/posts/2010/06/23/reverse-proxying-to-seaside-with-nginx.html)
+* Norbert Hartl's blog post: [Easy remote gemstone](http://selfish.org/blog/easy%20remote%20gemstone)
