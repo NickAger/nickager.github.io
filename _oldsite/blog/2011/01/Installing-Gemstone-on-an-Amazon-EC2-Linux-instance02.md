@@ -590,6 +590,7 @@ OGLauncherNode addSessionWithDescription:
     password: 'swordfish';
     backupDirectory: '';
     yourself).
+```
 
 The GemTools launcher doesn't automatically refresh with the new configuration. To force a refresh, close the launcher and open a new launcher by executing `OGLauncher open` in a Workspace
 
