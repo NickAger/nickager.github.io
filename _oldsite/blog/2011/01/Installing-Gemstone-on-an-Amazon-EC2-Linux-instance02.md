@@ -569,7 +569,7 @@ The `-X` parameter enables X11-forwarding, `-C` compression, `-L 8888:127.0.0.1:
 start GemTools with:
 ```
 ~/gemtools.sh
-``
+```
 
 GemTools should then launch within an X11-window on your desktop:
 
