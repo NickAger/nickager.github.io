@@ -7,6 +7,7 @@ layout: post
 As mobile devices become ever more powerful they are starting to encroach  on the domain of traditional PCs. While the smartphone and tablet markets are [growing rapidly](http://www.gartner.com/it/page.jsp?id=154301) (72% in 2010), PC market growth is slowing ([forcast](http://www.gartner.com/it/page.jsp?id=1570714) as less than 10% growth 2011-2015).
 
 This presents multiple problems for Intel (supplier of 90% PC processors):
+
 * The growth in their major market is slowing.
 * The rapidly growing smartphone/tablet market is currently dominated (95%) by CPUs licensed from [ARM](http://arm.com/). 
 * Intel is late to the party. They will launch their first competitive smartphone CPU in [Q3 2011](http://www.slashgear.com/intel-medfield-smartphonesmids-on-sale-q3-2011-tip-insiders-23135340/). 
@@ -36,10 +37,12 @@ However Intel doesn't look ready to seed this market to ARM and it's partners. T
 Intel's SoC will enter a crowded market of ARM partners SoCs. Will Intel simply be one of many SoC vendors or will Intel manage to design parts so compelling that it will cream off the majority of the market and leave the pickings for the others? It's a battle royal as it's effectively Intel vs the rest of the industry.
 
 Intel has a few things in it's favour:
+
 * Intel leads the world in the processes it uses within it's silicon fabs giving Intel approximately a 12month lead over it's competitors. Intel's initial smartphone offering will use 32nm geometry compared with 40nm or 45nm used by most ARM SoC vendors. The smaller geometry provides a power-consumption and cost advantage.
 * Intel can out-spend it's competitors on R&D over a sustained period or use it's massive cash reserves to effectively cross-subsidize it's SoC offerings. Intel can also afford to [pay massive fines](http://www.guardian.co.uk/technology/2009/may/13/intel-european-commission) for it's anticompetitive behaviour.
 
 Intel is also experimenting with alternative business models at the fringes:
+
 * [Selling fab capacity](http://arstechnica.com/business/news/2010/11/intel-shifts-strategy-sells-22nm-fab-capacity.ars) to 3rd parties.
 * [Licensing](http://bits.blogs.nytimes.com/2010/02/24/a-tie-up-between-intel-and-tsmc-fizzles/) x86 cores to 3rd parties.
 
@@ -52,6 +55,7 @@ Whatever the final outcome competition is going to keep prices down
 Update: March 21st: Intel has announced that Anand Chandrasekher, head of Ultramobility computing at Intel is leaving, 'to pursue other interests'. The terse nature of the [press release](http://newsroom.intel.com/community/intel_newsroom/blog/2011/03/21/chip-shot-anand-chandrasekher-to-leave-intel-mike-bell-dave-whalen-to-lead-ultra-mobility-group) and the unexpected and sudden announcement could lead one to speculate that all isn't going as well as hoped for at Intel's unit tasked to compete with ARM.
 
 Other coverage of the news:
+
 * [Anand Chandrasekher leaves Intel abruptly](http://semiaccurate.com/2011/03/21/anand-chandrasekher-leaves-intel-abruptly/) (Atom is still dead, the exodus begins).
 * [Intel Exec Departs Amid Mobile Disappointments>http://blogs.wsj.com/digits/2011/03/21/intel-exec-departs-amid-mobile-disappointments/* 
 * [Chandrasekher exits Intel](http://www.edn.com/article/517466-Chandrasekher_exits_Intel.php)
