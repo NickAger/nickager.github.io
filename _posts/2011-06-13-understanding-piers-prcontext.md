@@ -2,6 +2,7 @@
 title: "Understanding Pier's PRContext"
 tags: "Pier Smalltalk Seaside"
 date: 2011-06-12
+layout: post
 ---
 
 Pier (and Seaside) use *dynamic variables* to retrieve the value of the session or current context whose value is defined at runtime by the calling context. They enhance testability as mock or known _dynamic variable_ can be defined within the context of a test.
