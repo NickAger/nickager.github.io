@@ -191,7 +191,7 @@ Periodically run:
 sudo yum update
 ```
 
-####2. Require a ==sudo== password
+####2. Require a `sudo` password
 First you need to set a password for `seasideuser`:
 ```
 $ passwd
