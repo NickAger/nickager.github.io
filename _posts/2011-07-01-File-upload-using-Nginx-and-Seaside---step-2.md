@@ -1,7 +1,8 @@
 ---
 title: "Step 2:  Using a hidden iframe to enable ajax-like file upload"
 date: 2011-07-01
-tags: "Nginx upload"
+tags: "Nginx, upload"
+layout: post
 ---
 
 In this step we upload the file in the background in an AJAX-like style. Note we are not using the AJAX `XMLHttpRequest` as at the time of writing it was not possible to use an `XMLHttpRequest` for multipart form uploads. The work-around is to use a hidden iframe to submit the form. The main render method becomes:
