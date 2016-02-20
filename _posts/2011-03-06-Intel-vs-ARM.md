@@ -1,7 +1,7 @@
 ---
 title: "Intel vs ARM the battle commences"
 date: 2011-06-03
-tag: "punditry ARM Intel"
+tag: "punditry, ARM, Intel"
 ---
 As mobile devices become ever more powerful they are starting to encroach  on the domain of traditional PCs. While the smartphone and tablet markets are [growing rapidly](http://www.gartner.com/it/page.jsp?id=154301) (72% in 2010), PC market growth is slowing ([forcast](http://www.gartner.com/it/page.jsp?id=1570714) as less than 10% growth 2011-2015).
 
@@ -12,7 +12,7 @@ This presents multiple problems for Intel (supplier of 90% PC processors):
 * The [next generation](http://www.electronicsweekly.com/Articles/2010/09/09/49414/Update-ARM-Cortex-A15.htm) of ARM based CPUs will encroach on Intel's market of PCs and servers, by offering cheaper, low-power parts.
 * Intel is a single (although admittedly massive) company up against an ecosystem of ARM partners including most of the major silicon vendors - [Samsung](http://www.engadget.com/2010/09/07/samsungs-orion-is-the-1ghz-dual-core-arm-cortex-a9-weve-all-be/), [TI](http://pandaboard.org), [NVidia](http://blogs.nvidia.com/2011/01/project-denver-processor-to-usher-in-new-era-of-computing/), [Qualcomm](http://www.qualcomm.com/news/releases/2011/02/14/qualcomm-announces-quad-core-snapdragon-next-generation-tablets-and), [ST-Ericsson](http://www.stericsson.com/platforms/U8500.jsp), etc.
 
-![](/blog-images/intel-vs-arm/arm-cortex-a15.jpg)
+![](/images/intel-vs-arm/arm-cortex-a15.jpg)
 
 There's a [fascinating article at Arstechnica](http://arstechnica.com/business/news/2011/02/nvidia-30-and-the-riscification-of-x86.ars) which is based on an interview with NVIDIA CEO Jen-Hsun Huang whose company is placing a large bet on ARM. The article concludes that Intel will end up like other previously successful CPU architectures - Alpha, MIPS, SPARC, PowerPC - marginalised at the high-end:
 > if the ARM ecosystem can simultaneously keep the cost of ARM chips much lower than that of x86 chips, then ARM could do to x86 what x86 did to Alpha, MIPS, SPARC, PowerPC, and the other RISC workstation architectures. Intel used its process strength to get close enough to RISC workstation and server performance that the PC's status as a low-cost commodity machine gave the PC an edge. We all know how the story played out: the high-end RISC vendors were marginalized, as the lower volumes on their now-boutique chips kept their prices up; meanwhile, Intel relentlessly narrowed the performance gap and moved the PC into new markets because it was dramatically cheaper and almost as good.
@@ -23,7 +23,12 @@ For a long time Intel ignored ARM. ARM's business isn't remotely as profitable a
 
 In 2011 we will see Intel and ARM go head-to-head. Intel will have a [part](http://www.slashgear.com/intel-medfield-smartphonesmids-on-sale-q3-2011-tip-insiders-23135340/) which is power-competitive with ARM and ARM partners will be releasing [quad-core](http://www.brightsideofnews.com/news/2011/2/15/nvidia-unveils-tegra-roadmap-tegra-3-is-superman2c-tegra-6-is-iron-man.aspx) Cortex-A9 CPUs providing comparable performance to Intel.
 
-![](/blog-images/intel-vs-arm/intel-inside.jpg")
+![](/images/intel-vs-arm/intel-in
+
+
+
+
+)
 
 ##David vs Goliath OR Gullivar vs Lilliputians
 If this were a straight battle between Intel and ARM you'd expect a biblical twist with Goliath thrashing a helpless David. However ARM's ecosystem has changed the terms of engagement, so it's more like a battle between Gulliver and the Lilliputians. Will the giant Intel be able to fend-off attacks from all sides launched by it's diminutive, nimble competitors; the massed army of ARM licensees? 
