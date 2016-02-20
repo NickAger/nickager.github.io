@@ -26,6 +26,7 @@ GRPlatform current
                        to: (WAEmailAddress address:  'estebanlm@smallworks.com.ar')
                        subject: 'test')
                body: (WAStringEmailBody string: 'a test')).
+```
 
 it works inside the application (inside a session)... not outside (see below)
 
