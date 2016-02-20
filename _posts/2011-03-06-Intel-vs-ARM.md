@@ -2,6 +2,7 @@
 title: "Intel vs ARM the battle commences"
 date: 2011-06-03
 tag: "punditry, ARM, Intel"
+layout: post
 ---
 As mobile devices become ever more powerful they are starting to encroach  on the domain of traditional PCs. While the smartphone and tablet markets are [growing rapidly](http://www.gartner.com/it/page.jsp?id=154301) (72% in 2010), PC market growth is slowing ([forcast](http://www.gartner.com/it/page.jsp?id=1570714) as less than 10% growth 2011-2015).
 
@@ -23,12 +24,7 @@ For a long time Intel ignored ARM. ARM's business isn't remotely as profitable a
 
 In 2011 we will see Intel and ARM go head-to-head. Intel will have a [part](http://www.slashgear.com/intel-medfield-smartphonesmids-on-sale-q3-2011-tip-insiders-23135340/) which is power-competitive with ARM and ARM partners will be releasing [quad-core](http://www.brightsideofnews.com/news/2011/2/15/nvidia-unveils-tegra-roadmap-tegra-3-is-superman2c-tegra-6-is-iron-man.aspx) Cortex-A9 CPUs providing comparable performance to Intel.
 
-![](/images/intel-vs-arm/intel-in
-
-
-
-
-)
+![](/images/intel-vs-arm/intel-inside.jpg)
 
 ##David vs Goliath OR Gullivar vs Lilliputians
 If this were a straight battle between Intel and ARM you'd expect a biblical twist with Goliath thrashing a helpless David. However ARM's ecosystem has changed the terms of engagement, so it's more like a battle between Gulliver and the Lilliputians. Will the giant Intel be able to fend-off attacks from all sides launched by it's diminutive, nimble competitors; the massed army of ARM licensees? 
