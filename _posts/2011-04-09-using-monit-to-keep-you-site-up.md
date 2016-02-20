@@ -2,6 +2,7 @@
 title: "Using Monit to keep your site up"
 tags: "sysadmin"
 date: 2011-03-12
+layout: post
 ---
 ### sudo apt-get install monit
 ```bash
