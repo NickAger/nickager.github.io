@@ -2,6 +2,7 @@
 title: "File upload using Nginx and Seaside"
 tags: "Nginx upload progress"
 date: 2011-07-01
+layout: post
 ---
 The [Seaside book](http://book.seaside.com) explains how to write a simple file [upload component](http://book.seaside.st/book/fundamentals/forms/fileupload):
 
@@ -26,12 +27,12 @@ The key features are:
 
 There a quite a few pieces which co-operate to enable this functionality. I've described the functionality over four posts:
 
-* [Step 1](/blog/File-upload-using-Nginx-and-Seaside---step-1): Using Nginx upload module to stream file uploads directly to disk.
-* [Step 2](/blog/File-upload-using-Nginx-and-Seaside---step-2): Using a hidden iframe to enable ajax-like file uploads.
-* [Step 3](/blog/File-upload-using-Nginx-and-Seaside---step-3): Using Nginx upload progress module to report upload progress to the user.
-* [Step 4](/blog/Step-4-File-upload-as-a-plugable-component): File upload as a plugable component.
+* [Step 1](File-upload-using-Nginx-and-Seaside---step-1): Using Nginx upload module to stream file uploads directly to disk.
+* [Step 2](File-upload-using-Nginx-and-Seaside---step-2): Using a hidden iframe to enable ajax-like file uploads.
+* [Step 3](File-upload-using-Nginx-and-Seaside---step-3): Using Nginx upload progress module to report upload progress to the user.
+* [Step 4](Step-4-File-upload-as-a-plugable-component): File upload as a plugable component.
 
-The first three steps describe how the file upload component works. It follows a development journey similar to the one I've undertaken in developing the component. Each step adds an additional feature (and complexity). The fourth step describes how to configure a reusable upload component, which I've extracted from the component presented in [step 3](/blog/File-upload-using-Nginx-and-Seaside---step-3). If you only want to use the component, skip straight to [step 4](/blog/Step-4-File-upload-as-a-plugable-component).
+The first three steps describe how the file upload component works. It follows a development journey similar to the one I've undertaken in developing the component. Each step adds an additional feature (and complexity). The fourth step describes how to configure a reusable upload component, which I've extracted from the component presented in [step 3](File-upload-using-Nginx-and-Seaside---step-3). If you only want to use the component, skip straight to [step 4](Step-4-File-upload-as-a-plugable-component).
 
 The two Nginx components which enable this functionality are:
 * [Nginx Upload progress module](http://wiki.nginx.org/HttpUploadProgressModule)
