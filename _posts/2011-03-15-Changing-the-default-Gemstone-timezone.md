@@ -1,12 +1,14 @@
 ---
 title: "Changing the default Gemstone timezone"
 date: 2011-03-15
+layout: post
 ---
 Gemstone ships with a timezone of EST. Fine if your in EST, but not so great elsewhere.
 
 create an executable script containing the following: 
 
-{{{<blockquote><pre>#!/bin/bash
+```
+#!/bin/bash
 
 $GEMSTONE/bin/topaz -l << EOF
 
@@ -25,6 +27,7 @@ System commitTransaction.
 
 logout
 errorCount
-EOF</pre></blockquote>}}}
+EOF
+```
 
 When you execute it, Gemstone's timezone will match the timezone of your OS.
