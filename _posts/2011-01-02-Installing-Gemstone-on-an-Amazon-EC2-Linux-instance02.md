@@ -2,7 +2,8 @@
 title: "Installing Gemstone on an Amazon EC2 Linux instance"
 date: 2011-01-02
 layout: post
-tags: Gemstone sysadmin EC2
+tags: "Gemstone sysadmin EC2"
+layout: post
 ---
 This entry describes how to install and configure Gemstone on an Amazon EC2 Linux instance to create an EC2 deployment target for a Seaside application.
 
