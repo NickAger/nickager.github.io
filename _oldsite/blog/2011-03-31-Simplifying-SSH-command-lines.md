@@ -1,7 +1,7 @@
 ---
 title: "Simplifying  SSH command lines"
 tags: "sysadmin"
-date: 2011-06-02
+date: 2011-03-31
 ---
 I frequently forget the parameters required for SSHing into my servers. Fortunately it's straight-forward to define SSH configurations. For example say I frequently SSH into a site with the following SSH command-line:
 
