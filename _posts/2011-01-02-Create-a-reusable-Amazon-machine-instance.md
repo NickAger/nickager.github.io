@@ -1,7 +1,7 @@
 ---
 tags: EC2, Cloud
 title: "Create a reusable Amazon machine instance"
-date: 2011-02-01
+date: 2011-01-02
 ---
 
 This post assumes you've [configured an EC2 instance](Installing-Gemstone-on-an-Amazon-EC2-Linux-instance.md) using Amazon's Linux AMI, or you've modified a [preconfigured instance](Create-a-free-Gemstone-server-in-the-cloud-in-10-minutes.md] and want to make that image reusable.
