@@ -4,7 +4,7 @@ title: "Create a reusable Amazon machine instance"
 date: 2011-01-02
 ---
 
-This post assumes you've [configured an EC2 instance](Installing-Gemstone-on-an-Amazon-EC2-Linux-instance.md) using Amazon's Linux AMI, or you've modified a [preconfigured instance](Create-a-free-Gemstone-server-in-the-cloud-in-10-minutes.md] and want to make that image reusable.
+This post assumes you've [configured an EC2 instance](2011-01-02-Installing-Gemstone-on-an-Amazon-EC2-Linux-instance.md) using Amazon's Linux AMI, or you've modified a [preconfigured instance](2011-01-02-Create-a-free-Gemstone-server-in-the-cloud-in-10-minutes.md] and want to make that image reusable.
 
 At the time of writing this post (December 2010), I [found](https://forums.aws.amazon.com/thread.jspa?threadID=56007&tstart=0) that I needed to update the [CloudInit package](https://help.ubuntu.com/community/CloudInit) to reinitialise it:
 
