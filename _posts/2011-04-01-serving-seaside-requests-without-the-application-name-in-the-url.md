@@ -1,7 +1,8 @@
 ---
 title: "Serving Seaside requests without the application name in the URL"
-date: 2011-01-4
+date: 2011-04-01
 tags: "sysadmin Nginx Seaside"
+layout: post
 ---
 With fresh [Seaside image](http://seaside.st/download/pharo), try browsing to [http://localhost:8080](http://localhost:8080). You  should see the Seaside welcome screen. That's because `WAWelcome` is configured as the default application in `WAWelcome class>>#initialize`
 
@@ -18,8 +19,7 @@ However if you then click on say the `counter` example link within the welcome a
 
 How can you remove `/welcome` from the subsequent urls? It's easily achieved by editing the configuration and setting the ""Server Path"" to '/'. The screen below is a grab of the Seaside configuration application showing how the "Server Path" is set - browse to http://localhost:8080/config.
 
-![]("/blog-images/serving-apps-from-root/serverPath.png) width="640" height="582
-
+<img src="/images/serving-apps-from-root/serverPath.png" width="640" height="582" /> 
 
 or programmatically:
 
@@ -42,7 +42,7 @@ The above method works perfectly until you start using RESTful urls in your appl
 
 ...not surprising, as there's no `/counter` application registered:
 
-[](/blog-images/serving-apps-from-root/browse.png)
+![](/images/serving-apps-from-root/browse.png)
 
 
 What's going on here? We've fixed the outgoing links but the dispatcher needs some help looking up the incoming links. One solution for deployed applications, is to ask your front-end server to rewrite incoming urls. The [seaside book](http://book.seaside.com) describes how to [configure Apache](http://book.seaside.st/book/advanced/deployment/deployment-apache/configure-apache) so that incoming urls are rewritten to prepend the url with the application name before passing the request onto Seaside. However I've chosen the [Nginx](http://wiki.nginx.org) web-server in preference to Apache. Here's an Ningx configuration that I use in conjunction with the FastCGI server within Gemstone for rewriting incoming urls:
