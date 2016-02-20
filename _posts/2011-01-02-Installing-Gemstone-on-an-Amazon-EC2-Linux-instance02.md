@@ -14,20 +14,20 @@ and modify the instructions accordingly.
 ###Creating an EC2 instance
 Head over to http://aws.amazon.com and sign-up. Once signed-in you'll be able to navigate to the dashboard screen:
 
-![](EC2Dashboard2.gif)
+![](/images/ec2fromscratch/EC2Dashboard2.gif)
 
 * From the region drop-down, choose the region closest to you.
 * Click the ''Launch Instance'' button to open the ''Request Instance Wizard''
 
 Gemstone requires a 64bit OS; select the 64bit [Amazon Linux](http://aws.amazon.com/amazon-linux-ami/) instance:
 
-![](RequestInstanceWizard1.gif)
+![](/images/ec2fromscratch/RequestInstanceWizard1.gif)
 
 Select the __micro instance__ if you want to take up Amazon on their [free](http://aws.amazon.com/free/) offer. Amazon [describes](http://aws.amazon.com/ec2/instance-types/) micro instances as:
 
 > Instances of this family provide a small amount of consistent CPU resources and allow you to burst CPU capacity when additional cycles are available. They are well suited for lower throughput applications and web sites that consume significant compute cycles periodically.
 
-![](RequestInstanceWizard2.gif)
+![](/images/ec2fromscratch/RequestInstanceWizard2.gif)
 
 Next we pass an RSA public key to the EC2 instance which will allow SSH access. The key is generated using `ssh-keygen`:
 
@@ -52,30 +52,30 @@ disable_ec2_metadata: true
 
 format: [CloudInit](https://help.ubuntu.com/community/CloudInit) ([syntax](http://bazaar.launchpad.net/%7Ecloud-init-dev/cloud-init/trunk/annotate/head%3A/doc/examples/cloud-config.txt))
 
-![](RequestInstanceWizard2-1.gif)
+![](/images/ec2fromscratch/RequestInstanceWizard2-1.gif)
 
 No need to pass any key/value pairs:
 
-![](RequestInstanceWizard2-2.gif)
+![](/images/ec2fromscratch/RequestInstanceWizard2-2.gif)
 
 
 As we've passed an SSH key in the user data step above, there's no need to specify a key pair:
 
-![](RequestInstanceWizard3.gif)
+![](/images/ec2fromscratch/RequestInstanceWizard3.gif)
 
 Configure the firewall by opening port 22 (SSH) and port 80 (HTTP):
 
-![](RequestInstanceWizard4.gif)
+![](/images/ec2fromscratch/RequestInstanceWizard4.gif)
 
 
 Finally launch and wait for the instance to boot:
 
-![](RequestInstanceWizard5.gif)
+![](/images/ec2fromscratch/RequestInstanceWizard5.gif)
 
 
 Once the instance is booted, copy the public DNS of your new instance:
 
-![](LaunchedInstance.gif)
+![](/images/ec2fromscratch/LaunchedInstance.gif)
 
 Use the public DNS to ssh into the newly created instance, with the user `ec2-user`:
 
@@ -573,7 +573,7 @@ start GemTools with:
 
 GemTools should then launch within an X11-window on your desktop:
 
-![](FreshGemTools.gif)
+![](/images/ec2fromscratch/FreshGemTools.gif)
 
 Open a standard Workspace in the GemTools image and execute the following script:
 ```Smalltalk
@@ -596,7 +596,7 @@ The GemTools launcher doesn't automatically refresh with the new configuration. 
 
 Now with 'Standard' highlighted in the top pane, connect to Gemstone with the Login button:
 
-![](FreshGemToolsConfigured.gif)
+![](/images/ec2fromscratch/FreshGemToolsConfigured.gif)
 
 
 See [GemTools Launcher Guide](http://code.google.com/p/glassdb/wiki/GemTools) for more information.
@@ -623,7 +623,7 @@ WAGemStoneRunSeasideGems restartGems.
 ###Test all the moving parts
 Point your browser at the public DNS address of your server, eg `http://ec2-46-51-165-46.eu-west-1.compute.amazonaws.com`  and you should see the familar Seaside welcome screen:
 
-[](/blog-images/ec2fromscratch/SeasideWelcome.gif)
+![](/images/ec2fromscratch/SeasideWelcome.gif)
 
 ###Improvements
 * I've yet to configure any [monitoring software](http://mmonit.com/monit/).
