@@ -2,6 +2,7 @@
 title: "reloadApplications"
 date: 2011-03-09
 tags: "Seaside"
+layout: post
 ---
 
 ```Smalltalk
