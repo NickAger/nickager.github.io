@@ -1,6 +1,6 @@
 ---
 title: "Step 2:  Using a hidden iframe to enable ajax-like file upload"
-date: 2011-07-03
+date: 2011-07-01
 tags: "Nginx upload"
 ---
 
@@ -79,5 +79,5 @@ This script copies a div (`#uploadedFilesContainer`) inside the just updated ifr
 The code described above is contained in `NAFileUploadStep2` and can be downloaded from the repository http://www.squeaksource.com/NginxFileUpload.
 
 ## Next Steps
-* [Step 3](/blog/File-upload-using-Nginx-and-Seaside---step-3.md): Using Nginx upload progress module to report upload progress to the user.
-* [Step 4](/blog/Step-4-File-upload-as-a-plugable-component.md): File upload as a plugable component.
+* [Step 3](File-upload-using-Nginx-and-Seaside---step-3.md): Using Nginx upload progress module to report upload progress to the user.
+* [Step 4](Step-4-File-upload-as-a-plugable-component.md): File upload as a plugable component.
