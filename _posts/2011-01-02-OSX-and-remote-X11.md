@@ -1,6 +1,6 @@
 ---
 title: "OSX and remote X11"
-date: 2011-02-01
+date: 2011-01-02
 tags: X11 Mac GemTools Seaside Gemstone Remote Cloud
 ---
 If you're using MacOS as your client and you're working with GemTools remotely through X11, you may find that it gets confusing having to switch from Mac key shortcuts such as Cmd-b, Cmd-n, Cmd-m... to the subtly different Unix key bindings of Ctrl-b, Ctrl-n, Ctrl-m... 
