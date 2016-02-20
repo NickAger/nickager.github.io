@@ -1,5 +1,7 @@
 ---
 title: "Using google as your MTA from Seaside"
+date: 2011-07-16
+layout: post
 ---
 How to use a google account to send the mail from Seaside. Here's our configuration:
 
