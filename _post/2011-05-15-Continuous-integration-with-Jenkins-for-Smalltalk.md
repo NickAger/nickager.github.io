@@ -1,7 +1,8 @@
 ---
 title: "Continuous Integration With Jenkins for Smalltalk"
-tags: "sysadmin CI Smalltalk"
+tags: "sysadmin, CI, Smalltalk"
 date: 2011-05-15
+layout: post
 ---
 ###Installing Jenkins
 The Jenkins project provides clear installation instructions for [Jenkins on Ubunutu](http://pkg.jenkins-ci.org/debian/). The main details are:
