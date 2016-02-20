@@ -1,7 +1,8 @@
 ---
 title: "Ten minutes to deploy your Seaside application for free using Amazon EC2 and Gemstone"
 date: 2011-01-02
-tags: "Gemstone sysadmin EC2"
+tags: "Gemstone, sysadmin, EC2"
+layout: post
 ---
 Amazon's offer of [a free micro instance for a year](http://aws.amazon.com/free/) grabbed my attention:
 
