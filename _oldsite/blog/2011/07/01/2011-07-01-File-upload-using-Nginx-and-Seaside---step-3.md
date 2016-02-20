@@ -1,9 +1,9 @@
 ---
 title: "Step 3: Using Nginx upload progress module to report upload progress to the user"
-date: 2011-07-04
+date: 2011-07-01
 tags: "Nginx file upload"
 ---
-In this step we describe how to add an upload progress bar to the file uploads. The Nginx documentation for the upload progress module can be found [here](http://wiki.nginx.org/HttpUploadProgressModule). This post builds on the code described in the [previous](/blog/File-upload-using-Nginx-and-Seaside---step-2.md) two [posts](/blog/File-upload-using-Nginx-and-Seaside---step-1.md). 
+In this step we describe how to add an upload progress bar to the file uploads. The Nginx documentation for the upload progress module can be found [here](http://wiki.nginx.org/HttpUploadProgressModule). This post builds on the code described in the [previous](File-upload-using-Nginx-and-Seaside---step-2.md) two [posts](File-upload-using-Nginx-and-Seaside---step-1.md). 
 
 ##Parameterising and generifying the Javascript 
 In this step we chose to parameterise the Javascript; replacing hard coded element ids with parameters. Evolving the code in this way allows instantiation of  multiple file upload components on the same page. Pollution of the Javascript global namespace is minimised to a single shared method - `startUpload`. Finally the generic Javascript has been moved to a file library.
@@ -258,15 +258,15 @@ The `success` callback interprets the response from `/progress` and updates the 
 ##Understanding how the progress bar receives updates:
 Form submission creates an http-post which includes the `X-Progress-ID` parameter: 
 
-![](/blog-images/fileupload/post.png)
+![](/images/fileupload/post.png)
 
 we then poll `/progress` once a second passing the `X-Progress-ID` parameter: 
 
-![]("/blog-images/fileupload/get-progress.png")
+![](/images/fileupload/get-progress.png)
 
 which results in a response of the form:
 
-![](/blog-images/fileupload/get-progress-response.png)
+![](/images/fileupload/get-progress-response.png)
 
 The response is evaluated:
 ```
@@ -281,4 +281,4 @@ var percentageComplete = Math.floor(upload.received * 100 / upload.size);
 The code described above is contained in `NAFileUploadStep3` and can be downloaded from the repository http://www.squeaksource.com/NginxFileUpload
 
 ## Next Step
-[Step 4](/blog/Step-4-File-upload-as-a-plugable-component): File upload as a plugable component.
+[Step 4](Step-4-File-upload-as-a-plugable-component): File upload as a plugable component.
