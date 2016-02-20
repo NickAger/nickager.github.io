@@ -1,13 +1,13 @@
 ---
 title: "Ten minutes to deploy your Seaside application for free using Amazon EC2 and Gemstone"
-date: 2011-02-01
+date: 2011-01-02
 tags: "Gemstone sysadmin EC2"
 ---
 Amazon's offer of [a free micro instance for a year](http://aws.amazon.com/free/) grabbed my attention:
 
 > To help new AWS customers get started in the cloud, AWS is introducing a new free usage tier. Beginning November 1, new AWS customers will be able to run a free Amazon EC2 Micro Instance for a year...
 
-But would a micro instance be sufficient to allow a Seaside application to run within Gemstone (my deployment method of choice, who also offer a free [licence](http://seaside.gemstone.com/docs/GLASS-Announcement.htm))? The answer is YES and my experiments have resulted in a [pre-configured Gemstone EC2 Linux AMI (Amazon Machine Image)](Installing-Gemstone-on-an-Amazon-EC2-Linux-instance.md). In this post I describe how to use this pre-configured image to rapidly deploy Seaside applications for free on EC2.
+But would a micro instance be sufficient to allow a Seaside application to run within Gemstone (my deployment method of choice, who also offer a free [licence](http://seaside.gemstone.com/docs/GLASS-Announcement.htm))? The answer is YES and my experiments have resulted in a [pre-configured Gemstone EC2 Linux AMI (Amazon Machine Image)](2011-01-02-Installing-Gemstone-on-an-Amazon-EC2-Linux-instance.md). In this post I describe how to use this pre-configured image to rapidly deploy Seaside applications for free on EC2.
 
 **Note:** These instructions are based on connecting from a MacOS client to an Amazon EC2 instance; they should be relevant for other Unix clients. For a Windows client you'll probably need to download either or both of:
 * [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/)
@@ -18,7 +18,7 @@ and modify the instructions accordingly.
 ###Creating an EC2 instance
 Head over to http://aws.amazon.com and sign-up. Once signed-in you'll be able to navigate to the dashboard screen:
 
-![](ec2fromscratch/EC2Dashboard2.gif)
+![](/images/ec2fromscratch/EC2Dashboard2.gif)
 * From the region drop-down, choose the region closest to you.
 * Click the 'Launch Instance' button to open the 'Request Instance Wizard'
 
@@ -26,17 +26,17 @@ Select the 'Community AMI' tab and enter the AMI ID (Amazon Machine Image) of yo
 * EU-WEST `ami-7f9bae0b` 
 * US-EAST `ami-603bcb09`
 
-![](RequestInstanceWizardCustom.gif)
+![](/images/ec2fromscratch/RequestInstanceWizardCustom.gif)
 
 **Note:** After recording the screen-cast, I realised that each region is autonomous and Amazon currently (Jan 2011) doesn't make it easy to copy AMIs between regions. I've copied the EU-WEST AMI to US-EAST region. If there's a huge demand for a US-WEST AMI or Asia Pacific AMI, let me know and I'll do my best to create one there as well.
 
-The configuration of this AMI is described in a previous [post](Installing-Gemstone-on-an-Amazon-EC2-Linux-instance.md).
+The configuration of this AMI is described in a previous [post](2011-01-02-Installing-Gemstone-on-an-Amazon-EC2-Linux-instance.md).
 
 Select the 'micro instance' if you want to take up Amazon on their [free](http://aws.amazon.com/free/) offer. Amazon [describes](http://aws.amazon.com/ec2/instance-types/_ micro instances as:
 
 > Instances of this family provide a small amount of consistent CPU resources and allow you to burst CPU capacity when additional cycles are available. They are well suited for lower throughput applications and web sites that consume significant compute cycles periodically.
 
-![](RequestInstanceWizard2.gif)
+![](/images/ec2fromscratch/RequestInstanceWizard2.gif)
 
 Next we pass an RSA public key to the EC2 instance which will allow SSH access. The key is generated using `ssh-keygen`:
 
@@ -59,36 +59,36 @@ disable_ec2_metadata: true
 ```
 format: [CloudInit](https://help.ubuntu.com/community/CloudInit) ([syntax](http://bazaar.launchpad.net/%7Ecloud-init-dev/cloud-init/trunk/annotate/head%3A/doc/examples/cloud-config.txt))
 
-![](RequestInstanceWizard2-1.gif)
+![](/images/ec2fromscratch/RequestInstanceWizard2-1.gif)
 
 No need to pass any key/value pairs:
 
-![](RequestInstanceWizard2-2.gif)
+![](/images/ec2fromscratch/RequestInstanceWizard2-2.gif)
 
 
 As we've passed an SSH key in the user data step above, there's no need to specify a key pair:
 
-![](RequestInstanceWizard3.gif)
+![](/images/ec2fromscratch/RequestInstanceWizard3.gif)
 
 
 Configure the firewall by opening port 25 (SSH) and port 80 (HTTP):
 
-![](RequestInstanceWizard4.gif)
+![](/images/ec2fromscratch/RequestInstanceWizard4.gif)
 
 
 Finally launch and wait for the instance to boot:
 
-![](RequestInstanceWizardCustomfinal.gif)
+![](/images/ec2fromscratch/RequestInstanceWizardCustomfinal.gif)
 
 
 Once the instance is booted, copy the instance URL (public DNS):
 
-![](LaunchedInstance.gif)
+![](/images/ec2fromscratch/LaunchedInstance.gif)
 
 
 Point your browser at the public DNS address of your server, eg `http://ec2-46-51-165-46.eu-west-1.compute.amazonaws.com`  and you should see the familar Seaside welcome screen:
 
-![](SeasideWelcome.gif)
+![](/images/ec2fromscratch/SeasideWelcome.gif)
 
 
 Congratulations you have your own free Seaside server running in Amazon EC2.
@@ -156,18 +156,18 @@ $ ~/gemtools.sh
 ```
 and press the 'Login' button to connect to the Gemstone server which is running in your instance:
 
-![](GemToolsLauncher.gif)
+![](/images/ec2fromscratch/GemToolsLauncher.gif)
 
 You should now be logged into your Gemstone server:
 
-![](GemToolsLauncherLoggedIn.gif)
+![](/images/ec2fromscratch/GemToolsLauncherLoggedIn.gif)
 
 Now you can use the Monticello to load your code into your remote instance. Click on the 'Tools' button and select Monticello. Add the repository containing your code and load as normal. You can also use `Metacello` and `Gofer` to load code.
 
 ####Using GemTools
 Although you can work productively inside GemTools, as it's running remotely in your instance, you'll probably find it more productive to work locally either within a [Pharo](http://www.pharo-project.org/) image, using the [VMWare GLASS virtual appliance](http://seaside.gemstone.com/downloads.html), or by [installing](http://seaside.gemstone.com/downloads.html) Gemstone on your local machine. 
 
-If you're connecting from a MacOS client, you may find it useful to map the Ctrl and CMD keys see: [MacOS And X11](MacOS-And-XWindows.md).
+If you're connecting from a MacOS client, you may find it useful to map the Ctrl and CMD keys see: [MacOS And X11](2011-01-02-MacOS-And-XWindows.md).
 
 ###Improvements
 * I've yet to configure any [monitoring software](http://mmonit.com/monit/).
@@ -177,7 +177,7 @@ If you're connecting from a MacOS client, you may find it useful to map the Ctrl
 
 The [Glass Daemon Tools documentation])http://code.google.com/p/glassdb/wiki/GLASSDaemonTools) shows one route to implement some of these improvements. 
 
-Feel free to use this configuration as the basis for your own improved configuration, then [share that configuration](CreateAReusableAmazonMachineInstance.md) back with the community. Creating and sharing a modified configuration is relatively [straight-forward](CreateAReusableAmazonMachineInstance.md).
+Feel free to use this configuration as the basis for your own improved configuration, then [share that configuration](2011-01-02-CreateAReusableAmazonMachineInstance.md) back with the community. Creating and sharing a modified configuration is relatively [straight-forward](2011-01-02-CreateAReusableAmazonMachineInstance.md).
 
 ###Making your instance more secure
 Here are three ways in which you can make your installation more secure (this is not an exhaustive list):
@@ -247,7 +247,7 @@ ssh -p 20001 seasideuser@ec2-46-51-165-46.eu-west-1.compute.amazonaws.com
 Finally you can re-edit your firewall ('Security Group') to remove access to port 22.
 
 ###Further information
-The configuration of this instance is documented in a previous post; [Installing Gemstone on an Amazon EC2 Linux instance](Installing-Gemstone-on-an-Amazon-EC2-Linux-instance.md)
+The configuration of this instance is documented in a previous post; [Installing Gemstone on an Amazon EC2 Linux instance](2011-01-02-Installing-Gemstone-on-an-Amazon-EC2-Linux-instance.md)
 
 There's lots of great Gemstone documentation available:
 
