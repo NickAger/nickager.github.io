@@ -1,7 +1,8 @@
 ---
 title: "Administrating Gemstone with topaz"
 date: 2011-03-08
-tags: "Gemstone sysadmin devops"
+tags: "Gemstone, sysadmin, devops"
+layout: post
 ---
 
 Some examples of using `topaz` (command-line Smalltalk!) - its often easier than using `Gemstools` for administration work on a remote machine.
