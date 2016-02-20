@@ -80,7 +80,7 @@ By default Seaside assigns sequential numbers to form fields. Here's an example 
 ```
 # postFields keys: `#('2.name', '2.content_type', '2.path', '2.size')`
 # postFields values: `#('home-05.jpg', 'image/jpeg', '/var/nginx/temp/6/0000000056', '1127528')`
-
+```
 
 As the name assigned to the fileUpload field doesn't appear as a key in the `postFields` the callback handler associated with the fileUpload is never called. Instead we add a callback to a hidden field and within that callback  we extract the name of the fileUpload field (in our example "2") and prepend that name to the four fields Nginx adds to the postFields:
 
