@@ -2,6 +2,7 @@
 title: "Command-line image tips"
 date: 2011-03-28
 tags: "devops"
+layout: post
 ---
 
 #### Identify
