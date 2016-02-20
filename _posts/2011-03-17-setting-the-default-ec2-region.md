@@ -7,5 +7,6 @@ On the Mac I followed this blog post: http://www.robertsosinski.com/2008/01/26/s
 
 and added the following environment variable:
 
-  EC2_URL=https://eu-west-1.ec2.amazonaws.com
-
+```
+EC2_URL=https://eu-west-1.ec2.amazonaws.com
+```
