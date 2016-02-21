@@ -30,7 +30,7 @@ GRPlatform current
 
 it works inside the application (inside a session)... not outside (see below)
 
-3) You need a [stunnel](https://www.stunnel.org/index.html) installed and running. In Ubuntu, you need to change:
+3) You need [stunnel](https://www.stunnel.org/index.html) installed and running. In Ubuntu, you need to change:
 
 a) replace stunnel.conf with:
 
