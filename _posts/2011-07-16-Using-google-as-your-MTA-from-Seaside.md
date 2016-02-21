@@ -22,15 +22,15 @@ app
 ```Smalltalk
 GRPlatform current
        seasideDeliverEmailMessage: ((WAEmailMessage
-               from: (WAEmailAddress address: 'estebanlm@gmail.com')
-                       to: (WAEmailAddress address:  'estebanlm@smallworks.com.ar')
+               from: (WAEmailAddress address: 'support@getitmade.com')
+                       to: (WAEmailAddress address:  'a.client@astartup.com')
                        subject: 'test')
                body: (WAStringEmailBody string: 'a test')).
 ```
 
 it works inside the application (inside a session)... not outside (see below)
 
-3) You need [stunnel](https://www.stunnel.org/index.html) installed and running. In Ubuntu, you need to change:
+3) You need [stunnel](https://www.stunnel.org/index.html) installed and running. In Ubuntu, you need to make the following changes:
 
 a) replace stunnel.conf with:
 
@@ -70,6 +70,8 @@ d) restart:
 ```
 sudo /etc/init.d/stunnel4 restart
 ```
+
+---
 
 If you want to send the mail outside the session for example on a service task you need a mock request context then use something like:
 
