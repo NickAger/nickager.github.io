@@ -52,14 +52,14 @@ openssl req -new -x509 -days 3650 -nodes -out stunnel.pem -keyout stunnel.pem
 c) enable running:
 
 ```
-/etc/init.d/stunnel4
+vim /etc/init.d/stunnel4
 ```
 ```
 ENABLED=1
 ```
 
 ```
-/etc/default/stunnel4
+vim /etc/default/stunnel4
 ```
 ```
 ENABLED=1
