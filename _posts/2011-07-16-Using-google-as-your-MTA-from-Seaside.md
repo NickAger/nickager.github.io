@@ -33,6 +33,7 @@ it works inside the application (inside a session)... not outside (see below)
 3) You need an stunnel installed and running. In ubuntu, you need to change:
 
 a) replace stunnel.conf with:
+
 ```
 client = yes
 debug = debug
@@ -43,6 +44,7 @@ connect = smtp.gmail.com:465
 ```
 
 b) create  /etc/stunnel/stunnel.pem
+
 ```
 openssl req -new -x509 -days 3650 -nodes -out stunnel.pem -keyout stunnel.pem
 ```
@@ -64,6 +66,7 @@ ENABLED=1
 ```
 
 d) restart:
+
 ```
 sudo /etc/init.d/stunnel4 restart
 ```
