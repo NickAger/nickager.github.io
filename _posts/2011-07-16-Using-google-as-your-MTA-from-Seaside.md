@@ -3,7 +3,7 @@ title: "Using google as your MTA from Seaside"
 date: 2011-07-16
 layout: post
 ---
-How to use a google account to send the mail from Seaside. Here's our configuration:
+A quick to show how we use google mail to send mail from Seaside. Here's our setup for getitmade.com:
 
 1) You need to add `WAEmailConfiguration` as a configuration ancestor.
 And you need to add this configuration:
@@ -30,7 +30,7 @@ GRPlatform current
 
 it works inside the application (inside a session)... not outside (see below)
 
-3) You need an stunnel installed and running. In ubuntu, you need to change:
+3) You need a [stunnel](https://www.stunnel.org/index.html) installed and running. In Ubuntu, you need to change:
 
 a) replace stunnel.conf with:
 
