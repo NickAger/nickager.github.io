@@ -45,20 +45,20 @@ connect = smtp.gmail.com:465
 
 b) create  /etc/stunnel/stunnel.pem
 
-```
+```bash
 $ openssl req -new -x509 -days 3650 -nodes -out stunnel.pem -keyout stunnel.pem
 ```
 
 c) enable running:
 
-```
+```bash
 $ vim /etc/init.d/stunnel4
 ```
 ```
 ENABLED=1
 ```
 
-```
+```bash
 $ vim /etc/default/stunnel4
 ```
 ```
