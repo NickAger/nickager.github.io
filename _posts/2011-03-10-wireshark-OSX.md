@@ -5,6 +5,7 @@ tag: "sysadmin, OSX"
 layout: post
 ---
 When trying to monitor an interface using Wireshark on my Mac - I'm greeted with:
+
 ```
 No Interfaces Available In Wireshark Mac OS X
 ```
