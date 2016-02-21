@@ -3,7 +3,7 @@ title: "Using google as your MTA from Seaside"
 date: 2011-07-16
 layout: post
 ---
-A quick to show how we use google mail to send mail from Seaside. Here's our setup for getitmade.com:
+A quick post to show how we use Google mail to send mail from Seaside. Here's our setup for getitmade.com:
 
 1) You need to add `WAEmailConfiguration` as a configuration ancestor.
 And you need to add this configuration:
