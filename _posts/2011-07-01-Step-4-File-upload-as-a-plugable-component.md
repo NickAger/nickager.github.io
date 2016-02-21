@@ -77,7 +77,7 @@ function uploadStatus() {
 ```
 
 ## Download the code
-The code described above is contained in `NAFileUploadExample` and can be downloaded from the repository http://www.squeaksource.com/NginxFileUpload
+The code described above is contained in `NAFileUploadExample` and can be downloaded from the repository http://www.squeaksource.com/NginxFileUpload 
 
 ## Nginx configuration
 Here is my complete Nginx configuration for reference:
