@@ -1,15 +1,15 @@
 ---
-title:
-date: 2011-03-11
+title: "Automating Gemstone backups"
+date: 2011-04-03
 layout: post
 ---
 To create daily backups of your database:
 
 ```
-sudo vim /etc/cron.daily/backupgemstone 
+sudo vim /etc/cron.daily/backupgemstone
 ```
 
-enter the following script into the editor: 
+enter the following script into the editor:
 
 ```
 #!/bin/sh

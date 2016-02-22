@@ -1,6 +1,6 @@
 ---
 title: "Intel vs ARM the battle commences"
-date: 2011-06-03
+date: 2011-03-06
 tag: "punditry, ARM, Intel"
 layout: post
 ---
@@ -9,8 +9,8 @@ As mobile devices become ever more powerful they are starting to encroach  on th
 This presents multiple problems for Intel (supplier of 90% PC processors):
 
 * The growth in their major market is slowing.
-* The rapidly growing smartphone/tablet market is currently dominated (95%) by CPUs licensed from [ARM](http://arm.com/). 
-* Intel is late to the party. They will launch their first competitive smartphone CPU in [Q3 2011](http://www.slashgear.com/intel-medfield-smartphonesmids-on-sale-q3-2011-tip-insiders-23135340/). 
+* The rapidly growing smartphone/tablet market is currently dominated (95%) by CPUs licensed from [ARM](http://arm.com/).
+* Intel is late to the party. They will launch their first competitive smartphone CPU in [Q3 2011](http://www.slashgear.com/intel-medfield-smartphonesmids-on-sale-q3-2011-tip-insiders-23135340/).
 * The [next generation](http://www.electronicsweekly.com/Articles/2010/09/09/49414/Update-ARM-Cortex-A15.htm) of ARM based CPUs will encroach on Intel's market of PCs and servers, by offering cheaper, low-power parts.
 * Intel is a single (although admittedly massive) company up against an ecosystem of ARM partners including most of the major silicon vendors - [Samsung](http://www.engadget.com/2010/09/07/samsungs-orion-is-the-1ghz-dual-core-arm-cortex-a9-weve-all-be/), [TI](http://pandaboard.org), [NVidia](http://blogs.nvidia.com/2011/01/project-denver-processor-to-usher-in-new-era-of-computing/), [Qualcomm](http://www.qualcomm.com/news/releases/2011/02/14/qualcomm-announces-quad-core-snapdragon-next-generation-tablets-and), [ST-Ericsson](http://www.stericsson.com/platforms/U8500.jsp), etc.
 
@@ -28,7 +28,7 @@ In 2011 we will see Intel and ARM go head-to-head. Intel will have a [part](http
 ![](/images/intel-vs-arm/intel-inside.jpg)
 
 ##David vs Goliath OR Gullivar vs Lilliputians
-If this were a straight battle between Intel and ARM you'd expect a biblical twist with Goliath thrashing a helpless David. However ARM's ecosystem has changed the terms of engagement, so it's more like a battle between Gulliver and the Lilliputians. Will the giant Intel be able to fend-off attacks from all sides launched by it's diminutive, nimble competitors; the massed army of ARM licensees? 
+If this were a straight battle between Intel and ARM you'd expect a biblical twist with Goliath thrashing a helpless David. However ARM's ecosystem has changed the terms of engagement, so it's more like a battle between Gulliver and the Lilliputians. Will the giant Intel be able to fend-off attacks from all sides launched by it's diminutive, nimble competitors; the massed army of ARM licensees?
 
 Intel has traditionally enjoyed high margins. As the ARM ecosystem begins to move into Intel’s markets, Intel will see it's profit margins eroded as it’s forced to compete on price. Will Intel be able to, or want to, transform itself into a higher volume, lower profit company in-order to engage in the large mobile devices market? The [Arstechnica article](http://arstechnica.com/business/news/2011/02/nvidia-30-and-the-riscification-of-x86.ars) instead sees Intel retreating to a smaller high-margin, high-performance niche. This retreat to the profitable hills is well documented in the anecdotes in [Innovator's Dilemma](http://www.amazon.co.uk/gp/product/0875845851?ie=UTF8&tag=nickagercom-21&linkCode=as2&camp=1634&creative=6738&creativeASIN=087584585). Remember what happened to the incumbents as the technology changed from mainframe to mini-computer followed by mini-computer to microcomputer and the latest disruption; discrete microprocessor to system-on-chip.
 
@@ -46,7 +46,7 @@ Intel is also experimenting with alternative business models at the fringes:
 * [Selling fab capacity](http://arstechnica.com/business/news/2010/11/intel-shifts-strategy-sells-22nm-fab-capacity.ars) to 3rd parties.
 * [Licensing](http://bits.blogs.nytimes.com/2010/02/24/a-tie-up-between-intel-and-tsmc-fizzles/) x86 cores to 3rd parties.
 
-It's going to be fascinating to see how this story evolves. In one future, assuming ARM significantly erodes Intel's market share, Intel could demerge it's manufacturing capacity from it's CPU design capability. One company would run it's market leading silicon fabs and provide manufacturing capability to all comers, including the ARM ecosystem, while the other company would design high-end x86 based CPUs. Alternatively Intel could crush all comers and we'll all end up with "Intel Inside" stickers on our phones. Perhaps ARM will be purchased by one of it's partners, resulting in a contracting ARM ecosystem. 
+It's going to be fascinating to see how this story evolves. In one future, assuming ARM significantly erodes Intel's market share, Intel could demerge it's manufacturing capacity from it's CPU design capability. One company would run it's market leading silicon fabs and provide manufacturing capability to all comers, including the ARM ecosystem, while the other company would design high-end x86 based CPUs. Alternatively Intel could crush all comers and we'll all end up with "Intel Inside" stickers on our phones. Perhaps ARM will be purchased by one of it's partners, resulting in a contracting ARM ecosystem.
 
 Whatever the final outcome competition is going to keep prices down
 
@@ -57,7 +57,7 @@ Update: March 21st: Intel has announced that Anand Chandrasekher, head of Ultram
 Other coverage of the news:
 
 * [Anand Chandrasekher leaves Intel abruptly](http://semiaccurate.com/2011/03/21/anand-chandrasekher-leaves-intel-abruptly/) (Atom is still dead, the exodus begins).
-* [Intel Exec Departs Amid Mobile Disappointments>http://blogs.wsj.com/digits/2011/03/21/intel-exec-departs-amid-mobile-disappointments/* 
+* [Intel Exec Departs Amid Mobile Disappointments>http://blogs.wsj.com/digits/2011/03/21/intel-exec-departs-amid-mobile-disappointments/*
 * [Chandrasekher exits Intel](http://www.edn.com/article/517466-Chandrasekher_exits_Intel.php)
 * [Atom is dead, strangled slowly by Intel](http://semiaccurate.com/2011/02/15/atom-dead-strangled-slowly-intel/).
 * [The Coming War: ARM versus x86](http://vanshardware.com/2010/08/mirror-the-coming-war-arm-versus-x86/)

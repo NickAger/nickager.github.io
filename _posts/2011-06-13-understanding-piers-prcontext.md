@@ -1,7 +1,7 @@
 ---
 title: "Understanding Pier's PRContext"
 tags: "Pier Smalltalk Seaside"
-date: 2011-06-12
+date: 2011-06-13
 layout: post
 ---
 
@@ -50,11 +50,11 @@ PRPierFrame
 initialRequest: aRequest
 	| structure following |
 	super initialRequest: aRequest.
-	self session 
+	self session
 		addFilter: (PRContextFilter on: self).
 	following := self context
-		structure: (structure := self 
-			parseStructure: aRequest 
+		structure: (structure := self
+			parseStructure: aRequest
 			ifAbsent: [ ^ self notFound ])
 		command: (self
 			parseCommand: aRequest

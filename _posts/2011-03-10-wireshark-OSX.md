@@ -1,6 +1,6 @@
 ---
 title: "Wireshark on OSX"
-date: 2011-08-10
+date: 2011-03-10
 tag: "sysadmin, OSX"
 layout: post
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Using Monit to keep your site up"
 tags: "sysadmin"
-date: 2011-03-12
+date: 2011-04-09
 layout: post
 ---
 ### sudo apt-get install monit
@@ -29,7 +29,7 @@ Setting up monit (1:5.0.3-3) ...
 Starting daemon monitor: monit won't be started/stopped
 	unless it it's configured
 	please configure monit and then edit /etc/default/monit
-	and set the "startup" variable to 1 in order to allow 
+	and set the "startup" variable to 1 in order to allow
 	monit to start
 ```
 
@@ -72,7 +72,7 @@ Running rpm_check_debug
 Running Transaction Test
 Transaction Test Succeeded
 Running Transaction
-  Installing     : monit-5.1.1-2.0.amzn1.x86_64                                                1/1 
+  Installing     : monit-5.1.1-2.0.amzn1.x86_64                                                1/1
 
 Installed:
   monit.x86_64 0:5.1.1-2.0.amzn1                                                                   
@@ -112,7 +112,7 @@ $ sudo /etc/init.d/monit restart
 
 
 ###Running on Ubuntu
-Configuration file: 
+Configuration file:
 ```bash
 sudo vim /etc/monit/monitrc
 ```

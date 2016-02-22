@@ -1,6 +1,6 @@
 ---
 title: "Finding whats eating my disk space"
-date: 2011-07-12
+date: 2011-06-03
 layout: post
 ---
 Use `df` to find out how much space you have left on your disk partitions:

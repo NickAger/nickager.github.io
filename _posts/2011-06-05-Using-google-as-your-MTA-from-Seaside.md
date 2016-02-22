@@ -1,6 +1,6 @@
 ---
 title: "Using google as your MTA from Seaside"
-date: 2011-07-16
+date: 2011-06-05
 layout: post
 ---
 A quick post to show how we use Google mail to send mail from Seaside. Here's our setup for getitmade.com:
@@ -10,7 +10,7 @@ And you need to add this configuration:
 
 ```Smalltalk
 app configuration addParent: WAEmailConfiguration instance.
-app 
+app
 		preferenceAt: #smtpServer put: 'localhost';
 		preferenceAt: #smtpPort put: 259;
 		preferenceAt: #smtpUsername put: 'support@getitmade.com';
@@ -81,8 +81,8 @@ If you want to send the mail outside the session for example on a service task y
 
 ```Smalltalk
 WACurrentRequestContext
-		use: IZMockCurrentRequestContext 
-		during: [ 
+		use: IZMockCurrentRequestContext
+		during: [
 			GRPlatform current
        			seasideDeliverEmailMessage: ((WAEmailMessage
                			from: (WAEmailAddress address: 'support@getitmade.com')
