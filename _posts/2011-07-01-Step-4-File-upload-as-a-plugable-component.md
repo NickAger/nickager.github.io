@@ -17,36 +17,36 @@ There are additional comments on setter methods of in `NAFileUploadConfiguration
 
 In `NAFileUploadExample` we lazily create and configure the `NAFileUpload` component:
 
-```Smalltalk
+```smalltalk
 uploadComponent
-	^ uploadComponent ifNil: [ 
+	^ uploadComponent ifNil: [
 		| progressBar |
 		uploadComponent := NAFileUpload new.
-		
+
 		uploadComponent configuration
 			onFileUploaded: [ :file | self storeUploadedFile: file ];
 			onRenderUploadedFiles: [ :html | self renderUploadedFilesOn: html ] ;
 			uploadedFilesContainerId: #uploadedFilesContainerId;
 			onRenderForm: [ :html :fileUploadField :fileUploadStartJS |
-				fileUploadField onChange: fileUploadStartJS ]; 
+				fileUploadField onChange: fileUploadStartJS ];
 			nginxUrlLocation: 'fileupload'.
-			
+
 		"might be easier to do this in straight javascript; instead I'm using Seaside
 		javascript API for illustration"
 		progressBar := JQueryClass new with: #progressBarId.
 		progressBar cssAt: 'display' put: 'block'.
 
-		uploadComponent configuration 
+		uploadComponent configuration
 			onBeforeUpload: (progressBar progressbar value: 0) asFunction;
 			onUploadError: self onUploadErrorCallback;
 			onUploadProgress: self onUploadProgressCallback.
-		
+
 		uploadComponent ]
 ```
 
 The method `onUploadProgressCallback` is defined in `NAFileUploadExample` to respond to file upload updates and generates the following Javascript:
 
-```Javascript
+```javascript
 function uploadStatus() {
   if (uploadStatus.state == "done" || uploadStatus.state == "uploading") {
       var percentageComplete = Math.floor(uploadStatus.received * 100 / uploadStatus.size);
@@ -63,7 +63,7 @@ function uploadStatus() {
   if (uploadStatus.state == "done") {
       clearUploadProgress();
   }
- 
+
   function clearUploadProgress() {
 	  $("#progressBarId").css ("display", "none");
 	  setUploadStatus ("");
@@ -77,7 +77,7 @@ function uploadStatus() {
 ```
 
 ## Download the code
-The code described above is contained in `NAFileUploadExample` and can be downloaded from the repository http://www.squeaksource.com/NginxFileUpload 
+The code described above is contained in `NAFileUploadExample` and can be downloaded from the repository http://www.squeaksource.com/NginxFileUpload
 
 ## Nginx configuration
 Here is my complete Nginx configuration for reference:
@@ -87,7 +87,7 @@ Here is my complete Nginx configuration for reference:
 #
 # This is the main Nginx configuration file.  
 #
-# More information about the configuration options is available on 
+# More information about the configuration options is available on
 #   * the English wiki - http://wiki.nginx.org/Main
 #   * the Russian documentation - http://sysoev.ru/nginx/
 #
@@ -111,7 +111,7 @@ pid        /var/run/nginx.pid;
 
 
 #----------------------------------------------------------------------
-# Events Module 
+# Events Module
 #
 #   http://wiki.nginx.org/NginxHttpEventsModule
 #
@@ -125,7 +125,7 @@ events {
 #----------------------------------------------------------------------
 # HTTP Core Module
 #
-#   http://wiki.nginx.org/NginxHttpCoreModule 
+#   http://wiki.nginx.org/NginxHttpCoreModule
 #
 #----------------------------------------------------------------------
 
@@ -207,7 +207,7 @@ http {
      upload_aggregate_form_field "$upload_field_name.size" "$upload_file_size";
 
      # seaside automatically assigns sequential integers to fields with callbacks
-     # we want to pass those fields to the backend 
+     # we want to pass those fields to the backend
      upload_pass_form_field "^\d+$";
 
      # we don't want files hanging around if the server failed to process them.
@@ -232,7 +232,7 @@ http {
 
        location @seaside {
           include /etc/nginx/fastcgi_params;
-          
+
           fastcgi_intercept_errors on;
           fastcgi_pass seaside;
        }
