@@ -1,7 +1,7 @@
 ---
 title: "File upload using Nginx and Seaside"
 tags: "Nginx upload progress"
-date: 2011-07-01
+date: 2011-07-01 08:03:00 +0000
 layout: post
 ---
 The [Seaside book](http://book.seaside.com) explains how to write a simple file [upload component](http://book.seaside.st/book/fundamentals/forms/fileupload):
@@ -14,10 +14,10 @@ renderContentOn: html
         html submitButton: 'Send File' ]
 ```
 
-The above code is a good starting point and in many ways showcases [Seaside's](http://seaside.st) elegant approach to [callbacks](http://book.seaside.st/book/fundamentals/anchors/callbacks). However for a production site, a major drawback is that the 
+The above code is a good starting point and in many ways showcases [Seaside's](http://seaside.st) elegant approach to [callbacks](http://book.seaside.st/book/fundamentals/anchors/callbacks). However for a production site, a major drawback is that the
  file is loaded into a `ByteArray` within the image. Even if the file is immediately saved, large files will temporarily consume significant memory. A better solution is to avoid loading the file into your running image altogether and let the front-end server take the strain. In this case I'm using [Nginx](http://wiki.nginx.org/), which can stream the bytes directly to a file as it is uploaded, avoiding large spikes in consumed memory. An additional benefit is that [Nginx](http://wiki.nginx.org/) allows us to provide the user with customised upload progress feedback.
 
-The associated posts describes how to integrate [Seaside](http://seaside.st) and [Nginx](http://wiki.nginx.org/) to create a production-quality file upload solution. 
+The associated posts describes how to integrate [Seaside](http://seaside.st) and [Nginx](http://wiki.nginx.org/) to create a production-quality file upload solution.
 
 The key features are:
 * The uploaded file is streamed directly to disk by Nginx.

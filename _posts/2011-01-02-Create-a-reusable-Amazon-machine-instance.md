@@ -1,7 +1,7 @@
 ---
 tags: "EC2, Cloud"
 title: "Create a reusable Amazon machine instance"
-date: 2011-01-02
+date: 2011-01-02 12:03:00 +0000
 layout: post
 ---
 
@@ -48,7 +48,7 @@ Give your image a name and a description:
 
 ![](/images/ec2fromscratch/AMIDialog.gif)
 
-Which will create your own AMI (Amazon Machine Image): 
+Which will create your own AMI (Amazon Machine Image):
 
 ![](/images/ec2fromscratch/AMIList.gif)
 

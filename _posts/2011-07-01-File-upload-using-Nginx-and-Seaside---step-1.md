@@ -1,10 +1,10 @@
 ---
 title: "Step 1: Using Nginx upload module to stream file uploads directly to disk"
 tags: "Nginx, upload, Seaside"
-date: 2011-07-01
+date: 2011-07-01 09:03:00 +0000
 layout: post
 ---
-The default download of Nginx doesn't include the [file upload module](http://www.grid.net.ru/nginx/upload.en.html). A previous  [post](/blog/compiling-nginx-to-add-extra-modules) - [Recompiling Nginx to add extra modules](/blog/compiling-nginx-to-add-extra-modules) describes how to recompile Nginx to add the [file upload module](http://www.grid.net.ru/nginx/upload.en.html) module used in this post and also the [upload progress module](http://wiki.nginx.org/NginxHttpUploadProgressModule) used in [step 3](File-upload-using-Nginx-and-Seaside---step-3) 
+The default download of Nginx doesn't include the [file upload module](http://www.grid.net.ru/nginx/upload.en.html). A previous  [post](/blog/compiling-nginx-to-add-extra-modules) - [Recompiling Nginx to add extra modules](/blog/compiling-nginx-to-add-extra-modules) describes how to recompile Nginx to add the [file upload module](http://www.grid.net.ru/nginx/upload.en.html) module used in this post and also the [upload progress module](http://wiki.nginx.org/NginxHttpUploadProgressModule) used in [step 3](File-upload-using-Nginx-and-Seaside---step-3)
 
 ##Nginx configuration changes
 In a previous [post](/blog/2011/01/02/Installing-Gemstone-on-an-Amazon-EC2-Linux-instance/#configuringNginx) I explain how I configure Nginx for Seaside within Gemstone, see [here](/blog/2011/01/02/Installing-Gemstone-on-an-Amazon-EC2-Linux-instance/#configuringNginx). To your Nginx configuration add the following:
@@ -42,7 +42,7 @@ location ~ fileupload {
      upload_aggregate_form_field "$upload_field_name.size" "$upload_file_size";
 
      # seaside automatically assigns sequential integers to fields with callbacks
-     # we want to pass those fields to the backend 
+     # we want to pass those fields to the backend
      upload_pass_form_field "^\d+$";
 
      # we don't want files hanging around if the server failed to process them.
@@ -55,7 +55,7 @@ The above Nginx location directive matches any URLs containing the `fileupload` 
 ```Smalltalk
 updateUrl: aUrl
 	super updateUrl: aUrl.
-	
+
 	"Nginx configuration contains a specific fileupload handler for a url containing 'fileupload'"
 	aUrl addToPath: 'fileupload'
 ```
@@ -89,26 +89,26 @@ As the name assigned to the fileUpload field doesn't appear as a key in the `pos
 renderUploadFormOn: html
 	html form multipart; class: 'uploadForm'; with: [
 		| fileUploadField |
-		
+
 		"The Nginx handler stores the file uploaded in a specified location and adds POST parameters
-		for the filename, the size, the file type etc. 
+		for the filename, the size, the file type etc.
 		These parameters are then interpreted by the server form handling code.
 		Note: the file uploaded parameter (the file contents) is removed from the form variables."
-		
+
 		fileUploadField := html fileUpload
-			callback: [ :file | 
+			callback: [ :file |
 				"should never get here as Nginx's upload file model removes the
 				uploaded parameter from the form variables in the post request, so
 				Seaside never fires the callback"
 				self error: 'Check your Nginx configuration' ].
-			
+
 		html hiddenInput
 			value: 'hidden';
 			callback: [:val | | uploadFieldName |
 				"what name did Seaside assign to the file upload form field?"
 				uploadFieldName := fileUploadField attributeAt: 'name'.
 				self storeUploadedFile: uploadFieldName ].
-					
+
         	html submitButton: 'Upload File' ]
 ```
 
@@ -127,8 +127,8 @@ storeUploadedFile: uploadFieldName
 	mimeType := WAMimeType fromString: (postFields at: (uploadFieldName , '.content_type')).
 
 	filePath := self uploadDestinationDirectory, fileName.
-	self moveFrom: uploadFilePath toDirectory: self uploadDestinationDirectory name: fileName. 
-	
+	self moveFrom: uploadFilePath toDirectory: self uploadDestinationDirectory name: fileName.
+
 	url := self uploadFilesUrlRoot, fileName.		
 
 	"store a reference to the uploaded file in the session. The session deletes uploaded file when it expires"
@@ -158,20 +158,20 @@ We use the OS move file command, in this case `mv` to move the file to a directo
 ```Smalltalk
 moveFrom: fromString toDirectory: uploadDestinationDirectory name: filename
 	| shellMoveFileCommand |
-	
+
 	"GRPlatform current ensureExistenceOfFolder: uploadDestinationDirectory."
-	
-	"use the OS move ('mv') command to move the uploaded file from where the webserver 
+
+	"use the OS move ('mv') command to move the uploaded file from where the webserver
 	saves the file to the destination directory; ensure we don't load the file into memory"
 	shellMoveFileCommand := String streamContents: [:stream |
-		stream 
+		stream
 			nextPutAll: 'mv ';
 			nextPutAll: fromString;
 			nextPutAll: ' ''';
 			nextPutAll: uploadDestinationDirectory;
 			nextPutAll: filename;
 			nextPutAll: '''' ].
-		
+
 	SpEnvironment runShellCommandString: shellMoveFileCommand.
 ```
 

@@ -1,12 +1,12 @@
 ---
 title: "Step 3: Using Nginx upload progress module to report upload progress to the user"
-date: 2011-07-01
+date: 2011-07-01 11:03:00 +0000
 tags: "Nginx, file, upload"
 layout: post
 ---
-In this step we describe how to add an upload progress bar to the file uploads. The Nginx documentation for the upload progress module can be found [here](http://wiki.nginx.org/HttpUploadProgressModule). This post builds on the code described in the [previous](File-upload-using-Nginx-and-Seaside---step-2.md) two [posts](File-upload-using-Nginx-and-Seaside---step-1.md). 
+In this step we describe how to add an upload progress bar to the file uploads. The Nginx documentation for the upload progress module can be found [here](http://wiki.nginx.org/HttpUploadProgressModule). This post builds on the code described in the [previous](File-upload-using-Nginx-and-Seaside---step-2.md) two [posts](File-upload-using-Nginx-and-Seaside---step-1.md).
 
-##Parameterising and generifying the Javascript 
+##Parameterising and generifying the Javascript
 In this step we chose to parameterise the Javascript; replacing hard coded element ids with parameters. Evolving the code in this way allows instantiation of  multiple file upload components on the same page. Pollution of the Javascript global namespace is minimised to a single shared method - `startUpload`. Finally the generic Javascript has been moved to a file library.
 
 ##Nginx configuration changes
@@ -48,12 +48,12 @@ According to the [upload progress documentation](http://wiki.nginx.org/HttpUploa
 Back in our Smalltalk class we add a helper method to generate a unique upload id:
 
 ```Smalltalk
-xProgressId 
+xProgressId
 	^xProgressId ifNil: [ xProgressId := WAKeyGenerator current keyOfLength: 15 ]
 ```
 and a reset:
 ```Smalltalk
-resetXProgressId 
+resetXProgressId
 	xProgressId := nil
 ```
 
@@ -61,27 +61,27 @@ In the form we modify the `hiddenInput` to work twice as hard for us. To the cal
 ```Smalltalk
 renderUploadFormOn: html
 	| formId |
-	
+
 	html form
 		multipart;
 		attributeAt: 'target' put: (iframeId := html nextId);
 		id: (formId := html nextId);
 		with: [
 			| fileUploadField fileUploadId progressBarId notificationId |
-		
+
 			"The Nginx handler stores the file uploaded in a specified location and adds POST parameters
-			for the filename, the size, the file type etc. 
+			for the filename, the size, the file type etc.
 			These parameters are then interpreted by the server form handling code.
 			Note: the file uploaded parameter (the file contents) is removed from the form variables."
-		
+
 			fileUploadField := html fileUpload
 				id: (fileUploadId := html nextId);
 				callback: [ :file |
 					"should never get here as Nginx's upload file model removes the
 					uploaded parameter from the form variables in the post request, so
-					Seaside never fires the callback" 
+					Seaside never fires the callback"
 					self error: 'Check your Nginx configuration' ].
-			
+
 			html hiddenInput
 				id: (hiddenXProgressId := html nextId);
 				value: self xProgressId;			
@@ -91,25 +91,25 @@ renderUploadFormOn: html
 					self storeUploadedFile: uploadFieldName.
 					self resetXProgressId.
 					self renderIFrameResponse ].		
-			
-			progressBarId := html nextId. 
+
+			progressBarId := html nextId.
 			notificationId := html nextId.
 			uploadedFilesContainerId := html nextId.
-					
+
         		html button
 				bePush;
-				onClick: ((JSStream on: 'window') 
+				onClick: ((JSStream on: 'window')
 					call: 'startUpload'
-					withArguments: (Array 
+					withArguments: (Array
 						with: (html jQuery id: fileUploadId)
 						with: (html jQuery id: formId)
 						with: (html jQuery id: hiddenXProgressId)
 						with: (html jQuery id: progressBarId)
 						with: (html jQuery id: notificationId)));
 				with: 'Upload File'.
-				
+
 			self renderUploadProgressBarOn: html progressBarId: progressBarId notificationId: notificationId ].
-	
+
 	self renderHiddenIFrameOn: html
 ```
 
@@ -133,18 +133,18 @@ if (!filename && filename.length) {
 	}
 	form.attr("action", formActionUrl);
 	form.submit();
-	
+
 	fileUploadField.val("");
 	}
 }
 ```
 
-On the first upload the javascript appends the `X-Progress-ID` to the URL. On subsequent uploads, the regular expression replaces the `X-Progress-ID` parameter's value with the current value set in the `xProgressField` hidden field. 
+On the first upload the javascript appends the `X-Progress-ID` to the URL. On subsequent uploads, the regular expression replaces the `X-Progress-ID` parameter's value with the current value set in the `xProgressField` hidden field.
 
 We also add a line to `fileUploadedCallbackJSOn:` to set a new value of `#xProgressId=`after a file has been upload:
 ```Smalltalk
 fileUploadedCallbackJSOn: html
-	^ 
+	^
 '$("#', uploadedFilesContainerId, '").replaceWith($("#',iframeId,'").contents().find("#', uploadedFilesContainerId, '"));
 $("#', hiddenXProgressId, '").val($("#',iframeId,'").contents().find("#newXProgressId").val())'
 ```
@@ -152,11 +152,11 @@ $("#', hiddenXProgressId, '").val($("#',iframeId,'").contents().find("#newXProgr
 this method is called from:
 ```Smalltalk
 renderHiddenIFrameOn: html
-	html iframe 
+	html iframe
 		name: iframeId;
 		id: iframeId;
 		style: 'position:absolute;top:-1000px;left:-1000px'.
-		
+
 	html document addLoadScript:  ((html jQuery id: iframeId) onLoad: (self fileUploadedCallbackJSOn: html))
 ```
 with the iframes `onload` handler being set dynamically at page load.
@@ -169,7 +169,7 @@ renderUploadProgressBarOn: html progressBarId: progressBarId notificationId: not
 		id: progressBarId;
 		style: 'display: none'; "It starts hidden"
 		script: (html jQuery this progressbar value: 0).
-		
+
 	html div id: notificationId
 ```
 Javascript support for polling `/progress` and reporting on status is added to `startUpload`. The code is now generic and I've chosen to move the method into a file library which is then referenced in `updateRoot:`
@@ -195,11 +195,11 @@ var startUpload = function (fileUploadField, form, xProgressField, progressBar, 
 		}
 		form.attr("action", formActionUrl);
 		form.submit();
-	
+
 		fileUploadField.val("");
 		progressBar.progressbar({value:0});
 		progressBar.css("display", "block");
-		var intervalId = window.setInterval(function(){ 
+		var intervalId = window.setInterval(function(){
 			updateBar(progressBar, xProgressId, notificationField, intervalId)
 			}, 1000);
 	}
@@ -234,7 +234,7 @@ var startUpload = function (fileUploadField, form, xProgressField, progressBar, 
 				window.clearTimeout (intervalId);
 			}
 		});
-	
+
 		var clearUploadProgress = function() {
 			window.clearTimeout (intervalId);
 			progressBar.css ("display", "none");
@@ -257,11 +257,11 @@ beforeSend: function (xhr) {
 The `success` callback interprets the response from `/progress` and updates the progress bar and the text status.
 
 ##Understanding how the progress bar receives updates:
-Form submission creates an http-post which includes the `X-Progress-ID` parameter: 
+Form submission creates an http-post which includes the `X-Progress-ID` parameter:
 
 ![](/images/fileupload/post.png)
 
-we then poll `/progress` once a second passing the `X-Progress-ID` parameter: 
+we then poll `/progress` once a second passing the `X-Progress-ID` parameter:
 
 ![](/images/fileupload/get-progress.png)
 

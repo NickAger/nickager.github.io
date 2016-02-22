@@ -1,6 +1,6 @@
 ---
 title: "Step 2:  Using a hidden iframe to enable ajax-like file upload"
-date: 2011-07-01
+date: 2011-07-01 10:03:00 +0000
 tags: "Nginx, upload"
 layout: post
 ---
@@ -14,7 +14,7 @@ renderContentOn: html
 		with: [
 			self renderUploadFormOn: html.
 			self renderHiddenIFrameOn: html.
-	
+
 			self renderUploadedFilesOn: html.
 			self renderFileUploadedCallbackJSOn: html ]
 ```
@@ -23,10 +23,10 @@ the iframe is rendered off-screen (`position:absolute;top:-1000px;left:-1000px`)
 
 ```Smalltalk
 renderHiddenIFrameOn: html
-	html iframe 
+	html iframe
 		name: 'hiddenImageIFrameUploader';
 		id: #hiddenImageIFrameUploader;
-		style: 'position:absolute;top:-1000px;left:-1000px'; 
+		style: 'position:absolute;top:-1000px;left:-1000px';
 		attributeAt: 'onload' put: 'fileUploadedCallback()'
 ```
 
@@ -55,8 +55,8 @@ with `renderIFrameResponse` rendering the uploaded files:
 ```Smalltalk
 renderIFrameResponse
 	"Respond directly with the uploaded files"
-	self requestContext respond: 
-		[ :response | 
+	self requestContext respond:
+		[ :response |
 		response
 			contentType: WAMimeType textHtml;
 			nextPutAll: (WARenderCanvas builder
@@ -69,7 +69,7 @@ The iframe declaration above contains `attributeAt: 'onload' put: 'fileUploadedC
 
 ```Smalltalk
 renderFileUploadedCallbackJSOn: html
-	html script: 
+	html script:
 'var fileUploadedCallback = function() {
 	$("#uploadedFilesContainer").replaceWith($("#hiddenImageIFrameUploader").contents().find("#uploadedFilesContainer"))
 	}'

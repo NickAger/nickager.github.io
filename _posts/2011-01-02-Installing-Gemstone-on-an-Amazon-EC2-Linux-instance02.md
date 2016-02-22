@@ -1,6 +1,6 @@
 ---
 title: "Installing Gemstone on an Amazon EC2 Linux instance"
-date: 2011-01-02
+date: 2011-01-02 08:03:00 +0000
 layout: post
 tags: "Gemstone sysadmin EC2"
 layout: post
@@ -35,9 +35,9 @@ Next we pass an RSA public key to the EC2 instance which will allow SSH access. 
 ```
 $ ssh-keygen -t rsa
 Generating public/private rsa key pair.
-Enter file in which to save the key (/Users/nickager/.ssh/id_rsa): 
-Enter passphrase (empty for no passphrase): 
-Enter same passphrase again: 
+Enter file in which to save the key (/Users/nickager/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
 Your identification has been saved in /Users/nickager/.ssh/id_rsa.
 Your public key has been saved in /Users/nickager/.ssh/id_rsa.pub.
 ```
@@ -88,7 +88,7 @@ $ ssh **ec2-user**@ec2-46-51-165-46.eu-west-1.compute.amazonaws.com
       ___|___|\___|
 
 See /etc/image-release-notes for latest release notes. :-)
-[ec2-user@ip-10-234-159-73 ~]$ 
+[ec2-user@ip-10-234-159-73 ~]$
 ```
 
 ###Configure the Instance
@@ -116,7 +116,7 @@ again edit `/etc/sudoers` and this time remove references to `ec2-user`
 
 edit `/etc/ssh/sshd_config`:
 ```
-sudo vim /etc/ssh/sshd_config 
+sudo vim /etc/ssh/sshd_config
 ```
 and modify the following lines as:
 ```
@@ -129,8 +129,8 @@ Now copy the ssh key file:
 ```
 mkdir ~/.ssh
 sudo cp /home/ec2-user/.ssh/authorized_keys ~/.ssh/
-sudo chown seasideuser ~/.ssh/authorized_keys 
-sudo chgrp seasideuser ~/.ssh/authorized_keys 
+sudo chown seasideuser ~/.ssh/authorized_keys
+sudo chgrp seasideuser ~/.ssh/authorized_keys
 chmod 700 ~/.ssh/
 chmod 600 ~/.ssh/authorized_keys
 ```
@@ -319,7 +319,7 @@ gemstone       	0:off	1:off	2:off	3:on	4:on	5:on	6:off<
 Now to install the [ServiceVM](http://code.google.com/p/glassdb/wiki/ServiceVMExample), which is [described](http://code.google.com/p/glassdb/wiki/ServiceVMExample) as:
 
 > The Service VM example is intended to provide example code for creating and using a separate "Service VM" for offloading work that in a Squeak/Pharo Seaside application, you would have forked of a thread to do the work.
-> 
+>
 > The prototypical example would be to obtain a token from an external web-service (i.e., sending an HTTP request to obtain a token or other data). You would not want to defer the response to the user in this case, especially if the request can take several minutes to complete (or fail as the case may be).
 
 ```
@@ -363,7 +363,7 @@ then configure `/etc/nginx/nginx.conf` as:
 #
 # This is the main Nginx configuration file.  
 #
-# More information about the configuration options is available on 
+# More information about the configuration options is available on
 #   * the English wiki - http://wiki.nginx.org/Main
 #   * the Russian documentation - http://sysoev.ru/nginx/
 #
@@ -387,7 +387,7 @@ pid        /var/run/nginx.pid;
 
 
 #----------------------------------------------------------------------
-# Events Module 
+# Events Module
 #
 #   http://wiki.nginx.org/NginxHttpEventsModule
 #
@@ -401,7 +401,7 @@ events {
 #----------------------------------------------------------------------
 # HTTP Core Module
 #
-#   http://wiki.nginx.org/NginxHttpCoreModule 
+#   http://wiki.nginx.org/NginxHttpCoreModule
 #
 #----------------------------------------------------------------------
 
@@ -484,7 +484,7 @@ mkdir errors
 cd errors
 ```
 
-create error pages: `404.html` `403.html` and `50x.htmk`. 
+create error pages: `404.html` `403.html` and `50x.htmk`.
 
 create the `log` directory:
 
@@ -631,7 +631,7 @@ Point your browser at the public DNS address of your server, eg `http://ec2-46-5
 * There's nothing to restart Gems if they crash.
 * There's no scheduled backup of the database occurring.
 
-The [Glass Daemon Tools documentation](http://code.google.com/p/glassdb/wiki/GLASSDaemonTools) shows one route to implement these improvements. 
+The [Glass Daemon Tools documentation](http://code.google.com/p/glassdb/wiki/GLASSDaemonTools) shows one route to implement these improvements.
 
 All suggestions for improvements welcome.
 

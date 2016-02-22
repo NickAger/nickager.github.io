@@ -1,6 +1,6 @@
 ---
 title: "Ten minutes to deploy your Seaside application for free using Amazon EC2 and Gemstone"
-date: 2011-01-02
+date: 2011-01-02 09:03:00 +0000
 tags: "Gemstone, sysadmin, EC2"
 layout: post
 ---
@@ -24,7 +24,7 @@ Head over to http://aws.amazon.com and sign-up. Once signed-in you'll be able to
 * Click the 'Launch Instance' button to open the 'Request Instance Wizard'
 
 Select the 'Community AMI' tab and enter the AMI ID (Amazon Machine Image) of your region in the search box:
-* EU-WEST `ami-7f9bae0b` 
+* EU-WEST `ami-7f9bae0b`
 * US-EAST `ami-603bcb09`
 
 ![](/images/ec2fromscratch/RequestInstanceWizardCustom.gif)
@@ -44,9 +44,9 @@ Next we pass an RSA public key to the EC2 instance which will allow SSH access. 
 ```
 $ ssh-keygen -t rsa
 Generating public/private rsa key pair.
-Enter file in which to save the key (/Users/nickager/.ssh/id_rsa): 
-Enter passphrase (empty for no passphrase): 
-Enter same passphrase again: 
+Enter file in which to save the key (/Users/nickager/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
 Your identification has been saved in /Users/nickager/.ssh/id_rsa.
 Your public key has been saved in /Users/nickager/.ssh/id_rsa.pub.
 ```
@@ -145,7 +145,7 @@ Warning: No xauth data; using fake authentication data for X11 forwarding.
       ___|___|\___|
 
 See /etc/image-release-notes for latest release notes. :-)
-[seasideuser@ip-10-234-159-73 ~]$ 
+[seasideuser@ip-10-234-159-73 ~]$
 ```
 The `-X` parameter enables X11-forwarding, `-C` compression. This enables you to open GemTools on your remote instance, but have X11 forward the window to your local computer's display.
 
@@ -166,7 +166,7 @@ You should now be logged into your Gemstone server:
 Now you can use the Monticello to load your code into your remote instance. Click on the 'Tools' button and select Monticello. Add the repository containing your code and load as normal. You can also use `Metacello` and `Gofer` to load code.
 
 ####Using GemTools
-Although you can work productively inside GemTools, as it's running remotely in your instance, you'll probably find it more productive to work locally either within a [Pharo](http://www.pharo-project.org/) image, using the [VMWare GLASS virtual appliance](http://seaside.gemstone.com/downloads.html), or by [installing](http://seaside.gemstone.com/downloads.html) Gemstone on your local machine. 
+Although you can work productively inside GemTools, as it's running remotely in your instance, you'll probably find it more productive to work locally either within a [Pharo](http://www.pharo-project.org/) image, using the [VMWare GLASS virtual appliance](http://seaside.gemstone.com/downloads.html), or by [installing](http://seaside.gemstone.com/downloads.html) Gemstone on your local machine.
 
 If you're connecting from a MacOS client, you may find it useful to map the Ctrl and CMD keys see: [MacOS And X11](2011-01-02-MacOS-And-XWindows.md).
 
@@ -176,7 +176,7 @@ If you're connecting from a MacOS client, you may find it useful to map the Ctrl
 * There's no scheduled backup of the database occurring.
 * I've made no attempt to configure a mailserver.
 
-The [Glass Daemon Tools documentation])http://code.google.com/p/glassdb/wiki/GLASSDaemonTools) shows one route to implement some of these improvements. 
+The [Glass Daemon Tools documentation])http://code.google.com/p/glassdb/wiki/GLASSDaemonTools) shows one route to implement some of these improvements.
 
 Feel free to use this configuration as the basis for your own improved configuration, then [share that configuration](2011-01-02-CreateAReusableAmazonMachineInstance.md) back with the community. Creating and sharing a modified configuration is relatively [straight-forward](2011-01-02-CreateAReusableAmazonMachineInstance.md).
 
