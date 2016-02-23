@@ -10,7 +10,7 @@ One solution would be to handle the differences in the package manager configura
 
 The solution is two-pronged:
 
-* First ensure the server can identify itself (sysadmin work :-( )
+* First ensure the server can identify itself.
 * Query the server and match the identity against an appropriate class, which encapsulates the differences in behaviour between the servers.
 
 

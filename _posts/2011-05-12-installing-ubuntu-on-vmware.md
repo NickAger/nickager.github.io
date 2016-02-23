@@ -4,7 +4,7 @@ tags: "sysadmin"
 date: 2011-05-12
 layout: post
 ---
-From time to time I require a fresh VMWare Ubuntu server installation.  Each time I attempt an installation I have to resort to Google to get the basics to work. Here's a quick note to myself, (a sysadmin challenged developer), so next time it's all in one place.
+From time to time I require a fresh VMWare Ubuntu server installation.  Each time I attempt an installation I have to resort to Google to get the basics to work. Here's a quick note to myself, so next time it's all in one place.
 
 I'm installing Ubuntu 10.04.1 long term support using an ISO `ubuntu-10.04.1-server-amd64.iso`
 

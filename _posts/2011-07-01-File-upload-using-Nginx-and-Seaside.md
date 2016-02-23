@@ -28,19 +28,19 @@ The key features are:
 
 There a quite a few pieces which co-operate to enable this functionality. I've described the functionality over four posts:
 
-* [Step 1](File-upload-using-Nginx-and-Seaside---step-1): Using Nginx upload module to stream file uploads directly to disk.
-* [Step 2](File-upload-using-Nginx-and-Seaside---step-2): Using a hidden iframe to enable ajax-like file uploads.
-* [Step 3](File-upload-using-Nginx-and-Seaside---step-3): Using Nginx upload progress module to report upload progress to the user.
+* [Step 1](File-upload-using-Nginx-and-Seaside-step-1): Using Nginx upload module to stream file uploads directly to disk.
+* [Step 2](File-upload-using-Nginx-and-Seaside-step-2): Using a hidden iframe to enable ajax-like file uploads.
+* [Step 3](File-upload-using-Nginx-and-Seaside-step-3): Using Nginx upload progress module to report upload progress to the user.
 * [Step 4](Step-4-File-upload-as-a-plugable-component): File upload as a plugable component.
 
-The first three steps describe how the file upload component works. It follows a development journey similar to the one I've undertaken in developing the component. Each step adds an additional feature (and complexity). The fourth step describes how to configure a reusable upload component, which I've extracted from the component presented in [step 3](File-upload-using-Nginx-and-Seaside---step-3). If you only want to use the component, skip straight to [step 4](Step-4-File-upload-as-a-plugable-component).
+The first three steps describe how the file upload component works. It follows a development journey similar to the one I've undertaken in developing the component. Each step adds an additional feature (and complexity). The fourth step describes how to configure a reusable upload component, which I've extracted from the component presented in [step 3](File-upload-using-Nginx-and-Seaside-step-3). If you only want to use the component, skip straight to [step 4](Step-4-File-upload-as-a-plugable-component).
 
 The two Nginx components which enable this functionality are:
 
 * [Nginx Upload progress module](http://wiki.nginx.org/HttpUploadProgressModule)
 * [Nginx Upload module](http://www.grid.net.ru/nginx/upload.en.html)
 
-The default download of Nginx doesn't include these modules, a previous  [post](/blog/compiling-nginx-to-add-extra-modules) - [Recompiling Nginx to add extra modules](/blog/compiling-nginx-to-add-extra-modules) describes how to recompile Nginx to include these modules.
+The default download of Nginx doesn't include these modules, a previous  [post](compiling-nginx-for-extra-modules) - [Compiling Nginx to add extra modules](compiling-nginx-for-extra-modules) describes how to recompile Nginx to include these modules.
 
 ## Download the code
 The code described in the following sections can be downloaded from the repository [](http://www.squeaksource.com/NginxFileUpload)

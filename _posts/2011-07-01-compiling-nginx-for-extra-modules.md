@@ -1,10 +1,10 @@
 ---
-title: "Recompiling Nginx to add extra modules"
+title: "Compiling Nginx to add extra modules"
 tag: "sysadmin, Nginx, devops"
-date: 2011-03-08
+date: 2011-07-01 07:03:00 +0000
 layout: post
 ---
-This post describes the process of recompiling Nginx on Ubuntu 10.04.1 (Server Edition) and Amazon EC2 Linux (which is based on Centos 5.5). The motivation for recompiling Nginx, was to add the following modules:
+This post describes the process of compiling Nginx on Ubuntu 10.04.1 (Server Edition) and Amazon EC2 Linux (which is based on Centos 5.5). The motivation for compiling Nginx, was to add the following modules:
 
 * [upload progress module](http://wiki.nginx.org/NginxHttpUploadProgressModule).
 * [upload module](http://www.grid.net.ru/nginx/upload.en.html).

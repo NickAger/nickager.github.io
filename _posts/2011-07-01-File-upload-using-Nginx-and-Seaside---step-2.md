@@ -82,5 +82,5 @@ This script copies a div (`#uploadedFilesContainer`) inside the just updated ifr
 The code described above is contained in `NAFileUploadStep2` and can be downloaded from the repository http://www.squeaksource.com/NginxFileUpload.
 
 ## Next Steps
-* [Step 3](File-upload-using-Nginx-and-Seaside---step-3): Using Nginx upload progress module to report upload progress to the user.
+* [Step 3](File-upload-using-Nginx-and-Seaside-step-3): Using Nginx upload progress module to report upload progress to the user.
 * [Step 4](Step-4-File-upload-as-a-plugable-component): File upload as a plugable component.

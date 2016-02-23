@@ -35,7 +35,7 @@ Starting daemon monitor: monit won't be started/stopped
 ```
 
 
-###sudo yum install monit
+### sudo yum install monit
 On AWS Linux:
 
 ```bash
@@ -127,7 +127,7 @@ first need to edit:
 and then set the line so that `startup` is set to `1`:
 
 ```
-startup=1`
+startup=1
 ```
 
 Check the syntax (only on Ubuntu):

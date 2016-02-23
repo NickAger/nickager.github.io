@@ -4,7 +4,7 @@ tags: "Nginx, upload, Seaside"
 date: 2011-07-01 09:03:00 +0000
 layout: post
 ---
-The default download of Nginx doesn't include the [file upload module](http://www.grid.net.ru/nginx/upload.en.html). A previous  [post](/blog/compiling-nginx-to-add-extra-modules) - [Recompiling Nginx to add extra modules](/blog/compiling-nginx-to-add-extra-modules) describes how to recompile Nginx to add the [file upload module](http://www.grid.net.ru/nginx/upload.en.html) module used in this post and also the [upload progress module](http://wiki.nginx.org/NginxHttpUploadProgressModule) used in [step 3](File-upload-using-Nginx-and-Seaside---step-3)
+The default download of Nginx doesn't include the [file upload module](http://www.grid.net.ru/nginx/upload.en.html). A previous  [post](/blog/compiling-nginx-to-add-extra-modules) - [Recompiling Nginx to add extra modules](/blog/compiling-nginx-to-add-extra-modules) describes how to recompile Nginx to add the [file upload module](http://www.grid.net.ru/nginx/upload.en.html) module used in this post and also the [upload progress module](http://wiki.nginx.org/NginxHttpUploadProgressModule) used in [step 3](File-upload-using-Nginx-and-Seaside-step-3)
 
 ## Nginx configuration changes
 In a previous [post](/blog/2011/01/02/Installing-Gemstone-on-an-Amazon-EC2-Linux-instance/#configuringNginx) I explain how I configure Nginx for Seaside within Gemstone, see [here](/blog/2011/01/02/Installing-Gemstone-on-an-Amazon-EC2-Linux-instance/#configuringNginx). To your Nginx configuration add the following:
@@ -182,6 +182,6 @@ Currently uploading a file, causes a whole page refresh. Also there is no indica
 The code described above is contained in `NAFileUploadStep1` and can be downloaded from the repository http://www.squeaksource.com/NginxFileUpload.
 
 ## Next Steps
-* [Step 2](File-upload-using-Nginx-and-Seaside---step-2): Using a hidden iframe to enable ajax-like file uploads.
-* [Step 3](File-upload-using-Nginx-and-Seaside---step-3): Using Nginx upload progress module to report upload progress to the user.
+* [Step 2](File-upload-using-Nginx-and-Seaside-step-2): Using a hidden iframe to enable ajax-like file uploads.
+* [Step 3](File-upload-using-Nginx-and-Seaside-step-3): Using Nginx upload progress module to report upload progress to the user.
 * [Step 4](Step-4-File-upload-as-a-plugable-component): File upload as a plugable component.

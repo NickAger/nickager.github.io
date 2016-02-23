@@ -10,7 +10,7 @@ I frequently forget the parameters required for SSHing into my servers. Fortunat
 ssh -X -C -L 8888:127.0.0.1:80 seasideuser@myamazingsite.com
 ```
 
-This can be replaced with the following entry in `~/.ssh/config:
+This can be replaced with the following entry in `~/.ssh/config`:
 
 ```
 Host myamazingsite
@@ -36,7 +36,7 @@ Update: [Norbert](http://norbert.hartl.name/) pointed out that adding `ForwardAg
 On my Mac with OS 10.6.x I found that agent forwarding didn't work until I added my key to the Apple keychain, with the following:
 
 ```
-ssh-add -K ~/.ssh/id_rsa 
+ssh-add -K ~/.ssh/id_rsa
 ```
 
 With agent forwarding the  `~/.ssh/config` entry reads:
