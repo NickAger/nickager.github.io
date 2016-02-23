@@ -87,7 +87,7 @@ SystemRepository findReferencePathToObject: (Object _objectForOop: <oop>)
 
  to find reference paths that keep the string alive ...
 
-ScanBackup MFC  http://code.google.com/p/glassdb/issues/detail?id=136)
+ScanBackup MFC  http://code.google.com/p/glassdb/issues/detail?id=136
 
 ```smalltalk
 (KSSession allInstances
