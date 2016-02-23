@@ -58,7 +58,7 @@ Update: March 21st: Intel has announced that Anand Chandrasekher, head of Ultram
 Other coverage of the news:
 
 * [Anand Chandrasekher leaves Intel abruptly](http://semiaccurate.com/2011/03/21/anand-chandrasekher-leaves-intel-abruptly/) (Atom is still dead, the exodus begins).
-* [Intel Exec Departs Amid Mobile Disappointments>http://blogs.wsj.com/digits/2011/03/21/intel-exec-departs-amid-mobile-disappointments/*
+* [Intel Exec Departs Amid Mobile Disappointments](http://blogs.wsj.com/digits/2011/03/21/intel-exec-departs-amid-mobile-disappointments/)
 * [Chandrasekher exits Intel](http://www.edn.com/article/517466-Chandrasekher_exits_Intel.php)
 * [Atom is dead, strangled slowly by Intel](http://semiaccurate.com/2011/02/15/atom-dead-strangled-slowly-intel/).
 * [The Coming War: ARM versus x86](http://vanshardware.com/2010/08/mirror-the-coming-war-arm-versus-x86/)
