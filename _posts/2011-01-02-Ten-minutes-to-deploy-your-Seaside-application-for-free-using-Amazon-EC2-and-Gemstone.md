@@ -286,4 +286,4 @@ There's lots of great Gemstone documentation available:
 * James Foster's [blog](http://programminggems.wordpress.com)
 * Dale Henrick's [blog](http://gemstonesoup.wordpress.com/)
 
-as well as the GLASS [maillist](http://seaside.gemstone.com/mailman/listinfo/beta) readable [here](http://forum.world.st/GLASS-f1460844.html)
+as well as the GLASS [maillist](http://lists.gemtalksystems.com/mailman/listinfo/glass) readable [here](http://forum.world.st/GLASS-f1460844.html)
