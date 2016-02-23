@@ -8,11 +8,13 @@ layout: post
 This entry describes how to install and configure Gemstone on an Amazon EC2 Linux instance to create an EC2 deployment target for a Seaside application.
 
 **Note:** These instructions are based on connecting from a MacOS client to an Amazon EC2 instance; they should be relevant for other Unix clients. For a Windows client you'll probably need to download either or both of:
+
 * [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/)
 * [Cygwin](http://www.cygwin.com/)
+
 and modify the instructions accordingly.
 
-###Creating an EC2 instance
+### Creating an EC2 instance
 Head over to http://aws.amazon.com and sign-up. Once signed-in you'll be able to navigate to the dashboard screen:
 
 ![](/images/ec2fromscratch/EC2Dashboard2.gif)
@@ -214,7 +216,7 @@ test your Gemstone installation:
 startGemstone
 ```
 
-####Creating system startup scripts for Gemstone
+#### Creating system startup scripts for Gemstone
 The following `/etc/init.d/gemstone` script is based a [template](http://www.cyberciti.biz/tips/linux-write-sys-v-init-script-to-start-stop-service.html). It seems to work, but I'm sure can be improved.
 
 ```
@@ -315,7 +317,7 @@ gemstone       	0:off	1:off	2:off	3:on	4:on	5:on	6:off<
 ```
 
 
-####Adding Gemstone background service task
+#### Adding Gemstone background service task
 Now to install the [ServiceVM](http://code.google.com/p/glassdb/wiki/ServiceVMExample), which is [described](http://code.google.com/p/glassdb/wiki/ServiceVMExample) as:
 
 > The Service VM example is intended to provide example code for creating and using a separate "Service VM" for offloading work that in a Squeak/Pharo Seaside application, you would have forked of a thread to do the work.
@@ -626,7 +628,7 @@ Point your browser at the public DNS address of your server, eg `http://ec2-46-5
 
 ![](/images/ec2fromscratch/SeasideWelcome.gif)
 
-###Improvements
+### Improvements
 * I've yet to configure any [monitoring software](http://mmonit.com/monit/).
 * There's nothing to restart Gems if they crash.
 * There's no scheduled backup of the database occurring.
@@ -635,7 +637,7 @@ The [Glass Daemon Tools documentation](http://code.google.com/p/glassdb/wiki/GLA
 
 All suggestions for improvements welcome.
 
-###Acknowledgements and References
+### Acknowledgements and References
 * [Glass wiki](http://code.google.com/p/glassdb/wiki/TableOfContents), specifically  [BuildYourOwnGLASSAppliance](http://code.google.com/p/glassdb/wiki/BuildYourOwnGLASSAppliance)
 * Ramon Leon's [blog](http://onsmalltalk.com/) specifically [Installing a Gemstone Seaside Server on Ubuntu 10.10](http://onsmalltalk.com/2010-10-30-installing-a-gemstone-seaside-server-on-ubuntu-10.10) and [Faster Remote Gemstone](http://onsmalltalk.com/2010-10-23-faster-remote-gemstone)
 * James Foster's blog article [Setting up GLASS on Slicehost](http://programminggems.wordpress.com/2008/09/05/setting-up-glass-on-slicehost/)
