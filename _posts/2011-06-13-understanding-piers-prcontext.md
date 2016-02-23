@@ -9,7 +9,7 @@ Pier (and Seaside) use *dynamic variables* to retrieve the value of the session 
 
 How do _dynamic variables_ work. Examining the code:
 
-```Smalltalk
+```smalltalk
 PRCurrentContext class
 value
 	"This is the read accessor of the current context."
@@ -19,7 +19,7 @@ value
 	^ holder isNil ifFalse: [ holder context ]
 ```
 
-```Smalltalk
+```smalltalk
 PRCurrentContext class
 value: aContext
 	"This is the write accessor of the current context."
@@ -29,7 +29,7 @@ value: aContext
 
 notice how these methods call `context/context:` on the results from: `self signal` which in turn is the 'anObject` passed in:
 
-```Smalltalk
+```smalltalk
 PRCurrentContext class
 use: anObject during: aBlock
 	^ aBlock on: self do: [ :notification | notification resume: anObject ]
@@ -37,7 +37,7 @@ use: anObject during: aBlock
 
 `PRContextFilter` passes presenter to `use:during:`
 
-```Smalltalk
+```smalltalk
 PRContextFilter
 handleFiltered: aRequestContext
 	^ PRCurrentContext use: presenter during: [ super handleFiltered: aRequestContext ]
@@ -45,7 +45,7 @@ handleFiltered: aRequestContext
 
 `PRContextFilter` is created in:
 
-```Smalltalk
+```smalltalk
 PRPierFrame
 initialRequest: aRequest
 	| structure following |

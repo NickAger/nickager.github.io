@@ -31,5 +31,5 @@ sudo dpkg-reconfigure tzdata
 
 ... the rest then normally falls into place.
 
-###Helpful References
+### Helpful References
 Confused by the differences between `/etc/profile`, `/etc/environment`, `/etc/profile.d/*`, `~/.bashrc`, `~/.profile`, `~/.bash_profile`. It's all here: [Shell initialization files](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_03_01.html)

@@ -80,7 +80,7 @@ Installed:
 Complete!
 ```
 
-####Running on AWS Linux
+#### Running on AWS Linux
 
 ```$ sudo vim /etc/monit.d/gemstone```
 
@@ -129,8 +129,8 @@ Check the syntax (only on Ubuntu):
 $ sudo /etc/init.d/monit syntax
 ```
 
-###Monit log
-####AWS Linux
+### Monit log
+#### AWS Linux
 In the default `/etc/monit.conf` on AWS Linux there's a line:
 ```
 include /etc/monit.d/*
@@ -141,22 +141,22 @@ By default this pulls in `/etc/monit.d/logging` which includes the line:
 set logfile /var/log/monit.log
 ```
 
-####Ubuntu
+#### Ubuntu
 I've added the line:
 ```
 set logfile /var/log/monit.log
 ```
 to `/etc/monit/monitrc`
 
-####Debugging tips
+#### Debugging tips
 * Be aware that scripts called from Monit don't contain the same environment variables as the shell
 
-####Re-enabling after disable
+#### Re-enabling after disable
 ```bash
 sudo chkconfig --levels 235 monit on
 ```
 
-####Links
+#### Links
 * [Monit examples](http://mmonit.com/wiki/Monit/ConfigurationExamples)
 * [Monit documentation](http://mmonit.com/monit/documentation/monit.html)
 * [Debugging Monit](http://stackoverflow.com/questions/3356476/debugging-monit)

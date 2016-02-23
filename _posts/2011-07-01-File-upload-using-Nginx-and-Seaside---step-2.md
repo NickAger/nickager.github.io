@@ -7,7 +7,7 @@ layout: post
 
 In this step we upload the file in the background in an AJAX-like style. Note we are not using the AJAX `XMLHttpRequest` as at the time of writing it was not possible to use an `XMLHttpRequest` for multipart form uploads. The work-around is to use a hidden iframe to submit the form. The main render method becomes:
 
-```Smalltalk
+```smalltalk
 renderContentOn: html
 	html div
 		class: 'fileuploadExample';
@@ -21,7 +21,7 @@ renderContentOn: html
 
 the iframe is rendered off-screen (`position:absolute;top:-1000px;left:-1000px`)
 
-```Smalltalk
+```smalltalk
 renderHiddenIFrameOn: html
 	html iframe
 		name: 'hiddenImageIFrameUploader';
@@ -32,7 +32,7 @@ renderHiddenIFrameOn: html
 
 the form declaration is changed to set the form's target to the iframe:
 
-```Smalltalk
+```smalltalk
 html form
     multipart;
     attributeAt: 'target' put: 'hiddenImageIFrameUploader';
@@ -42,7 +42,7 @@ html form
 Now when the form's submit button is pressed the response is rendered within the iframe.
 
 The response handling in the `hiddenInput` completes with a call to `renderIFrameResponse` as:
-```Smalltalk
+```smalltalk
 html hiddenInput
     callback: [:val | | uploadFieldName |
         "what name did Seaside assign to the file upload form field?"
@@ -52,7 +52,7 @@ html hiddenInput
 ```
 
 with `renderIFrameResponse` rendering the uploaded files:
-```Smalltalk
+```smalltalk
 renderIFrameResponse
 	"Respond directly with the uploaded files"
 	self requestContext respond:
@@ -67,7 +67,7 @@ renderIFrameResponse
 
 The iframe declaration above contains `attributeAt: 'onload' put: 'fileUploadedCallback()'`. When the response is loaded by the iframe, the iframe's `onload` will trigger a call to the javascript method `fileUploadedCallback()`, which is defined by:
 
-```Smalltalk
+```smalltalk
 renderFileUploadedCallbackJSOn: html
 	html script:
 'var fileUploadedCallback = function() {
@@ -76,9 +76,9 @@ renderFileUploadedCallbackJSOn: html
 ```
 This script copies a div (`#uploadedFilesContainer`) inside the just updated iframe to the same named div, rendered just below the upload form, displaying the newly uploaded file and any previously uploaded files.
 
-##Download the code
+## Download the code
 The code described above is contained in `NAFileUploadStep2` and can be downloaded from the repository http://www.squeaksource.com/NginxFileUpload.
 
 ## Next Steps
-* [Step 3](File-upload-using-Nginx-and-Seaside---step-3.md): Using Nginx upload progress module to report upload progress to the user.
-* [Step 4](Step-4-File-upload-as-a-plugable-component.md): File upload as a plugable component.
+* [Step 3](File-upload-using-Nginx-and-Seaside---step-3): Using Nginx upload progress module to report upload progress to the user.
+* [Step 4](Step-4-File-upload-as-a-plugable-component): File upload as a plugable component.

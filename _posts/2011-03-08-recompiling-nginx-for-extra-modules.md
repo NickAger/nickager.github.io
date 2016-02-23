@@ -12,7 +12,7 @@ All modules are compiled into the one Nginx binary; there is currently no concep
 
 Note: I am far from a Linux expert, especially when it comes to building packages from source. I'd love to hear alternative approaches.
 
-###Setting your machine up for building
+### Setting your machine up for building
 Firstly set your machine up for building code and install the default Nginx installation. Firstly on Ubuntu:
 ```bash
 sudo apt-get update
@@ -31,7 +31,7 @@ sudo yum install openssl-devel pcre pcre-devel zlib-devel
 ```
 
 
-###Installing Nginx source
+### Installing Nginx source
 Grab the latest Nginx source from [nginx.org](http://nginx.org/). At the time of writing the latest source was version 0.8.54:
 
 ```
@@ -46,7 +46,7 @@ apt-get source nginx
 On EC2:
 ```
 $yum list | grep nginx
-nginx.x86_64                              0.7.67-1.0.amzn1             @amzn 
+nginx.x86_64                              0.7.67-1.0.amzn1             @amzn
 $
 $ get_reference_source -p nginx
 Please enter your AWS account id: 4930-xxxx-xxxx
@@ -68,13 +68,13 @@ $ tar -zxvf nginx-0.7.67.tar.gz
 
 One benefit of downloading the packaged source is that you can see the configuration options used when compiling the source. The files to study are:
 * Ubuntu: `nginx-0.7.65/debian/rules`
-* EC2:  `nginx.spec` 
+* EC2:  `nginx.spec`
 
-###Downloading the upload progress module
+### Downloading the upload progress module
 Download the [Nginx upload progress module](http://wiki.nginx.org/NginxHttpUploadProgressModule). at the time of writing the latest version was 0.8.2 and can be downloaded from github [here](https://github.com/masterzen/nginx-upload-progress-module/archives/v0.8.2)
 
 > nginx_uploadprogress_module is an implementation of an upload progress system, that monitors RFC1867 POST upload as they are transmitted to upstream servers.
-> 
+>
 > It works by tracking the uploads proxied by Nginx to upstream servers without analysing the uploaded content and offers a web API to report upload progress in Javascript, JSON or configurable format. It works because Nginx acts as an accelerator of an upstream server, storing uploaded POST content on disk, before transmitting it to the upstream server. Each individual POST upload request should contain a progress unique identifier.
 
 ```
@@ -82,7 +82,7 @@ wget --no-check-certificate https://github.com/masterzen/nginx-upload-progress-m
 mv v0.8.2 nginx-upload-progress-module-v0.8.2.zip
 ```
 
-###Downloading the upload module
+### Downloading the upload module
 I also incorporated the [upload module](http://www.grid.net.ru/nginx/upload.en.html), which can be downloaded from [here](http://www.grid.net.ru/nginx/download/), at the time of writing the latest version was 2.2.0
 
 > The module parses request body storing all files being uploaded to a directory specified by upload_store directive. The files are then being stripped from body and altered request is then passed to a location specified by upload_pass directive, thus allowing arbitrary handling of uploaded files. Each of file fields are being replaced by a set of fields specified by upload_set_form_field directive. The content of each uploaded file then could be read from a file specified by $upload_tmp_path variable or the file could be simply moved to ultimate destination. Removal of output files is controlled by directive upload_cleanup.
@@ -91,7 +91,7 @@ I also incorporated the [upload module](http://www.grid.net.ru/nginx/upload.en.h
 wget http://www.grid.net.ru/nginx/download/nginx_upload_module-2.2.0.zip
 ```
 
-###Downloading the upstream fair module
+### Downloading the upstream fair module
 The [upstream fair module](http://wiki.nginx.org/HttpUpstreamFairModule), source's git repository is [here](https://github.com/gnosek/nginx-upstream-fair)
 
 > The upstream_fair module sends an incoming request to the least-busy backend server, rather than distributing requests round-robin.
@@ -101,7 +101,7 @@ wget --no-check-certificate https://github.com/gnosek/nginx-upstream-fair/zipbal
 mv master nginx-upstream-fair.zip
 ```
 
-###Preparing the build directory
+### Preparing the build directory
 ```
 ls
 nginx-0.8.54.tar.gz
@@ -127,10 +127,10 @@ nginx_upload_module-2.2.0
 nginx-0.8.54
 ```
 
-###Configuration options for the compile
+### Configuration options for the compile
 As I mentioned above you can see the packaged source configuration options in the files:
 * Ubuntu:`ginx-0.7.65/debian/rules`
-* EC2:  `nginx.spec` 
+* EC2:  `nginx.spec`
 
 However I found that you can examine the compile options used to build the repository binary by typing:
 ```
@@ -146,7 +146,7 @@ configure arguments: --conf-path=/etc/nginx/nginx.conf --error-log-path=/var/log
 ```
 and:
 ```
-file /usr/sbin/nginx 
+file /usr/sbin/nginx
 /usr/sbin/nginx: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.15, stripped
 ```
 
@@ -159,7 +159,7 @@ TLS SNI support enabled
 configure arguments: --user=nginx --group=nginx --prefix=/usr/share/nginx --sbin-path=/usr/sbin/nginx --conf-path=/etc/nginx/nginx.conf --error-log-path=/var/log/nginx/error.log --http-log-path=/var/log/nginx/access.log --http-client-body-temp-path=/var/lib/nginx/tmp/client_body --http-proxy-temp-path=/var/lib/nginx/tmp/proxy --http-fastcgi-temp-path=/var/lib/nginx/tmp/fastcgi --pid-path=/var/run/nginx.pid --lock-path=/var/lock/subsys/nginx --with-http_ssl_module --with-http_realip_module --with-http_addition_module --with-http_sub_module --with-http_dav_module --with-http_flv_module --with-http_gzip_static_module --with-http_random_index_module --with-http_secure_link_module --with-http_stub_status_module --with-http_perl_module --with-mail --with-mail_ssl_module --with-ipv6 --with-cc-opt='-O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector --param=ssp-buffer-size=4 -m64 -mtune=generic'
 ```
 
-and: 
+and:
 
 ```
 $ file /usr/sbin/nginx
@@ -178,11 +178,11 @@ However EC2 adds the following over Ubuntu:
 * `--with-http_perl_module` [EmbeddedPerlModule](http://wiki.nginx.org/EmbeddedPerlModule)
 
 The EC2 binary was also compiled with some additional compiler flags which looked useful:
-`-with-cc-opt='-O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector --param=ssp-buffer-size=4 -m64 -mtune=generic'` 
+`-with-cc-opt='-O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector --param=ssp-buffer-size=4 -m64 -mtune=generic'`
 
-There is also a comprehensive list of [compile options](http://wiki.nginx.org/InstallOptions) on the Nginx site. 
+There is also a comprehensive list of [compile options](http://wiki.nginx.org/InstallOptions) on the Nginx site.
 
-###Compiling
+### Compiling
 
 Combining the best of both configurations, including the modules I thought I'd need and adding the three 3rd-party modules I set out to include, can be built in the following way:
 
@@ -217,7 +217,7 @@ CFLAGS+=-O2 \
 
 make
 strip objs/nginx
-ls -hl objs/nginx 
+ls -hl objs/nginx
 -rwxr-xr-x 1 seasideuser seasideuser 737K 2011-01-26 20:07 objs/nginx
 ```
 
@@ -229,7 +229,7 @@ sudo cp objs/nginx /usr/sbin/
 
 and you're done - that is except editing your configuration file - but I'll save that for another post
 
-####Compilation problems
+#### Compilation problems
 
 You may see some compile warnings:
 ```
@@ -241,10 +241,10 @@ ngx_process.c:(.text+0x33a): warning: `sys_nerr' is deprecated; use `strerror' o
 according to the nginx wiki this is [normal](http://nginx.org/en/docs/sys_errlist.html) and  they can be ignored.
 
 
-###References
+### References
 
-* Nginx [compile options](http://wiki.nginx.org/InstallOptions). 
-* [built-in modules](http://wiki.nginx.org/Modules). 
+* Nginx [compile options](http://wiki.nginx.org/InstallOptions).
+* [built-in modules](http://wiki.nginx.org/Modules).
 * [third party modules](http://wiki.nginx.org/3rdPartyModules).
 * [upload progress and upload modules](http://blog.martinfjordvald.com/2010/08/file-uploading-with-php-and-nginx/).
 * [Nginx journey of discovery blog](http://www.nginx-discovery.com/)

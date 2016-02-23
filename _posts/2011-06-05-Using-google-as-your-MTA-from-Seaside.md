@@ -8,7 +8,7 @@ A quick post to show how we use Google mail to send mail from Seaside. Here's ou
 1) You need to add `WAEmailConfiguration` as a configuration ancestor.
 And you need to add this configuration:
 
-```Smalltalk
+```smalltalk
 app configuration addParent: WAEmailConfiguration instance.
 app
 		preferenceAt: #smtpServer put: 'localhost';
@@ -19,7 +19,7 @@ app
 
 2) You send mails with this string:
 
-```Smalltalk
+```smalltalk
 GRPlatform current
        seasideDeliverEmailMessage: ((WAEmailMessage
                from: (WAEmailAddress address: 'support@getitmade.com')
@@ -79,7 +79,7 @@ sudo /etc/init.d/stunnel4 restart
 
 If you want to send the mail outside the session for example on a service task you need a mock request context then use something like:
 
-```Smalltalk
+```smalltalk
 WACurrentRequestContext
 		use: IZMockCurrentRequestContext
 		during: [

@@ -4,7 +4,7 @@ tags: "sysadmin, CI, Smalltalk"
 date: 2011-05-15
 layout: post
 ---
-###Installing Jenkins
+### Installing Jenkins
 The Jenkins project provides clear installation instructions for [Jenkins on Ubunutu](http://pkg.jenkins-ci.org/debian/). The main details are:
 
 1) Install Jenkins with `apt-get` by adding the Jenkins repository to your system, First add the key:
@@ -20,9 +20,9 @@ deb http://pkg.jenkins-ci.org/debian binary/
 sudo apt-get update
 sudo apt-get install jenkins
 ```
-4) By default Jenkins is started on `http://localhost:8080`, see `/etc/init.d/jenkins` 
+4) By default Jenkins is started on `http://localhost:8080`, see `/etc/init.d/jenkins`
 
-####Setting up Jenkins for Smalltalk Continuous Integration
+#### Setting up Jenkins for Smalltalk Continuous Integration
 Lukas Renggli has integrated Jenkins and Smalltalk using a set of shell scripts and `*.st` files.  Lukas's [git Jenkins repository](https://github.com/renggli/builder) contains a detailed `README` which provides excellent instructions. For most people Lukas's instructions will suffice. However for sysadmin challenged developers such as myself the following description of how I setup Jenkins for Smalltalk CI may be of use.  
 
 I installed Lukas's builder scripts within the Jenkins home folder as user Jenkins:
@@ -89,7 +89,7 @@ Follow Lukas's directions in his `README` for configuring Smalltalk builds throu
 build.sh -i Pharo-1.2.1 -o seaside3 -s seaside3 -s testrunner -s seaside3-tests
 ```
 
-Select your build project through the Jenkins web ui and select the "Build Now" option. If the build isn't successful, select the build in the "Build History" and examine the "Console Output" to search for reasons for the failure. 
+Select your build project through the Jenkins web ui and select the "Build Now" option. If the build isn't successful, select the build in the "Build History" and examine the "Console Output" to search for reasons for the failure.
 
 ###Debugging your configuration
 Viewing the console output is invaluable for debugging your setup. I added `echo $PATH` and other `echo` output to the `execute shell` web text box help during debugging.

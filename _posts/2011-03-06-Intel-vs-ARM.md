@@ -27,7 +27,7 @@ In 2011 we will see Intel and ARM go head-to-head. Intel will have a [part](http
 
 ![](/images/intel-vs-arm/intel-inside.jpg)
 
-##David vs Goliath OR Gullivar vs Lilliputians
+## David vs Goliath OR Gullivar vs Lilliputians
 If this were a straight battle between Intel and ARM you'd expect a biblical twist with Goliath thrashing a helpless David. However ARM's ecosystem has changed the terms of engagement, so it's more like a battle between Gulliver and the Lilliputians. Will the giant Intel be able to fend-off attacks from all sides launched by it's diminutive, nimble competitors; the massed army of ARM licensees?
 
 Intel has traditionally enjoyed high margins. As the ARM ecosystem begins to move into Intel’s markets, Intel will see it's profit margins eroded as it’s forced to compete on price. Will Intel be able to, or want to, transform itself into a higher volume, lower profit company in-order to engage in the large mobile devices market? The [Arstechnica article](http://arstechnica.com/business/news/2011/02/nvidia-30-and-the-riscification-of-x86.ars) instead sees Intel retreating to a smaller high-margin, high-performance niche. This retreat to the profitable hills is well documented in the anecdotes in [Innovator's Dilemma](http://www.amazon.co.uk/gp/product/0875845851?ie=UTF8&tag=nickagercom-21&linkCode=as2&camp=1634&creative=6738&creativeASIN=087584585). Remember what happened to the incumbents as the technology changed from mainframe to mini-computer followed by mini-computer to microcomputer and the latest disruption; discrete microprocessor to system-on-chip.

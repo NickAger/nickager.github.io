@@ -4,7 +4,7 @@ tags: "Gemstone, EC2, screencast"
 date: 2011-01-02 10:03:00 +0000
 layout: post
 ---
-Here's a screencast to accompany my blog post on [deploying your Seaside application for free using Amazon EC2 and Gemstone](Ten-minutes-to-deploy-your-Seaside-application-for-free-using-Amazon-EC2-and-Gemstone.md):
+Here's a screencast to accompany my blog post on [deploying your Seaside application for free using Amazon EC2 and Gemstone](Ten-minutes-to-deploy-your-Seaside-application-for-free-using-Amazon-EC2-and-Gemstone):
 
 
 

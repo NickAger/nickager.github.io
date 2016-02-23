@@ -6,7 +6,7 @@ layout: post
 ---
 The default download of Nginx doesn't include the [file upload module](http://www.grid.net.ru/nginx/upload.en.html). A previous  [post](/blog/compiling-nginx-to-add-extra-modules) - [Recompiling Nginx to add extra modules](/blog/compiling-nginx-to-add-extra-modules) describes how to recompile Nginx to add the [file upload module](http://www.grid.net.ru/nginx/upload.en.html) module used in this post and also the [upload progress module](http://wiki.nginx.org/NginxHttpUploadProgressModule) used in [step 3](File-upload-using-Nginx-and-Seaside---step-3)
 
-##Nginx configuration changes
+## Nginx configuration changes
 In a previous [post](/blog/2011/01/02/Installing-Gemstone-on-an-Amazon-EC2-Linux-instance/#configuringNginx) I explain how I configure Nginx for Seaside within Gemstone, see [here](/blog/2011/01/02/Installing-Gemstone-on-an-Amazon-EC2-Linux-instance/#configuringNginx). To your Nginx configuration add the following:
 
 ```
@@ -52,7 +52,7 @@ location ~ fileupload {
 
 The above Nginx location directive matches any URLs containing the `fileupload` path. Switching now to Seaside code, we ensure that the file upload component creates a URL containing `fileupload`, by overriding `updateUrl:`
 
-```Smalltalk
+```smalltalk
 updateUrl: aUrl
 	super updateUrl: aUrl.
 
@@ -85,7 +85,7 @@ By default Seaside assigns sequential numbers to form fields. Here's an example 
 
 As the name assigned to the fileUpload field doesn't appear as a key in the `postFields` the callback handler associated with the fileUpload is never called. Instead we add a callback to a hidden field and within that callback  we extract the name of the fileUpload field (in our example "2") and prepend that name to the four fields Nginx adds to the postFields:
 
-```Smalltalk
+```smalltalk
 renderUploadFormOn: html
 	html form multipart; class: 'uploadForm'; with: [
 		| fileUploadField |
@@ -114,7 +114,7 @@ renderUploadFormOn: html
 
 The `#storeUploadedFile:` method extracts the fields manually from `self requestContext request postFields`:
 
-```Smalltalk
+```smalltalk
 storeUploadedFile: uploadFieldName
  	| postFields fileName uploadFilePath urlFilePath url mimeType fileSize filePath |
 
@@ -155,7 +155,7 @@ sudo chown -R seasideuser:seasideuser nginx
 
 We use the OS move file command, in this case `mv` to move the file to a directory that can then be served by Nginx directly:
 
-```Smalltalk
+```smalltalk
 moveFrom: fromString toDirectory: uploadDestinationDirectory name: filename
 	| shellMoveFileCommand |
 

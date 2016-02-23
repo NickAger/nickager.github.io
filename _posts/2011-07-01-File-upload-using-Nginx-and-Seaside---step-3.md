@@ -4,7 +4,7 @@ date: 2011-07-01 11:03:00 +0000
 tags: "Nginx, file, upload"
 layout: post
 ---
-In this step we describe how to add an upload progress bar to the file uploads. The Nginx documentation for the upload progress module can be found [here](http://wiki.nginx.org/HttpUploadProgressModule). This post builds on the code described in the [previous](File-upload-using-Nginx-and-Seaside---step-2.md) two [posts](File-upload-using-Nginx-and-Seaside---step-1.md).
+In this step we describe how to add an upload progress bar to the file uploads. The Nginx documentation for the upload progress module can be found [here](http://wiki.nginx.org/HttpUploadProgressModule). This post builds on the code described in the [previous](File-upload-using-Nginx-and-Seaside---step-2) two [posts](File-upload-using-Nginx-and-Seaside---step-1).
 
 ## Parameterising and generifying the Javascript
 In this step we chose to parameterise the Javascript; replacing hard coded element ids with parameters. Evolving the code in this way allows instantiation of  multiple file upload components on the same page. Pollution of the Javascript global namespace is minimised to a single shared method - `startUpload`. Finally the generic Javascript has been moved to a file library.

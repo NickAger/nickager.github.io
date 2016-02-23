@@ -6,7 +6,7 @@ layout: post
 ---
 The [Seaside book](http://book.seaside.com) explains how to write a simple file [upload component](http://book.seaside.st/book/fundamentals/forms/fileupload):
 
-```Smalltalk
+```smalltalk
 renderContentOn: html
     html form multipart; with: [
         html fileUpload

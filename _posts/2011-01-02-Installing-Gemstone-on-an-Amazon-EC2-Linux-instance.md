@@ -91,7 +91,7 @@ See /etc/image-release-notes for latest release notes. :-)
 [ec2-user@ip-10-234-159-73 ~]$
 ```
 
-###Configure the Instance
+### Configure the Instance
 
 Create a new user:
 ```
@@ -157,7 +157,7 @@ sudo userdel ec2-user
 sudo rm -rf /home/ec2-user/
 ```
 
-###Install Gemstone
+### Install Gemstone
 ```
 cd
 wget http://seaside.gemstone.com/scripts/installGemstone.sh
@@ -335,12 +335,12 @@ chmod +x startServiceVM30
 
 modify `/opt/gemstone/product/seaside/bin/runSeasideGems30` to match http://code.google.com/p/glassdb/wiki/ServiceVMExampleRunSeasideGems30Script
 
-####Test your Gemstone installation
+#### Test your Gemstone installation
 ```
 sudo /etc/init.d/gemstone restart
 ```
 
-###Configuring a webserver
+### Configuring a webserver
 A [variety](http://code.google.com/p/glassdb/wiki/SeasideConfiguration) of webservers have been used with Gemstone:
 * [Apache](http://httpd.apache.org/)
 * [Lighttpd](http://www.lighttpd.net/)
@@ -349,7 +349,7 @@ A [variety](http://code.google.com/p/glassdb/wiki/SeasideConfiguration) of webse
 
 I've chosen [Nginx](http://www.nginx.org/) as it's a [popular](http://news.netcraft.com/archives/category/web-server-survey/), fast, scalable server. It also supports [https reverse proxy](http://www.monkeysnatchbanana.com/posts/2010/06/23/reverse-proxying-to-seaside-with-nginx.html), allowing server code to access https resources even though Gemstone doesn't support https directly.
 
-####Configuring Nginx
+#### Configuring Nginx
 
 Install Nginx:
 ```
@@ -499,7 +499,7 @@ Restart Nginx:
 sudo /etc/init.d/nginx restart
 ```
 
-####About the Nginx configuration
+#### About the Nginx configuration
 
 Nginx proxies requests to Gemstone, with three Gems listening on ports 9001, 9002 and 9003 to FastCGI requests from the Nginx.
 
@@ -530,7 +530,7 @@ ensure that `/config` and `/tools` are not visible to world; they are only visib
 
 **See also:** [Sean Allen's ](http://www.monkeysnatchbanana.com/) Nginx configuration [documentation](http://www.monkeysnatchbanana.com/posts/2010/08/17/using-fastcgi-with-nginx-and-seaside.html)
 
-###Configuring GemTools
+### Configuring GemTools
 [GemTools](http://code.google.com/p/glassdb/wiki/GemTools) is a [Pharo](http://www.pharo-project.org/) environment which allows you to connect to Gemstone, load and modify code, and perform administrative activities from a GUI environment (such as starting and stopping servers, backing-up and restoring the database etc). This section borrows heavily from Ramon Leon's blog post: ['Faster Remote Gemstone'](http://onsmalltalk.com/2010-10-23-faster-remote-gemstone)
 
 Download and unpack the GemTools distribution:
@@ -577,7 +577,7 @@ GemTools should then launch within an X11-window on your desktop:
 ![](/images/ec2fromscratch/FreshGemTools.gif)
 
 Open a standard Workspace in the GemTools image and execute the following script:
-```Smalltalk
+```smalltalk
 | hostname |
 hostname := 'localhost'.
 OGLauncherNode addSessionWithDescription:
@@ -604,7 +604,7 @@ See [GemTools Launcher Guide](http://code.google.com/p/glassdb/wiki/GemTools) fo
 
 Before loading Seaside you should update both GemTools and GLASS versions using the ''Update'' button on the launcher. See GemToolsUpdate wiki [entry](http://code.google.com/p/glassdb/wiki/GemToolsUpdate).
 
-###Load the latest Seaside and Pier into Gemstone
+### Load the latest Seaside and Pier into Gemstone
 Before loading any code ensure the menu option under 'Admin->Commit on Almost out of memory' is selected, also open a Transcript window open. Then in a GemTools workspace execute the following:
 ```
 Gofer project load: 'Seaside30' group: 'ALL'.
@@ -613,7 +613,7 @@ Gofer project load: 'PierAddOns2' group: 'ALL'.
 ```
 
 Once Seaside is loaded, configure the Gemstone FastCGI adaptor and the three serving Gems, by executing the following script, in the GemTools workspace:
-```Smalltalk
+```smalltalk
 WAGemStoneRunSeasideGems default
 	name: 'FastCGI';
 	adaptorClass: WAFastCGIAdaptor;
@@ -621,7 +621,7 @@ WAGemStoneRunSeasideGems default
 WAGemStoneRunSeasideGems restartGems.
 ```
 
-###Test all the moving parts
+### Test all the moving parts
 Point your browser at the public DNS address of your server, eg `http://ec2-46-51-165-46.eu-west-1.compute.amazonaws.com`  and you should see the familar Seaside welcome screen:
 
 ![](/images/ec2fromscratch/SeasideWelcome.gif)

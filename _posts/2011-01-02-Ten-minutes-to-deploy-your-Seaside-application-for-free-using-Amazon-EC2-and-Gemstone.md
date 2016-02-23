@@ -8,7 +8,7 @@ Amazon's offer of [a free micro instance for a year](http://aws.amazon.com/free/
 
 > To help new AWS customers get started in the cloud, AWS is introducing a new free usage tier. Beginning November 1, new AWS customers will be able to run a free Amazon EC2 Micro Instance for a year...
 
-But would a micro instance be sufficient to allow a Seaside application to run within Gemstone (my deployment method of choice, who also offer a free [licence](http://seaside.gemstone.com/docs/GLASS-Announcement.htm))? The answer is YES and my experiments have resulted in a [pre-configured Gemstone EC2 Linux AMI (Amazon Machine Image)](2011-01-02-Installing-Gemstone-on-an-Amazon-EC2-Linux-instance.md). In this post I describe how to use this pre-configured image to rapidly deploy Seaside applications for free on EC2.
+But would a micro instance be sufficient to allow a Seaside application to run within Gemstone (my deployment method of choice, who also offer a free [licence](http://seaside.gemstone.com/docs/GLASS-Announcement.htm))? The answer is YES and my experiments have resulted in a [pre-configured Gemstone EC2 Linux AMI (Amazon Machine Image)](Installing-Gemstone-on-an-Amazon-EC2-Linux-instance.md). In this post I describe how to use this pre-configured image to rapidly deploy Seaside applications for free on EC2.
 
 **Note:** These instructions are based on connecting from a MacOS client to an Amazon EC2 instance; they should be relevant for other Unix clients. For a Windows client you'll probably need to download either or both of:
 * [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/)
@@ -31,7 +31,7 @@ Select the 'Community AMI' tab and enter the AMI ID (Amazon Machine Image) of yo
 
 **Note:** After recording the screen-cast, I realised that each region is autonomous and Amazon currently (Jan 2011) doesn't make it easy to copy AMIs between regions. I've copied the EU-WEST AMI to US-EAST region. If there's a huge demand for a US-WEST AMI or Asia Pacific AMI, let me know and I'll do my best to create one there as well.
 
-The configuration of this AMI is described in a previous [post](2011-01-02-Installing-Gemstone-on-an-Amazon-EC2-Linux-instance.md).
+The configuration of this AMI is described in a previous [post](Installing-Gemstone-on-an-Amazon-EC2-Linux-instance).
 
 Select the 'micro instance' if you want to take up Amazon on their [free](http://aws.amazon.com/free/) offer. Amazon [describes](http://aws.amazon.com/ec2/instance-types/_ micro instances as:
 
@@ -99,7 +99,7 @@ You should find that the counter, task and 'create a component' samples work as 
 
 As well as the welcome screen, there is a default installation of [Pier](http://www.piercms.com/) available at `/pier`. Pier is a powerful and flexible content management system built on Seaside and as it includes a blog it's ideal for sites such as this one.
 
-###Accessing `/config`
+### Accessing `/config`
 Use the public DNS address to ssh into the newly created instance, with the user `seasideuser`:
 ```
 ssh -L 8888:127.0.0.1:80 seasideuser@ec2-46-51-165-46.eu-west-1.compute.amazonaws.com
@@ -178,21 +178,22 @@ If you're connecting from a MacOS client, you may find it useful to map the Ctrl
 
 The [Glass Daemon Tools documentation])http://code.google.com/p/glassdb/wiki/GLASSDaemonTools) shows one route to implement some of these improvements.
 
-Feel free to use this configuration as the basis for your own improved configuration, then [share that configuration](2011-01-02-CreateAReusableAmazonMachineInstance.md) back with the community. Creating and sharing a modified configuration is relatively [straight-forward](2011-01-02-CreateAReusableAmazonMachineInstance.md).
+Feel free to use this configuration as the basis for your own improved configuration, then [share that configuration](Create-a-reusable-Amazon-machine-instance) back with the community. Creating and sharing a modified configuration is relatively [straight-forward](Create-a-reusable-Amazon-machine-instance).
 
 ###Making your instance more secure
 Here are three ways in which you can make your installation more secure (this is not an exhaustive list):
-*keep your system software up-to-date
-*require a password to use `sudo`
-*change the SSH port.
 
-####1. Keep your system software up-to-date
+* keep your system software up-to-date
+* require a password to use `sudo`
+* change the SSH port.
+
+#### 1. Keep your system software up-to-date
 Periodically run:
 ```
 sudo yum update
 ```
 
-####2. Require a `sudo` password
+#### 2. Require a `sudo` password
 First you need to set a password for `seasideuser`:
 ```
 $ passwd
@@ -215,7 +216,7 @@ seasideuser ALL = (ALL) ALL
 ```
 you will now need a password when executing a command using `sudo`.
 
-####3. Change the SSH port
+#### 3. Change the SSH port
 The default SSH port is port 22, many attacks target this port. That said, the only way to ssh into this instance is via RSA keys. Additionally `root` access is disabled (a common attack route). However if you want to be extra cautious you might want to change the ssh port (although I doubt this provides any protection against a determined attack).
 
 First you should open the new port on your firewall. Select 'Security Groups' from within the Amazon AWS EC2 tab then select the security group associated with your instance. Add the new port.
@@ -247,8 +248,8 @@ ssh -p 20001 seasideuser@ec2-46-51-165-46.eu-west-1.compute.amazonaws.com
 
 Finally you can re-edit your firewall ('Security Group') to remove access to port 22.
 
-###Further information
-The configuration of this instance is documented in a previous post; [Installing Gemstone on an Amazon EC2 Linux instance](2011-01-02-Installing-Gemstone-on-an-Amazon-EC2-Linux-instance.md)
+### Further information
+The configuration of this instance is documented in a previous post; [Installing Gemstone on an Amazon EC2 Linux instance](Installing-Gemstone-on-an-Amazon-EC2-Linux-instance)
 
 There's lots of great Gemstone documentation available:
 

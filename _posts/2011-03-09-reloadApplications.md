@@ -5,7 +5,7 @@ tags: "Seaside"
 layout: post
 ---
 
-```Smalltalk
+```smalltalk
 WAEnvironment class>>#reloadApplications
 ```
 

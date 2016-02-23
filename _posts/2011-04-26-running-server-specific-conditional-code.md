@@ -13,7 +13,7 @@ The solution is two-pronged:
 * Query the server and match the identity against an appropriate class, which encapsulates the differences in behaviour between the servers.
 
 
-##Identifying the server
+## Identifying the server
 On my minimally configured servers `hostname` resulted in the following:
 ```
 $ hostname
@@ -22,7 +22,7 @@ ip-10-234-189-50
 
 The first task is to ensure `hostname` identifies the server in a useful form. Unfortunately Centos and Ubuntu (10.4) based servers handle this differently:
 
-###Centos
+### Centos
 Test to see if the server's hostname is correctly configured:
 ```
 $ hostname
@@ -62,7 +62,7 @@ $ hostname
 getitmade.com
 ```
 
-###Ubuntu
+### Ubuntu
 Test to see if the server's hostname is correctly configured:
 ```
 $ hostname
@@ -98,18 +98,18 @@ $ hostname
 staging.getitmade.com
 ```
 
-##Resolving the class from the server
+## Resolving the class from the server
 Now the servers are correctly configured, identifying the server from Smalltalk is trivially simple:
-```Smalltalk
+```smalltalk
 NetNameResolver localHostName
 ```
 
 I chose to wrap the call to `#localHostName` in a method which maps the server's hostname string to a symbol and caches the result:
 
-```Smalltalk
+```smalltalk
 server
 	^ server ifNil: [
-		| servers | 
+		| servers |
 		servers := Dictionary new
 		 	at: 'getitmade.com' put: #live;
 			at: 'staging.getitmade.com' put: #staging;
@@ -122,34 +122,34 @@ server
 
 I'm particular interested in whether the server is live or not, so I encapsulate this as:
 
-```Smalltalk
-isLiveServer	
+```smalltalk
+isLiveServer
 	^ self server = #live
 ```
 
 Finally I abstract the differences between the servers in a class hierarchy and use a factory in the base class to return an appropriate class for the server:
 
-```Smalltalk
+```smalltalk
 merchantClass
 	| serverIdentification |
 	serverIdentification := IZServerIdentification default.
-	self allSubclassesDo: [:aMerchantClass | 
+	self allSubclassesDo: [:aMerchantClass |
 		(aMerchantClass designedFor: serverIdentification)
 			ifTrue: [ ^ aMerchantClass ] ].
-	
+
 	^ nil
 ```
 
 
 the `#designedFor:` method is implemented on the class which encapsulations the parameters for live server as:
 
-```Smalltalk
+```smalltalk
 designedFor: serverIdentification
 	^ serverIdentification isLiveServer
 ```
 
 
 **Note:** `NetNameResolver>>#localHostName` on Pharo doesn't work reliably on Mac OSX. See this [message thread](http://lists.squeakfoundation.org/pipermail/squeak-dev/2010-March/146746.html) for the background to the issue. In my case, although I develop on a Mac, I deploy on Gemstone and Linux and so circumvent this problem. Also note `NetNameResolver>>#localHostName` on Gemstone is a thin wrapper around:
-```Smalltalk
+```smalltalk
 GsSocket getLocalHostName
 ```

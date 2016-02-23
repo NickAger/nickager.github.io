@@ -5,15 +5,15 @@ date: 2011-03-08
 layout: post
 ---
 
-##Understanding location matching
+## Understanding location matching
 There are three items to consider in-order to understand Nginx location matching:
 * What does the location syntax match against?
-* What is the matching precedence? 
+* What is the matching precedence?
 * At what stage does the match stop the location search.
 
 **syntax:** 'location [=|~|~\*|^~|@] /uri/ { ... }'
 
-###Regular expression matching
+### Regular expression matching
 The "~" "~\*" and "^~" are regular expression matches.
 
 * "~" a case-sensitive regular expression match.
@@ -22,7 +22,7 @@ The "~" "~\*" and "^~" are regular expression matches.
 
 Note: Try not to confuse "^~" with "^regex". In the later case "^" is a regular expression operator meaning - match from the start-of-string. For example "^regex" matches against locations which begin with "regex".
 
-###Location matching examples
+### Location matching examples
 
 ```
 location / {
@@ -30,14 +30,14 @@ location / {
 }
 
 location = /images {
-    #literal match; matches a request for "/images" ONLY. 
+    #literal match; matches a request for "/images" ONLY.
     #also halts the location scanning as soon as such an exact match is met.
     #exact text only, no regular expressions
 }
 
 location ^~ /images {
     #The "^~" results in a case sensitive regular expression match.
-    #This means /images, /images/logo.gif, etc will all be matched. 
+    #This means /images, /images/logo.gif, etc will all be matched.
     #Halts the location scanning as soon as a match is met.
 }
 
@@ -47,11 +47,11 @@ location ~ /images {
 
 location ~* /images {
     #As above but case insensitive version
-} 
+}
 
 
 location ~ \.(gif|jpg|jpeg)$ {
-    #Note ALL literal strings get checked first, and THEN regular expressions, 
+    #Note ALL literal strings get checked first, and THEN regular expressions,
     #regular expressions are matched in the order they appear in the file.
 }
 ```
@@ -60,9 +60,9 @@ Notes:
 * the `location` syntax only matches against the address part of the URL; I have not found a way to match based on URL parameters.
 * Nginx includes an `if` directive, but read [If is evil](http://wiki.nginx.org/IfIsEvil) before you use it.
 
-##Understanding redirects
+## Understanding redirects
 
-###External redirects
+### External redirects
 ```
 #Sends an HTTP 301 permanent redirection
 location /getitmade {
@@ -81,7 +81,7 @@ location = /browse {
 }
 ```
 
-###Internal redirects
+### Internal redirects
 ```
 #The "break" syntax causes the rewrite processing to stop
 location /admin {

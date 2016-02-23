@@ -5,9 +5,9 @@ tags: "Gemstone, sysadmin, devops"
 layout: post
 ---
 
-Some examples of using `topaz` (command-line Smalltalk!) - its often easier than using `Gemstools` for administration work on a remote machine.
+Some examples of using `topaz` (command-line Smalltalk!) - its often easier than using `Gemtools` for administration work on a remote machine.
 
-####Example 1
+#### Example 1
 ```
 $ topaz
 topaz> set user DataCurator pass swordfish gems seaside
@@ -28,7 +28,7 @@ $
 ```
 
 
-####Example 2
+#### Example 2
 ```
 topaz> set user DataCurator pass swordfish gems seaside
 topaz> login
@@ -65,7 +65,7 @@ topaz 1> printit
 SystemRepository currentTranlogSizeMB
 %
 topaz 1> printit
-ObjectLogEntry emptyLog. 
+ObjectLogEntry emptyLog.
 System commitTransaction
 %
 true
@@ -77,11 +77,11 @@ Successful completion of markForCollection.
     261985 possible dead objects, occupying approximately 23578650 bytes, may be reclaimed.
 ```
 
-###Some tips from Dale
+### Some tips from Dale
 
 If the strings are not reaped by an MFC then given the oop of the String, you can look at it `Object _objectForOop: <oop>` and that might give you a clue as to it's source. You can use:
 
-```Smalltalk
+```smalltalk
 SystemRepository findReferencePathToObject: (Object _objectForOop: <oop>)
 ```
 
@@ -89,14 +89,14 @@ SystemRepository findReferencePathToObject: (Object _objectForOop: <oop>)
 
 ScanBackup MFC  http://code.google.com/p/glassdb/issues/detail?id=136)
 
-```Smalltalk
+```smalltalk
 (KSSession allInstances
        select: [:each | each expired]) size
 ```
 
 We then expired them all at the Seaside level:
 
-```Smalltalk
+```smalltalk
 (KSSession allInstances do: [:each | each expire]
 ```
 
@@ -148,7 +148,7 @@ Just keeping the last 3-4 tranlog files will give you enough to recover from a c
 
 For crash recovery ... where the stone process crashes for some reason. You will need the set of tranlogs that were created since the last checkpoint. You can evaluate the following to find out the oldest tranlog that is needed to recover from the last checkpoint:
 
-```Smalltalk
+```smalltalk
 SystemRepository oldestLogFileIdForRecovery
 ```
 
@@ -159,10 +159,10 @@ Depending upon the amount of disk space needed for the tranlogs during a restore
 * 9.5 How to Restore from a Smalltalk Full Backup
 
 
-###Clearing the object log
+### Clearing the object log
 ObjectLogEntry is the key object:
 
-```Smalltalk
+```smalltalk
 Object subclass: 'ObjectLogEntry'
 	instVarNames: #( pid stamp label
 	                  priority object tag)
@@ -175,7 +175,7 @@ Object subclass: 'ObjectLogEntry'
 
 There are two class side variables which seem to store the entries: `ObjectQueue` and `ObjectLog` and are accessed through the following class side methods:
 
-```Smalltalk
+```smalltalk
 objectLog
 	"expect the caller to abort, acquire lock, and commit if necessary"
 
@@ -185,14 +185,14 @@ objectLog
 	^ObjectLog
 ```
 
-```Smalltalk
+```smalltalk
 objectQueue
 
 	ObjectQueue == nil ifTrue: [ ObjectQueue := RcQueue new: 100 ].
 	^ObjectQueue
 ```
 
-```Smalltalk
+```smalltalk
 _objectLog
 	"direct access to ObjectLog - should have acquired ObjectLogLock if removing entries from ObjectLog"
 
@@ -228,11 +228,10 @@ System commitTransaction.
 %
 ```
 
-###Create a fresh extent
+### Create a fresh extent
 
 ```bash
 cp /opt/gemstone/product/bin/extent0.seaside.dbf \
   /opt/gemstone/product/seaside/data/extent0.dbf
 chmod 644 /opt/gemstone/product/seaside/data/extent0.dbf
 ```
-
