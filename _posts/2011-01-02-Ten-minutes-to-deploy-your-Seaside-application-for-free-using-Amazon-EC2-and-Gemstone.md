@@ -21,7 +21,7 @@ and modify the instructions accordingly.
 ### Creating an EC2 instance
 Head over to http://aws.amazon.com and sign-up. Once signed-in you'll be able to navigate to the dashboard screen:
 
-![](/images/ec2fromscratch/EC2Dashboard2.gif)
+![](/images/blog/ec2fromscratch/EC2Dashboard2.gif)
 
 * From the region drop-down, choose the region closest to you.
 * Click the 'Launch Instance' button to open the 'Request Instance Wizard'
@@ -31,7 +31,7 @@ Select the 'Community AMI' tab and enter the AMI ID (Amazon Machine Image) of yo
 * EU-WEST `ami-7f9bae0b`
 * US-EAST `ami-603bcb09`
 
-![](/images/ec2fromscratch/RequestInstanceWizardCustom.gif)
+![](/images/blog/ec2fromscratch/RequestInstanceWizardCustom.gif)
 
 **Note:** After recording the screen-cast, I realised that each region is autonomous and Amazon currently (Jan 2011) doesn't make it easy to copy AMIs between regions. I've copied the EU-WEST AMI to US-EAST region. If there's a huge demand for a US-WEST AMI or Asia Pacific AMI, let me know and I'll do my best to create one there as well.
 
@@ -41,7 +41,7 @@ Select the 'micro instance' if you want to take up Amazon on their [free](http:/
 
 > Instances of this family provide a small amount of consistent CPU resources and allow you to burst CPU capacity when additional cycles are available. They are well suited for lower throughput applications and web sites that consume significant compute cycles periodically.
 
-![](/images/ec2fromscratch/RequestInstanceWizard2.gif)
+![](/images/blog/ec2fromscratch/RequestInstanceWizard2.gif)
 
 Next we pass an RSA public key to the EC2 instance which will allow SSH access. The key is generated using `ssh-keygen`:
 
@@ -66,36 +66,36 @@ disable_ec2_metadata: true
 
 format: [CloudInit](https://help.ubuntu.com/community/CloudInit) ([syntax](http://bazaar.launchpad.net/%7Ecloud-init-dev/cloud-init/trunk/annotate/head%3A/doc/examples/cloud-config.txt))
 
-![](/images/ec2fromscratch/RequestInstanceWizard2-1.gif)
+![](/images/blog/ec2fromscratch/RequestInstanceWizard2-1.gif)
 
 No need to pass any key/value pairs:
 
-![](/images/ec2fromscratch/RequestInstanceWizard2-2.gif)
+![](/images/blog/ec2fromscratch/RequestInstanceWizard2-2.gif)
 
 
 As we've passed an SSH key in the user data step above, there's no need to specify a key pair:
 
-![](/images/ec2fromscratch/RequestInstanceWizard3.gif)
+![](/images/blog/ec2fromscratch/RequestInstanceWizard3.gif)
 
 
 Configure the firewall by opening port 25 (SSH) and port 80 (HTTP):
 
-![](/images/ec2fromscratch/RequestInstanceWizard4.gif)
+![](/images/blog/ec2fromscratch/RequestInstanceWizard4.gif)
 
 
 Finally launch and wait for the instance to boot:
 
-![](/images/ec2fromscratch/RequestInstanceWizardCustomfinal.gif)
+![](/images/blog/ec2fromscratch/RequestInstanceWizardCustomfinal.gif)
 
 
 Once the instance is booted, copy the instance URL (public DNS):
 
-![](/images/ec2fromscratch/LaunchedInstance.gif)
+![](/images/blog/ec2fromscratch/LaunchedInstance.gif)
 
 
 Point your browser at the public DNS address of your server, eg `http://ec2-46-51-165-46.eu-west-1.compute.amazonaws.com`  and you should see the familar Seaside welcome screen:
 
-![](/images/ec2fromscratch/SeasideWelcome.gif)
+![](/images/blog/ec2fromscratch/SeasideWelcome.gif)
 
 
 Congratulations you have your own free Seaside server running in Amazon EC2.
@@ -173,11 +173,11 @@ $ ~/gemtools.sh
 
 and press the 'Login' button to connect to the Gemstone server which is running in your instance:
 
-![](/images/ec2fromscratch/GemToolsLauncher.gif)
+![](/images/blog/ec2fromscratch/GemToolsLauncher.gif)
 
 You should now be logged into your Gemstone server:
 
-![](/images/ec2fromscratch/GemToolsLauncherLoggedIn.gif)
+![](/images/blog/ec2fromscratch/GemToolsLauncherLoggedIn.gif)
 
 Now you can use the Monticello to load your code into your remote instance. Click on the 'Tools' button and select Monticello. Add the repository containing your code and load as normal. You can also use `Metacello` and `Gofer` to load code.
 

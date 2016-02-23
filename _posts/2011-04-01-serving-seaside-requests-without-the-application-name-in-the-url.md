@@ -42,7 +42,7 @@ The above method works perfectly until you start using RESTful urls in your appl
 
 ...not surprising, as there's no `/counter` application registered:
 
-![](/images/serving-apps-from-root/browse.png)
+![](/images/blog/serving-apps-from-root/browse.png)
 
 
 What's going on here? We've fixed the outgoing links but the dispatcher needs some help looking up the incoming links. One solution for deployed applications, is to ask your front-end server to rewrite incoming urls. The [seaside book](http://book.seaside.com) describes how to [configure Apache](http://book.seaside.st/book/advanced/deployment/deployment-apache/configure-apache) so that incoming urls are rewritten to prepend the url with the application name before passing the request onto Seaside. However I've chosen the [Nginx](http://wiki.nginx.org) web-server in preference to Apache. Here's an Ningx configuration that I use in conjunction with the FastCGI server within Gemstone for rewriting incoming urls:
