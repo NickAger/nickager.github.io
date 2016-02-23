@@ -62,5 +62,5 @@ Other coverage of the news:
 * [Chandrasekher exits Intel](http://www.edn.com/article/517466-Chandrasekher_exits_Intel.php)
 * [Atom is dead, strangled slowly by Intel](http://semiaccurate.com/2011/02/15/atom-dead-strangled-slowly-intel/).
 * [The Coming War: ARM versus x86](http://vanshardware.com/2010/08/mirror-the-coming-war-arm-versus-x86/)
-* [Who killed the Intel microprocessor?])http://www.asymco.com/2011/01/10/who-killed-the-intel-microprocessor/)
+* [Who killed the Intel microprocessor?](http://www.asymco.com/2011/01/10/who-killed-the-intel-microprocessor/)
 * [Pandaboard benchmarking](http://computerarch.com/log/2011/03/01/pandaboard/)
