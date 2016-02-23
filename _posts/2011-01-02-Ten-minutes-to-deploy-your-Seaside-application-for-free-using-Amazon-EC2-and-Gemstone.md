@@ -8,7 +8,7 @@ Amazon's offer of [a free micro instance for a year](http://aws.amazon.com/free/
 
 > To help new AWS customers get started in the cloud, AWS is introducing a new free usage tier. Beginning November 1, new AWS customers will be able to run a free Amazon EC2 Micro Instance for a year...
 
-But would a micro instance be sufficient to allow a Seaside application to run within Gemstone (my deployment method of choice, who also offer a free [licence](http://seaside.gemstone.com/docs/GLASS-Announcement.htm))? The answer is YES and my experiments have resulted in a [pre-configured Gemstone EC2 Linux AMI (Amazon Machine Image)](Installing-Gemstone-on-an-Amazon-EC2-Linux-instance.md). In this post I describe how to use this pre-configured image to rapidly deploy Seaside applications for free on EC2.
+But would a micro instance be sufficient to allow a Seaside application to run within Gemstone (my deployment method of choice, who also offer a free [licence](http://seaside.gemstone.com/docs/GLASS-Announcement.htm))? The answer is YES and my experiments have resulted in a [pre-configured Gemstone EC2 Linux AMI (Amazon Machine Image)](Installing-Gemstone-on-an-Amazon-EC2-Linux-instance). In this post I describe how to use this pre-configured image to rapidly deploy Seaside applications for free on EC2.
 
 **Note:** These instructions are based on connecting from a MacOS client to an Amazon EC2 instance; they should be relevant for other Unix clients. For a Windows client you'll probably need to download either or both of:
 
@@ -37,7 +37,7 @@ Select the 'Community AMI' tab and enter the AMI ID (Amazon Machine Image) of yo
 
 The configuration of this AMI is described in a previous [post](Installing-Gemstone-on-an-Amazon-EC2-Linux-instance).
 
-Select the 'micro instance' if you want to take up Amazon on their [free](http://aws.amazon.com/free/) offer. Amazon [describes](http://aws.amazon.com/ec2/instance-types/_ micro instances as:
+Select the 'micro instance' if you want to take up Amazon on their [free](http://aws.amazon.com/free/) offer. Amazon [describes](http://aws.amazon.com/ec2/instance-types/) micro instances as:
 
 > Instances of this family provide a small amount of consistent CPU resources and allow you to burst CPU capacity when additional cycles are available. They are well suited for lower throughput applications and web sites that consume significant compute cycles periodically.
 
