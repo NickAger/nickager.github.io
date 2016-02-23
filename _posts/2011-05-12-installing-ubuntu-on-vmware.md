@@ -1,6 +1,6 @@
 ---
 title: "Installing Ubuntu 10.04.1 on VMWare"
-tags: "sysadmin"
+tags: [sysadmin]
 date: 2011-05-12
 layout: post
 ---

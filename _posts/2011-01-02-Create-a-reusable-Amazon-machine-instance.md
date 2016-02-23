@@ -1,5 +1,5 @@
 ---
-tags: "EC2, Cloud"
+tags: [EC2, Cloud]
 title: "Create a reusable Amazon machine instance"
 date: 2011-01-02 12:03:00 +0000
 layout: post

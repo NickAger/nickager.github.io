@@ -1,7 +1,7 @@
 ---
 title: "Could the Mac App Store ease a transition from Intel to ARM?"
 date: 2011-05-03
-tags: "punditry, Apple, Mac, OSX, ARM, Intel, ISA, SoC"
+tags: [punditry, Apple, Mac, OSX, ARM, Intel, ISA, SoC]
 layout: post
 ---
 As Apple's ARM based system-on-chip (SoC) become ever more powerful, I'm not the only observer wondering if/when Apple will move their MacBooks away from Intel and over to a future generation of their ARM CPUs. What might the benefits be:

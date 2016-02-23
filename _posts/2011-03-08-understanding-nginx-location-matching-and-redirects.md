@@ -1,6 +1,6 @@
 ---
 title: "Understanding Nginx location matching and redirects"
-tags: "Nginx, sysadmin"
+tags: [Nginx, sysadmin]
 date: 2011-03-08
 layout: post
 ---

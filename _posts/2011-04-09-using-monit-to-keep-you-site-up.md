@@ -1,6 +1,6 @@
 ---
 title: "Using Monit to keep your site up"
-tags: "sysadmin"
+tags: [sysadmin]
 date: 2011-04-09
 layout: post
 ---

@@ -1,11 +1,11 @@
 ---
 title: "Thinking in Gemstone"
 date: 2011-03-19
-tags: "Gemstone"
+tags: [Gemstone]
 layout: post
 ---
 ## Abort
-When I first started using Gemstone, the term abort was flying around. This confused me greatly.
+When I first started using Gemstone, the term "abort" was flying around. This confused me greatly.
 Surely aborting a database rolls back a transaction?
 In Gemstone 'abort' ensures that the data in the Gem is consistant with the copy in the stone.
 

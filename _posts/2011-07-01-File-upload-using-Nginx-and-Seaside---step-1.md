@@ -1,6 +1,6 @@
 ---
 title: "Step 1: Using Nginx upload module to stream file uploads directly to disk"
-tags: "Nginx, upload, Seaside"
+tags: [Nginx, upload, Seaside]
 date: 2011-07-01 09:03:00 +0000
 layout: post
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Understanding Pier's PRContext"
-tags: "Pier Smalltalk Seaside"
+tags: [Pier, Smalltalk, Seaside]
 date: 2011-06-13
 layout: post
 ---

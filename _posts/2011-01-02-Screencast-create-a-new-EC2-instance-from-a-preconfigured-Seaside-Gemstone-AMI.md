@@ -1,6 +1,6 @@
 ---
 title: "Screencast: Create a new EC2 instance from a preconfigured Seaside/Gemstone AMI"
-tags: "Gemstone, EC2, screencast"
+tags: [Gemstone, EC2, screencast]
 date: 2011-01-02 10:03:00 +0000
 layout: post
 ---

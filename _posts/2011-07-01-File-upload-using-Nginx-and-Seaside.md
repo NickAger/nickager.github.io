@@ -1,6 +1,6 @@
 ---
 title: "File upload using Nginx and Seaside"
-tags: "Nginx upload progress"
+tags: [Nginx, upload, progress]
 date: 2011-07-01 08:03:00 +0000
 layout: post
 ---

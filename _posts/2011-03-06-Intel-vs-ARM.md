@@ -1,7 +1,7 @@
 ---
 title: "Intel vs ARM the battle commences"
 date: 2011-03-06
-tag: "punditry, ARM, Intel"
+tag: [punditry, ARM, Intel]
 layout: post
 ---
 As mobile devices become ever more powerful they are starting to encroach  on the domain of traditional PCs. While the smartphone and tablet markets are [growing rapidly](http://www.gartner.com/it/page.jsp?id=154301) (72% in 2010), PC market growth is slowing ([forcast](http://www.gartner.com/it/page.jsp?id=1570714) as less than 10% growth 2011-2015).

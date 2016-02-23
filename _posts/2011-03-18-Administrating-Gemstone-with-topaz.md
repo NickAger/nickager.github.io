@@ -1,7 +1,7 @@
 ---
 title: "Administrating Gemstone with topaz"
 date: 2011-03-08
-tags: "Gemstone, sysadmin, devops"
+tags: [Gemstone, sysadmin, devops]
 layout: post
 ---
 

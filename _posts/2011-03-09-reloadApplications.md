@@ -1,7 +1,7 @@
 ---
 title: "reloadApplications"
 date: 2011-03-09
-tags: "Seaside"
+tags: [Seaside]
 layout: post
 ---
 

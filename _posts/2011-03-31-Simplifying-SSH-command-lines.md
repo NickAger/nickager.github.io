@@ -1,6 +1,6 @@
 ---
 title: "Simplifying  SSH command lines"
-tags: "sysadmin"
+tags: [sysadmin]
 date: 2011-03-31
 layout: post
 ---

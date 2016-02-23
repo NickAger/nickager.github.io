@@ -1,7 +1,7 @@
 ---
 title: "Step 3: Using Nginx upload progress module to report upload progress to the user"
 date: 2011-07-01 11:03:00 +0000
-tags: "Nginx, file, upload"
+tags: [Nginx, file, upload]
 layout: post
 ---
 In this step we describe how to add an upload progress bar to the file uploads. The Nginx documentation for the upload progress module can be found [here](http://wiki.nginx.org/HttpUploadProgressModule). This post builds on the code described in the [previous](File-upload-using-Nginx-and-Seaside-step-2) two [posts](File-upload-using-Nginx-and-Seaside-step-1).
