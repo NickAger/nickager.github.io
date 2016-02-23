@@ -16,11 +16,13 @@ This manifests itself when debugging. As soon as you start a server, gem tools U
 
 ## Gemstone hangs when starting up
 check for old lock files hanging around:
+
 ```
 ls /opt/gemstone/locks/
 ```
 
 crucial lines (copied from the installer) to recover from a hosed instance before restoring a backup:
+
 ```
 cp /opt/gemstone/product/bin/extent0.seaside.dbf \
         /opt/gemstone/product/seaside/data/extent0.dbf

@@ -13,9 +13,11 @@ tmpfs                   305304         0    305304   0% /dev/shm
 ```
 
 Then use `du` to zero in on the culprit(s):
+
 ```bash
 du -h --max-depth=1 on /
 ```
+
 It will tell you exactly which directory is the culprit. Then you use it down the tree, and you find out where is the big file(s) located... e.g.:
 
 ```

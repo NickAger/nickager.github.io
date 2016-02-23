@@ -8,6 +8,7 @@ layout: post
 ```bash
 $ sudo apt-get install monit
 ```
+
 ```
 Reading package lists... Done
 Building dependency tree       
@@ -36,9 +37,11 @@ Starting daemon monitor: monit won't be started/stopped
 
 ###sudo yum install monit
 On AWS Linux:
+
 ```bash
 $ sudo yum install monit
 ```
+
 ```
 Loaded plugins: fastestmirror, security
 Determining fastest mirrors
@@ -106,13 +109,15 @@ check process service_gem with pidfile /opt/gemstone/product/seaside/data/servic
 ```
 
 restart:
+
 ```bash
 $ sudo /etc/init.d/monit restart
 ```
 
 
-###Running on Ubuntu
+### Running on Ubuntu
 Configuration file:
+
 ```bash
 sudo vim /etc/monit/monitrc
 ```
@@ -120,11 +125,13 @@ sudo vim /etc/monit/monitrc
 first need to edit:
 `sudo vim /etc/default/monit`
 and then set the line so that `startup` is set to `1`:
+
 ```
 startup=1`
 ```
 
 Check the syntax (only on Ubuntu):
+
 ```bash
 $ sudo /etc/init.d/monit syntax
 ```
@@ -132,20 +139,24 @@ $ sudo /etc/init.d/monit syntax
 ### Monit log
 #### AWS Linux
 In the default `/etc/monit.conf` on AWS Linux there's a line:
+
 ```
 include /etc/monit.d/*
 ```
 
 By default this pulls in `/etc/monit.d/logging` which includes the line:
+
 ```
 set logfile /var/log/monit.log
 ```
 
 #### Ubuntu
 I've added the line:
+
 ```
 set logfile /var/log/monit.log
 ```
+
 to `/etc/monit/monitrc`
 
 #### Debugging tips

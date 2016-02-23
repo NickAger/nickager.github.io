@@ -12,6 +12,7 @@ In this step we chose to parameterise the Javascript; replacing hard coded eleme
 ## Nginx configuration changes
 
 Firstly we modify our Nginx configuration. At the bottom of the location  `fileupload` block add:
+
 ```
 # file upload progress tracking - 30s is the timeout (progress tracking is
 # available 30s after the upload has finished)
@@ -20,6 +21,7 @@ track_uploads proxied 30s;
 ```
 
 and create a new location block to track progress:
+
 ```
 # used to report upload progress - defined by the Nginx Upload Progress Module
 # see http://wiki.nginx.org/HttpUploadProgressModule
@@ -27,15 +29,18 @@ location  /progress {
     report_uploads proxied;
 }
 ```
+
 This location block is key to reporting upload progress; once the upload has started, we poll `/progress` to receive updates on the upload status.
 
 Within the main http block of the Nginx configuration add:
+
 ```
 upload_max_file_size 10m;
 upload_progress proxied 10m;
 ```
 
 and ensure the sizes set match the `client_max_body_size` directive:
+
 ```
 client_max_body_size 10m;
 ```
@@ -51,13 +56,16 @@ Back in our Smalltalk class we add a helper method to generate a unique upload i
 xProgressId
 	^xProgressId ifNil: [ xProgressId := WAKeyGenerator current keyOfLength: 15 ]
 ```
+
 and a reset:
+
 ```smalltalk
 resetXProgressId
 	xProgressId := nil
 ```
 
 In the form we modify the `hiddenInput` to work twice as hard for us. To the callback processing we add a call to `#resetXProgressId`, and we store  `#xProgressId` in the `hiddenInput`'s value:
+
 ```smalltalk
 renderUploadFormOn: html
 	| formId |
@@ -119,6 +127,7 @@ Note that the hard coded ids in `renderUploadFormOn:` in the previous steps have
 The form's submit button has changed to a push button with an `#onClick:` handler which calls a modified `startUpload` with parameters of JQuery references to various fields. Alternatively you could add an `#onChange:` handler to the `fileUpload` control and call `startUpload` from there, dispensing with the need for the button.
 
 The Javascript function `startUpload` is defined as:
+
 ```javascript
 function startUpload(fileUploadField, form, xProgressField, progressBar, notificationField) {
 var filename = fileUploadField.val();
@@ -142,6 +151,7 @@ if (!filename && filename.length) {
 On the first upload the javascript appends the `X-Progress-ID` to the URL. On subsequent uploads, the regular expression replaces the `X-Progress-ID` parameter's value with the current value set in the `xProgressField` hidden field.
 
 We also add a line to `fileUploadedCallbackJSOn:` to set a new value of `#xProgressId=`after a file has been upload:
+
 ```smalltalk
 fileUploadedCallbackJSOn: html
 	^
@@ -150,6 +160,7 @@ $("#', hiddenXProgressId, '").val($("#',iframeId,'").contents().find("#newXProgr
 ```
 
 this method is called from:
+
 ```smalltalk
 renderHiddenIFrameOn: html
 	html iframe
@@ -159,10 +170,12 @@ renderHiddenIFrameOn: html
 
 	html document addLoadScript:  ((html jQuery id: iframeId) onLoad: (self fileUploadedCallbackJSOn: html))
 ```
+
 with the iframes `onload` handler being set dynamically at page load.
 
 ## Adding the progress bar
 We've created the infrastructure for the upload progress bar, now we add the progress bar:
+
 ```smalltalk
 renderUploadProgressBarOn: html progressBarId: progressBarId notificationId: notificationId
 	html div
@@ -172,12 +185,15 @@ renderUploadProgressBarOn: html progressBarId: progressBarId notificationId: not
 
 	html div id: notificationId
 ```
+
 Javascript support for polling `/progress` and reporting on status is added to `startUpload`. The code is now generic and I've chosen to move the method into a file library which is then referenced in `updateRoot:`
+
 ```smalltalk
 updateRoot: anHtmlRoot
 	super updateRoot: anHtmlRoot.
 	anHtmlRoot javascript url: NAFileUploadStep3FileLibrary / #startUploadJs
 ```
+
 The associated Javascript now becomes a little more complex from version presented above:
 
 ```javascript
@@ -249,11 +265,13 @@ var startUpload = function (fileUploadField, form, xProgressField, progressBar, 
 ```
 
 The script polls `/progress` once a second, using a low level ajax call which allows the `X-Progress-ID` parameter to be set:
+
 ```javascript
 beforeSend: function (xhr) {
 	xhr.setRequestHeader("X-Progress-ID", xProgressId);
 }
 ```
+
 The `success` callback interprets the response from `/progress` and updates the progress bar and the text status.
 
 ## Understanding how the progress bar receives updates:
@@ -270,10 +288,13 @@ which results in a response of the form:
 ![](/images/fileupload/get-progress-response.png)
 
 The response is evaluated:
+
 ```
 var upload = eval(data);
 ```
+
 and can be used to calculate the percentage complete:
+
 ```
 var percentageComplete = Math.floor(upload.received * 100 / upload.size);
 ```

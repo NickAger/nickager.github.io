@@ -71,6 +71,7 @@ upload_aggregate_form_field "$upload_field_name.size" "$upload_file_size";
 ```
 
 For this configuration the original file-upload field name (`$upload_field_name`) is used as a prefix for four new fields:
+
 * `name` - the original filename.
 * `content-type` - the mime-type.
 * `path` - the temporary upload path.

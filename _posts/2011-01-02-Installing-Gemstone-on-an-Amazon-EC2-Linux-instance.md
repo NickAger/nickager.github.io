@@ -96,31 +96,38 @@ See /etc/image-release-notes for latest release notes. :-)
 ### Configure the Instance
 
 Create a new user:
+
 ```
 sudo adduser seasideuser
 sudo passwd -d seasideuser
 ```
 
 Then edit `/etc/sudoers`:
+
 ```
 sudo vim /etc/sudoers
 ```
 and add:
+
 ```
 seasideuser ALL = NOPASSWD: ALL
 ```
 
 login as the new user:
+
 ```
 su - seasideuser
 ```
+
 again edit `/etc/sudoers` and this time remove references to `ec2-user`
 
 edit `/etc/ssh/sshd_config`:
+
 ```
 sudo vim /etc/ssh/sshd_config
 ```
 and modify the following lines as:
+
 ```
 #PermitRootLogin forced-commands-only
 #UsePAM yes
@@ -128,6 +135,7 @@ AllowUsers seasideuser
 ```
 
 Now copy the ssh key file:
+
 ```
 mkdir ~/.ssh
 sudo cp /home/ec2-user/.ssh/authorized_keys ~/.ssh/
@@ -138,11 +146,13 @@ chmod 600 ~/.ssh/authorized_keys
 ```
 
 restart the ssh daemon:
+
 ```
 sudo /etc/init.d/sshd restart
 ```
 
 Now logout:
+
 ```
 exit
 ```
@@ -154,6 +164,7 @@ ssh **seasideruser**@ec2-46-51-165-46.eu-west-1.compute.amazonaws.com
 ```
 
 delete the default `ec2-user`:
+
 ```
 sudo userdel ec2-user
 sudo rm -rf /home/ec2-user/
@@ -168,16 +179,19 @@ chmod +x installGemstone.sh
 ```
 
 setup the Gemstone environment by editing `.bash_profile`
+
 ```
 vim .bash_profile
 ```
 
 add the following line:
+
 ```
 source /opt/gemstone/product/seaside/defSeaside
 ```
 
 install the [new key](http://seaside.gemstone.com/docs/GLASS-Announcement.htm) file:
+
 ```
 cd /opt/gemstone/product/seaside/etc
 wget http://seaside.gemstone.com/etc/gemstone.key-GLASS-Linux-2CPU.txt
@@ -186,6 +200,7 @@ mv gemstone.key-GLASS-Linux-2CPU.txt gemstone.key
 ```
 
 check `/opt/gemstone/product/seaside/bin/startSeaside30_Adaptor` the end of which should read:
+
 ```
 run
 GemToGemAnnouncement uninstallStaticHandler.
@@ -201,11 +216,13 @@ System commitTransaction.
 ```
 
 remove the installation downloads:
+
 ```
 rm ~/*  
 ```
 
 logout and login and check the environment:
+
 ```
 set | grep gem
 ```
@@ -302,16 +319,20 @@ exit 0
 ```
 
 Make the startup script executable:
+
 ```
 sudo chmod +x /etc/init.d/gemstone
 sudo chkconfig --add gemstone
 ```
 
 Check the startup script has been installed:
+
 ```
 sudo chkconfig --list
 ```
+
 you should see gemstone listed as:
+
 ```
 gemstone       	0:off	1:off	2:off	3:on	4:on	5:on	6:off<
 ```
@@ -331,6 +352,7 @@ cd /opt/gemstone/product/seaside/bin
 create `/opt/gemstone/product/seaside/bin/startServiceVM30` by copying the contents of: http://code.google.com/p/glassdb/wiki/ServiceVMExampleStartServiceVM30Script
 
 set script as executable:
+
 ```
 chmod +x startServiceVM30
 ```
@@ -344,6 +366,7 @@ sudo /etc/init.d/gemstone restart
 
 ### Configuring a webserver
 A [variety](http://code.google.com/p/glassdb/wiki/SeasideConfiguration) of webservers have been used with Gemstone:
+
 * [Apache](http://httpd.apache.org/)
 * [Lighttpd](http://www.lighttpd.net/)
 * [Cherokee](http://www.cherokee-project.com/)
@@ -354,6 +377,7 @@ I've chosen [Nginx](http://www.nginx.org/) as it's a [popular](http://news.netcr
 #### Configuring Nginx
 
 Install Nginx:
+
 ```
 sudo yum install nginx
 ```
@@ -477,6 +501,7 @@ http {
 ```
 
 Create the directories which will be used for serving static files:
+
 ```
 cd /var
 sudo mkdir www
@@ -486,7 +511,7 @@ mkdir errors
 cd errors
 ```
 
-create error pages: `404.html` `403.html` and `50x.htmk`.
+create error pages: `404.html` `403.html` and `50x.html`.
 
 create the `log` directory:
 
@@ -497,6 +522,7 @@ sudo chown seasideuser:seasideuser nginx
 ```
 
 Restart Nginx:
+
 ```
 sudo /etc/init.d/nginx restart
 ```
@@ -506,14 +532,17 @@ sudo /etc/init.d/nginx restart
 Nginx proxies requests to Gemstone, with three Gems listening on ports 9001, 9002 and 9003 to FastCGI requests from the Nginx.
 
 The lines:
+
 ```
 location / {
             try_files $uri @seaside;
         }
 ```
+
 instruct the webserver to fulfill a request by first attempting to serve a file from the file-system, if no file is found then the request is forwarded to Gemstone.
 
 The lines:
+
 ```
 location /config {
          allow 127.0.0.1;
@@ -536,6 +565,7 @@ ensure that `/config` and `/tools` are not visible to world; they are only visib
 [GemTools](http://code.google.com/p/glassdb/wiki/GemTools) is a [Pharo](http://www.pharo-project.org/) environment which allows you to connect to Gemstone, load and modify code, and perform administrative activities from a GUI environment (such as starting and stopping servers, backing-up and restoring the database etc). This section borrows heavily from Ramon Leon's blog post: ['Faster Remote Gemstone'](http://onsmalltalk.com/2010-10-23-faster-remote-gemstone)
 
 Download and unpack the GemTools distribution:
+
 ```
 wget http://seaside.gemstone.com/squeak/GemTools-1.0-beta.8-244x.app.zip
 unzip GemTools-1.0-beta.8-244x.app.zip
@@ -544,11 +574,13 @@ rm GemTools-1.0-beta.8-244x.app.zip
 ```
 
 Install 32bit support libraries:
+
 ```
 sudo yum install xauth mesa-libGL.i686 libXrender.i686 libSM.i686 freetype.i686 libstdc++.i686
 ```
 
 Create a helper script:
+
 ```
 vim ~/gemtools.sh
 ```
@@ -564,12 +596,15 @@ chmod +x gemtools.sh
 ```
 
 Logout and log back in with:
+
 ```
 ssh -X -C -L 8888:127.0.0.1:80 seasideruser@ec2-46-51-165-46.eu-west-1.compute.amazonaws.com
 ```
+
 The `-X` parameter enables X11-forwarding, `-C` compression, `-L 8888:127.0.0.1:80` forwards `localhost` on the server to `localhost:8888` on your client enabling access to `http://localhost:8888/config` and `http://localhost:8888/tools`
 
 start GemTools with:
+
 ```
 ~/gemtools.sh
 ```
@@ -579,6 +614,7 @@ GemTools should then launch within an X11-window on your desktop:
 ![](/images/ec2fromscratch/FreshGemTools.gif)
 
 Open a standard Workspace in the GemTools image and execute the following script:
+
 ```smalltalk
 | hostname |
 hostname := 'localhost'.
@@ -608,6 +644,7 @@ Before loading Seaside you should update both GemTools and GLASS versions using 
 
 ### Load the latest Seaside and Pier into Gemstone
 Before loading any code ensure the menu option under 'Admin->Commit on Almost out of memory' is selected, also open a Transcript window open. Then in a GemTools workspace execute the following:
+
 ```
 Gofer project load: 'Seaside30' group: 'ALL'.
 Gofer project load: 'Pier2'.
@@ -615,6 +652,7 @@ Gofer project load: 'PierAddOns2' group: 'ALL'.
 ```
 
 Once Seaside is loaded, configure the Gemstone FastCGI adaptor and the three serving Gems, by executing the following script, in the GemTools workspace:
+
 ```smalltalk
 WAGemStoneRunSeasideGems default
 	name: 'FastCGI';

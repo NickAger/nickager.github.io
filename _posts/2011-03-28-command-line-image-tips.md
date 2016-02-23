@@ -13,7 +13,8 @@ IMG_4417.JPG JPEG 2112x2816 2112x2816+0+0 8-bit DirectClass 2.543MiB 0.000u 0:00
 
 ### Using the command line calculator
 
-Non-interactively
+Non-interactively:
+
 ```
 echo "scale=2; 2112 / 2816" | bc
 ```

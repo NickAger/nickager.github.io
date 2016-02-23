@@ -70,6 +70,7 @@ rewrite ^/(.*)$ /appname/$1 break;
 ```
 
 A downside of this approach is that all requests will be prepended with `/appname`, including file requests. Worse still, file requests will be sent to Seaside, rather than handled directly by Nginx. I worked around this problem by ensuring that all static files I wanted to serve were in known directories and then I added those directories to my configuration. Such as:
+
 ```
 location /files {
 
@@ -105,6 +106,7 @@ WADispatcher default: NADispatcher new.
 ```
 
 Finally register your application and set it as the default application:
+
 ```smalltalk
 | application |
 application := WAAdmin register: self asApplicationAt: 'welcome'.
@@ -132,6 +134,7 @@ WAEnvironment reloadApplications.
 ```
 
 When dispatching directly from an application the Nginx configuration can be simplified dramatically. The Nginx `try_files` directive first looks on the file system for a match. If the file isn't found Nginx will pass the request onto Seaside. For good measure I add another directive to ensure that Nginx doesn't trouble Seaside with requests for missing files. Here is the snippet of my Nginx configuration relating to static file serving:
+
 ```
 server {
     listen 80;
@@ -152,6 +155,7 @@ server {
 ```
 
 **Note:** [Julian Fitzell](http://forum.world.st/Deploying-Seaside-on-a-Swazoo-Server-td3569506.html) has suggested an alternative approach (which was intentionally designed into Seaside) in which the application is set directly in the server adaptor:
+
 ```smalltalk
 aServerAdaptor requestHandler: myApplication
 ```
@@ -162,6 +166,7 @@ Clearly this is a much neater approach than setting `WADispatcher default: myApp
 
 ### Exporting from file libraries #2
 Here's a code-snippet, showing how I export files from the file libraries I require (as using the approaches I've outlined `/files` will no longer dispatch files from the file libraries):
+
 ```smalltalk
 (WAFileLibrary allSubclasses select: [:each |
     each name beginsWithAnyOf: #('WA'  'PR' 'JQ')])

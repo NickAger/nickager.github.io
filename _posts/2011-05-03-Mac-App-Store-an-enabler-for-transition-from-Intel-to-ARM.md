@@ -5,6 +5,7 @@ tags: "punditry, Apple, Mac, OSX, ARM, Intel, ISA, SoC"
 layout: post
 ---
 As Apple's ARM based system-on-chip (SoC) become ever more powerful, I'm not the only observer wondering if/when Apple will move their MacBooks away from Intel and over to a future generation of their ARM CPUs. What might the benefits be:
+
 * Lower power consumption than Intel's equivalents enabling:
   * Longer battery life.
   * Eliminating the need for a fan.
@@ -17,12 +18,14 @@ As Apple's ARM based system-on-chip (SoC) become ever more powerful, I'm not the
 * Greater profit margins for Apple and or lower selling price for an ARM based MacBook
 
 The problem with switching from Intel to ARM is that currently all the Mac software is compiled for Intel and will need to be recompiled for ARM. Apple eased the transition from PowerPC architecture to Intel by using dynamic translation in the form of [Rossetta](http://en.wikipedia.org/wiki/Rosetta_(software)). This enabled PowerPC applications to run on Intel Macs and gave application and peripheral driver developers time to recompile for Intel. The translation software was aided by moving to a more powerful CPU, which could affort to "waste" cycles translating without impacting end-user performance. However in any future shift to ARM, Apple will not have the luxury of performance improvements to hide the cost of the translation. This is where I think a thriving Mac App store comes into it's own and will enable the shift:
+
 * Mac users become accustomed to loading their software via the App store.
 * Populating a MacBook with your chosen applications becomes simply a matter of downloading all purchased applications - a single click.
 * Apple pre-announces a range of super-sexy MacBooks based on ARM and encourages application developers to recompile for ARM and produce universal binaries containing Intel and ARM versions.
 * Users with new ARM based MacBooks can download their chosen applications with a single click and don't need to know that their new ulta-thin, light, long battery life laptops use a completely different CPU architecture.
 
-To summarise, the Mac App store could ease any transition by: 
+To summarise, the Mac App store could ease any transition by:
+
 * simple messaging to consumers: your favourite application is/isn't available for a particular machine.
 * provide a conduit for communication with application developers to ensure a smooth transition.
 * enable Apple to incentivise application developers to recompile for ARM.

@@ -9,12 +9,14 @@ I'd like to be able to deploy the same code base to my live, staging, test, back
 One solution would be to handle the differences in the package manager configuration (eg [Metacello](http://code.google.com/p/metacello/) configuration) and load different classes depending on the server. I take this approach for some of my code, but especially for the payment gateway I'd like a "belt and braces" approach where the server can query itself to ensure that it's using a class that's appropriate for the server.
 
 The solution is two-pronged:
+
 * First ensure the server can identify itself (sysadmin work :-( )
 * Query the server and match the identity against an appropriate class, which encapsulates the differences in behaviour between the servers.
 
 
 ## Identifying the server
 On my minimally configured servers `hostname` resulted in the following:
+
 ```
 $ hostname
 ip-10-234-189-50
@@ -24,14 +26,18 @@ The first task is to ensure `hostname` identifies the server in a useful form. U
 
 ### Centos
 Test to see if the server's hostname is correctly configured:
+
 ```
 $ hostname
 ip-10-234-189-50
 ```
+
 In this case it isn't so let's config it:
+
 ```
 $ sudo vim /etc/sysconfig/network
 ```
+
 ```
 NETWORKING=yes
 HOSTNAME=**getitmade.com**
@@ -64,14 +70,18 @@ getitmade.com
 
 ### Ubuntu
 Test to see if the server's hostname is correctly configured:
+
 ```
 $ hostname
 ip-10-234-189-50
 ```
+
 ...not in this case; let's configure it:
+
 ```
 $ sudo vim /etc/hostname
 ```
+
 ```
 staging.getitmade.com
 ```
@@ -93,6 +103,7 @@ $ sudo restart hostname
 ```
 
 Testing the changes have worked:
+
 ```
 $ hostname
 staging.getitmade.com
@@ -100,6 +111,7 @@ staging.getitmade.com
 
 ## Resolving the class from the server
 Now the servers are correctly configured, identifying the server from Smalltalk is trivially simple:
+
 ```smalltalk
 NetNameResolver localHostName
 ```
@@ -150,6 +162,7 @@ designedFor: serverIdentification
 
 
 **Note:** `NetNameResolver>>#localHostName` on Pharo doesn't work reliably on Mac OSX. See this [message thread](http://lists.squeakfoundation.org/pipermail/squeak-dev/2010-March/146746.html) for the background to the issue. In my case, although I develop on a Mac, I deploy on Gemstone and Linux and so circumvent this problem. Also note `NetNameResolver>>#localHostName` on Gemstone is a thin wrapper around:
+
 ```smalltalk
 GsSocket getLocalHostName
 ```

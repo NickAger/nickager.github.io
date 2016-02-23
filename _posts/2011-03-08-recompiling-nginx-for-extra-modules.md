@@ -4,6 +4,7 @@ tag: "sysadmin, Nginx, devops"
 date: 2011-03-08
 ---
 This post describes the process of recompiling Nginx on Ubuntu 10.04.1 (Server Edition) and Amazon EC2 Linux (which is based on Centos 5.5). The motivation for recompiling Nginx, was to add the following modules:
+
 * [upload progress module](http://wiki.nginx.org/NginxHttpUploadProgressModule).
 * [upload module](http://www.grid.net.ru/nginx/upload.en.html).
 * [upstream fair module](http://wiki.nginx.org/HttpUpstreamFairModule).
@@ -14,6 +15,7 @@ Note: I am far from a Linux expert, especially when it comes to building package
 
 ### Setting your machine up for building
 Firstly set your machine up for building code and install the default Nginx installation. Firstly on Ubuntu:
+
 ```bash
 sudo apt-get update
 sudo apt-get upgrade
@@ -23,6 +25,7 @@ sudo apt-get install libssl-dev libpcre3-dev zlib1g-dev unzip
 ```
 
 on Centos (eg EC2 Linux machine):
+
 ```bash
 sudo yum update
 sudo yum install nginx
@@ -39,11 +42,13 @@ wget http://nginx.org/download/nginx-0.8.54.tar.gz
 ```
 
 You might also like to (optionally) grab the repositories source. For Ubuntu:
+
 ```
 apt-get source nginx
 ```
 
 On EC2:
+
 ```
 $yum list | grep nginx
 nginx.x86_64                              0.7.67-1.0.amzn1             @amzn
@@ -67,6 +72,7 @@ $ tar -zxvf nginx-0.7.67.tar.gz
 ```
 
 One benefit of downloading the packaged source is that you can see the configuration options used when compiling the source. The files to study are:
+
 * Ubuntu: `nginx-0.7.65/debian/rules`
 * EC2:  `nginx.spec`
 
@@ -102,6 +108,7 @@ mv master nginx-upstream-fair.zip
 ```
 
 ### Preparing the build directory
+
 ```
 ls
 nginx-0.8.54.tar.gz
@@ -110,8 +117,8 @@ nginx-upload-progress-module-v0.8.2.zip
 nginx-upstream-fair.zip
 ```
 
-
 decompress:
+
 ```
 unzip nginx-upload-progress-module-v0.8.2.zip
 unzip nginx_upload_module-2.2.0.zip
@@ -120,6 +127,7 @@ tar -zxvf nginx-0.8.54.tar.gz
 ```
 
 resulting in:
+
 ```
 gnosek-nginx-upstream-fair-2131c73
 masterzen-nginx-upload-progress-module-8b55a34
@@ -129,28 +137,34 @@ nginx-0.8.54
 
 ### Configuration options for the compile
 As I mentioned above you can see the packaged source configuration options in the files:
+
 * Ubuntu:`ginx-0.7.65/debian/rules`
 * EC2:  `nginx.spec`
 
 However I found that you can examine the compile options used to build the repository binary by typing:
+
 ```
 nginx -V
 ```
 
 My version of Nginx on Ubuntu had a date of Mar 5 2010 and a file size of: 657800
+
 ```
 /usr/sbin/nginx -V
 nginx version: nginx/0.7.65
 TLS SNI support enabled
 configure arguments: --conf-path=/etc/nginx/nginx.conf --error-log-path=/var/log/nginx/error.log --pid-path=/var/run/nginx.pid --lock-path=/var/lock/nginx.lock --http-log-path=/var/log/nginx/access.log --http-client-body-temp-path=/var/lib/nginx/body --http-proxy-temp-path=/var/lib/nginx/proxy --http-fastcgi-temp-path=/var/lib/nginx/fastcgi --with-debug --with-http_stub_status_module --with-http_flv_module --with-http_ssl_module --with-http_dav_module --with-http_gzip_static_module --with-http_realip_module --with-mail --with-mail_ssl_module --with-ipv6 --add-module=/build/buildd/nginx-0.7.65/modules/nginx-upstream-fair
 ```
+
 and:
+
 ```
 file /usr/sbin/nginx
 /usr/sbin/nginx: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.15, stripped
 ```
 
 Examining Nginx in EC2 which is dated Oct 20 2010, size 658736:
+
 ```
 $ sudo /usr/sbin/nginx -V
 nginx version: nginx/0.7.67
@@ -171,6 +185,7 @@ The default Ubuntu and EC2 configuration are different. The EC2 configuration do
     it's really useful to compile with debugging enabled to help understand the behaviour of location matching and rewriting in your Nginx configuration. Debugging a configuration is then enabled with a [parameter in the config file](http://nginx.org/en/docs/debugging_log.html).
 
 However EC2 adds the following over Ubuntu:
+
 * `--with-http_addition_module` [HttpAdditionModule](http://wiki.nginx.org/HttpAdditionModule)
 * `--with-http_sub_module` [HttpSubModule](http://wiki.nginx.org/HttpSubModule)
 * `--with-http_random_index_module` [HttpRandomIndexModule](http://wiki.nginx.org/HttpRandomIndexModule)
@@ -232,6 +247,7 @@ and you're done - that is except editing your configuration file - but I'll save
 #### Compilation problems
 
 You may see some compile warnings:
+
 ```
 objs/src/os/unix/ngx_process.o: In function `ngx_signal_handler':
 ngx_process.c:(.text+0x347): warning: `sys_errlist' is deprecated; use `strerror' or `strerror_r' instead

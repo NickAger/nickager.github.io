@@ -14,26 +14,33 @@ $ sudo yum install cloud-init
 ```
 
 then edit `/etc/cloud/cloud.cfg` and change:
+
 ```
 user: ec2-user
 ```
+
 to read:
+
 ```
 user: seasideuser
 ```
 
 remove your SSH key from `~/.ssh/`:
+
 ```
 $ rm -rf ~/.ssh
 ```
+
 **Warning:** Removing your SSH key will prevent you from being able to subsequently ssh into your remote image, however you'll be able to create a new image based on this image and pass in your SSH key.
 
 reset the author initials within GemTools:
+
 ```smalltalk
 Author reset
 ```
 
 Stop Gemstone:
+
 ```
 $ sudo /etc/init.d/gemstone stop
 ```

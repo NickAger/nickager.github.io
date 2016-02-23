@@ -7,6 +7,7 @@ layout: post
 
 ## Understanding location matching
 There are three items to consider in-order to understand Nginx location matching:
+
 * What does the location syntax match against?
 * What is the matching precedence?
 * At what stage does the match stop the location search.
@@ -57,6 +58,7 @@ location ~ \.(gif|jpg|jpeg)$ {
 ```
 
 Notes:
+
 * the `location` syntax only matches against the address part of the URL; I have not found a way to match based on URL parameters.
 * Nginx includes an `if` directive, but read [If is evil](http://wiki.nginx.org/IfIsEvil) before you use it.
 
@@ -98,6 +100,7 @@ location /admin {
 See also the `alias` [directive](http://wiki.nginx.org/HttpCoreModule), though I've yet to use it successfully.
 
 References:
+
 * [Nginx offical documentation](http://wiki.nginx.org/HttpCoreModule)
 * [How to debug location matching in Nginx](http://www.nginx-discovery.com/2011/04/day-46-how-to-debug-location-in-nginx.html)
 * [Nginx location regexp or no regexp](http://www.nginx-discovery.com/2011/04/day-45-location-regexp-or-no-regexp.html)

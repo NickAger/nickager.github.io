@@ -9,22 +9,26 @@ From time to time I require a fresh VMWare Ubuntu server installation.  Each tim
 I'm installing Ubuntu 10.04.1 long term support using an ISO `ubuntu-10.04.1-server-amd64.iso`
 
 First I update the repositories and install any updated libraries:
+
 ```
 sudo apt-get update
 sudo apt-get upgrade
 ```
 
 The default installation doesn't come with an SSH Server. To install SSH:
+
 ```
 sudo apt-get install ssh openssh-server
 ```
 
 Next install vim:
+
 ```
 sudo apt-get install vim-nox
 ```
 
 Set the timezone:
+
 ```
 sudo dpkg-reconfigure tzdata
 ```

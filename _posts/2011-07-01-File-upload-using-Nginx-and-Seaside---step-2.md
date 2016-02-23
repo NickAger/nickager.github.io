@@ -52,6 +52,7 @@ html hiddenInput
 ```
 
 with `renderIFrameResponse` rendering the uploaded files:
+
 ```smalltalk
 renderIFrameResponse
 	"Respond directly with the uploaded files"
@@ -74,6 +75,7 @@ renderFileUploadedCallbackJSOn: html
 	$("#uploadedFilesContainer").replaceWith($("#hiddenImageIFrameUploader").contents().find("#uploadedFilesContainer"))
 	}'
 ```
+
 This script copies a div (`#uploadedFilesContainer`) inside the just updated iframe to the same named div, rendered just below the upload form, displaying the newly uploaded file and any previously uploaded files.
 
 ## Download the code
