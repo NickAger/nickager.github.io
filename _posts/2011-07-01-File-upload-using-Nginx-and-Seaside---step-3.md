@@ -303,4 +303,4 @@ var percentageComplete = Math.floor(upload.received * 100 / upload.size);
 The code described above is contained in `NAFileUploadStep3` and can be downloaded from the repository http://www.squeaksource.com/NginxFileUpload
 
 ## Next Step
-[Step 4]({% post_url 2011-07-01-Step-4-File-upload-as-a-plugable-component %}): File upload as a pluggable component.
+[Step 4]({% post_url 2011-07-01-Step-4-File-upload-as-a-pluggable-component %}): File upload as a pluggable component.
