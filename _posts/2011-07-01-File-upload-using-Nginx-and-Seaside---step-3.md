@@ -277,15 +277,15 @@ The `success` callback interprets the response from `/progress` and updates the 
 ## Understanding how the progress bar receives updates:
 Form submission creates an http-post which includes the `X-Progress-ID` parameter:
 
-![](/images/fileupload/post.png)
+![](/images/blog/fileupload/post.png)
 
 we then poll `/progress` once a second passing the `X-Progress-ID` parameter:
 
-![](/images/fileupload/get-progress.png)
+![](/images/blog/fileupload/get-progress.png)
 
 which results in a response of the form:
 
-![](/images/fileupload/get-progress-response.png)
+![](/images/blog/fileupload/get-progress-response.png)
 
 The response is evaluated:
 
