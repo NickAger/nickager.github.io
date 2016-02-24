@@ -44,3 +44,20 @@ bundle exec jekyll build --safe
 all this is documented on the github pages [Setting up your Pages site locally with Jekyll](https://help.github.com/articles/setting-up-your-pages-site-locally-with-jekyll/)
 
 Note rather than having to setup a local instance of jekyll you can use travis to report build errors - https://help.github.com/articles/viewing-jekyll-build-error-messages/
+
+had to specify a version of Ruby, I went with 2.1.8, which is closed to the version installed on my Mac.  So my `.travis.yml` ends up as:
+
+```yml
+language: ruby
+script: "bundle exec jekyll build"
+rvm:
+  - 2.1.8
+```
+
+to my `_config.yml` file, I added the line:
+
+```
+exclude: [vendor] # for travis
+```
+
+which again is apparently
