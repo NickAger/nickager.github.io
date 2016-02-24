@@ -19,7 +19,7 @@ However if you then click on say the `counter` example link within the welcome a
 
 How can you remove `/welcome` from the subsequent urls? It's easily achieved by editing the configuration and setting the ""Server Path"" to '/'. The screen below is a grab of the Seaside configuration application showing how the "Server Path" is set - browse to http://localhost:8080/config.
 
-<img src="/images/serving-apps-from-root/serverPath.png" width="640" height="582" />
+<img src="/images/blog/serving-apps-from-root/serverPath.png" width="640" height="582" />
 
 or programmatically:
 
