@@ -68,18 +68,19 @@ which again is apparently
 
 My archive page I wanted to highlight the years so I added:
 
-```
-{% for post in site.posts %}
-  {% assign currentdate = post.date | date: "%Y" %}
-  {% if currentdate != date %}
-    {% unless forloop.first %}</ul>{% endunless %}
-    <h2 id="y{{post.date | date: "%Y"}}">{{ currentdate }}</h2>
+{{formating from http://stackoverflow.com/questions/3426182/how-to-escape-liquid-template-tags}}
+```liquid
+{{ "{% for post in site.posts " }}%}
+{{ "  {% assign currentdate = post.date | "}} date: "%Y" %}
+{{ "  {% if currentdate != date "}}%}
+{{ "    {% unless forloop.first "}}"%}</ul>{{"{% endunless "}}%}
+    <h2 id="y{{"{{"}}post.date | date: "%Y"}}">{{"{{ currentdate "}}}}</h2>
     <ul>
-    {% assign date = currentdate %}
-  {% endif %}
-  <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
-  {% if forloop.last %}</ul>{% endif %}
-{% endfor %}
+{{"    {% assign date = currentdate "}}%}
+{{"  {% endif "}}%}
+  <li><span>{{"{{ post.date | date_to_string "}}}}</span> » <a href="{{"{{ post.url "}}}}" title="{{"{{ post.title "}}}}">{{"{{ post.title "}}}}</a></li>
+{{"  {% if forloop.last "}}%}</ul>{{"{% endif "}}%}
+{{"{% endfor "}}%}
 ```
 
 from http://stackoverflow.com/questions/19086284/jekyll-liquid-templating-how-to-group-blog-posts-by-year
