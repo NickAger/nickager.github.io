@@ -1,10 +1,8 @@
 ---
 layout: post
-title: "New blogging platform"
+title: "Configuring Jekyll"
 date: 2016-02-03
 ---
-When you are the person who uses the software most you become the maintainer. When the community is small. YoU end up building a lot of the infrastructure yourself.
-Smalltalk has much to recommend it, but recently I've become parallel/concurrent future I need to in
 
 https://github.com/jekyll/jekyll  http://jekyllrb.com
 Jekyll includes Smalltalk code highlighting so my existing posts have come across. The only thing I miss is the ability to embed 'live' components within the blog eg my file upload component.
@@ -21,7 +19,12 @@ When you go to jekyll http://jekyllrb.com the quick start guide shows:
 # => Now browse to http://localhost:4000
 ```
 
-resulted in subtly different parsing and errors when I discovered when github mailed-me with an unspecific `Page build failure` with no indication of the error. Instead I created a `Gemfile` in the root folder of my site as:
+resulted in subtly different parsing and errors when I discovered when github mailed-me with an unspecific `Page build failure` with no indication of the error.
+From https://jekyllrb.com/docs/github-pages/
+
+> Our friends at GitHub have provided the github-pages gem which is used to manage Jekyll and its dependencies on GitHub Pages. Using it in your projects means that when you deploy your site to GitHub Pages, you will not be caught by unexpected differences between various versions of the gems. To use the currently-deployed version of the gem in your project, add the following to your
+
+Instead I created a `Gemfile` in the root folder of my site as:
 
 ```
 source 'https://rubygems.org'
