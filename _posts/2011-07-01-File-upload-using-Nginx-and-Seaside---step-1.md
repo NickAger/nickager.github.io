@@ -179,8 +179,7 @@ moveFrom: fromString toDirectory: uploadDestinationDirectory name: filename
 Currently uploading a file, causes a whole page refresh. Also there is no indication of upload progress. In the subsequent steps we resolve these issues:
 
 ## Download the code
-The code described above is contained in `NAFileUploadStep1` and can be downloaded from the repository http://www.squeaksource.com/NginxFileUpload.
-
+The code described above is contained in `NAFileUploadStep1` and can be downloaded from the repository http://www.squeaksource.com/fileupload
 ## Next Steps
 * [Step 2](File-upload-using-Nginx-and-Seaside-step-2): Using a hidden iframe to enable ajax-like file uploads.
 * [Step 3](File-upload-using-Nginx-and-Seaside-step-3): Using Nginx upload progress module to report upload progress to the user.

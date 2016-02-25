@@ -43,7 +43,7 @@ The two Nginx components which enable this functionality are:
 The default download of Nginx doesn't include these modules, a previous  [post](compiling-nginx-for-extra-modules) - [Compiling Nginx to add extra modules](compiling-nginx-for-extra-modules) describes how to recompile Nginx to include these modules.
 
 ## Download the code
-The code described in the following sections can be downloaded from the repository [](http://www.squeaksource.com/NginxFileUpload)
+The code described in the following sections can be downloaded from the repository [](http://www.squeaksource.com/fileupload)
 
 ## Alternatives
 People have pointed out [Uploadify](http://www.uploadify.com/documentation/) as an alternative. I can't see how [Uploadify](http://www.uploadify.com/documentation/) would avoid loading the file directly into memory. It also requires Flash  - that said the UI looks very slick and would be worth using for some design clues.

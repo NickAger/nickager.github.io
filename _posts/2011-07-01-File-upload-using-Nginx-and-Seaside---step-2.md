@@ -79,7 +79,7 @@ renderFileUploadedCallbackJSOn: html
 This script copies a div (`#uploadedFilesContainer`) inside the just updated iframe to the same named div, rendered just below the upload form, displaying the newly uploaded file and any previously uploaded files.
 
 ## Download the code
-The code described above is contained in `NAFileUploadStep2` and can be downloaded from the repository http://www.squeaksource.com/NginxFileUpload.
+The code described above is contained in `NAFileUploadStep2` and can be downloaded from the repository http://www.squeaksource.com/fileupload.
 
 ## Next Steps
 * [Step 3](File-upload-using-Nginx-and-Seaside-step-3): Using Nginx upload progress module to report upload progress to the user.
