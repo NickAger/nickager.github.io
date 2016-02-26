@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="Content-Type">
+  <script
+ src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"
+ type="text/javascript"></script>
+  <script type="text/javascript">
+   (function($) {
+    $.fn.typewriter = function(oncomplete) {
+        this.each(function() {
+            var $ele = $(this), str = $ele.text(), progress = 0;
+            $ele.text('');
+            var timer = setInterval(function() {
+                $ele.text(str.substring(0, progress++) + (progress & 1 ? '_' : ''));
+                if (progress >= str.length){ clearInterval(timer);$ele.text(str);if (oncomplete){oncomplete()}}
+            }, 50);
+        });
+        return this;
+    };
+
+    $.fn.flashCursor = function() {
+        this.each(function() {
+			var cursorOn = true;
+			$(this).append($('<span />'));
+			var span = $(this).find('span:first');
+            var timer = setInterval(function() {
+				span.text(cursorOn ? '_' : '');
+				cursorOn = !cursorOn;
+            }, 500);
+        });
+        return this;
+    };
+
+	$.fn.textWidth = function(){
+	  var html_org = $(this).html();
+	  var html_calc = '<span>' + html_org + '</span>'
+	  $(this).html(html_calc);
+	  var width = $(this).find('span:first').width();
+	  $(this).html(html_org);
+	  return width;
+	};
+  })(jQuery);
+  </script>
+  <style>
+* {
+font-family: "Courier New", Courier, monospace;
+line-height:2;
+font-size: 20px;
+}
+  </style>
+  <title>Error: 50x</title>
+</head>
+<body>
+<div id="typedText1" style="text-align: center;">Sorry the site is down for maintenance at the moment</div>
+<div id="typedText2" style="text-align: center;">Come back soon</div>
+<script type="text/javascript">
+function reposition () {
+	var text1pos, text2pos, screenWidth, text1width, text2width, text1Left, text1Top, text2Left, text2Top;
+
+	text1pos=$('#typedText1').position();
+	text2pos=$('#typedText2').position();
+	text1width=$('#typedText1').textWidth();
+	text2width=$('#typedText2').textWidth();
+	screenWidth=$(document).width();
+	text1Left = (screenWidth /2) - text1width /2;
+	text2Left = (screenWidth /2) - text2width /2;
+	text1Top = text1pos.top;
+	text2Top = text2pos.top;
+	
+	$('#typedText2').css({ "position": "absolute", "marginLeft": 0, "marginTop": 0, "top": text2Top, "left": text2Left });
+	$('#typedText1').css({ "position": "absolute", "marginLeft": 0, "marginTop": 0, "top": text1Top, "left": text1Left });
+}	
+
+$(function(){
+reposition();
+$('#typedText2').css({ display:"none" })
+$('#typedText1').typewriter(function(){
+$('#typedText2').css({ display: "inline"}).typewriter(function(){
+$('#typedText2').flashCursor();})});
+});
+$(window).resize(function(){reposition()});
+</script>
+</body>
+</html>

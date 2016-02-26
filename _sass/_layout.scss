@@ -245,12 +245,18 @@
 .action for "edit this page"
 .PageNaviation* for next previous links
 */
+a {
+  color: #1863A1;
+  text-decoration-line: underline;
+}
+
+a:hover {
+  color: blue;
+}
+
 .actions {
   float:right;
   font-size: 12px;
-  a {
-    color: #828282
-  }
 }
 
 .PageNavigation {
@@ -269,4 +275,25 @@
 
 .PageNavigation .next {
   text-align: right;
+}
+
+h1.entry-title {
+  font-family: "Fjalla One", "Georgia", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 400
+}
+
+.entry-title {
+  a {
+    color: inherit;
+
+//    text-decoration-color: #1863A1
+  }
+  a:hover {
+    color: #1863A1;
+    text-decoration: none;
+  }
+}
+
+.debug {
+  border:1px solid red;
 }

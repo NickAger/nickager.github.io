@@ -44,6 +44,8 @@ However ... when you are the person who uses and develops the software more than
 
 So I started looking for something that is simple to use, easy to host and well supported. In short a blogging platform I don't have to support.
 
+The behemoth is [Wordpress](http://wordpress.com), but I don't want to have to deal with the on-going need to install security patches and manage content in an opaque database.
+
 Enter [Jekyll](http://jekyllrb.com). It generates static content that can be hosted anywhere, but even better, [Github](https://help.github.com/articles/using-jekyll-as-a-static-site-generator-with-github-pages/) provides free hosting and automatic generation of [Jekyll](http://jekyllrb.com) based content.
 
 [Jekyll](http://jekyllrb.com) has a completely different philosophy to site generation from [Pier](http://www.piercms.com), we'll see how I get on.

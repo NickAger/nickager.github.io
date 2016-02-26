@@ -4,6 +4,7 @@ title: "Configuring Jekyll"
 date: 2016-02-03
 ---
 
+# Getting the basics working
 https://github.com/jekyll/jekyll  http://jekyllrb.com
 Jekyll includes Smalltalk code highlighting so my existing posts have come across. The only thing I miss is the ability to embed 'live' components within the blog eg my file upload component.
 
@@ -65,22 +66,31 @@ exclude: [vendor] # for travis
 
 which again is apparently
 
+# Customisations
 
 My archive page I wanted to highlight the years so I added:
 
-{{formating from http://stackoverflow.com/questions/3426182/how-to-escape-liquid-template-tags}}
+{% comment %}raw formatting idea from http://stackoverflow.com/questions/3426182/how-to-escape-liquid-template-tags {% endcomment %}
 ```liquid
-{{ "{% for post in site.posts " }}%}
-{{ "  {% assign currentdate = post.date | "}} date: "%Y" %}
-{{ "  {% if currentdate != date "}}%}
-{{ "    {% unless forloop.first "}}"%}</ul>{{"{% endunless "}}%}
-    <h2 id="y{{"{{"}}post.date | date: "%Y"}}">{{"{{ currentdate "}}}}</h2>
+{% raw %}{% for post in site.posts %}
+  {% assign currentdate = post.date | date: "%Y" %}
+  {% if currentdate != date %}
+    {% unless forloop.first %}</ul>{% endunless %}
+    <h2 id="y{{post.date | date: "%Y"}}">{{ currentdate }}</h2>
     <ul>
-{{"    {% assign date = currentdate "}}%}
-{{"  {% endif "}}%}
-  <li><span>{{"{{ post.date | date_to_string "}}}}</span> » <a href="{{"{{ post.url "}}}}" title="{{"{{ post.title "}}}}">{{"{{ post.title "}}}}</a></li>
-{{"  {% if forloop.last "}}%}</ul>{{"{% endif "}}%}
-{{"{% endfor "}}%}
+    {% assign date = currentdate %}
+  {% endif %}
+	<li><span>{{ post.date | date: "%B %d" }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+  {% if forloop.last %}</ul>{% endif %}
+{% endfor %}{% endraw %}
 ```
 
-from http://stackoverflow.com/questions/19086284/jekyll-liquid-templating-how-to-group-blog-posts-by-year
+from [Stack overflow: "Jekyll/Liquid Templating: How to group blog posts by year?"](http://stackoverflow.com/questions/19086284/jekyll-liquid-templating-how-to-group-blog-posts-by-year)
+
+## Other customistations
+* [Adding an Edit Link to Github Pages in Jekyll](http://webcache.googleusercontent.com/search?q=cache:3TA-ApJ1xqAJ:rgardler.github.io/2015/07/26/add-edit-me-link-for-github-pages/+&cd=3&hl=en&ct=clnk&gl=us&client=safari)
+* [Adding next/previous blog posts links ](http://david.elbe.me/jekyll/2015/06/20/how-to-link-to-next-and-previous-post-with-jekyll.html)
+* The raw site file are on [github](https://github.com/NickAger/nickager.github.io)
+* [How to use Github issues for comments](http://ivanzuzak.info/2011/02/18/github-hosted-comments-for-github-hosted-blogs.html)
+* Introduction to Jekyll and deatils of how to use github commenting in your blog http://loyc.net/2014/blogging-on-github.html
+* [Post excerpts](https://jekyllrb.com/docs/posts/#post-excerpts)
