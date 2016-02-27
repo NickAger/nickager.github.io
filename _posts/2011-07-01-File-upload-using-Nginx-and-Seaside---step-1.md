@@ -1,9 +1,11 @@
 ---
-title: "Step 1: Using Nginx upload module to stream file uploads directly to disk"
+title: "Step 1: Nginx upload module to stream to disk"
 tags: [Nginx, upload, Seaside]
 date: 2011-07-01 09:03:00 +0000
 layout: post
 ---
+Nginx upload module allows uploaded files to be streamed directly to the disk, completely by-passing the Smalltalk image. This step explains how to integrate it with Seaside.
+
 The default download of Nginx doesn't include the [file upload module](http://www.grid.net.ru/nginx/upload.en.html). A previous  [post](/blog/compiling-nginx-to-add-extra-modules) - [Recompiling Nginx to add extra modules](/blog/compiling-nginx-to-add-extra-modules) describes how to recompile Nginx to add the [file upload module](http://www.grid.net.ru/nginx/upload.en.html) module used in this post and also the [upload progress module](http://wiki.nginx.org/NginxHttpUploadProgressModule) used in [step 3](File-upload-using-Nginx-and-Seaside-step-3)
 
 ## Nginx configuration changes

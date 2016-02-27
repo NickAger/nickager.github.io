@@ -2,13 +2,19 @@
 layout: post
 title: "Configuring Jekyll"
 date: 2016-02-03
+excerpt_separator: <!--more-->
 ---
 
 # Getting the basics working
+
+A useful introduction - http://jmcglone.com/guides/github-pages/
+
 https://github.com/jekyll/jekyll  http://jekyllrb.com
 Jekyll includes Smalltalk code highlighting so my existing posts have come across. The only thing I miss is the ability to embed 'live' components within the blog eg my file upload component.
 
 Its great not having to host the site myself with all the energy that takes and its free.
+
+<!--more-->
 
 When you go to jekyll http://jekyllrb.com the quick start guide shows:
 

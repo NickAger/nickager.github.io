@@ -1,5 +1,5 @@
 ---
-title: "Step 2:  Using a hidden iframe to enable ajax-like file upload"
+title: "Step 2: Hidden iframe for ajax-like file upload"
 date: 2011-07-01 10:03:00 +0000
 tags: [Nginx, upload]
 layout: post

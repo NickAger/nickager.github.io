@@ -1,5 +1,5 @@
 ---
-title: "Step 3: Using Nginx upload progress module to report upload progress to the user"
+title: "Step 3: Using Nginx upload progress module"
 date: 2011-07-01 11:03:00 +0000
 tags: [Nginx, file, upload]
 layout: post

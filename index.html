@@ -2,16 +2,16 @@
 layout: default
 ---
 
-<div class="home">
-
+<div class="home blog-excerpt-index">
   {% for post in paginator.posts %}
+    <br />
+    <p class="date">{{ post.date | date: "%b %-d, %Y" }}</p>
     <h1 class="entry-title"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
-    <p class="author">
-      <span class="date">{{ post.date | date: "%B %-d, %Y" }}</span>
-    </p>
     <div class="content">
       {{ post.excerpt }}
     </div>
+    <hr>
+    <br />
   {% endfor %}
 
   <!-- Pagination links -->
