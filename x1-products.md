@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: product
 title: Products
 permalink: /products/
 ---
@@ -7,10 +7,14 @@ permalink: /products/
 # Products
 
 ### iDiff View
-<div style="display:table"><a href="https://itunes.apple.com/us/app/idiff-view/id1084386974?mt=8"><img src="/images/blog/iDiffView/iDiffViewIcon.svg" style="display:table-cell;vertical-align:middle;width:100px;margin:5px auto;"/></a></div><div><a href="https://itunes.apple.com/us/app/idiff-view/id1084386974?mt=8"><img src="/images/apple-marketing-images/App_Store_Badge_US-UK_135x40.svg" style="display:table-cell; vertical-align:middle; height:40px;width:135px;margin:5px auto"/></a></div><div style="display: table-column"><div style="display:table-cell">iDiff View highlights the difference between two versions of a text file.</div></div></div>
+<div style="display:table"><a href="https://itunes.apple.com/us/app/idiff-view/id1084386974?mt=8"><img src="/images/blog/iDiffView/iDiffViewIcon.svg" style="display:table-cell;vertical-align:middle;width:100px;margin:5px auto;"/></a><a href="https://itunes.apple.com/us/app/idiff-view/id1084386974?mt=8"><img src="/images/apple-marketing-images/App_Store_Badge_US-UK_135x40.svg" style="display:table-cell; vertical-align:middle; height:40px;width:135px;margin:5px auto"/></a><div style="display: table-column"><div style="display:table-cell">iDiff View highlights the difference between two versions of a text file.</div></div></div>
+
+---
 
 ### Pier admin
 Demonstration of my Pier Administration interface see [overview video](https://vimeo.com/32749535)
+
+---
 
 ### Seafox
 A [Firefox](https://www.mozilla.org/en-US/firefox/new/) plug-in and on-line html converter which translates Html into Seaside canvas methods. For example:
@@ -25,8 +29,12 @@ html anchor url: 'http://www.seaside.st' with: 'Seaside site'.
 ```
 See [Seafox](http://seafox.seasidehosting.st)
 
+---
+
 ### Seaside web-framework
 I was one of the co-maintainers of the [Seaside web-framework](seaside.st) and managed a number of releases.
+
+---
 
 # Talks & screencasts
 
