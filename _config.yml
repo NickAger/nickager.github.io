@@ -5,7 +5,7 @@ kramdown:
   syntax_highlighter: rouge
 permalink: /blog/:year/:month/:day/:title
 paginate: 5
-gems: [jekyll-paginate]
+gems: [jekyll-paginate, jekyll-sitemap]
 exclude: [vendor] # for travis
 # Welcome to Jekyll!
 #
