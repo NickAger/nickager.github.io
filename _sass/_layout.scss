@@ -322,7 +322,7 @@ a:hover {
 
 h1.entry-title {
   font-size: 36px;
-  font-family: "Fjalla One", "Georgia", "Helvetica Neue", Arial, sans-serif;
+  font-family: $header-font-family;
 
   @include media-query($on-laptop) {
       font-size: 32px;
@@ -346,13 +346,21 @@ h1.entry-title {
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: "Fjalla One", "Georgia", "Helvetica Neue", Arial, sans-serif;
+  font-family: $header-font-family;
 }
 
-p.date {
-text-transform: uppercase;
-color: #aaaaaa;
-font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
-font-size: 14px;
-margin-bottom: 2px;
+p.date, p.post-meta  {
+  text-transform: uppercase;
+  color: #aaaaaa;
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+p.post-meta {
+  margin-bottom: 10px;
+}
+
+.site-header {
+  font-family: $header-font-family;
 }
