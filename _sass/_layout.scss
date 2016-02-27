@@ -37,9 +37,9 @@
         line-height: $base-line-height;
 
         // Gaps between nav items, but not on the last one
-        &:not(:last-child) {
-            margin-right: 20px;
-        }
+        // &:not(:last-child) {
+        //     margin-right: 20px;
+        // }
     }
 
     @include media-query($on-palm) {
@@ -83,7 +83,7 @@
         .page-link {
             display: block;
             padding: 5px 10px;
-
+        
             &:not(:last-child) {
                 margin-right: 0;
             }
@@ -246,7 +246,7 @@
 .PageNaviation* for next previous links
 */
 a {
-  color: #1863A1;
+  color: $link-color;
   text-decoration-line: underline;
 }
 
@@ -332,17 +332,11 @@ h1.entry-title {
 .entry-title {
   a {
     color: inherit;
-
-//    text-decoration-color: #1863A1
   }
   a:hover {
-    color: #1863A1;
+    color: $link-color;
     text-decoration: none;
   }
-}
-
-.debug {
-  border:1px solid red;
 }
 
 h1, h2, h3, h4, h5 {
@@ -363,4 +357,24 @@ p.post-meta {
 
 .site-header {
   font-family: $header-font-family;
+}
+
+.site-nav {
+  a {
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+  }
+  a.active, a:hover.active {
+    background-color: $link-color;
+    color: #ffffff;
+  }
+
+  a.inactive, a:hover.inactive {
+    color: $link-color;
+  }
+
+  a:hover.inactive {
+    background-color: $grey-color-light;
+  }
 }
