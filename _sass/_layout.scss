@@ -18,10 +18,10 @@
     margin-bottom: 0;
     float: left;
 
-    &,
-    &:visited {
-        color: $grey-color-dark;
-    }
+//     &,
+//     &:visited {
+//         color: $grey-color-dark;
+//     }
 }
 
 .site-nav {
@@ -83,7 +83,7 @@
         .page-link {
             display: block;
             padding: 5px 10px;
-        
+
             &:not(:last-child) {
                 margin-right: 0;
             }
@@ -367,7 +367,7 @@ p.post-meta {
   }
   a.active, a:hover.active {
     background-color: $link-color;
-    color: #ffffff;
+    color: white;
   }
 
   a.inactive, a:hover.inactive {
@@ -377,4 +377,13 @@ p.post-meta {
   a:hover.inactive {
     background-color: $grey-color-light;
   }
+}
+
+a.site-title {
+  color: $grey-color;
+}
+
+a:hover.site-title {
+  text-decoration: none;
+  color: $link-color;
 }
