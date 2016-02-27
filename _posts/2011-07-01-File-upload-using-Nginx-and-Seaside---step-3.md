@@ -300,7 +300,7 @@ var percentageComplete = Math.floor(upload.received * 100 / upload.size);
 ```
 
 ## Download the code
-The code described above is contained in `NAFileUploadStep3` and can be downloaded from the repository http://www.squeaksource.com/fileupload
+The code described above is contained in `NAFileUploadStep3` and can be downloaded from the repository [http://www.squeaksource.com/fileupload](http://www.squeaksource.com/fileupload)
 
 ## Next Step
 [Step 4]({% post_url 2011-07-01-Step-4-File-upload-as-a-pluggable-component %}): File upload as a pluggable component.

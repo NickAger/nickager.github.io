@@ -3,7 +3,7 @@ title: "Step 4: File upload as a pluggable component"
 date: 2011-07-01 12:03:00 +0000
 layout: post
 ---
-In this final post, I've morphed the code I've presented so far into a pluggable upload component: `NAFileUpload`. I've created an example component `NAFileUploadExample` to illustrate how to use `NAFileUpload`. There are six callbacks and one configuration id which should be set:
+In this final post of the series, I've morphed the code I've presented so far into a pluggable upload component: `NAFileUpload`. I've created an example component `NAFileUploadExample` to illustrate how to use `NAFileUpload`. There are six callbacks and one configuration id which should be set:
 
 * `onFileUploaded:` - server-side callback, called when a new file has been uploaded. An `NAFile` is passed into the callback block.
 * `onRenderUploadedFiles:` - server-side callback, called after the file has been uploaded, to re-render the uploaded files.
@@ -77,7 +77,7 @@ function uploadStatus() {
 ```
 
 ## Download the code
-The code described above is contained in `NAFileUploadExample` and can be downloaded from the repository http://www.squeaksource.com/fileupload
+The code described above is contained in `NAFileUploadExample` and can be downloaded from the repository [http://www.squeaksource.com/fileupload](http://www.squeaksource.com/fileupload)
 
 ## Nginx configuration
 Here is my complete Nginx configuration for reference:
