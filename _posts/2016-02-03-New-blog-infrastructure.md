@@ -16,6 +16,8 @@ Its great not having to host the site myself with all the energy that takes and 
 
 <!--more-->
 
+I was inspired by the octopress theme used by http://norbert.hartl.name
+
 When you go to jekyll http://jekyllrb.com the quick start guide shows:
 
 ```bash

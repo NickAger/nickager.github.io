@@ -394,3 +394,24 @@ a:hover.site-title {
     border-style: none none dotted;
   }
 }
+
+div.footer-heading {
+  font-size: 15px;
+  color: $grey-color;
+}
+
+div.pagination {
+//  margin: 0 10px;
+  position: relative;
+  text-align: center;
+
+  a.previous {
+    position: absolute;
+    left: 0;
+  }
+
+  a.next {
+    position: absolute;
+    right: 0;
+  }
+}
