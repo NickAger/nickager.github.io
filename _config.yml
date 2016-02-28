@@ -18,7 +18,7 @@ exclude: [vendor] # for travis - Travis bundles all gems in the vendor directory
 title: Nick Ager's blog
 email: nick.ager@gmail
 description: > # this means to ignore newlines until "baseurl:"
-  Nick Ager, software developer, iOS, Swift, Objective-C, C++, C, Javascript, Haskell, Ruby, Smalltalk
+  Nick Ager, software developer; iOS, Swift, Objective-C, C++, C, Javascript, Haskell, Ruby, Smalltalk
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://nickager.com" # the base hostname & protocol for your site
 twitter_username: nickager
