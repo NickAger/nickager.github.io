@@ -4,15 +4,20 @@ title: Products
 permalink: /products/
 ---
 
-# Products
-
 ### iDiff View
-<div style="display:table"><a href="https://itunes.apple.com/us/app/idiff-view/id1084386974?mt=8"><img src="/images/blog/iDiffView/iDiffViewIcon.svg" style="display:table-cell;vertical-align:middle;width:100px;margin:5px auto;"/></a><a href="https://itunes.apple.com/us/app/idiff-view/id1084386974?mt=8"><img src="/images/apple-marketing-images/App_Store_Badge_US-UK_135x40.svg" style="display:table-cell; vertical-align:middle; height:40px;width:135px;margin:5px auto"/></a><div style="display: table-column"><div style="display:table-cell">iDiff View highlights the difference between two versions of a text file.</div></div></div>
+<table>
+<tr>
+<td width="145px"><a href="https://itunes.apple.com/us/app/idiff-view/id1084386974?mt=8"><img src="/images/blog/iDiffView/iDiffViewIcon.svg" style="width:100px;margin-left:20px;"/></a></td>
+<td rowspan="2">iDiff View highlights the difference between two versions of a text file showing which characters/words and lines have changed, highlighting additions and deletions. Files are chosen from document providers, such as iCloud Drive, Google Drive, OneDrive etc.</td>
+</tr>
+<tr><td><a href="https://itunes.apple.com/us/app/idiff-view/id1084386974?mt=8"><img src="/images/apple-marketing-images/App_Store_Badge_US-UK_135x40.svg" style="height:40px;width:135px;margin:5px;"/></a></td>
+</tr>
+</table>
 
 ---
 
 ### Pier admin
-Demonstration of my Pier Administration interface see [overview video](https://vimeo.com/32749535)
+Demonstration of the Pier Administration interface see [overview video](https://vimeo.com/32749535), showing the WYSIWYG editor, the tree view and other administrative features.
 
 ---
 
@@ -39,6 +44,6 @@ I was one of the co-maintainers of the [Seaside web-framework](seaside.st) and m
 # Talks & screencasts
 
 * [Deploy your Seaside application for free with an EC2 micro instance and Gemstone](https://vimeo.com/18375790). A screen cast showing how to use a pre-configured AMI (Amazon Machine Image) to deploy your Seaside applications using EC2 and Gemstone.
-* [An Introduction to Magritte 3](https://vimeo.com/37032840).  Describing the rational for Magritte 3, how to upgrade a project from Magritte 1 or 2 to Magritte 3, including a walk through of the refactorings required. A brief demonstration of form building using a custom form render and using Magritte json and xml-binding add-ons.
-* [Pier admin](https://vimeo.com/32749535). A demonstration of the new Pier Administration interface.
-* [Flickr Photos with JQueryMobile](https://vimeo.com/31600152). A Tutorial describing how to create a simple JQueryMobile application that browses photos retrieved from flickr that match an entered tag.
+* [An Introduction to Magritte 3](https://vimeo.com/37032840).  Describing the rational for Magritte 3, how to upgrade a project from Magritte 1 or 2 to Magritte 3. Includes a walk through of the refactoring tool developed to ease migration. The video includes a brief demonstration of form building using a custom form render and the Magritte json and xml-binding add-ons.
+* [Pier admin](https://vimeo.com/32749535). A demonstration of the new Pier Administration interface, showing the WYSIWYG editor, the tree view and other administrative features.
+* [Flickr Photos with JQueryMobile](https://vimeo.com/31600152). A Tutorial describing how to create a simple JQueryMobile application using the Seaside webframe that browses photos retrieved from flickr that match an entered tag.
