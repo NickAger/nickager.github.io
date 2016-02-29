@@ -102,3 +102,9 @@ from [Stack overflow: "Jekyll/Liquid Templating: How to group blog posts by year
 * [How to use Github issues for comments](http://ivanzuzak.info/2011/02/18/github-hosted-comments-for-github-hosted-blogs.html)
 * Introduction to Jekyll and deatils of how to use github commenting in your blog http://loyc.net/2014/blogging-on-github.html
 * [Post excerpts](https://jekyllrb.com/docs/posts/#post-excerpts)
+
+![](/images/blog/new-blog-infrastructure/unhelpfulgithubmessage.png)
+
+![](/images/blog/new-blog-infrastructure/travis-error-mail.png)
+
+![](/images/blog/new-blog-infrastructure/travis-error-screen.png)

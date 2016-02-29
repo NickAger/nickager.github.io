@@ -49,3 +49,7 @@ The behemoth is [Wordpress](http://wordpress.com), but I don't want to have to d
 Enter [Jekyll](http://jekyllrb.com). It generates static content that can be hosted anywhere, but even better, [Github](https://help.github.com/articles/using-jekyll-as-a-static-site-generator-with-github-pages/) provides free hosting and automatic generation of [Jekyll](http://jekyllrb.com) based content.
 
 [Jekyll](http://jekyllrb.com) has a completely different philosophy to site generation from [Pier](http://www.piercms.com), we'll see how I get on.
+
+![](/images/blog/olgblog.png)
+
+![](/images/blog/oldblogdown.png)
