@@ -102,6 +102,8 @@ from [Stack overflow: "Jekyll/Liquid Templating: How to group blog posts by year
 * [How to use Github issues for comments](http://ivanzuzak.info/2011/02/18/github-hosted-comments-for-github-hosted-blogs.html)
 * Introduction to Jekyll and deatils of how to use github commenting in your blog http://loyc.net/2014/blogging-on-github.html
 * [Post excerpts](https://jekyllrb.com/docs/posts/#post-excerpts)
+* [How to list your Jekyll posts by tag](http://www.jokecamp.com/blog/listing-jekyll-posts-by-tag/)
+* [Sitemaps for GitHub Pages](https://help.github.com/articles/sitemaps-for-github-pages/)
 
 ![](/images/blog/new-blog-infrastructure/unhelpfulgithubmessage.png)
 
