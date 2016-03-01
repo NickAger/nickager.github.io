@@ -16,6 +16,12 @@ permalink: /products/
 
 ---
 
+### JQuery Mobile for Seaside
+
+Seaside integration with JQuery-Mobile see [http://jquerymobile.seasidehosting.st](http://jquerymobile.seasidehosting.st)
+
+---
+
 ### Pier admin
 Demonstration of the Pier Administration interface see [overview video](https://vimeo.com/32749535), showing the WYSIWYG editor, the tree view and other administrative features.
 

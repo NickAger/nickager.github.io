@@ -514,19 +514,14 @@ a.internal {
   }
 }
 
-
-
-/*
-<div class="post-index">
-  <h2 class="year-group" id="y2011">2011</h2>
-
-  <span class="post-date">Feb 19</span>
-  <span class="post-title">
-    <a href="/blog/2011/07/01/File-upload-using-Nginx-and-Seaside-step-2" title="Step 2: Hidden iframe for ajax-like file upload">Step 2: Hidden iframe for ajax-like file upload</a>
-  </span>
-  <div class="tags">posted in
-    <span class="tag"><a href="/tags/#Nginx">Nginx</a></span>
-    <span class="tag"><a href="/tags/#upload">upload</a></span>
-	</div>
-</div>
-*/
+// model dialog support
+#lean_overlay {
+    position: fixed;
+    z-index:100;
+    top: 0px;
+    left: 0px;
+    height:100%;
+    width:100%;
+    background: #000;
+    display: none;
+}
