@@ -155,7 +155,7 @@ BSc Electronic Engineering, University of Southampton
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 <script type="text/javascript" src="/files/jquery.leanModal.min.js"></script>
 
-<div id="github-contributions">
+<div id="github-contributions" style="display:none">
   <div style="background-color:white">
   <br />
   <p style="text-align:center">My Github commits while at TLC</p>
@@ -163,7 +163,7 @@ BSc Electronic Engineering, University of Southampton
   </div>
 </div>
 
-<div id="vitalpac-doctor">
+<div id="vitalpac-doctor" style="display:none">
   <div style="background-color:white">
   <br />
   <p style="text-align:center">VitalPAC Doctor iPad</p>
@@ -171,7 +171,7 @@ BSc Electronic Engineering, University of Southampton
   </div>
 </div>
 
-<div id="vitalpac-nurse">
+<div id="vitalpac-nurse" style="display:none">
   <div style="background-color:white">
   <br />
   <p style="text-align:center">VitalPAC Nurse</p>
