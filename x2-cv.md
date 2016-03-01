@@ -43,7 +43,7 @@ Firmware development in C & C++ for ARM-based custom networked audio hardware on
 #### iOS Contracting, The Learning Clinic
 4/2012 - 10/2015
 
-Contracting as a senior developer and “Technical Design Authority” iOS/Objective-C. Developed award winning iOS apps for patient observation recording, tracking and escalation between nurses and doctors within hospitals.
+Contracting as a senior developer and “Technical Design Authority” iOS/Objective-C. Developed award winning iOS apps for patient observation recording, tracking and escalation between <a href="#vitalpac-nurse" rel="leanModal">nurses</a> and <a href="#vitalpac-doctor" rel="leanModal">doctors</a> within hospitals.
 
 * Recruited, led and mentored an iOS development team.
 * Modernised a legacy code-base by introducing well defined protocols between components and encouraged coding standards based on industry best practice.
@@ -156,11 +156,29 @@ BSc Electronic Engineering, University of Southampton
 <script type="text/javascript" src="/files/jquery.leanModal.min.js"></script>
 
 <div id="github-contributions">
-  <div>
-  <p>Github commits while at TLC</p>
+  <div style="background-color:white">
+  <br />
+  <p style="text-align:center">My Github commits while at TLC</p>
   <img src="\images\CV\githubContributions.png" style="width:800px;height:527px;" alt="Github contributions" />
   </div>
 </div>
+
+<div id="vitalpac-doctor">
+  <div style="background-color:white">
+  <br />
+  <p style="text-align:center">VitalPAC Doctor iPad</p>
+  <img src="\images\VitalPAC-images\vitalpacDoctor.jpg" style="width:800px;height:450px;" alt="VitalPAC Doctor" />
+  </div>
+</div>
+
+<div id="vitalpac-nurse">
+  <div style="background-color:white">
+  <br />
+  <p style="text-align:center">VitalPAC Nurse</p>
+  <img src="\images\VitalPAC-images\Nurse.png" style="width:258px;height:450px;" alt="VitalPAC Nurse" />
+  </div>
+</div>
+
 
 <script type="text/javascript">
 			$(function() {
