@@ -10,7 +10,7 @@ Adopting Jekyll I wanted:
 # Low or no maintenance blog
 # Github to be able to generate the site for me.
 
-The second item means no Jekyll plug-ins unless there are supported by Github.
+The second item means that Jekyll plug-ins are ruled-out unless they are supported by Github.
 
 - talk about the problem of errors, setting up Travis etc
 
@@ -119,3 +119,8 @@ from [Stack overflow: "Jekyll/Liquid Templating: How to group blog posts by year
 ![](/images/blog/new-blog-infrastructure/travis-error-mail.png)
 
 ![](/images/blog/new-blog-infrastructure/travis-error-screen.png)
+
+### Final thoughts
+It took longer than I expected to mould my Jekyll blog into a form I was happy with. The default theme is very minimal and it took time to pull in all the features I wanted. However the end result feels worth it. Jekyll has proved itself to be very adaptable and I don't feel at all constrained by the platform. I love the Github based workflow and GitHub's automatic generation of the site.
+
+... now I've no excuse not to blog more frequently.
