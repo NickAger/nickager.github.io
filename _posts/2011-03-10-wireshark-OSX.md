@@ -1,7 +1,7 @@
 ---
 title: "Wireshark on OSX"
 date: 2011-03-10
-tag: [sysadmin, OSX]
+tag: [DevOps, OSX]
 layout: post
 ---
 When trying to monitor an interface using Wireshark on my Mac - I'm greeted with:

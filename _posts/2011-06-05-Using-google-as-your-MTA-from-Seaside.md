@@ -1,6 +1,7 @@
 ---
 title: "Using google as your MTA from Seaside"
 date: 2011-06-05
+tags: [DevOps, MTA, Seaside]
 layout: post
 ---
 A quick post to show how we use Google mail to send mail from Seaside. Here's our setup for getitmade.com:

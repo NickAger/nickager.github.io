@@ -2,8 +2,17 @@
 layout: post
 title: "Configuring Jekyll"
 date: 2016-02-03
+tags: [Jekyll, blog]
 excerpt_separator: <!--more-->
 ---
+
+Adopting Jekyll I wanted:
+# Low or no maintenance blog
+# Github to be able to generate the site for me.
+
+The second item means no Jekyll plug-ins unless there are supported by Github.
+
+- talk about the problem of errors, setting up Travis etc
 
 # Getting the basics working
 

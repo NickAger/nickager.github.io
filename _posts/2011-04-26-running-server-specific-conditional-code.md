@@ -1,7 +1,7 @@
 ---
 title: "Running server specific conditional code"
 date: 2011-04-26
-tags: [sysadmin, Seaside, Gemstone]
+tags: [DevOps, Seaside, Gemstone]
 layout: post
 ---
 I'd like to be able to deploy the same code base to my live, staging, test, backup and development servers, however sometimes the code is server specific. For example, I only want my live server to go through the live payment gateway; my other servers should use the test payment gateway.

@@ -1,6 +1,7 @@
 ---
 title: "Setting the order cron jobs execute"
 date: 2011-06-10
+tags: [cron, DevOps]
 layout: post
 ---
 I had a problem where I wanted to restart my server then backup my database, but how to ensure the order is executed as intended?

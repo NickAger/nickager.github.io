@@ -1,6 +1,7 @@
 ---
 title: "Automating Gemstone backups"
 date: 2011-04-03
+tags: [Gemstone, Seaside]
 layout: post
 ---
 To create daily backups of your database:

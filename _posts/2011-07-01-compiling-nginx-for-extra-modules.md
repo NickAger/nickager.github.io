@@ -1,6 +1,6 @@
 ---
 title: "Compiling Nginx to add extra modules"
-tag: [sysadmin, Nginx, devops]
+tag: [DevOps, Nginx, devops]
 date: 2011-07-01 07:03:00 +0000
 layout: post
 ---

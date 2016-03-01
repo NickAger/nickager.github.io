@@ -1,6 +1,6 @@
 ---
 title: "Continuous Integration With Jenkins for Smalltalk"
-tags: [sysadmin, CI, Smalltalk]
+tags: [DevOps, CI, Smalltalk]
 date: 2011-05-15
 layout: post
 ---
@@ -29,7 +29,7 @@ sudo apt-get install jenkins
 4) By default Jenkins is started on `http://localhost:8080`, see `/etc/init.d/jenkins`
 
 #### Setting up Jenkins for Smalltalk Continuous Integration
-Lukas Renggli has integrated Jenkins and Smalltalk using a set of shell scripts and `*.st` files.  Lukas's [git Jenkins repository](https://github.com/renggli/builder) contains a detailed `README` which provides excellent instructions. For most people Lukas's instructions will suffice. However for sysadmin challenged developers such as myself the following description of how I setup Jenkins for Smalltalk CI may be of use.  
+Lukas Renggli has integrated Jenkins and Smalltalk using a set of shell scripts and `*.st` files.  Lukas's [git Jenkins repository](https://github.com/renggli/builder) contains a detailed `README` which provides excellent instructions. For most people Lukas's instructions will suffice. However for DevOps challenged developers such as myself the following description of how I setup Jenkins for Smalltalk CI may be of use.  
 
 I installed Lukas's builder scripts within the Jenkins home folder as user Jenkins:
 

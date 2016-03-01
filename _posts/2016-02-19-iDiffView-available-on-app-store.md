@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "iDiffView available on the app store"
+tags: [Swift, iOS, Apps, App store]
 date: 2016-02-19
 excerpt_separator: <!--more-->
 ---

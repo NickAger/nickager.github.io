@@ -461,25 +461,32 @@ a.internal {
 
   h2.year-group {
     display: inline-block;
-    float: left;
-    margin-top: -.2em;
+    margin-bottom: .3em;
+  }
+
+  .year-group-cell {
+    border-top: 1px dotted $grey-color-light;
+    padding-top: 15px;
   }
 
   .post-date {
     text-transform: uppercase;
-    text-align: right;
-    left: 0em;
-    top: 1.8em;
+    text-align: left;
     font-size: .9em;
-    line-height: 1.2em;
-    margin-left: 1em;
     font-family: $small-title-font-family;
+    width: 75px;
+    position: relative;
+    left: 25px;
+    border-top: 1px dotted $grey-color-light;
+    padding-top: 15px;
   }
 
   .post-title {
+    position: relative;
+    left: 25px;
     font-size: 1.5em;
-    margin-bottom: .3em;
-    margin-left: 1em;
+    border-top: 1px dotted $grey-color-light;
+    padding-top: 15px;
   }
 
   .post-title a {
@@ -488,6 +495,8 @@ a.internal {
   }
 
   .tags {
+    position: relative;
+    left: 25px;
     font-family: $small-title-font-family;
   }
 
@@ -500,6 +509,9 @@ a.internal {
     color: $link-color;
   }
 
+  .spacer-row {
+    line-height: 5px;
+  }
 }
 
 

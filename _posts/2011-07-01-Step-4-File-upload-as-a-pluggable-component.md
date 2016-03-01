@@ -1,6 +1,7 @@
 ---
 title: "Step 4: File upload as a pluggable component"
 date: 2011-07-01 12:03:00 +0000
+tags: [Nginx, file, upload]
 layout: post
 ---
 In this final post of the series, I've morphed the code I've presented so far into a pluggable upload component: `NAFileUpload`. I've created an example component `NAFileUploadExample` to illustrate how to use `NAFileUpload`. There are six callbacks and one configuration id which should be set:

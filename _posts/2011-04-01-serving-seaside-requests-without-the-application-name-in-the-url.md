@@ -1,7 +1,7 @@
 ---
 title: "Serving Seaside requests without the application name in the URL"
 date: 2011-04-01
-tags: [sysadmin, Nginx, Seaside]
+tags: [DevOps, Nginx, Seaside]
 layout: post
 ---
 With fresh [Seaside image](http://seaside.st/download/pharo), try browsing to [http://localhost:8080](http://localhost:8080). You  should see the Seaside welcome screen. That's because `WAWelcome` is configured as the default application in `WAWelcome class>>#initialize`

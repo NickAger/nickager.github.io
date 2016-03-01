@@ -1,11 +1,12 @@
 ---
 title: "Changing the default Gemstone timezone"
 date: 2011-03-15
+tags: [Gemstone, DevOps, Seaside]
 layout: post
 ---
 Gemstone ships with a timezone of EST. Fine if your in EST, but not so great elsewhere.
 
-create an executable script containing the following: 
+create an executable script containing the following:
 
 ```
 #!/bin/bash
