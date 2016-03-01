@@ -64,7 +64,7 @@ Contracting as a senior developer and “Technical Design Authority” iOS/Objec
 #### Founding Director, getitmade.com
 2009-2011
 
-Full stack web development using an innovative continuation based open-source web-frame - ‘Seaside’ of which I was a significant open-source contributor and was selected as one of the core-maintainers. Spoke at various conferences and developed related on-line training material. Deployed using Amazon EC2, Linode and Gemstone - an object database.
+A site for inventors & designers to market-test and manufacture products. Full stack web development using an innovative continuation based open-source web-frame - ‘Seaside’ of which I was a significant open-source contributor and was selected as one of the core-maintainers. Spoke at various conferences and developed related on-line training material. Deployed using Amazon EC2, Linode and Gemstone - an object database.
 
 <br />
 
