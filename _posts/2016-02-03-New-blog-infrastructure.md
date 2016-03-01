@@ -7,8 +7,8 @@ excerpt_separator: <!--more-->
 ---
 
 Adopting Jekyll I wanted:
-# Low or no maintenance blog
-# Github to be able to generate the site for me.
+* Low or no maintenance blog
+* Github to be able to generate the site for me.
 
 The second item means that Jekyll plug-ins are ruled-out unless they are supported by Github.
 
