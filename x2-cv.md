@@ -156,8 +156,10 @@ BSc Electronic Engineering, University of Southampton
 <script type="text/javascript" src="/files/jquery.leanModal.min.js"></script>
 
 <div id="github-contributions">
+  <div>
   <p>Github commits while at TLC</p>
   <img src="\images\CV\githubContributions.png" style="width:800px;height:527px;" alt="Github contributions" />
+  </div>
 </div>
 
 <script type="text/javascript">
