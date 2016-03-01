@@ -6,7 +6,7 @@ permalink: /cv/
 
 <div style="float:right; line-height:23px; border: 1px solid black; border-radius: 4px; padding: 6px 12px; top:-70px; position: relative"><a href="\files\Nick-Ager-CV-2-2016.pdf">Download CV</a></div>
 
-I am a <a href="#github-contributions">hands-on</a> senior iOS Developer with over 20 years commercial programming experience and over 4 years experience developing commercial iPhone/iPad applications.
+I am a <a href="#github-contributions" rel="leanModal">hands-on</a> senior iOS Developer with over 20 years commercial programming experience and over 4 years experience developing commercial iPhone/iPad applications.
 
 Although I am very focused on iOS development, I do have significant senior management experience which is often useful in project planning, execution, team mentoring and in client-facing situations.
 
@@ -152,10 +152,16 @@ Embedded development in C. Windows development in Foxpro.
 ## Education
 BSc Electronic Engineering, University of Southampton
 
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 <script type="text/javascript" src="/files/jquery.leanModal.min.js"></script>
 
 <div id="github-contributions">
   <p>Github commits while at TLC</p>
   <img src="\images\CV\githubContributions.png" style="width:800px;height:527px;" alt="Github contributions" />
 </div>
+
+<script type="text/javascript">
+			$(function() {
+    			$('a[rel*=leanModal]').leanModal({ top : 200, closeButton: ".modal_close" });		
+			});
+</script>
