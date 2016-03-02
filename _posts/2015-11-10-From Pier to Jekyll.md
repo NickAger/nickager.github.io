@@ -4,7 +4,7 @@ title: "Changing blogging platform"
 date: 2015-11-10
 tags: [Pier, Jekyll, blog, life-hacking]
 ---
-My original blog used [Pier](http://www.piercms.com) which was built on the [Seaside web framework](http://seaside.st). I become very familiar with [Pier](http://www.piercms.com) while working on getitmade.com. [Pier](http://www.piercms.com) merged static and dynamic content, easily allowing new components to be embedded in static content managed through its CMS interface. I even invested considerable time in building [Pier Admin]((https://vimeo.com/32749535)), releasing a WYSIWYG editor for Pier as well as many other improved admin tools. My series of posts on building a [file upload component]({% post_url 2011-07-01-File-upload-using-Nginx-and-Seaside %}), embedded the described components as live examples directly into the content, in a way I've not seen achieved elsewhere. Pier also allowed code to be pulled directly into the content with markup such as:
+My original blog used [Pier](http://www.piercms.com) which was built on the [Seaside web framework](http://seaside.st). I become very familiar with [Pier](http://www.piercms.com) while working on <a href="#getitmade">getitmade.com</a>. [Pier](http://www.piercms.com) merged static and dynamic content, easily allowing new components to be embedded in static content managed through its CMS interface. I even invested considerable time in building [Pier Admin](https://vimeo.com/32749535), releasing a WYSIWYG editor for Pier as well as many other improved admin tools. My series of posts on building a [file upload component]({% post_url 2011-07-01-File-upload-using-Nginx-and-Seaside %}), embedded the described components as live examples directly into the content, in a way I've not seen achieved elsewhere. Pier also allowed code to be pulled directly into the content with markup such as:
 
 ```
 +value:source | class=NAFileUploadExample | method=onUploadProgressCallback+
@@ -51,6 +51,10 @@ Enter [Jekyll](http://jekyllrb.com). It generates static content that can be hos
 
 [Jekyll](http://jekyllrb.com) has a completely different philosophy to site generation from [Pier](http://www.piercms.com), we'll see how I get on.
 
-![](/images/blog/olgblog.png)
+![](/images/blog/new-blog-infrastructure/old-site.png)
 
-![](/images/blog/oldblogdown.png)
+![](/images/blog/new-blog-infrastructure/site-down.png)
+
+{% include popup-javascript.html %}
+
+{% include getitmade-video.html %}
