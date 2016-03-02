@@ -29,7 +29,7 @@ I am focused on the maintainability of the code I write and develop with others.
 
 
 
-#### C/C++ Consulting with Sienda Ltd
+#### C/C++ Consulting with [Sienda Ltd](http://www.sienda.com/sienda/)
 10/2015 - Present
 
 Firmware development in C & C++ for ARM-based custom networked audio hardware on a sweat equity basis.  
@@ -40,7 +40,7 @@ Firmware development in C & C++ for ARM-based custom networked audio hardware on
 
 <br />
 
-#### iOS Contracting, The Learning Clinic
+#### iOS Contracting, [The Learning Clinic](http://thelearningclinic.co.uk)
 4/2012 - 10/2015
 
 Contracting as a senior developer and “Technical Design Authority” iOS/Objective-C. Developed award winning iOS apps for patient observation recording, tracking and escalation between <a href="#vitalpac-nurse" rel="leanModal">nurses</a> and <a href="#vitalpac-doctor" rel="leanModal">doctors</a> within hospitals.
@@ -61,7 +61,7 @@ Contracting as a senior developer and “Technical Design Authority” iOS/Objec
 <br />
 
 
-#### Founding Director, getitmade.com
+#### Founding Director, <a href="#getitmade" rel="leanModal">getitmade.com</a>
 2009-2011
 
 A site for <a href="#getitmade" rel="leanModal">inventors & designers to market-test and manufacture products</a>. Full stack web development using an innovative continuation based open-source web-frame - ‘Seaside’ of which I was a significant open-source contributor and was selected as one of the core-maintainers. Spoke at various conferences and developed related on-line training material. Deployed using Amazon EC2, Linode and Gemstone - an object database.
@@ -72,7 +72,7 @@ A site for <a href="#getitmade" rel="leanModal">inventors & designers to market-
 
 <br />
 
-#### Captain, Circumnavigation
+#### Captain, [Circumnavigation](http://kikasailing.blogspot.com))
 2005-2009
 
 Sailed round the world aboard my own yacht. Kept a well regarded blog of my [trip](http://kikasailing.blogspot.com)
@@ -83,7 +83,7 @@ Sailed round the world aboard my own yacht. Kept a well regarded blog of my [tri
 
 <br />
 
-#### Head of Software, Active Ltd
+#### Head of Software, [Actix Ltd](http://www.actix.com)
 2002-2005
 
 Started as a contractor and finally became the head of software leading a team of 60 developers. Developed components in C++; a visual state diagram editor, a 3D terrain viewer, performed aggressive optimisation on a map component. Led development of a new distributed database-backed data-processing and querying system. The technology from this project provided multiple innovations within the company including a new web-based UI allowing rapid development of novel interfaces.
@@ -94,7 +94,7 @@ Started as a contractor and finally became the head of software leading a team o
 
 <br />
 
-#### Technical Director, Nykris Ltd
+#### Technical Director, [Nykris Ltd](https://web.archive.org/web/20041204091316/http://www.nykris.com/)
 2000-2002
 
 Full stack web development in Java, TLC, Javascript using Oracle and PostgreSQL. Prepared and presented proposals to clients. Worked with clients to define, refine and understand their goals for their web applications and ensured the result matched their business objectives. Hired and led a small development team.
@@ -105,7 +105,7 @@ Full stack web development in Java, TLC, Javascript using Oracle and PostgreSQL.
 
 <br />
 
-#### Founding Director, Tigerteam Software Ltd
+#### Founding Director, [Tigerteam Software Ltd](http://www.tigerteam.co.uk)
 1998-2000
 
 One of two founding directors. My presentation resulted in the seed funding which allowed us to create the company. Developed innovative web-based interfaces in DHTML.
@@ -116,7 +116,7 @@ One of two founding directors. My presentation resulted in the seed funding whic
 
 <br />
 
-#### Head of Software, DK Multimedia Ltd
+#### Head of Software, [DK Multimedia Ltd](http://www.amazon.com/s?rh=n%3A229561%2Cp_4%3ADK+Multimedia)
 1994-1998
 
 Started as a contractor and became the head of software with responsibility for 30 developers. Developed award winning multimedia CD-ROM software in C++.  Pioneered new ways of working with 'creative staff' to help break-down the divide between technical and non-technical staff.
@@ -127,7 +127,7 @@ Started as a contractor and became the head of software with responsibility for 
 
 <br />
 
-#### Programmer, Servotest Ltd
+#### Programmer, [Servotest Ltd](http://www.servotestsystems.com)
 1991-1994
 
 Developed a Windows based UI to a new range of test and control electronics in C++ and VB, including the test interface for a Formula 1 car testing rig.  The software was used largely unchanged for the next 6 years within a wide range of products.
@@ -150,7 +150,7 @@ Embedded development in C. Windows development in Foxpro.
 <br />
 
 ## Education
-BSc Electronic Engineering, University of Southampton
+BSc [Electronic Engineering](http://www.thecompleteuniversityguide.co.uk/league-tables/rankings?s=electrical%20%26%20electronic%20engineering), [University of Southampton](http://www.ecs.soton.ac.uk/undergraduate/electronic-engineering)
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 <script type="text/javascript" src="/files/jquery.leanModal.min.js"></script>
