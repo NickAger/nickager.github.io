@@ -102,6 +102,10 @@ My archive page I wanted to highlight the years so I added:
 {% endfor %}{% endraw %}
 ```
 
+http://joshualande.com/jekyll-github-pages-poole/
+
+[Edit link on page](http://rgardler.github.io/2015/07/26/add-edit-me-link-for-github-pages)
+
 from [Stack overflow: "Jekyll/Liquid Templating: How to group blog posts by year?"](http://stackoverflow.com/questions/19086284/jekyll-liquid-templating-how-to-group-blog-posts-by-year)
 
 ## Useful links
