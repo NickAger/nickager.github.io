@@ -8,7 +8,7 @@ excerpt_separator: <!--more-->
 
 Adopting Jekyll I wanted:
 * Low or no maintenance blog
-* Github to be able to generate the site for me.
+* Github to be able to [generate](https://help.github.com/articles/creating-pages-with-the-automatic-generator/) the site for me.
 
 The second item means that Jekyll plug-ins are ruled-out unless they are supported by Github.
 
@@ -103,6 +103,10 @@ My archive page I wanted to highlight the years so I added:
 ```
 
 from [Stack overflow: "Jekyll/Liquid Templating: How to group blog posts by year?"](http://stackoverflow.com/questions/19086284/jekyll-liquid-templating-how-to-group-blog-posts-by-year)
+
+## Useful links
+* [Jekyll templates and Liquid templating language](https://jekyllrb.com/docs/templates/)
+* [Creating Github pages with the automatic generator](https://help.github.com/articles/creating-pages-with-the-automatic-generator/)
 
 ## Other customistations
 * [Adding an Edit Link to Github Pages in Jekyll](http://webcache.googleusercontent.com/search?q=cache:3TA-ApJ1xqAJ:rgardler.github.io/2015/07/26/add-edit-me-link-for-github-pages/+&cd=3&hl=en&ct=clnk&gl=us&client=safari)
