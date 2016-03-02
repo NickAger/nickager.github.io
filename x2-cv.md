@@ -64,7 +64,7 @@ Contracting as a senior developer and “Technical Design Authority” iOS/Objec
 #### Founding Director, getitmade.com
 2009-2011
 
-A site for inventors & designers to market-test and manufacture products. Full stack web development using an innovative continuation based open-source web-frame - ‘Seaside’ of which I was a significant open-source contributor and was selected as one of the core-maintainers. Spoke at various conferences and developed related on-line training material. Deployed using Amazon EC2, Linode and Gemstone - an object database.
+A site for <a href="#getitmade" rel="leanModal">inventors & designers to market-test and manufacture products</a>. Full stack web development using an innovative continuation based open-source web-frame - ‘Seaside’ of which I was a significant open-source contributor and was selected as one of the core-maintainers. Spoke at various conferences and developed related on-line training material. Deployed using Amazon EC2, Linode and Gemstone - an object database.
 
 <br />
 
@@ -177,6 +177,13 @@ BSc Electronic Engineering, University of Southampton
   <p style="text-align:center">VitalPAC Nurse</p>
   <img src="\images\VitalPAC-images\Nurse.png" style="width:258px;height:450px;" alt="VitalPAC Nurse" />
   </div>
+</div>
+
+<div id="getitmade" style="display:none">
+  <video width="480" height="269" controls>
+    <source src="\files\getitmadenewbrandingwithsoundNotFeathered.mp4" type="video/mp4">
+    Your browser does not support this video.
+  </video>
 </div>
 
 
