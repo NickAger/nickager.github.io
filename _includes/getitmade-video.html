@@ -1,0 +1,19 @@
+<div id="getitmade" style="display:none">
+  <video id="getitmade-video" width="480" height="269" controls>
+    <source src="\files\getitmadenewbrandingwithsoundNotFeathered.mp4" type="video/mp4">
+    Your browser does not support this video.
+  </video>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(event) {
+	$("a[href=#getitmade]").leanModal({ top : 100, closeButton: ".modal_close" });
+	$("a[href=#getitmade]").click(function(){
+		var videoTag = $("#getitmade-video")[0]
+	  videoTag.play();
+	  $("#lean_overlay").click(function(){
+	    videoTag.pause();
+	  });
+	})
+});
+</script>

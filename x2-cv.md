@@ -61,10 +61,10 @@ Contracting as a senior developer and “Technical Design Authority” iOS/Objec
 <br />
 
 
-#### Founding Director, <a href="#getitmade" rel="leanModal">getitmade.com</a>
+#### Founding Director, <a href="#getitmade">getitmade.com</a>
 2009-2011
 
-A site for <a href="#getitmade" rel="leanModal">inventors & designers to market-test and manufacture products</a>. Full stack web development using an innovative continuation based open-source web-frame - ‘Seaside’ of which I was a significant open-source contributor and was selected as one of the core-maintainers. Spoke at various conferences and developed related on-line training material. Deployed using Amazon EC2, Linode and Gemstone - an object database.
+A site for <a href="#getitmade">inventors & designers to market-test and manufacture products</a>. Full stack web development using an innovative continuation based open-source web-frame - ‘Seaside’ of which I was a significant open-source contributor and was selected as one of the core-maintainers. Spoke at various conferences and developed related on-line training material. Deployed using Amazon EC2, Linode and Gemstone - an object database.
 
 <br />
 
@@ -72,7 +72,7 @@ A site for <a href="#getitmade" rel="leanModal">inventors & designers to market-
 
 <br />
 
-#### Captain, [Circumnavigation](http://kikasailing.blogspot.com))
+#### Captain, [Circumnavigation](http://kikasailing.blogspot.com)
 2005-2009
 
 Sailed round the world aboard my own yacht. Kept a well regarded blog of my [trip](http://kikasailing.blogspot.com)
@@ -152,8 +152,6 @@ Embedded development in C. Windows development in Foxpro.
 ## Education
 BSc [Electronic Engineering](http://www.thecompleteuniversityguide.co.uk/league-tables/rankings?s=electrical%20%26%20electronic%20engineering), [University of Southampton](http://www.ecs.soton.ac.uk/undergraduate/electronic-engineering)
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-<script type="text/javascript" src="/files/jquery.leanModal.min.js"></script>
 
 <div id="github-contributions" style="display:none">
   <div style="background-color:white">
@@ -179,16 +177,6 @@ BSc [Electronic Engineering](http://www.thecompleteuniversityguide.co.uk/league-
   </div>
 </div>
 
-<div id="getitmade" style="display:none">
-  <video width="480" height="269" controls>
-    <source src="\files\getitmadenewbrandingwithsoundNotFeathered.mp4" type="video/mp4">
-    Your browser does not support this video.
-  </video>
-</div>
+{% include popup-javascript.html %}
 
-
-<script type="text/javascript">
-			$(function() {
-    			$('a[rel*=leanModal]').leanModal({ top : 200, closeButton: ".modal_close" });		
-			});
-</script>
+{% include getitmade-video.html %}
