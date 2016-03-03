@@ -1,0 +1,5 @@
+{% comment %}
+from: http://stackoverflow.com/questions/19331362/using-an-image-caption-in-markdown-jekyll
+usage: {% include captioned-image.html url="/images/my-cat.jpg" description="My cat, Robert Downey Jr." %}
+{% endcomment %}
+<figure class="image"><img src="{{ include.url }}" alt="{{ include.description }}"><figcaption>{{ include.description }}</figcaption></figure>

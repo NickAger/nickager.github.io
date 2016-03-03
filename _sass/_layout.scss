@@ -514,7 +514,12 @@ a.internal {
   }
 }
 
-// model dialog support
+figure.image figcaption {
+  text-align: center;
+  font-style: italic;
+}
+
+// modal dialog support
 #lean_overlay {
     position: fixed;
     z-index:100;
