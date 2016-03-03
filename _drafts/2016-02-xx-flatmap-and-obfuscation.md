@@ -1,12 +1,30 @@
 ---
 layout: post
-title: "Flatmap and obfuscation"
+title: "Superpowers or obfuscation with map & flatMap"
 date: 2016-02-xx
 excerpt_separator: <!--more-->
 ---
 Show examples from iDiffView comparing if let syntax with flatMap and map.
 
 Example from natasha blog showing how you can see array flatMap as similar to Option flatMap
+
+
+private static let leftURLKey = "leftURL"
+private static let rightURLKey = "rightURL"
+required init?(coder decoder: NSCoder) {
+    super.init()
+
+    let currentDocumentKeys = [leftURLKey, rightURLKey]
+    let (leftDocument, rightDocument) = arrayToTuple(currentDocumentKeys.map{decodeDocumentUrl(decoder, forKey:$0)}.map(createDocument))
+
+    let previousDocumentKeys = [previousLeftURLKey, previousRightURLKey]
+    let (leftPreviousURL, rightPreviousURL) = arrayToTuple(previousDocumentKeys.map{decodeDocumentUrl(decoder, forKey:$0)})
+
+    model = DiffViewModel(leftDocument: leftDocument, rightDocument: rightDocument, previousLeftURL: leftPreviousURL, previousRightURL: rightPreviousURL)
+}
+
+        private func decodeDocumentUrl(decoder: NSCoder,forKey key: String) -> NSURL?
+        private func createDocument(url: NSURL?) -> DiffTextDocument?
 
 Show example with operators
 
