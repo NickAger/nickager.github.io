@@ -1,5 +1,5 @@
 ---
-title: "Ten minutes to deploy your Seaside application for free using Amazon EC2 and Gemstone"
+title: "Deploy your Seaside app in 10 mins for free using Amazon EC2"
 date: 2011-01-02 09:03:00 +0000
 tags: [Gemstone, DevOps, EC2]
 layout: post
