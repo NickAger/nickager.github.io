@@ -17,12 +17,12 @@ layout: default
 
   <!-- Pagination links -->
   <div class="pagination">
-    {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path }}" class="previous">← Older</a>
+    {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path }}" class="previous">← Older</a>
     {% endif %}
     <a href="/blog">&mdash; Blog archives &mdash;</a>
-    {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path }}" class="next">Newer →</a>
+    {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path }}" class="next">Newer →</a>
     {% endif %}
   </div>
 </div>
