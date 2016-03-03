@@ -58,6 +58,6 @@ So I started looking for something that is simple to use, easy to host and well 
 
 The behemoth is [Wordpress](http://wordpress.com), but I don't want to have to deal with the on-going need to install security patches and manage content in an opaque database or pay someone else to provide that support.
 
-Enter [Jekyll](http://jekyllrb.com). It generates static content that can be hosted anywhere, but even better, [Github](https://help.github.com/articles/using-jekyll-as-a-static-site-generator-with-github-pages/) provides free hosting and automatic generation of [Jekyll](http://jekyllrb.com) based content.
+Enter [Jekyll](http://jekyllrb.com). It generates static content that can be hosted anywhere, but even better, [GitHub](https://help.github.com/articles/using-jekyll-as-a-static-site-generator-with-github-pages/) provides free hosting and automatic generation of [Jekyll](http://jekyllrb.com) based content.
 
 [Jekyll](http://jekyllrb.com)'s philosophy is the polar opposite to [Pier](http://www.piercms.com) and I was worried I would find the constraints frustrating, however so far I'm enjoying the benefits such as having someone else responsible for maintenance, using GitHub as the backing store and being able to quickly find answers on [stackoverflow.com](http://stackoverflow.com).

@@ -156,8 +156,8 @@ BSc [Electronic Engineering](http://www.thecompleteuniversityguide.co.uk/league-
 <div id="github-contributions" style="display:none">
   <div style="background-color:white">
   <br />
-  <p style="text-align:center">My Github commits while at TLC - #1 committer by a large margin</p>
-  <img src="\images\CV\githubContributions.png" style="width:800px;height:527px;" alt="Github contributions" />
+  <p style="text-align:center">My GitHub commits while at TLC - #1 committer by a large margin</p>
+  <img src="\images\CV\githubContributions.png" style="width:800px;height:527px;" alt="GitHub contributions" />
   </div>
 </div>
 
