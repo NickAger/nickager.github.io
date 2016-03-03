@@ -10,7 +10,7 @@ Adopting Jekyll I wanted:
 * Low or no maintenance blog
 * Github to be able to [generate](https://help.github.com/articles/creating-pages-with-the-automatic-generator/) the site for me.
 
-The second item means that Jekyll plug-ins are ruled-out unless they are supported by Github.
+The second item means that [Jekyll plug-ins](http://jekyllrb.com/docs/plugins/) are ruled-out unless they are supported by Github.
 
 - talk about the problem of errors, setting up Travis etc
 
@@ -121,6 +121,7 @@ from [Stack overflow: "Jekyll/Liquid Templating: How to group blog posts by year
 * [Post excerpts](https://jekyllrb.com/docs/posts/#post-excerpts)
 * [How to list your Jekyll posts by tag](http://www.jokecamp.com/blog/listing-jekyll-posts-by-tag/)
 * [Sitemaps for GitHub Pages](https://help.github.com/articles/sitemaps-for-github-pages/)
+* [Captioned images](http://stackoverflow.com/questions/19331362/using-an-image-caption-in-markdown-jekyll)
 
 ![](/images/blog/new-blog-infrastructure/unhelpfulgithubmessage.png)
 
