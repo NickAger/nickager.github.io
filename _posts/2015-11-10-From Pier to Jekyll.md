@@ -44,7 +44,7 @@ uploadComponent
 		uploadComponent ]
 ```
 
-Guaranteed up-to-date running code, eliminating copy and paste errors.
+By pulling in code directly from the application powering the blog the code shown is guaranteed to be up-to-date and working, eliminating copy and paste errors.
 
 I had plans to extend Pier to support online technical book publication whose code examples you could interact with directly. Pier felt ahead of the pack. (See [School of Haskell](http://www.schoolofhaskell.com) for a recent implementation of the same idea).
 
