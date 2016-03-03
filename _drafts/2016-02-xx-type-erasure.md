@@ -11,3 +11,5 @@ http://robnapier.net/erasure
 http://stackoverflow.com/questions/33843038/define-a-swift-protocol-which-requires-a-specific-type-of-sequence
 
 let sequence = AnySequence(zip(previousArray, nextArray, self as [Diff]))
+
+* [Type erasure with `AnyError`](https://github.com/NickAger/iDiffView/commit/dca2d6811974721dd65364a70231b6f6f10d7d82)
