@@ -3,12 +3,17 @@ layout: post
 title: "Changing blogging platform"
 date: 2015-11-10
 tags: [Pier, Jekyll, blog, life-hacking]
+excerpt_separator: <!--more-->
 ---
+{% include popup-javascript.html %}
+
+{% include getitmade-video.html %}
 My original blog used [Pier](http://www.piercms.com) which was built on the [Seaside web framework](http://seaside.st). I become very familiar with [Pier](http://www.piercms.com) while working on <a href="#getitmade">getitmade.com</a>. [Pier](http://www.piercms.com) merged static and dynamic content, easily allowing new components to be embedded in static content managed through its CMS interface. I even invested considerable time in building [Pier Admin](https://vimeo.com/32749535) - a WYSIWYG editor for Pier as well as many other improved admin tools. My series of posts on building a [file upload component]({% post_url 2011-07-01-File-upload-using-Nginx-and-Seaside %}) embedded the described components as live examples directly into the content, in a way I've not seen achieved elsewhere. Pier also allowed code to be pulled directly into the content with markup such as:
 
 ```
 +value:source | class=NAFileUploadExample | method=onUploadProgressCallback+
 ```
+<!--more-->
 
 which resulted in the following code appearing in the content with the code highlighting being generated directly from the Smalltalk AST:
 
@@ -39,6 +44,8 @@ uploadComponent
 		uploadComponent ]
 ```
 
+Guaranteed up-to-date running code, eliminating copy and paste errors.
+
 I had plans to extend Pier to support online technical book publication whose code examples you could interact with directly. Pier felt ahead of the pack. (See [School of Haskell](http://www.schoolofhaskell.com) for a recent implementation of the same idea).
 
 {% include captioned-image.html url="/images/blog/new-blog-infrastructure/old-site.png" description="The old site" %}
@@ -53,8 +60,4 @@ The behemoth is [Wordpress](http://wordpress.com), but I don't want to have to d
 
 Enter [Jekyll](http://jekyllrb.com). It generates static content that can be hosted anywhere, but even better, [Github](https://help.github.com/articles/using-jekyll-as-a-static-site-generator-with-github-pages/) provides free hosting and automatic generation of [Jekyll](http://jekyllrb.com) based content.
 
-[Jekyll](http://jekyllrb.com)'s philosophy is the polar opposite to [Pier](http://www.piercms.com) and I was worried I would find the constraints frustrating, however so far I'm enjoying the benefits such as having someone else responsible for maintenance, using GitHub as the backing store and being able to quickly find answers on [stackoverflow.com](http://stackoverflow.com).	
-
-{% include popup-javascript.html %}
-
-{% include getitmade-video.html %}
+[Jekyll](http://jekyllrb.com)'s philosophy is the polar opposite to [Pier](http://www.piercms.com) and I was worried I would find the constraints frustrating, however so far I'm enjoying the benefits such as having someone else responsible for maintenance, using GitHub as the backing store and being able to quickly find answers on [stackoverflow.com](http://stackoverflow.com).

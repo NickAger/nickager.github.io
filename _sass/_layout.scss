@@ -17,11 +17,6 @@
     letter-spacing: -1px;
     margin-bottom: 0;
     float: left;
-
-//     &,
-//     &:visited {
-//         color: $grey-color-dark;
-//     }
 }
 
 .site-nav {
@@ -35,11 +30,6 @@
     .page-link {
         color: $text-color;
         line-height: $base-line-height;
-
-        // Gaps between nav items, but not on the last one
-        // &:not(:last-child) {
-        //     margin-right: 20px;
-        // }
     }
 
     @include media-query($on-palm) {
@@ -529,4 +519,27 @@ figure.image figcaption {
     width:100%;
     background: #000;
     display: none;
+}
+
+// fork me on github don't display on iphones
+@include media-query($on-palm) {
+  .github-corner {
+    display: none;
+  }
+}
+@include media-query($on-laptop) {
+  .github-corner:hover
+  .octo-arm {
+    animation:octocat-wave 560ms ease-in-out
+}
+  @keyframes octocat-wave {
+    0%,100%{transform:rotate(0)}
+    20%,60%{transform:rotate(-25deg)}
+    40%,80%{transform:rotate(10deg)}
+  }
+  @media (max-width:500px) {
+    .github-corner:hover
+    .octo-arm { animation:none}
+    .github-corner .octo-arm { animation:octocat-wave 560ms ease-in-out}
+  }
 }
