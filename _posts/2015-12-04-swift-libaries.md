@@ -2,6 +2,7 @@
 layout: post
 title: "Swift libraries"
 date: 2015-12-04
+tags: [Swift, iOS]
 ---
 Some potentially useful Swift libraries:
 
