@@ -10,7 +10,7 @@ I am a <a href="#github-contributions" rel="leanModal">hands-on</a> senior iOS D
 
 Although I am very focused on iOS development, I do have significant senior management experience which is often useful in project planning, execution, team mentoring and in client-facing situations.
 
-I am focused on the maintainability of the code I write and develop with others. I find maintainability brings a focus on testability, automation, separation of concerns, evolving systems sympathetically with their original intent, using appropriate technologies, making illegal states unrepresentable and removing barriers to iteration speed.
+I am focused on the maintainability of the code I write and develop with others. I find maintainability brings a focus on testability, automation, separation of concerns, evolving systems sympathetically with their original intent, using appropriate technologies, making illegal states unrepresentable and removing barriers to iteration speed. My interest in maintainability is leading me to be increasingly interested in strongly-typed functional <a href="#language" rel="leanModal">languages</a>; such as Haskell and Swift.
 
 ## Skills
 
@@ -174,6 +174,22 @@ BSc [Electronic Engineering](http://www.thecompleteuniversityguide.co.uk/league-
   <br />
   <p style="text-align:center">VitalPAC Nurse</p>
   <img src="\images\VitalPAC-images\Nurse.png" style="width:258px;height:450px;" alt="VitalPAC Nurse" />
+  </div>
+</div>
+
+<div id="language" style="display:none">
+  <div style="background-color:white; padding: 20px;">
+  <blockquote>&ldquo;Language defines how you think, what you can think and what thoughts you can have&rdquo;</blockquote>
+  <p style="text-align:right"><i>George Orwell</i></p>
+  <p>I plan a blog post on this subject but in the mean-time consider:</p>
+  <ul>
+  <li><a href="http://fsharpforfunandprofit.com/posts/designing-with-types-discovering-the-domain/">Designing with types: Discovering new concepts</a></li>
+  <li><a href="http://www.informit.com/articles/article.aspx?p=2044336">Why Programmers Need Design Patterns to Communicate Effectively</a></li>
+  <li><a href="http://elm-lang.org">Elm programming language & FRP</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Communicating_sequential_processes">Communicating sequential processes</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Actor_model">Actor model of currency</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Compare-and-swap">Compare and Swap</a></li>
+  </ul>
   </div>
 </div>
 
