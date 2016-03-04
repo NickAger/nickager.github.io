@@ -13,7 +13,7 @@ let twos = (1...10).map { $0 * 2 }
 
 it is but it also has extra super-powers:
 
-
+let size =
 
 
 `CollectionType`
