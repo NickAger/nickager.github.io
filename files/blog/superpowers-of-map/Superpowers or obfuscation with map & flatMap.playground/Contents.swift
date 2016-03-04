@@ -8,5 +8,20 @@ let twos = (1...10).map { $0 * 2 }
 
 UIImage(named: "anImage")?.size
 
-UIImage(named: "anImage").map {$0.size}
+let imageSize = UIImage(named: "anImage").map {$0.size}
 
+let hello = ["arrays", "in", "arrays"].map {Array($0.characters)}
+
+hello.count
+
+hello[0].count
+
+
+let arrayOfArrayOfCharacters = ["array", "of", "arrays"].map {print(Array($0.characters)); Array($0.characters)}
+let arrayOfCharacters = ["array", "of", "characters"].flatMap {Array($0.characters)}
+
+print(arrayOfCharacters)
+arrayOfCharacters.count
+
+
+UIImage(named: "anImage").map

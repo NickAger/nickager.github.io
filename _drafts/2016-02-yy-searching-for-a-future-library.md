@@ -1,20 +1,28 @@
 ---
 layout: post
 title: "Searching for a Swift Future library"
-date: 2016-02-xx
+date: 2016-01-20
 excerpt_separator: <!--more-->
 ---
+Futures and [Promises](http://promisesaplus.com) are a fantastic abstraction for asynchronous operations which I'll write about in a future post. In Objective-C I used a version of [SHXPromise](https://github.com/MSNexploder/SHXPromise) which worked well for us.
 
-http://promisesaplus.com
+Searching for an equivalent in Swift, I narrowed my choice to:
+
+* [Promise Kit](http://promisekit.org)
+* [Future Kit](https://github.com/FutureKit/FutureKit)
+* [Bright Futures](https://github.com/Thomvis/BrightFutures)
+
+
+
+
+
 
 In objective-C I used SHXPromise
 
 
 Options:
 
-http://promisekit.org
-https://github.com/FutureKit/FutureKit
-https://github.com/Thomvis/BrightFutures
+
 ReactiveCocoa
 
 I liked the functional composition built into Bright Futures
