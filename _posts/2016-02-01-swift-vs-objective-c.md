@@ -5,7 +5,7 @@ date: 2016-02-01
 tags: [Swift, iOS, Objective-C, static]
 excerpt_separator: <!--more-->
 ---
-Coding in Swift feels slower than Objective-C. I'm sure that's partly due to not yet having the same level of mastery of Swift, that I felt I had with Objective-C. However I came across this quote, which matches my experience:
+Coding in Swift feels slower than Objective-C. I'm sure that's partly due to not yet having the same level of mastery of Swift, that I felt I had with Objective-C. However I came across this quote, which reflects my experience:
 
 > Dynamically typed languages give fast positive feedback, but slow negative feedback, whereas statically typed languages do the reverse.
 
