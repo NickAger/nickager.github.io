@@ -5,7 +5,7 @@ tags: [Swift, iOS, Futures, Promises, async]
 date: 2016-01-20
 excerpt_separator: <!--more-->
 ---
-Futures and [Promises](http://promisesaplus.com) are a fantastic abstraction for asynchronous operations which I'll write about in a future post. In Objective-C I used a version of [SHXPromise](https://github.com/MSNexploder/SHXPromise) which worked well for us.
+[Futures and Promises](https://en.wikipedia.org/wiki/Futures_and_promises) are a fantastic abstraction for asynchronous operations which I'll write about in a future [post]({% post_url 2016-02-10-profit-from-futures %}). In Objective-C I used a version of [SHXPromise](https://github.com/MSNexploder/SHXPromise) which worked well for us.
 
 Searching for an equivalent in Swift, I narrowed my choice to:
 
