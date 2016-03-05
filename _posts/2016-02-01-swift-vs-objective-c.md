@@ -9,7 +9,7 @@ Coding in Swift feels slower than Objective-C. I'm sure that's partly due to not
 
 > Dynamically typed languages give fast positive feedback, but slow negative feedback, whereas statically typed languages do the reverse.
 
-The quote was based on a comparison of Javascript and Scala, but I think a similar (although less extreme) dynamic vs static difference applies between Objective-C and Swift.<!--more--> In Objective-C I can build an application very rapidly, but in doing so I won't have considered many error conditions. Whereas Swift's more advanced type system forces you to handle failure cases and ensures your types match.
+The quote was based on a comparison of Javascript and Scala, but I think a similar (although less extreme) dynamic vs static chasm divides Objective-C and Swift.<!--more--> In Objective-C I can build an application very rapidly, but in doing so I won't have considered many error conditions. Whereas Swift's more advanced type system forces you to handle failure cases and ensures your types match.
 
 A common error I saw causing crashes in released apps - mine and others (hello Xcode) - was inserting a `nil` into an `NSArray`. Swift's type-system should entirely eliminate this source of failure.
 
