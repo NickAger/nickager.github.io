@@ -43,7 +43,7 @@ let idResult = intForKey(json, key:"id").map { id in String(id) }
 Using `map` on a `Future`:
 
 ```swift
-// open() returns Future<DiffTextDocument, AnyError>
+// open() returns Future<TextDocument, AnyError>
 document.open().map {updateView ($0)}
 }
 ```
