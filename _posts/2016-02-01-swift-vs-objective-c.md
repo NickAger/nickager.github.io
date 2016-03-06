@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Development speed in Swift vs Objective-C"
+title: "Productivity in Swift vs Objective-C"
 date: 2016-02-01
 tags: [Swift, iOS, Objective-C, static]
 excerpt_separator: <!--more-->

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Custom classes in Objective-C"
+title: "Making invalid states unrepresentable"
 date: 2016-02-xx
 excerpt_separator: <!--more-->
 ---
