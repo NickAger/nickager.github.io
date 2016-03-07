@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Superpowers / obfuscation with map & flatMap"
-tags: [Swift, iOS, Array, Optional, Result, Future, map, flatMap]
+tags: [Swift, iOS, Future, map, flatMap, functional-composition]
 date: 2016-02-02
 
 excerpt_separator: <!--more-->
