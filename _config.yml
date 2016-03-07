@@ -2,7 +2,8 @@ name: Nick Ager's blog
 markdown: kramdown
 kramdown:
   input: GFM
-  syntax_highlighter: rouge
+highlighter: rouge
+  line_numbers: true
 permalink: /blog/:year/:month/:day/:title
 paginate: 5
 gems: [jekyll-paginate, jekyll-sitemap, jekyll-seo-tag, jekyll-gist]
