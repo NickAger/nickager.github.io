@@ -122,4 +122,45 @@ Other sites I've found useful while customising Jekyll for my purpose include:
 * [Captioned images](http://stackoverflow.com/questions/19331362/using-an-image-caption-in-markdown-jekyll)
 * [GitHub corner image]( http://tholman.com/github-corners/)
 
+Gems included in the github-pages Gem:
+
+```bash
+$ github-pages versions
++---------------------------+---------+
+| Gem                       | Version |
++---------------------------+---------+
+| jekyll                    | 3.0.3   |
+| jekyll-sass-converter     | 1.3.0   |
+| jekyll-textile-converter  | 0.1.0   |
+| kramdown                  | 1.9.0   |
+| rdiscount                 | 2.1.8   |
+| redcarpet                 | 3.3.3   |
+| RedCloth                  | 4.2.9   |
+| liquid                    | 3.0.6   |
+| rouge                     | 1.10.1  |
+| jemoji                    | 0.5.1   |
+| jekyll-mentions           | 1.0.1   |
+| jekyll-redirect-from      | 0.9.1   |
+| jekyll-sitemap            | 0.10.0  |
+| jekyll-feed               | 0.4.0   |
+| jekyll-gist               | 1.4.0   |
+| jekyll-paginate           | 1.1.0   |
+| github-pages-health-check | 1.0.1   |
+| jekyll-coffeescript       | 1.0.1   |
+| jekyll-seo-tag            | 1.2.0   |
++---------------------------+---------+
+```
+
+These are the Gems that are installed in GitHub pages's Jekyll installation. At the time of writing I am using:
+
+* [jekyll-paginate](https://jekyllrb.com/docs/pagination/) - for my main index page
+* [jekyll-sitemap](https://github.com/jekyll/jekyll-sitemap) - to generate a `sitemap.xml`.
+* [jekyll-seo-tag](https://github.com/jekyll/jekyll-seo-tag) - meta tags for search engines
+* [jekyll-gist](https://github.com/jekyll/jekyll-gist) - include gists inline
+* [jekyll-mentions](https://github.com/jekyll/jekyll-mentions) - @name links to twitter.
+
+---
+
+<br />
+
 As with all sites hosted directly from a GitHub repository, the raw site files are available for perusal [github](https://github.com/NickAger/nickager.github.io)
