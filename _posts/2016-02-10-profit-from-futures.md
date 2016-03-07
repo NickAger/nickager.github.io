@@ -68,22 +68,37 @@ Clearly callbacks don't compose in the same way as `Future`s and the `Future` ba
 
 It's a good idea to display an activity indicator to the user, if they are unable to use the UI until an asynchronous callback completes.
 
-With `Futures` this is a single line `futureResult.showActivityIndicatorWhileWaiting()`:
+With a `Future` this is a single line `futureResult.showActivityIndicatorWhileWaiting()`:
 
 ```swift
 func loadInitialText() {
-  let futureResult = readSample()
-  futureResult.showActivityIndicatorWhileWaiting(onView: self.view)
+  let futureResult = readSample().showActivityIndicatorWhileWaiting(onView: self.view)
   futureResult.onSuccess { (leftDocument, rightDocument) in
       .
       .   
-  }.onFailure { error in
-    fatalError("Unable to open sample documents, error: '\(error)'")
   }
 }
 ```
+The activity indicator is displayed until the `Future` completes; whether successfully or in failure state.
 
-This is implemented as a `Future` extension as:
+Compare this to the original pre-future version, where you have to remember to manually remove the activityOverlay once the completion block is called:
+
+```swift
+func loadInitialText() {
+  let activityOverlay = showActivityOverlayAddedTo(self.view)
+  readSample { (leftDocument, rightDocument) in
+    activityOverlay.removeFromSuperview()
+    .
+    .
+   }
+}
+```
+
+---
+
+<br />
+
+`showActivityIndicatorWhileWaiting()` is implemented as a `Future` extension as:
 
 ```swift
 extension Future {
@@ -96,7 +111,7 @@ extension Future {
 }
 ```
 
-Neat. The activity indicator will be displayed until the `Future` completes; whether successfully or in failure state.
+... which shows another advantage of `Futures`s; the ability to associate multiple completion blocks with a `Future`
 
 ### See also
 
