@@ -114,5 +114,6 @@ For `Optional` values, I think the idiomatic version wins by virtue of being und
 ### See also
 
 * [Railway oriented programming](http://fsharpforfunandprofit.com/rop/).
+* [I, for One, Welcome Our New Haskell Overlords](http://robnapier.net/haskell-overlords)
 * [What do map() and flatMap() really do?](http://sketchytech.blogspot.co.uk/2015/06/swift-what-do-map-and-flatmap-really-do.html)
 * [`Optional` type on Apple's GitHub repository](https://github.com/apple/swift/blob/master/stdlib/public/core/Optional.swift)
