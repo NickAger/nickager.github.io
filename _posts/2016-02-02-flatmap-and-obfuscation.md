@@ -117,3 +117,4 @@ For `Optional` values, I think the idiomatic version wins by virtue of being und
 * [I, for One, Welcome Our New Haskell Overlords](http://robnapier.net/haskell-overlords)
 * [What do map() and flatMap() really do?](http://sketchytech.blogspot.co.uk/2015/06/swift-what-do-map-and-flatmap-really-do.html)
 * [`Optional` type on Apple's GitHub repository](https://github.com/apple/swift/blob/master/stdlib/public/core/Optional.swift)
+* Higher-kinded types in [Completing Generics](https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20160229/011666.html)
