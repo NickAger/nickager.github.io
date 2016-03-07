@@ -5,7 +5,7 @@ kramdown:
   syntax_highlighter: rouge
 permalink: /blog/:year/:month/:day/:title
 paginate: 5
-gems: [jekyll-paginate, jekyll-sitemap]
+gems: [jekyll-paginate, jekyll-sitemap, jekyll-seo-tag]
 exclude: [vendor] # for travis - Travis bundles all gems in the vendor directory on its build servers, which Jekyll will mistakenly read and explode on.
 # Welcome to Jekyll!
 #
