@@ -96,7 +96,7 @@ extension Future {
 }
 ```
 
-Neat. The activity indicator will be diplayed until the `Future` completes; whether successfully or in failure state.
+Neat. The activity indicator will be displayed until the `Future` completes; whether successfully or in failure state.
 
 ### See also
 
