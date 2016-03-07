@@ -3,10 +3,9 @@ markdown: kramdown
 kramdown:
   input: GFM
 highlighter: rouge
-  line_numbers: true
 permalink: /blog/:year/:month/:day/:title
 paginate: 5
-gems: [jekyll-paginate, jekyll-sitemap, jekyll-seo-tag, jekyll-gist]
+gems: [jekyll-paginate, jekyll-sitemap, jekyll-seo-tag, jekyll-gist, jekyll-mentions]
 exclude: [vendor] # for travis - Travis bundles all gems in the vendor directory on its build servers, which Jekyll will mistakenly read and explode on.
 # Welcome to Jekyll!
 #
@@ -23,6 +22,7 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://nickager.com" # the base hostname & protocol for your site
 twitter_username: nickager
+jekyll-mentions: https://twitter.com
 github_username:  nickager
 github:
     user: nickager
