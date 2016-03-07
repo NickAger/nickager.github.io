@@ -20,7 +20,7 @@ opacity:0;
 }
 </style>
 
-This is the home of Nick Ager, software developer. I care a lot about usability and maintainability. My interests are in mobile development, embedded systems and the impending parallel programming crisis. I'm a bit obsessed with programming languages and how they effect how you think about solving problems.
+This is the home of Nick Ager, software developer. I care a lot about usability and maintainability. My interests are in mobile development, embedded systems and the impending parallel programming crisis. I'm fascinated with programming languages and how they effect how you think about solving problems.
 
 <div id="images"><img id="cycleImage1" src="/images/About/KikaOffYemen.jpeg"/><img id="cycleImage2" src="/images/About/NickAndOrangutan.jpeg" /></div>
 <br />
