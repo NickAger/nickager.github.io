@@ -109,7 +109,7 @@ func readSampleText() -> String {
 
 ### Final thoughts
 
-For `Optional` values, I think the idiomatic version wins by virtue of being understood instantly by other Swift developers. However the `map` and `flatMap` version is often the best approach when using other container types such as [`Result`](https://github.com/antitypical/Result) and [`Future`](https://github.com/Thomvis/BrightFutures). I hope that over time the use of `map` and `flatMap` on values other than `Array` will become familiar to mainstream Swift developers. I find that when using `map` and `flatMap`, my code becomes simpler as I think in terms of data transformation rather than state.
+For `Optional` values, I think the idiomatic version wins by virtue of being understood instantly by other Swift developers. However the `map` and `flatMap` version is often the best approach when using other container types such as [`Result` ](https://github.com/antitypical/Result) and [`Future` ](https://github.com/Thomvis/BrightFutures). I hope that over time the use of `map` and `flatMap` on values other than `Array` will become familiar to mainstream Swift developers. I find that when using `map` and `flatMap`, my code becomes simpler as I think in terms of data transformation rather than state.
 
 ### See also
 
