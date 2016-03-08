@@ -26,9 +26,43 @@ The component implements both [UIDocumentMenuDelegate](https://developer.apple.c
 
 `NADocumentPicker` returns a [Future](https://github.com/Thomvis/BrightFutures#examples). Hooking into `onSuccess` provides the URL of the file choosen by the user.
 
+## Implementation details.
+
+One of the challenges of keeping a simple API, was how to ensure that the `NADocumentPicker` object remains in memory until the [Future](https://github.com/Thomvis/BrightFutures#examples) completes. The trick I used was to add a reference count to the object that is only freed `onComplete`:
+
+```
+public class NADocumentPicker : NSObject {
+    private var keepInMemory: NADocumentPicker?
+    .
+    .
+    private func keepOurselvesInMemory() {
+        keepInMemory = self
+    }
+
+    private func freeOurselvesFromMemory() {
+        keepInMemory = nil
+    }
+
+    private func keepInMemoryUntilComplete() {
+        keepOurselvesInMemory()
+        self.promise.future.onComplete { [unowned self] _ in
+            self.freeOurselvesFromMemory()
+        }
+    }
+
+    private init(...) {
+      .
+      .
+      keepInMemoryUntilComplete()
+    }
+}
+```
+
+If the property `keepInMemory` is non-nil the object will not be freed. The object sets `keepInMemory` to `nil` within an `onComplete` block. This completion block will be called for success or failure. Success when the user picked a file and failure if the user dismissed the UI without choosing a file.
+
 ## Installation
 
-It is available as a [Cocoapod](https://cocoapods.org). To incorporate the document picker into your project add the following to your `Podfile` eg:
+`NADocumentPicker` is available as a [Cocoapod](https://cocoapods.org). To incorporate the document picker into your project add the following to your `Podfile` eg:
 
 ```ruby
 target '<YourProject>' do
