@@ -23,5 +23,10 @@ let arrayOfCharacters = ["array", "of", "characters"].flatMap {Array($0.characte
 print(arrayOfCharacters)
 arrayOfCharacters.count
 
+let sequence1 = zip("hello".characters, "world".characters)
+sequence1.dynamicType
 
-UIImage(named: "anImage").map
+let sequence2 = AnySequence(sequence1)
+sequence2.dynamicType
+
+
