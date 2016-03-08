@@ -74,7 +74,7 @@ end
 
 ### See Also
 
-* [https://github.com/NickAger/NADocumentPicker](https://github.com/NickAger/NADocumentPicker)
+* [NADocumentPicker.swift](https://github.com/NickAger/NADocumentPicker/blob/master/NADocumentPicker/NADocumentPicker.swift#L25) on GitHub
 * [Searching for a Swift Future library]({% post_url 2016-01-20-searching-for-a-future-library %})
 * [Profit from Futures]({% post_url 2016-02-10-profit-from-futures %})
 * [https://github.com/Thomvis/BrightFutures](https://github.com/Thomvis/BrightFutures)
