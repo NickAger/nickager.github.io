@@ -10,7 +10,7 @@ I've released a Cocoapod that encapsulates UIKit document picker UI on [GitHub](
 ![](/images/blog/DocumentPicker/filepicker-combined.jpg)
 
 <!--more-->
-The component implements both [UIDocumentMenuDelegate](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIDocumentMenuDelegate_Protocol/index.html) and [UIDocumentPickerDelegate](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIDocumentPickerDelegate/) and provides a simple [Future](https://github.com/Thomvis/BrightFutures#examples) based API.
+The component implements both [UIDocumentMenuDelegate](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIDocumentMenuDelegate_Protocol/index.html) and [UIDocumentPickerDelegate](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIDocumentPickerDelegate/) and provides a simple [`Future` ](https://github.com/Thomvis/BrightFutures#examples) based API.
 
 ## Usage
 
@@ -24,11 +24,11 @@ The component implements both [UIDocumentMenuDelegate](https://developer.apple.c
 }
 ```
 
-`NADocumentPicker` returns a [Future](https://github.com/Thomvis/BrightFutures#examples). Hooking into `onSuccess` provides the URL of the file choosen by the user.
+`NADocumentPicker` returns a [`Future` ](https://github.com/Thomvis/BrightFutures#examples). Hooking into `onSuccess` provides the URL of the file choosen by the user.
 
 ## Implementation details.
 
-One of the challenges of keeping a simple API, was how to ensure that the `NADocumentPicker` object remains in memory until the [Future](https://github.com/Thomvis/BrightFutures#examples) completes. The trick I used was to add a reference count to the object that is only freed `onComplete`:
+One of the challenges of keeping a simple API, was how to ensure that the `NADocumentPicker` object remains in memory until the [`Future` ](https://github.com/Thomvis/BrightFutures#examples) completes. The trick I used was to add a reference count to the object that is only freed `onComplete`:
 
 ```swift
 public class NADocumentPicker : NSObject {
@@ -66,10 +66,16 @@ If the property `keepInMemory` is non-nil the object will not be freed. The obje
 
 ```ruby
 target '<YourProject>' do
-    pod 'NADocumentPicker', :git => 'git@github.com:NickAger/NADocumentPicker.git'
+    pod 'NADocumentPicker'
     .
     .
 end
+```
+
+you can test an `NADocumentPicker` demo project with:
+
+```
+$ pod try NADocumentPicker
 ```
 
 ### See Also
