@@ -38,4 +38,9 @@ target '<YourProject>' do
 end
 ```
 
-See: [https://github.com/NickAger/NADocumentPicker](https://github.com/NickAger/NADocumentPicker)
+### See Also
+
+* [https://github.com/NickAger/NADocumentPicker](https://github.com/NickAger/NADocumentPicker)
+* [Searching for a Swift Future library]({% post_url 2016-01-20-searching-for-a-future-library %})
+* [Profit from Futures]({% post_url 2016-02-10-profit-from-futures %})
+* [https://github.com/Thomvis/BrightFutures](https://github.com/Thomvis/BrightFutures)
