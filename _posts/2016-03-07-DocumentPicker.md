@@ -30,7 +30,7 @@ The component implements both [UIDocumentMenuDelegate](https://developer.apple.c
 
 One of the challenges of keeping a simple API, was how to ensure that the `NADocumentPicker` object remains in memory until the [Future](https://github.com/Thomvis/BrightFutures#examples) completes. The trick I used was to add a reference count to the object that is only freed `onComplete`:
 
-```
+```swift
 public class NADocumentPicker : NSObject {
     private var keepInMemory: NADocumentPicker?
     .
