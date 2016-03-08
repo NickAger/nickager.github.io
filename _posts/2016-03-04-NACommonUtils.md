@@ -17,3 +17,5 @@ target '<YourProject>' do
 end
 ```
 <!--more-->
+
+See [https://github.com/NickAger/NACommonUtils.git](https://github.com/NickAger/NACommonUtils.git)
