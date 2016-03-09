@@ -5,7 +5,7 @@ date: 2016-02-10
 tags: [Futures, Promises, async]
 excerpt_separator: <!--more-->
 ---
-As most battle-hardened programmers will attest, implementing threaded code that reads or writes to shared mutable state is hard to develop correctly and rapidly degenerates into a maintenance nightmare unless all programmers are equally skilled. Lets quickly why; shared mutable state requires locks and:
+As most battle-hardened programmers will attest, implementing threaded code that reads or writes to shared mutable state is hard to develop correctly and rapidly degenerates into a maintenance nightmare unless all programmers are equally skilled. Lets review why; shared mutable state requires locks and:
 
 * Locks do not compose
 * Locks break encapsulation (you need to know a lot!)
