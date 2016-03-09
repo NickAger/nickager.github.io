@@ -4,7 +4,7 @@ title: "Custom classes in Objective-C"
 date: 2016-02-xx
 excerpt_separator: <!--more-->
 ---
-Describe the motivation - white label product.
+Describe the motivation - white label product. Not just white label products but having say a diagnostic mode that where all the extra diagnostic code is kept in derived classes, rather than adding the the confusion of the main code base.
 
 Differentiate between customisations and configuration. Where customisation is something that is specific to one or two sites. Whereas configuration is something which needs configuration across all sites.
 
