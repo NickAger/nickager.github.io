@@ -4,6 +4,16 @@ title: Products
 permalink: /products/
 ---
 
+### DocumentPicker
+
+Cocoapod that encapsulates UIKit document picker UI; allowing the user to select iCloud documents (or documents from other providers), with a simple [`Future` ](https://github.com/Thomvis/BrightFutures) based API.
+
+![](/images/blog/DocumentPicker/filepicker-combined.jpg)
+
+See blog post: [Swift document picker UI]({% post_url 2016-03-07-DocumentPicker %})
+
+---
+
 ### iDiff View
 <table>
 <tr>
