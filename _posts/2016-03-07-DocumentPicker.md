@@ -5,7 +5,7 @@ tags: [Swift, iOS, Cocoapods, UIDocumentMenuDelegate, UIDocumentPickerDelegate, 
 date: 2016-03-07
 excerpt_separator: <!--more-->
 ---
-I've released a Cocoapod that encapsulates UIKit document picker UI; allowing the user to select iCloud documents (or documents from other providers), with a simple [`Future` ](https://github.com/Thomvis/BrightFutures) based API.
+I've released a Cocoapod that encapsulates UIKit document picker UI; allowing the user to select iCloud documents (and Google Drive, One Drive, etc), with a simple [`Future` ](https://github.com/Thomvis/BrightFutures) based API.
 
 ![](/images/blog/DocumentPicker/filepicker-combined.jpg)
 
