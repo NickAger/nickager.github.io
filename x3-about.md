@@ -20,7 +20,9 @@ opacity:0;
 }
 </style>
 
-This is the home of Nick Ager, software developer. I care a lot about usability and maintainability. My interests are in mobile development, embedded systems and the impending parallel programming crisis. I'm fascinated with programming languages and how they effect how you think about solving problems.
+This is the home of Nick Ager, software developer. I care passionately about usability and maintainability of the software I create. My interests span mobile development and embedded systems through to how we will be able to take advantage of future mega-core processors. I'm fascinated with how disparate programming languages effect our thought processes when solving problems and how the choice of language effects the efficiency/succinct nature of the expression of the solution.
+
+I'm available for consultancy and contract development work.
 
 <div id="images"><img id="cycleImage1" src="/images/About/KikaOffYemen.jpeg"/><img id="cycleImage2" src="/images/About/NickAndOrangutan.jpeg" /></div>
 <br />
