@@ -4,7 +4,7 @@ title: CV
 permalink: /cv/
 ---
 
-<div style="float:right; line-height:23px; border: 1px solid black; border-radius: 4px; padding: 6px 12px; top:-70px; position: relative"><a href="\files\NickAgerCV-March2016.pdf">Download CV</a></div>
+<div style="float:right; line-height:23px; border: 1px solid black; border-radius: 4px; padding: 6px 12px; top:-70px; position: relative"><a href="/files/NickAgerCV-March2016.pdf">Download CV</a></div>
 
 I am a <a href="#github-contributions" rel="leanModal">hands-on</a> senior iOS Developer with over 20 years commercial programming experience and over 4 years experience developing commercial iPhone/iPad applications.
 
