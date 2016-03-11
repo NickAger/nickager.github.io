@@ -121,6 +121,7 @@ Other sites I've found useful while customising Jekyll for my purpose include:
 * [Sitemaps for GitHub Pages](https://help.github.com/articles/sitemaps-for-github-pages/)
 * [Captioned images](http://stackoverflow.com/questions/19331362/using-an-image-caption-in-markdown-jekyll)
 * [GitHub corner image]( http://tholman.com/github-corners/)
+* [Social sharing buttons to your Jekyll blog](http://vdaubry.github.io/2014/10/20/add-social-sharing-buttons-with-jekyll/)
 
 Gems included in the github-pages Gem:
 
