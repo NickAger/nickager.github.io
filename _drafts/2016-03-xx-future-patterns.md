@@ -19,3 +19,15 @@ Here are some common patterns I've used with [Futures](https://github.com/Thomvi
 * Delay Futures
 * Wait for all Futures to complete
 * Network up as a guard future. - sometimes you wait to fast-fail.
+
+
+pyramid of doom
+http://raynos.github.io/presentation/shower/controlflow.htm?full#OpeningSlide
+
+Callbacks considered a smell
+http://adamghill.com/callbacks-considered-a-smell/
+
+
+https://fsharpforfunandprofit.com/posts/computation-expressions-continuations/
+
+Of course we could rewrite the whole lot in haskell as:
