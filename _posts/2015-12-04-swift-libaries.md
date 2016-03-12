@@ -33,4 +33,4 @@ I still haven't found Swift equivalents of:
 |Area | Library | Comments|
 |-----|---------|---------|
 |Dependency Injection|[Objection](http://objection-framework.org/)|See 'Function programming in Swift' [2015 conference](http://2015.funswiftconf.com) - DI in Swift [ video](https://youtu.be/2--pYf1T6Xc) |
-|Mocking|[OCMock](http://ocmock.org)|Extensive use of Swift protocols minimises the need for mocks|
+|Mocking|[OCMock](http://ocmock.org)|Extensive use of Swift protocols minimises the need for mocks. Using locally defined classes for mocking see [Mocking in Swift](http://nshipster.com/xctestcase/)|
