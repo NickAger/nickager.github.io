@@ -33,7 +33,7 @@ Seaside integration with JQuery-Mobile see [http://jquerymobile.seasidehosting.s
 ---
 
 ### Pier admin
-Demonstration of the Pier Administration interface see [overview video](https://vimeo.com/32749535), showing the WYSIWYG editor, the tree view and other administrative features.
+Demonstration of the Pier Administration interface see [overview video](https://vimeo.com/32749535), showing the WYSIWYG editor, the tree view and other administrative features. See [http://pieradmin.seasidehosting.st](http://pieradmin.seasidehosting.st)
 
 ---
 
