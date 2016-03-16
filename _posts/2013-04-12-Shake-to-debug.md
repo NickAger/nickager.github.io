@@ -2,7 +2,7 @@
 layout: post
 title: "Shake to debug"
 date: 2013-04-12
-tags: [iOS, Objective-C, async]
+tags: [iOS, Objective-C, async, gist]
 ---
 When trying to debug UI glitches caused by asynchronous events, I've found it useful to simulate an asynchronous event with a shake. It's easy to hook into iOS device shake notifications with:
 
