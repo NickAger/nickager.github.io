@@ -18,11 +18,18 @@ See blog post: [Swift document picker UI]({% post_url 2016-03-07-DocumentPicker 
 <table>
 <tr>
 <td width="145px"><a href="https://itunes.apple.com/us/app/idiff-view/id1084386974?mt=8"><img src="/images/blog/iDiffView/iDiffViewIcon.svg" style="width:100px;margin-left:20px;"/></a></td>
-<td rowspan="2">iDiff View highlights the difference between two versions of a text file showing which characters/words and lines have changed, highlighting additions and deletions. Files are chosen from document providers, such as iCloud Drive, Google Drive, OneDrive etc.</td>
+<td rowspan="2">iDiff View highlights the differences between two versions of a text file showing which characters/words and lines have changed, highlighting additions and deletions.</td>
 </tr>
 <tr><td><a href="https://itunes.apple.com/us/app/idiff-view/id1084386974?mt=8"><img src="/images/apple-marketing-images/App_Store_Badge_US-UK_135x40.svg" style="height:40px;width:135px;margin:5px;"/></a></td>
 </tr>
 </table>
+<br />
+
+Files are chosen from document providers, such as iCloud Drive, Google Drive, OneDrive etc:
+
+![](/images/blog/iDiffView/iPad2.jpg)
+
+iDiff View is a universal app with adaptive layout, supporting side-by-side apps view on the iPad. See blog post: [iDiff View on the app store]({% post_url 2016-02-19-iDiffView-available-on-app-store %})
 
 ---
 
