@@ -3,6 +3,7 @@ layout: product
 title: Products
 permalink: /products/
 ---
+The products listed below are only the ones for which I am solely responsible, not ones I have been paid by others to create.
 
 ### DocumentPicker
 
@@ -40,7 +41,7 @@ Seaside integration with JQuery-Mobile see [http://jquerymobile.seasidehosting.s
 ---
 
 ### Pier admin
-Demonstration of the Pier Administration interface see [overview video](https://vimeo.com/32749535), showing the WYSIWYG editor, the tree view and other administrative features. See [http://pieradmin.seasidehosting.st](http://pieradmin.seasidehosting.st)
+Demonstration of the Pier Administration interface see [overview video](https://vimeo.com/32749535), showing the WYSIWYG editor, the tree view and other administrative features. A live demonstration is here: [http://pieradmin.seasidehosting.st](http://pieradmin.seasidehosting.st)
 
 ---
 
