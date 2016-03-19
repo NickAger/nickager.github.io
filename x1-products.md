@@ -3,7 +3,7 @@ layout: product
 title: Products
 permalink: /products/
 ---
-The products listed below are only the ones for which I am solely responsible, not ones I have been paid by others to create.
+The products listed below are those for which I am solely responsible, rather than the many products I have been paid by others to create.
 
 ### DocumentPicker
 
