@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Updating an Objective-C library for Swift"
+title: "objective-c <=> swift interop - down the rabbit holeUpdating an Objective-C library for Swift"
 date: 2016-03-18
 excerpt_separator: <!--more-->
 ---
