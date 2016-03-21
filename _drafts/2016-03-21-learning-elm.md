@@ -4,6 +4,7 @@ Some elm links:
 * [Elm - Model the problem](http://elm-lang.org/guide/model-the-problem)
 * [Convert Html to Elm](http://mbylstra.github.io/html-to-elm/)
 * [Redit Elm](https://www.reddit.com/r/elm/)
+* [Elm Check ala Quick Check](https://github.com/TheSeamau5/elm-check)
 * [Google Groups Elm discuss](https://groups.google.com/forum/#!forum/elm-discuss)
 * [Elm playlist - list to vidoes, podcasts featuring Elm](http://crossingtheruby.com/2015/11/10/elm-playlist.html)
 * [Richard Feldman Github repositories](https://github.com/rtfeldman?tab=repositories)
