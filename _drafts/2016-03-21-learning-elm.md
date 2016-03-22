@@ -11,7 +11,7 @@ Some elm links:
 * [Guy learning Elm - crossingtheruby.com](http://crossingtheruby.com)
 * [Next steps from pragmatic studio course](https://online.pragmaticstudio.com/courses/elm-signals/next_steps)
 * [Typed up CRUD SPA with Haskell and Elm](http://rundis.github.io/blog/2015/haskell_elm_spa_part1.html) "A single page web application with crud features"
-* [Elm slack channel](http://elmlang.herokuapp.com)
+* [Elm slack channel](https://elmlang.slack.com/messages/general/)
 
 
 
