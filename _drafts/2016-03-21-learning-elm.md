@@ -14,9 +14,10 @@ Some elm links:
 * [Elm slack channel](https://elmlang.slack.com/messages/general/)
 * [Typed up CRUD SPA with Haskell and Elm - Part 1: Spike time](http://rundis.github.io/blog/2015/haskell_elm_spa_part1.html) - Guy learning FP with Haskell and Elm
 * [The code associated with the above blog](https://github.com/rundis/albums)
-* [Looking up US zip codes](http://elm-lang.org/examples/zip-codes) eg 201166
-* [Querying flikr](http://elm-lang.org/examples/flickr)
-* [Reactivity - tasks etc](http://elm-lang.org/guide/reactivity)
+* [Looking up US zip codes](http://elm-lang.org/examples/zip-codes) eg 201166 from http://elm-lang.org/examples/zip-codes
+* [Querying flikr](http://elm-lang.org/examples/flickr) from http://elm-lang.org/examples/flickr
+* [Reactivity - tasks etc](http://elm-lang.org/guide/reactivity) from http://elm-lang.org/guide/reactivity
+* [Elm Tutorial](http://www.elm-tutorial.org) covers routing
 
 
 
