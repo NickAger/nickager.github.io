@@ -16,7 +16,7 @@ Some elm links:
 * [The code associated with the above blog](https://github.com/rundis/albums)
 * [Looking up US zip codes](http://elm-lang.org/examples/zip-codes) eg 201166
 * [Querying flikr](http://elm-lang.org/examples/flickr)
-
+* [Reactivity - tasks etc](http://elm-lang.org/guide/reactivity)
 
 
 
