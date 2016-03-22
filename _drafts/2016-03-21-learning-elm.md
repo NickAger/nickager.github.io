@@ -15,6 +15,7 @@ Some elm links:
 * [Typed up CRUD SPA with Haskell and Elm - Part 1: Spike time](http://rundis.github.io/blog/2015/haskell_elm_spa_part1.html) - Guy learning FP with Haskell and Elm
 * [The code associated with the above blog](https://github.com/rundis/albums)
 * [Looking up US zip codes](http://elm-lang.org/examples/zip-codes) eg 201166
+* [Querying flikr](http://elm-lang.org/examples/flickr)
 
 
 
