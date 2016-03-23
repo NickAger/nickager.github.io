@@ -18,6 +18,7 @@ Some elm links:
 * [Querying flikr](http://elm-lang.org/examples/flickr) from http://elm-lang.org/examples/flickr
 * [Reactivity - tasks etc](http://elm-lang.org/guide/reactivity) from http://elm-lang.org/guide/reactivity
 * [Elm Tutorial](http://www.elm-tutorial.org) covers routing
+* [No Red Ink Elm style guide](https://github.com/NoRedInk/elm-rails/wiki/NoRedInk's-Elm-Style-Guide)
 
 
 
