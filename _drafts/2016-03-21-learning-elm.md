@@ -19,6 +19,7 @@ Some elm links:
 * [Reactivity - tasks etc](http://elm-lang.org/guide/reactivity) from http://elm-lang.org/guide/reactivity
 * [Elm Tutorial](http://www.elm-tutorial.org) covers routing
 * [No Red Ink Elm style guide](https://github.com/NoRedInk/elm-rails/wiki/NoRedInk's-Elm-Style-Guide)
+* [Elm by Example](http://elm-by-example.org)  - includes a snake game
 
 
 
