@@ -21,6 +21,7 @@ Some elm links:
 * [No Red Ink Elm style guide](https://github.com/NoRedInk/elm-rails/wiki/NoRedInk's-Elm-Style-Guide)
 * [Elm by Example](http://elm-by-example.org)  - includes a snake game
 * [Planet Elm](http://planet.elm-lang.org) news aggregator.
+* [FancyStartApp](https://github.com/vilterp/fancy-start-app/blob/master/src/FancyStartApp.elm) - [pull request discussion](https://github.com/evancz/start-app/pull/11) background [discussion](https://groups.google.com/forum/#!topic/elm-discuss/Ro4C6moKD0k)
 
 
 
