@@ -22,6 +22,7 @@ Some elm links:
 * [Elm by Example](http://elm-by-example.org)  - includes a snake game
 * [Planet Elm](http://planet.elm-lang.org) news aggregator.
 * [FancyStartApp](https://github.com/vilterp/fancy-start-app/blob/master/src/FancyStartApp.elm) - [pull request discussion](https://github.com/evancz/start-app/pull/11) background [discussion](https://groups.google.com/forum/#!topic/elm-discuss/Ro4C6moKD0k)
+* [Share Elm](http://www.share-elm.com)
 
 
 
