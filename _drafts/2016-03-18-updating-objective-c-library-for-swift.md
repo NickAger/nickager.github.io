@@ -1,10 +1,34 @@
 ---
 layout: post
-title: "objective-c <=> swift interop - down the rabbit holeUpdating an Objective-C library for Swift"
+title: "Updating an Objective-C library for Swift"
 date: 2016-03-18
 excerpt_separator: <!--more-->
 ---
-Recently I updated an Objective-C library for improved Swift interoperability. The Objective-C library hadn't been touched for a while - it still used manually memory management rather than ARC. The library's use of manual memory management added additional challenges that I thought would be worthwhile documenting.
+Recently I updated an Objective-C library for improved Swift interoperability. The Objective-C library hadn't been touched for a while - it still used manually memory management rather than ARC. Converting a pre-ARC library added additional challenges.
+
+The full 
+<!--more-->
+
+## Initial Swift Import
+
+let nullDiff = Diff(operation: .DiffEqual, andText:"") as Diff // this cast is necessary while the Diff.init! is a forced unwrapped - we need to port DiffMatchPatch to swift (but first it needs refectoring for ARC
+
+
+  +    func diff_mainOfOldStringSwift(text1: String, andNewString text2: String) -> [Diff] {
+   +        let diffs = diff_mainOfOldString(text1, andNewString:  text2)
+   +        return diffs as NSArray as! [Diff] // see http://stackoverflow.com/questions/25837539/how-can-i-cast-an-nsmutablearray-to-a-swift-array-of-a-specific-type
+   +    }
+
+
+   extension Operation : CustomStringConvertible {
+       public var description : String {
+           switch self {
+           case .DiffDelete: return "Delete";
+           case .DiffInsert: return "Insert";
+           case .DiffEqual: return "Equal";
+           }
+       }
+   }
 
 ## Initial Swift interface
 
@@ -17,6 +41,19 @@ func test() {
 let differ = DiffMatchPatch();
 let diffs =  differ.diff_mainOfOldString("hello world", andNewString: "goodbye world")
 
+}
+
+
+public class Diff : NSObject, NSCopying {
+    // One of: DIFF_INSERT, DIFF_DELETE or DIFF_EQUAL.
+    // The text associated with this diff operation.
+
+    public var operation: Operation
+    public var text: String!
+
+    public class func diffWithOperation(anOperation: Operation, andText aText: String!) -> AnyObject!
+
+    public init!(operation anOperation: Operation, andText aText: String!)
 }
 
 
