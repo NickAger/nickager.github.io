@@ -6,10 +6,14 @@ excerpt_separator: <!--more-->
 ---
 Recently I updated an Objective-C library for improved Swift interoperability. The Objective-C library hadn't been touched for a while - it still used manually memory management rather than ARC. Converting a pre-ARC library added additional challenges.
 
-The full 
+All the changes made are contained in this [pull request](https://github.com/aerogear/aerogear-diffmatchpatch-ios/pull/6). I also added a [Travis build CI](https://travis-ci.org/NickAger/aerogear-diffmatchpatch-ios) for the [library](https://github.com/NickAger/aerogear-diffmatchpatch-ios/tree/ARC-conversion).
 <!--more-->
 
-## Initial Swift Import
+## Unmodified Swift Import
+
+First lets look at the Swift imports for the unmodified Objective-C library. The library contains over forty methods, but I'll focus on two which are representative of the less-than ideal initial API the library presents to Swift:
+
+public func diff_mainOfOldString(text1: String!, andNewString text2: String!) -> NSMutableArray!
 
 let nullDiff = Diff(operation: .DiffEqual, andText:"") as Diff // this cast is necessary while the Diff.init! is a forced unwrapped - we need to port DiffMatchPatch to swift (but first it needs refectoring for ARC
 
@@ -54,6 +58,19 @@ public class Diff : NSObject, NSCopying {
     public class func diffWithOperation(anOperation: Operation, andText aText: String!) -> AnyObject!
 
     public init!(operation anOperation: Operation, andText aText: String!)
+}
+
+final result:
+
+public class Diff : NSObject, NSCopying {
+    public var operation: Operation // One of: DIFF_INSERT, DIFF_DELETE or DIFF_EQUAL.
+    public var text: String // The text associated with this diff operation.
+
+    public init(operation anOperation: Operation, andText aText: String)
+}
+
+public class DiffMatchPatch : NSObject {
+    public func diff_mainOfOldString(text1: String, andNewString text2: String) -> [Diff]
 }
 
 
