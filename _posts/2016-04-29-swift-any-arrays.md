@@ -15,6 +15,7 @@ Adding an explicit type declaration solves the problem:
 But why?
 <!--more-->
 If you Cmd-? over `let a` you discover that the inferred type in the first example is: `[NSObject]` not `[Any]`. It is then, perhaps, a little clearer why the runtime is generating the error:
+
 ```
 fatal error: array cannot be bridged from Objective-C
 ```
@@ -34,13 +35,13 @@ Examining the error message:
 Could not cast value of type 'Swift.Array<Swift.Int>' to 'Swift.Array<protocol<>>'
 ```
 
-Note `Any` is defined as:
+... and noting that `Any` is defined as:
 
 ```swift
 public typealias Any = protocol<>
 ```
 
-so the error can be translated is:
+... means the error can be translated as:
 
 ```
 Could not cast value of type 'Swift.Array<Swift.Int>' to 'Swift.Array<Any>'
