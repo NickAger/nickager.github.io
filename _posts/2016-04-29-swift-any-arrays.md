@@ -8,7 +8,7 @@ Any idea why the following code is generating a runtime exception:
 
 ![](/images/blog/2016-04-19-swift-any-arrays/any-array-exception.png)
 
-Adding a type declaration solves the problem:
+Adding an explicit type declaration solves the problem:
 
 ![](/images/blog/2016-04-19-swift-any-arrays/any-array-no-exception.png)
 
