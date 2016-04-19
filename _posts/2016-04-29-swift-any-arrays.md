@@ -18,7 +18,7 @@ If you Cmd-? over `let a` you discover that the inferred type in the first examp
 ```
 fatal error: array cannot be bridged from Objective-C
 ```
-The runtime is throwing up its hands and saying it doesn't know how to convert  from `[NSObject]` to `[Any]`, which makes sense.
+The runtime is throwing up its hands and saying it doesn't know how to convert  from `[NSObject]` to `[Any]`, which makes a little more sense.
 
 However it feels like this should be picked up by the compiler rather than produce a runtime exception, so I've filed a bug report with Apple to that effect: [rdar://25799364](http://openradar.appspot.com/radar?id=6151575726718976)  
 
