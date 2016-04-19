@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Avoiding Swift's [Any]"
-date: 2016-04-20
+date: 2016-04-19
 excerpt_separator: <!--more-->
 ---
 In my previous post "[Unexpected behaviour with Swift's [Any]]({% post_url 2016-04-19-swift-any-arrays %})", I declared a nested array of integers as:
