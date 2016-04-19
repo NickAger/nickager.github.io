@@ -14,13 +14,17 @@ Adding a type declaration solves the problem:
 
 But why?
 <!--more-->
-If you Cmd-? over `let a` you discover that the inferred type in the first runtime exception generating example is: `[NSObject]` not `[Any]`. It is then a little clearer why the error is `fatal error: array cannot be bridged from Objective-C` as the runtime is throwing up its hands and saying it doesn't know how to convert  from `[NSObject]` to `[Any]`, which makes sense.
+If you Cmd-? over `let a` you discover that the inferred type in the first runtime exception generating example is: `[NSObject]` not `[Any]`. It is then a little clearer why the runtime is generating the error:
+ ```
+ fatal error: array cannot be bridged from Objective-C
+ ```
+The runtime is throwing up its hands and saying it doesn't know how to convert  from `[NSObject]` to `[Any]`, which makes sense.
 
 However it feels like this should be picked up by the compiler rather than produce a runtime exception, and I've filed a bug report with Apple to that effect: [rdar://25799364](http://openradar.appspot.com/radar?id=6151575726718976)  
 
 ## Converting Any to [Any]
 
-Different problem, but again we have a runtime exception:
+Different problem, but again `Any` is involved in causing a runtime exception:
 
 ![](/images/blog/2016-04-19-swift-any-arrays/any-to-any-array.png)
 
@@ -30,13 +34,13 @@ Examining the error message:
 Could not cast value of type 'Swift.Array<Swift.Int>' to 'Swift.Array<protocol<>>'
 ```
 
-The `Swift.Array<protocol<>>` means `Swift.Array<Any>` as `Any` is defined as:
+Note `Any` is defined as:
 
 ```swift
 public typealias Any = protocol<>
 ```
 
-so the error is:
+so the error can be translated is:
 
 ```
 Could not cast value of type 'Swift.Array<Swift.Int>' to 'Swift.Array<Any>'
@@ -48,6 +52,7 @@ This seems counter intuitive - "Surely all types can be converted into `Any`". H
 > .
 > .
 > Since value types are held directly in the array, the ([Any]) array would be a very different shape (to the [Int] array) so under the hood the compiler would have to do the equivalent of this:
+>
 > anArray.map { $0 as Any }
 
 which allows me to write a conversion from `Any` to `[Any]`:
