@@ -14,11 +14,11 @@ Adding a type declaration solves the problem:
 
 But why?
 <!--more-->
-The inferred type in the first runtime exception generating example is: `[NSObject]`. It is then a little clearer why the error is `fatal error: array cannot be bridged from Objective-C` as it is not possible to convert directly from `[NSObject]` to `[Any]`.
+If you Cmd-? over `let a` you discover that the inferred type in the first runtime exception generating example is: `[NSObject]` not `[Any]`. It is then a little clearer why the error is `fatal error: array cannot be bridged from Objective-C` as the runtime is throwing up its hands and saying it doesn't know how to convert  from `[NSObject]` to `[Any]`, which makes sense.
 
 However it feels like this should be picked up by the compiler rather than produce a runtime exception, and I've filed a bug report with Apple to that effect: [rdar://25799364](http://openradar.appspot.com/radar?id=6151575726718976)  
 
-## Converting `Any` to `[Any]`
+## Converting Any to [Any]
 
 Different problem, but again we have a runtime exception:
 
@@ -62,4 +62,4 @@ func convertToArray(value: Any) -> [Any] {
 The code then works:
 ![](/images/blog/2016-04-19-swift-any-arrays/any-to-any-array-2.png)
 
-A playground containing these examples can be downloaded [here](/files/blog/2016-04-19-swift-any-arrays/[Any].playground)
+A playground containing these examples can be downloaded [here](/files/blog/2016-04-19-swift-any-arrays/[Any].playground.zip)
