@@ -1,0 +1,65 @@
+---
+layout: post
+title: "Unexpected behaviour with Swift's [Any]"
+date: 2016-04-19
+excerpt_separator: <!--more-->
+---
+Any idea why the following code is generating a runtime exception:
+
+![](/images/blog/2016-04-19-swift-any-arrays/any-array-exception.png)
+
+Adding a type declaration solves the problem:
+
+![](/images/blog/2016-04-19-swift-any-arrays/any-array-no-exception.png)
+
+But why?
+<!--more-->
+The inferred type in the first runtime exception generating example is: `[NSObject]`. It is then a little clearer why the error is `fatal error: array cannot be bridged from Objective-C` as it is not possible to convert directly from `[NSObject]` to `[Any]`.
+
+However it feels like this should be picked up by the compiler rather than produce a runtime exception, and I've filed a bug report with Apple to that effect: [rdar://25799364](http://openradar.appspot.com/radar?id=6151575726718976)  
+
+## Converting `Any` to `[Any]`
+
+Different problem, but again we have a runtime exception:
+
+![](/images/blog/2016-04-19-swift-any-arrays/any-to-any-array.png)
+
+Examining the error message:
+
+```
+Could not cast value of type 'Swift.Array<Swift.Int>' to 'Swift.Array<protocol<>>'
+```
+
+The `Swift.Array<protocol<>>` means `Swift.Array<Any>` as `Any` is defined as:
+
+```swift
+public typealias Any = protocol<>
+```
+
+so the error is:
+
+```
+Could not cast value of type 'Swift.Array<Swift.Int>' to 'Swift.Array<Any>'
+```
+
+This seems counter intuitive - "Surely all types can be converted into `Any`". However [Airspeed Velocity](https://airspeedvelocity.net) on stackoverflow nudged my understanding in the right directly with this [answer](http://stackoverflow.com/questions/31697093/cannot-pass-any-array-type-to-a-function-which-takes-any-as-parameter#31698054)
+
+> While every type conforms Any, this is not the same as it being a universal implicit superclass that all types inherit from.
+> .
+> .
+> Since value types are held directly in the array, the ([Any]) array would be a very different shape (to the [Int] array) so under the hood the compiler would have to do the equivalent of this:
+> anArray.map { $0 as Any }
+
+which allows me to write a conversion from `Any` to `[Any]`:
+
+```swift
+func convertToArray(value: Any) -> [Any] {
+    let nsarrayValue = value as! NSArray
+    return nsarrayValue.map {$0 as Any}
+}
+```
+
+The code then works:
+![](/images/blog/2016-04-19-swift-any-arrays/any-to-any-array-2.png)
+
+A playground containing these examples can be downloaded [here](/files/blog/2016-04-19-swift-any-arrays/[Any].playground)
