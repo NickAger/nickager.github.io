@@ -19,7 +19,7 @@ If you Cmd-? over `let a` you discover that the inferred type in the first examp
 ```
 fatal error: array cannot be bridged from Objective-C
 ```
-The runtime is throwing up its hands and saying it doesn't know how to convert  from `[NSObject]` to `[Any]`, which makes a little more sense.
+The runtime is throwing up its hands and saying it doesn't know how to convert  from `[NSObject]` to `[Any]`.
 
 However it feels like this should be picked up by the compiler rather than produce a runtime exception, so I've filed a bug report with Apple to that effect: [rdar://25799364](http://openradar.appspot.com/radar?id=6151575726718976)  
 
@@ -68,6 +68,6 @@ func convertToArray(value: Any) -> [Any] {
 The code then works:
 ![](/images/blog/2016-04-19-swift-any-arrays/any-to-any-array-2.png)
 
-A playground containing these examples can be downloaded [here](/files/blog/2016-04-19-swift-any-arrays/[Any].playground.zip)
-
 Hopefully this will help someone (or my future self), not waste so much time with confusing `Any` related problems.
+
+A playground containing these examples can be downloaded [here](/files/blog/2016-04-19-swift-any-arrays/[Any].playground.zip)
