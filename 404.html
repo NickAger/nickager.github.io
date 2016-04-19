@@ -1,3 +1,6 @@
+---
+permalink: /404.html
+---
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
@@ -55,6 +58,8 @@ font-size: 20px;
 <body>
 <div id="typedText1" style="text-align: center;">Oops something went wrong</div>
 <div id="typedText2" style="text-align: center;">404: Page not found</div>
+<hr>
+<div style="text-align: center;">Return <a href="\">home</a></div>
 <script type="text/javascript">
 function reposition () {
 	var text1pos, text2pos, screenWidth, text1width, text2width, text1Left, text1Top, text2Left, text2Top;
@@ -68,7 +73,7 @@ function reposition () {
 	text2Left = (screenWidth /2) - text2width /2;
 	text1Top = text1pos.top;
 	text2Top = text2pos.top;
-	
+
 	$('#typedText2').css({ "position": "absolute", "marginLeft": 0, "marginTop": 0, "top": text2Top, "left": text2Left });
 	$('#typedText1').css({ "position": "absolute", "marginLeft": 0, "marginTop": 0, "top": text1Top, "left": text1Left });
 }
