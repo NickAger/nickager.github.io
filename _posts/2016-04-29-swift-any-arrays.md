@@ -69,3 +69,5 @@ The code then works:
 ![](/images/blog/2016-04-19-swift-any-arrays/any-to-any-array-2.png)
 
 A playground containing these examples can be downloaded [here](/files/blog/2016-04-19-swift-any-arrays/[Any].playground.zip)
+
+Hopefully this will help someone (or my future self), not waste so much time with confusing `Any` related problems.
