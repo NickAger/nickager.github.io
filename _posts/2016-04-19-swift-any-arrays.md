@@ -3,6 +3,7 @@ layout: post
 title: "Unexpected behaviour with Swift's [Any]"
 date: 2016-04-19
 excerpt_separator: <!--more-->
+tags: [Swift, iOS, Array, Any]
 ---
 Any idea why the following code is generating a runtime exception:
 
