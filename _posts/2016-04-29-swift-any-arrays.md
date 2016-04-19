@@ -14,7 +14,7 @@ Adding a type declaration solves the problem:
 
 But why?
 <!--more-->
-If you Cmd-? over `let a` you discover that the inferred type in the first runtime exception generating example is: `[NSObject]` not `[Any]`. It is then a little clearer why the runtime is generating the error:
+If you Cmd-? over `let a` you discover that the inferred type in the first example is: `[NSObject]` not `[Any]`. It is then a little clearer why the runtime is generating the error:
  ```
  fatal error: array cannot be bridged from Objective-C
  ```
