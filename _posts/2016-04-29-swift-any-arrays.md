@@ -14,10 +14,10 @@ Adding an explicit type declaration solves the problem:
 
 But why?
 <!--more-->
-If you Cmd-? over `let a` you discover that the inferred type in the first example is: `[NSObject]` not `[Any]`. It is then a little clearer why the runtime is generating the error:
- ```
- fatal error: array cannot be bridged from Objective-C
- ```
+If you Cmd-? over `let a` you discover that the inferred type in the first example is: `[NSObject]` not `[Any]`. It is then, perhaps, a little clearer why the runtime is generating the error:
+```
+fatal error: array cannot be bridged from Objective-C
+```
 The runtime is throwing up its hands and saying it doesn't know how to convert  from `[NSObject]` to `[Any]`, which makes sense.
 
 However it feels like this should be picked up by the compiler rather than produce a runtime exception, and I've filed a bug report with Apple to that effect: [rdar://25799364](http://openradar.appspot.com/radar?id=6151575726718976)  
