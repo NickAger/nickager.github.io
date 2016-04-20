@@ -69,6 +69,6 @@ func flattenAnElement (element : IntOrArray) -> [Int] {
 flatten(a) // [1,2,4,5,6,7,8]
 ```
 
-Swift's [enumerations](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Enumerations.html) with associated values is a language feature which can often be used instead of class hierarchies, benefit from being [value types](https://en.wikipedia.org/wiki/Value_type) and frequently express the intent of the code much more succinctly than a class based alternative.
+Swift's [enumerations](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Enumerations.html) with associated values are a language feature which can often be used instead of class hierarchies, they benefit from being [value types](https://en.wikipedia.org/wiki/Value_type) and frequently express the intent of the code much more succinctly than a class based alternative.
 
 A playground containing the code in this post can be downloaded [here](/files/blog/2016-04-20-avoiding-any-arrays/[IntOrArray].playground.zip)
