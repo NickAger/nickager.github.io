@@ -5,7 +5,7 @@ date: 2016-04-19
 excerpt_separator: <!--more-->
 tags: [Swift, iOS, Array, Any]
 ---
-Any idea why the following code is generating a runtime exception:
+Any idea why the following code is generating a runtime exception?:
 
 ![](/images/blog/2016-04-19-swift-any-arrays/any-array-exception.png)
 
