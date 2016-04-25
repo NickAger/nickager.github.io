@@ -26,7 +26,7 @@ func diff_mainOfOldStringSwift(text1: String, andNewString text2: String) -> [Di
 }
 ```
 
-Note the hideous double cast: `diffs as NSArray as! [Diff]` it was necessary to use to move from `NSMutableArray` to `[Diff]`
+Note the hideous double cast: `diffs as NSArray as! [Diff]`; necessary to move from `NSMutableArray` to `[Diff]`
 
 The wrapping method's signature highlights what is wrong with the original (apart from the horrible `diff_` prefix):
 
@@ -130,4 +130,4 @@ func diff_mainOfOldString(text1: String, andNewString text2: String) -> [Diff]
 
 Clearly my initial expedient solution of using wrapper methods and judicious casts worked but I felt my code was quickly becoming difficult to maintain, even though it was littered with comments explaining the Objective-C -> Swift API.
 
-Although for one developer it might be difficult to rationally justify the time spent "Swiftifying" an Objective-C library, amortising the time over multiple developers quickly saves time.
+Although for one developer it might be difficult to rationally justify the time spent "Swiftifying" an Objective-C library, amortising the time over multiple developers quickly makes-up the time spent.
