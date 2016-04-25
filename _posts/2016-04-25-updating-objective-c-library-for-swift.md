@@ -11,27 +11,28 @@ All the changes made are contained in this [pull request](https://github.com/aer
 
 ## Unmodified Swift Import
 
-First lets look at the Swift imports for the unmodified Objective-C library. The library contains over forty methods, for the sake of brevity I'll focus on two which are representative of the less-than ideal initial API the library presents to Swift. The first method:
+First lets look at the Swift imports for the unmodified Objective-C library. The library contains over forty methods, for the sake of brevity I'll focus on two which are representative of the less-than-ideal initial API the library presents to Swift. The first method:
 
 ```swift
-public func diff_mainOfOldString(text1: String!, andNewString text2: String!) -> NSMutableArray!
+func diff_mainOfOldString(text1: String!, andNewString text2: String!) -> NSMutableArray!
 ```
 
 Before updating the library, I wrapped the method call inside another method which presented a more idiomatic Swift interface:
 
 ```swift
-    func diff_mainOfOldStringSwift(text1: String, andNewString text2: String) -> [Diff] {
-          let diffs = diff_mainOfOldString(text1, andNewString:  text2)
-          return diffs as NSArray as! [Diff] // see http://stackoverflow.com/questions/25837539/how-can-i-cast-an-nsmutablearray-to-a-swift-array-of-a-specific-type
-    }
+func diff_mainOfOldStringSwift(text1: String, andNewString text2: String) -> [Diff] {
+      let diffs = diff_mainOfOldString(text1, andNewString:  text2)
+      return diffs as NSArray as! [Diff] // see http://stackoverflow.com/questions/25837539/how-can-i-cast-an-nsmutablearray-to-a-swift-array-of-a-specific-type
+}
 ```
 
-Note the hideous double cast: `diffs as NSArray as! [Diff]`
+Note the hideous double cast: `diffs as NSArray as! [Diff]` it was necessary to use to move from `NSMutableArray` to `[Diff]`
 
 The wrapping method's signature highlights what is wrong with the original (apart from the horrible `diff_` prefix):
-* We removed the implicitly unwrapped optional parameters by changing `String!` to `String`
-* The original returned `NSMutableArray` which even in Objective-C world, I would have thought would be a contravention of most sensible coding guidelines.
-* The new method returns `[Diff]`, clearly stating the purpose of the method.
+
+* The wrapper removes the implicitly unwrapped optional parameters by changing `String!` to `String`
+* The wrapper returns `NSMutableArray` which even in Objective-C world, I would have thought would be a contravention of most sensible coding guidelines.
+* The wrapper returns `[Diff]`, clearly stating the purpose of the method.
 
 
 The second method is the constructor method `init`:
@@ -56,15 +57,14 @@ func nullDiff() -> Diff {
 However in my code, I discovered that sometimes `Diff!` objects aren't treated as `Diff`s, for example:
 
 ```swift
-// compile error: "contextual type 'AnySequence<(Diff, Diff)>' cannot be used with array literal
-        return [(noDiff, noDiff)]"
+// compile error: "contextual type 'AnySequence<(Diff, Diff)>' cannot be used with array literal return [(noDiff, noDiff)]"
 func nullDiffSequence() -> AnySequence<(Diff,Diff)> {
     let noDiff = Diff(operation: .DiffEqual, andText:"")
     return [(noDiff, noDiff)]
 }
 ```
 
-or perhaps its slightly clearer where Swift see the problem in this similar example:
+or perhaps the error generated in this similar example makes it slightly clearer where Swift sees the problem :
 
 ```swift
 // compile error: "cannot invoke initializer for type 'AnySequence<_>' with an argument list of type '([(Diff!, Diff!, Diff!)])'"
@@ -74,13 +74,13 @@ func nullDiffSequence2() -> AnySequence<(Diff, Diff, Diff)> {
 }
 ```
 
-In the above two examples Swift is making it clear that `Diff!` is not equivalent to `Diff`.
+The above two examples show that for Swift `Diff!` is not **always** equivalent to `Diff`.
 
 For more information on `AnySequence` see my previous post on [Type Erasure with AnyError]({% post_url 2016-03-08-AnyError %})
 
 ## Improving the Objective-C library for Swift
 
-My initial attempt at improving the library was to wrap the header in `NS_ASSUME_NONNULL_BEGIN` …
+My initial attempt at improving the library was to wrap the Objective-C header in `NS_ASSUME_NONNULL_BEGIN` …
 `NS_ASSUME_NONNULL_END`. However this failed as the library still used manual memory management with `dealloc` methods which manually set properties to 'nil' to ensure the memory was freed:
 
 ```objc
@@ -97,7 +97,7 @@ My initial attempt at improving the library was to wrap the header in `NS_ASSUME
 ```
 
 ### Down the rabbit-hole of modernising the Objective-C library
-After trying various work-arounds to this, I decided to do-the-right-thing and convert the library from manual memory management to ARC. In the process I also used the "Convert to modern Objective-C syntax" tool which:
+After trying various work-arounds to `dealloc`s penchant for setting properties to nil, I decided to do-the-right-thing and convert the library from manual memory management to ARC. In the process I also used the "Convert to modern Objective-C syntax" tool which:
 
 * converted NSArray indexing to use the `[]` syntax
 * converted boxed literals to use the `@()` syntax
@@ -105,9 +105,9 @@ After trying various work-arounds to this, I decided to do-the-right-thing and c
 * converted `id` to `instancetype` on `init..` methods
 
 I then manually converted to use automatic synthesis of properties by removing the instance variables backing store and ensured all access to the instance
-variables to go through the property e.g. `_editCost` becomes `self.editCost`.
+variables to go through the property e.g. `_editCost = 5` becomes `self.editCost = 5`.
 
-Reworked the public methods to return `NSArray` rather than `NSMutableArray`. Which then allowed me to add objective-C generics annotation to arrays as:
+I also reworked the public methods to return `NSArray` rather than `NSMutableArray` and added Objective-C generics annotation to arrays as:
 
 ```objc
 - (NSArray<Diff *> *)diff_mainOfOldString:(NSString *)text1 andNewString:(NSString *)text2;
@@ -119,13 +119,15 @@ The rather hideous looking `(NSArray<Diff *> *)` translates in Swift to a much c
 Making a pre-ARC library expose an API in idiomatic swift proved to be a fair amount of effect. To recap, the old API imported as:
 
 ```swift
-public func diff_mainOfOldString(text1: String!, andNewString text2: String!) -> NSMutableArray!
+func diff_mainOfOldString(text1: String!, andNewString text2: String!) -> NSMutableArray!
 ```
 
 and after improving the Swift interop imported as:
 
 ```swift
-   public func diff_mainOfOldString(text1: String, andNewString text2: String) -> [Diff]
+func diff_mainOfOldString(text1: String, andNewString text2: String) -> [Diff]
 ```
 
-Clearly my initial expedient solution of using wrapper methods and judicious casts worked but I felt that my code was quickly becoming difficult to maintain, even though it was littered with comments explaining the Objective-C -> Swift API. Although for one developer it was difficult to rationally justify the time spent, amortising the time over multiple developers quickly saves time.
+Clearly my initial expedient solution of using wrapper methods and judicious casts worked but I felt my code was quickly becoming difficult to maintain, even though it was littered with comments explaining the Objective-C -> Swift API.
+
+Although for one developer it might be difficult to rationally justify the time spent "Swiftifying" an Objective-C library, amortising the time over multiple developers quickly saves time.
