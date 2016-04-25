@@ -11,7 +11,7 @@ All the changes made are contained in this [pull request](https://github.com/aer
 
 ## Unmodified Swift Import
 
-First lets look at the way Swift imports the unmodified Objective-C library. The library contains over forty methods, for the sake of brevity I'll focus on two which are representative of the less-than-ideal initial API the library presents to Swift. The first method:
+First lets look at the way Swift imports the unmodified Objective-C library. The library contains over forty methods; for the sake of brevity I'll focus on two which are representative of the less-than-ideal initial API the library presents to Swift. The first method:
 
 ```swift
 func mainOfOldString(text1: String!, andNewString text2: String!) -> NSMutableArray!
@@ -28,7 +28,7 @@ func mainOfOldStringSwift(text1: String, andNewString text2: String) -> [Diff] {
 
 Note the hideous double cast: `diffs as NSArray as! [Diff]`; necessary to move from `NSMutableArray` to `[Diff]`
 
-The wrapping method's signature highlights what is wrong with the original:
+The wrapping method's signature highlights the non-idiomatic nature of the original:
 
 * The wrapper removes the implicitly unwrapped optional parameters by changing `String!` to `String`
 * The wrapper returns `NSMutableArray` which even in Objective-C world, I would have thought would be a contravention of most sensible coding guidelines.
