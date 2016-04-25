@@ -6,7 +6,7 @@ excerpt_separator: <!--more-->
 ---
 Recently I updated an Objective-C [library](https://github.com/NickAger/aerogear-diffmatchpatch-ios/tree/ARC-conversion) for improved Swift interoperability. The Objective-C library hadn't been touched for a while to the extent that it still used manually memory management rather than ARC. Converting a pre-ARC library added additional challenges.
 
-All the changes made are contained in this [pull request](https://github.com/aerogear/aerogear-diffmatchpatch-ios/pull/6). I also added a [Travis build CI](https://travis-ci.org/NickAger/aerogear-diffmatchpatch-ios) for the [library](https://github.com/NickAger/aerogear-diffmatchpatch-ios/tree/ARC-conversion).
+All the changes made are contained in this [pull request](https://github.com/aerogear/aerogear-diffmatchpatch-ios/pull/6). I also added a [Travis CI](https://travis-ci.org/NickAger/aerogear-diffmatchpatch-ios) build for the [library](https://github.com/NickAger/aerogear-diffmatchpatch-ios/tree/ARC-conversion).
 <!--more-->
 
 ## Unmodified Swift Import
