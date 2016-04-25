@@ -11,24 +11,24 @@ All the changes made are contained in this [pull request](https://github.com/aer
 
 ## Unmodified Swift Import
 
-First lets look at the Swift imports for the unmodified Objective-C library. The library contains over forty methods, for the sake of brevity I'll focus on two which are representative of the less-than-ideal initial API the library presents to Swift. The first method:
+First lets look at the way Swift imports the unmodified Objective-C library. The library contains over forty methods, for the sake of brevity I'll focus on two which are representative of the less-than-ideal initial API the library presents to Swift. The first method:
 
 ```swift
-func diff_mainOfOldString(text1: String!, andNewString text2: String!) -> NSMutableArray!
+func mainOfOldString(text1: String!, andNewString text2: String!) -> NSMutableArray!
 ```
 
 Before updating the library, I wrapped the method call inside another method which presented a more idiomatic Swift interface:
 
 ```swift
-func diff_mainOfOldStringSwift(text1: String, andNewString text2: String) -> [Diff] {
-      let diffs = diff_mainOfOldString(text1, andNewString:  text2)
+func mainOfOldStringSwift(text1: String, andNewString text2: String) -> [Diff] {
+      let diffs = mainOfOldString(text1, andNewString:  text2)
       return diffs as NSArray as! [Diff] // see http://stackoverflow.com/questions/25837539/how-can-i-cast-an-nsmutablearray-to-a-swift-array-of-a-specific-type
 }
 ```
 
 Note the hideous double cast: `diffs as NSArray as! [Diff]`; necessary to move from `NSMutableArray` to `[Diff]`
 
-The wrapping method's signature highlights what is wrong with the original (apart from the horrible `diff_` prefix):
+The wrapping method's signature highlights what is wrong with the original:
 
 * The wrapper removes the implicitly unwrapped optional parameters by changing `String!` to `String`
 * The wrapper returns `NSMutableArray` which even in Objective-C world, I would have thought would be a contravention of most sensible coding guidelines.
@@ -110,7 +110,7 @@ variables to go through the property e.g. `_editCost = 5` becomes `self.editCost
 I also reworked the public methods to return `NSArray` rather than `NSMutableArray` and added Objective-C generics annotation to arrays as:
 
 ```objc
-- (NSArray<Diff *> *)diff_mainOfOldString:(NSString *)text1 andNewString:(NSString *)text2;
+- (NSArray<Diff *> *)mainOfOldString:(NSString *)text1 andNewString:(NSString *)text2;
 ```
 
 The rather hideous looking `(NSArray<Diff *> *)` translates in Swift to a much clearer `[Diff]`
@@ -119,13 +119,13 @@ The rather hideous looking `(NSArray<Diff *> *)` translates in Swift to a much c
 Making a pre-ARC library expose an API in idiomatic swift proved to be a fair amount of effect. To recap, the old API imported as:
 
 ```swift
-func diff_mainOfOldString(text1: String!, andNewString text2: String!) -> NSMutableArray!
+func mainOfOldString(text1: String!, andNewString text2: String!) -> NSMutableArray!
 ```
 
 and after improving the Swift interop imported as:
 
 ```swift
-func diff_mainOfOldString(text1: String, andNewString text2: String) -> [Diff]
+func mainOfOldString(text1: String, andNewString text2: String) -> [Diff]
 ```
 
 Clearly my initial expedient solution of using wrapper methods and judicious casts worked but I felt my code was quickly becoming difficult to maintain, even though it was littered with comments explaining the Objective-C -> Swift API.
