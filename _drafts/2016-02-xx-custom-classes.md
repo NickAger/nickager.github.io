@@ -19,3 +19,8 @@ Was is successful? (in another blog - problem of fragile base class, real proble
 Retrospectively looking at these old presentations I see:
 standard build has replaced the need to make multiple releases on the same core
 The analysis of the problem remains valid, however the solution focused on an implementation in iOS. The real problem however is in the framework.
+
+
+Links:
+
+* [Change your API endpoint/environment using Xcode Configurations in Swift](https://medium.com/@danielgalasko/change-your-api-endpoint-environment-using-xcode-configurations-in-swift-c1ad2722200e#.fwze4gplt)
