@@ -19,6 +19,7 @@ Here are some common patterns I've used with [Futures](https://github.com/Thomvi
 * Delay Futures
 * Wait for all Futures to complete
 * Network up as a guard future. - sometimes you wait to fast-fail.
+* On a failed future, return another future.
 
 
 pyramid of doom
@@ -31,3 +32,8 @@ http://adamghill.com/callbacks-considered-a-smell/
 https://fsharpforfunandprofit.com/posts/computation-expressions-continuations/
 
 Of course we could rewrite the whole lot in haskell as:
+
+
+See:
+
+[Future Proofing](https://github.com/Thomvis/FutureProofing) - extensions to CocoaTouch that provide a Future based interface to asynchronous API's
