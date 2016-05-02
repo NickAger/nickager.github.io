@@ -21,6 +21,17 @@ Here are some common patterns I've used with [Futures](https://github.com/Thomvi
 * Network up as a guard future. - sometimes you wait to fast-fail.
 * On a failed future, return another future.
 
+Talk about threading models. see https://github.com/Thomvis/BrightFutures#default-threading-model for example:
+
+```swift
+static func authenticateUser() -> Future<Bool, AnyError> {
+    let future = touchIDAuthenticate().recoverWith(context: Queue.main.context) { _ in
+        return passwordAuthenticate()
+    }
+    return future
+```
+
+
 
 pyramid of doom
 http://raynos.github.io/presentation/shower/controlflow.htm?full#OpeningSlide
