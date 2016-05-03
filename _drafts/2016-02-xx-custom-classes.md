@@ -6,6 +6,12 @@ excerpt_separator: <!--more-->
 ---
 Describe the motivation - white label product. Not just white label products but having say a diagnostic mode that where all the extra diagnostic code is kept in derived classes, rather than adding the the confusion of the main code base.
 
+Demo versions of products
+
+In retrospect think all I did was invent a rubbish dependency injection.
+
+Compare with dependency injection and mocks.
+
 Differentiate between customisations and configuration. Where customisation is something that is specific to one or two sites. Whereas configuration is something which needs configuration across all sites.
 
 * I (Nick Ager) saw a danger that we were conflating configuration with customisation which led to more and more conditional code paths within our core, with the associated testing complexity in our code-base.
