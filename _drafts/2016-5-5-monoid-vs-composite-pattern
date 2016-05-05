@@ -1,0 +1,10 @@
+---
+layout: post
+title: "Monoid vs composite pattern"
+date: 2016-04-26
+excerpt_separator: <!--more-->
+---
+
+Monoid or Semi-group.
+
+View composition look at addSubview in cocoa
