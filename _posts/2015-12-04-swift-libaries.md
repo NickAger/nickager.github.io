@@ -24,6 +24,7 @@ Some potentially useful Swift libraries:
 |Logging|[CleanroomLogger](https://github.com/emaloney/CleanroomLogger)|The API provided by CleanroomLogger is designed to be readily understood by anyone familiar with packages such as CocoaLumberjack and log4j|
 |HTTP networking library|[Alamofire](https://github.com/Alamofire/Alamofire)|Swift version of AFNetworking|
 |Functional programming in Swift|[Swiftz](https://github.com/typelift/swiftz)|Swiftz implements higher-level data types like Arrows, Lists, HLists, and a number of typeclasses integral to programming with the maximum amount of support from the type system|
+|Dependency Injection|[Dip](https://github.com/AliSoftware/Dip) - iand other DI containers.|"Dip is inspired by .NET's Unity Container. See also:'Function programming in Swift' [2015 conference](http://2015.funswiftconf.com) - DI in Swift [ video](https://youtu.be/2--pYf1T6Xc). There must be other DI frameworks out there... |
 
 <br />
 
@@ -32,5 +33,4 @@ I still haven't found Swift equivalents of:
 {: .table-striped}
 |Area | Library | Comments|
 |-----|---------|---------|
-|Dependency Injection|[Objection](http://objection-framework.org/)|See 'Function programming in Swift' [2015 conference](http://2015.funswiftconf.com) - DI in Swift [ video](https://youtu.be/2--pYf1T6Xc) |
 |Mocking|[OCMock](http://ocmock.org)|Extensive use of Swift protocols minimises the need for mocks. Using locally defined classes for mocking see [Mocking in Swift](http://nshipster.com/xctestcase/)|
