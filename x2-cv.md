@@ -16,7 +16,7 @@ I care passionately about usability and maintainability of the software I create
 
 <table>
 <tr><td><strong>Tier 1 Languages & Technologies</strong></td><td>Swift, Objective-C, Cocoa-touch, C++, C, Javascript, Web technologies (HTML, CSS, AJAX etc), Smalltalk</td></tr>
-<tr><td><strong>Tier 2 Languages</strong></td><td>Java, Haskell, Ruby, CoffeeScript, C#, SQL, Shell</td></tr>
+<tr><td><strong>Tier 2 Languages</strong></td><td>Java, Haskell, Elm, Ruby, CoffeeScript, C#, SQL, Shell</td></tr>
 </table>
 
 <br />
@@ -64,7 +64,7 @@ Contracting as a senior developer and “Technical Design Authority” iOS/Objec
 #### Founding Director, <a href="#getitmade">getitmade.com</a>
 2009-2011
 
-A site for <a href="#getitmade">inventors & designers to market-test and manufacture products</a>. Full stack web development using an innovative continuation based open-source web-frame - ‘Seaside’ of which I was a significant open-source contributor and was selected as one of the core-maintainers. Spoke at various conferences and developed related on-line training material. Deployed using Amazon EC2, Linode and Gemstone - an object database.
+A site for <a href="#getitmade">inventors & designers to market-test and manufacture products</a>. Full stack web development using an innovative continuation based open-source web-frame - [Seaside](https://github.com/SeasideSt/Seaside) of which I was a significant open-source contributor and was selected as one of the core-maintainers. Spoke at various conferences and developed related on-line training material. Deployed using Amazon EC2, [Linode](http://linode.com) and [Gemstone](https://github.com/glassdb) - an object database.
 
 <br />
 
