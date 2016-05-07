@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Avoiding Swift's [Any]"
+title: "Avoiding Swift's [Any] by using functional patterns"
 date: 2016-04-20
 excerpt_separator: <!--more-->
 tags: [Swift, iOS, Array, Any, functional, Haskell, enum, sum types, flatten]
