@@ -33,4 +33,4 @@ I still haven't found Swift equivalents of:
 {: .table-striped}
 |Area | Library | Comments|
 |-----|---------|---------|
-|Mocking|[OCMock](http://ocmock.org)|Extensive use of Swift protocols minimises the need for mocks. Using locally defined classes for mocking see [Mocking in Swift](http://nshipster.com/xctestcase/)|
+|Mocking|[OCMock](http://ocmock.org)|Extensive use of Swift protocols minimises the need for mocks. Using locally defined classes for mocking see [Mocking in Swift](http://nshipster.com/xctestcase/). Quote: "In Swift, classes can be declared within the definition of a function, allowing for mock objects to be extremely self-contained. Just declare a mock inner-class, override and necessary methods"|
