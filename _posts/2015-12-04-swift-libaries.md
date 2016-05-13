@@ -10,7 +10,7 @@ Some potentially useful Swift libraries:
 | Area                                | Library      | Comments  |
 |-------------------------------------|------------|----------|
 | GCD                                 | [Async](https://github.com/duemunk/Async)| appears to be a simple useful framework |
-| Future, Promises|[BrightFutures](https://github.com/Thomvis/BrightFutures)| Swift futures and promises |
+| Future, Promises|[BrightFutures](https://github.com/Thomvis/BrightFutures)| Swift futures and promises. See also [Searching for a Swift Future library]({% post_url 2016-01-20-searching-for-a-future-library %}) |
 | Mocking HTTP                        | [Nocilla](http://mr-v.github.io/http-testing-in-swift-with-nocilla/) |                 |
 | NSDate                              | [TimePiece](https://github.com/naoty/Timepiece) | Various NSDate helpers  |
 | Keychain                            | [KeychainAccess](https://github.com/kishikawakatsumi/KeychainAccess) | Keychain API needs wrapping  |
@@ -25,6 +25,7 @@ Some potentially useful Swift libraries:
 |HTTP networking library|[Alamofire](https://github.com/Alamofire/Alamofire)|Swift version of AFNetworking|
 |Functional programming in Swift|[Swiftz](https://github.com/typelift/swiftz)|Swiftz implements higher-level data types like Arrows, Lists, HLists, and a number of typeclasses integral to programming with the maximum amount of support from the type system|
 |Dependency Injection|[Dip](https://github.com/AliSoftware/Dip)|"Dip is inspired by .NET's Unity Container". See also: "Function programming in Swift" [2015 conference](http://2015.funswiftconf.com) - DI in Swift [ video](https://youtu.be/2--pYf1T6Xc). I'm sure there are other DI frameworks out there... |
+|Autolayout|[PureLayout](https://github.com/PureLayout/PureLayout)|PureLayout extends UIView/NSView, NSArray, and NSLayoutConstraint with a comprehensive Auto Layout API that is modeled after Apple's own frameworks. PureLayout is a cross-platform Objective-C library that works (and looks!) great in Swift|
 
 <br />
 
