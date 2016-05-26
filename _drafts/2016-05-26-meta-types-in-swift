@@ -1,0 +1,41 @@
+---
+layout: post
+title: "Meta types in Swift"
+date: 2016-02-12
+excerpt_separator: <!--more-->
+---
+
+* [Types and meta types in swift](https://medium.com/ios-os-x-development/types-and-meta-types-in-swift-9cd59ba92295#.uvg3roadb)
+* [How do I print the type or class of a variable in Swift?](http://stackoverflow.com/questions/24006165/how-do-i-print-the-type-or-class-of-a-variable-in-swift)
+* [Swift class introspection & generics](http://stackoverflow.com/questions/24049673/swift-class-introspection-generics)
+
+
+Code that creates an array of classes eg:
+
+```
+func configureTimeline() {
+    let cellClasses:[UITableViewCell.Type] = [VTETableViewCell.self, PathologyTableViewCell.self, NutritionalScreeningTableViewCell.self, StandardObsTableViewCell.self]
+
+    let cells = cellClasses.map { (cellClass:UITableViewCell.Type) -> CellActionPair in
+        let cell: UITableViewCell! = cellClass.instanceFromNib()
+        return (cell, nil)
+    }
+
+    let section = NATableSection(title: "", cells: cells)
+    timeLineTableView.sections = [section]
+}
+```
+
+
+Code that uses dynamicType instead of class name eg:
+```
+override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+    data = self.dynamicType.commonInit()
+    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+}
+```
+
+why not hard code the class name - prevents it being overloaded - is this true?
+
+
+loadInstanceFromNib example.
