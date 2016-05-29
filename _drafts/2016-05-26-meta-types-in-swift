@@ -43,6 +43,7 @@ loadInstanceFromNib example.
 consider using generics:
 
 ```
+// didn't work as interface builder is built on objective-c runtime
 let pdfViewerController: PDFViewerViewController<UIWebView> = self.instantiateViewerController()
 
 func instantiateViewerController<T>() -> T {
