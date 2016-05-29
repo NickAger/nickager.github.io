@@ -39,3 +39,15 @@ why not hard code the class name - prevents it being overloaded - is this true?
 
 
 loadInstanceFromNib example.
+
+consider using generics:
+
+```
+let pdfViewerController: PDFViewerViewController<UIWebView> = self.instantiateViewerController()
+
+func instantiateViewerController<T>() -> T {
+    let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+    let pdfViewerController = storyboard.instantiateViewControllerWithIdentifier("PDFViewerViewController")  as! T
+    return pdfViewerController
+}
+```
