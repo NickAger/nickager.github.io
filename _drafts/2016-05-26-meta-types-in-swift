@@ -52,3 +52,16 @@ func instantiateViewerController<T>() -> T {
     return pdfViewerController
 }
 ```
+
+
+hmm ...
+
+```
+/// The protocol to which all classes implicitly conform.
+@objc public protocol AnyObject {
+}
+```
+
+```
+public typealias AnyClass = AnyObject.Type
+```

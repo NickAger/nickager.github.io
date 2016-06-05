@@ -12,6 +12,7 @@ Searching for an equivalent in Swift, I narrowed my choice to:
 * [Promise Kit](http://promisekit.org)
 * [Future Kit](https://github.com/FutureKit/FutureKit)
 * [Bright Futures](https://github.com/Thomvis/BrightFutures)
+* [Bolts](https://github.com/BoltsFramework/Bolts-Swift)
 <!--more-->
 
 {: .table-striped}
@@ -20,6 +21,7 @@ Searching for an equivalent in Swift, I narrowed my choice to:
 |Promise Kit|51|yes|< week|yes|31 open, 227 closed|
 |Future Kit|9|yes|10 days|Some, but limited|3 open, 6 closed|
 |Bright Futures|18|yes & Travis|1 month|yes|9 open, 56 closed|
+|Bolts|4|yes & Travis|< week|yes|1 open, 16 closed|
 
 On a purely analytical survey, [Promise Kit](http://promisekit.org) appears to be the winner.
 
