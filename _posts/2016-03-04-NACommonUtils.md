@@ -28,6 +28,8 @@ I've released some common Swift utilities and extensions that I use across a num
 |UIButton+ActionBlock|Button onPressed: block extension|
 |UIResponder+FindUIViewController|Walk the responder chain until we find a `UIViewController`; useful when a `UIView` needs to access `UIViewController` API|
 |UIView+Autolayout|Autolayout helpers; `useAutolayout()`, `centerInView(..)`, `constrainToWidth(..)`, `constrainToHeight(..) `|
+|KeepInMemoryMixin|Class mixin to allow the class to keep itself in memory|
+|UIView+NibLoading|`instanceFromNib()` Load an instance of a view from a nib named identically to the class.
 
 <!--more-->
 
