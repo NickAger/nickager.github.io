@@ -36,3 +36,6 @@ I still haven't found Swift equivalents of:
 |Area | Library | Comments|
 |-----|---------|---------|
 |Mocking|[OCMock](http://ocmock.org)|Extensive use of Swift protocols minimises the need for mocks. Using locally defined classes for mocking see [Mocking in Swift](http://nshipster.com/xctestcase/). Quote: "In Swift, classes can be declared within the definition of a function, allowing for mock objects to be extremely self-contained. Just declare a mock inner-class, override and necessary methods"|
+
+See also:
+* [Awesome Swift](https://github.com/Wolg/awesome-swift) - A curated list of awesome Swift frameworks, libraries and software.
