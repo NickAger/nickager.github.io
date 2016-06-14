@@ -38,5 +38,6 @@ I still haven't found Swift equivalents of:
 |Mocking|[OCMock](http://ocmock.org)|Extensive use of Swift protocols minimises the need for mocks. Using locally defined classes for mocking see [Mocking in Swift](http://nshipster.com/xctestcase/). Quote: "In Swift, classes can be declared within the definition of a function, allowing for mock objects to be extremely self-contained. Just declare a mock inner-class, override and necessary methods"|
 
 See also:
+
 * [A collaborative list of awesome swift resources](https://github.com/matteocrippa/awesome-swift)]
 * [Awesome Swift](https://github.com/Wolg/awesome-swift) - A curated list of awesome Swift frameworks, libraries and software.
