@@ -1,0 +1,1 @@
+* ReactiveCocoa with the idea of an engine management system (ala http://itchingpixels.com/blog/functional-reactive-intuition-swift/) engine rotation, starter power, and a timer - only run the starter for a certain time; report battery too low etc
