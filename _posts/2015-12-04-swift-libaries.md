@@ -39,5 +39,5 @@ I still haven't found Swift equivalents of:
 
 See also:
 
-* [A collaborative list of awesome swift resources](https://github.com/matteocrippa/awesome-swift)]
+* [A collaborative list of awesome swift resources](https://github.com/matteocrippa/awesome-swift)
 * [Awesome Swift](https://github.com/Wolg/awesome-swift) - A curated list of awesome Swift frameworks, libraries and software.
