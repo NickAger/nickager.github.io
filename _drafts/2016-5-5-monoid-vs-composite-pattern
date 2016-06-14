@@ -5,6 +5,8 @@ date: 2016-04-26
 excerpt_separator: <!--more-->
 ---
 
+Compare monoids (and SemiGroup) with composite pattern and null object pattern
+
 Monoid or Semi-group.
 
 View composition look at addSubview in cocoa
