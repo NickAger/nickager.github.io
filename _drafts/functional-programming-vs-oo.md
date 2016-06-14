@@ -19,7 +19,7 @@ fourth choice, but all your code will break.
 * The flip side is that on the behaviour side, if in the alegbraic data types case I want to add a new function its easy - I add a new function - in the OO design
 * I'd have to add the new method to each of the subclasses and the base class. ala "expression problem"
 * The functional approach is great if you have a fix set of options and you want to add new behaviour easily. The OO - inheritence - model is great if you want
-to have an unlimited set of choices (you don't know what the choices are in advance) and you don't mind making it hard to chance the behviour.
+to have an unlimited set of choices (you don't know what the choices are in advance) and you don't mind making it hard to change the behviour.
 * In OO model changing the behaviour breaks things / in the functional model changing the choices breaks things.
 * In most real domains - eg payment methods, adding a new payment method shouldn't be as simple as adding a new class, rather you'd want your code to break eg
 how do I do refunds, how do I report payments etc. eg in the functional model when you change the choices all your code will break - but often that is a good thing
