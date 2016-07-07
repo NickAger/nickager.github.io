@@ -20,7 +20,6 @@ I've released some common Swift utilities and extensions that I use across a num
 | Utility | Comment|
 |---------|--------|
 |ActivityOverlay|Light-weight version of [MBProgessHUD](https://github.com/jdg/MBProgressHUD) - shows a translucent HUD, containing an activity indicator, centred in a specified view|
-|AnyError|Provides type erasing unified error type - see [Type erasure with AnyError]({% post_url 2016-03-08-AnyError %})|
 |Array+Functional|`func headTail() -> (head: Element, tail: [Element])?` see <a href="#list-monster" rel="leanModal">list monster</a> |
 |NSMutableAttributedString+Creation|`NSMutableAttributedString` creation helpers|
 |OnePixelConstraint|Designed as a auto-layout width/height constraint that will always be 1px regardless of screen scale|
@@ -48,4 +47,5 @@ end
 ```
 
 
-See [https://github.com/NickAger/NACommonUtils.git](https://github.com/NickAger/NACommonUtils.git)
+See:
+* [https://github.com/NickAger/NACommonUtils.git](https://github.com/NickAger/NACommonUtils.git)
