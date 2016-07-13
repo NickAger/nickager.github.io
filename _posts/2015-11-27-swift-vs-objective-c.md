@@ -22,3 +22,7 @@ That said Apple still has a way to go on with Xcode and Swift:
 ![](/images/blog/swift-vs-objective-c/cantrefactorswiftcode.png)
 
 ![](/images/blog/swift-vs-objective-c/xcode-editor-error.png)
+
+### See also
+
+* [Swift - why is annoying is good](http://seanhess.github.io/2014/09/08/swift-why-annoying-is-good.html)
