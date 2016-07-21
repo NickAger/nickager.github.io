@@ -30,6 +30,7 @@ how do we recreate this in Haskell? First a quick Swift->Haskell transition tabl
 |Optional(T)|Maybe a|
 |Some(T)|Just a|
 |nil|Nothing|
+|Array.reduce|foldr|
 
 ```haskell
 swiftFlatMap :: (a -> b) -> [Maybe a] -> [b]
@@ -40,6 +41,26 @@ swiftFlatMap f = (map f) . (map fromJust) . (filter isJust)
 1. We filter out the `Nothing` values with `filter isJust`
 2. We convert from `Just a` to `a` with `fromJust` and map that over the array `map fromJust`.
 3. With `(map fromJust) . (filter isJust)` we've converted `[Maybe a] -> [a]` now we map the function passed in over the array `[a]` to give an array `[b]`
+
+
+Here are a couple of alternative implementations:
+
+```haskell
+swiftFlatMap2 :: (a -> b) -> [Maybe a] -> [b]
+swiftFlatMap2 f = (map f) . catMaybes
+```
+
+where `catMaybes :: [Maybe a] -> [a]`
+
+```haskell
+swiftFlatMap3 :: (a -> b) -> [Maybe a] -> [b]
+swiftFlatMap3 f = (map f) . (foldr filterAndExtract [])
+  where
+    filterAndExtract Nothing xs = xs
+    filterAndExtract (Just x) xs = x:xs
+```
+
+
 
 -- see also
 [Scala's flatMap is not Haskell's >>=](http://igstan.ro/posts/2012-08-23-scala-s-flatmap-is-not-haskell-s.html)
