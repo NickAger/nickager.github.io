@@ -4,6 +4,8 @@ date: 2016-06-29
 tags: [Swift, logging]
 layout: post
 ---
+http://merowing.info/2016/07/logging-in-swift/
+
 I want to be able to log errors into a service
 
 Previously I've written custom server-side code wrapping up CocoaLumberjack which remotely allowed different logging to be switched on at a class level.

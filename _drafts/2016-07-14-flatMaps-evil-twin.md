@@ -20,9 +20,29 @@ let lines = splitIntoLines(callsString)
 let calls = lines.flatMap(Call.init(line:))
 ```
 
+Swift's flapMap is overloaded but one of the signatures we are interested in is:
+```swift
+flatMap<T>(transform: (Self.Generator.Element) -> T?) -> [T]
+```
 
+how do we recreate this in Haskell? First a quick Swift->Haskell transition table:
+||Swift||Haskell||
+|Optional(T)|Maybe a|
+|Some(T)|Just a|
+|nil|Nothing|
 
+```haskell
+swiftFlatMap :: (a -> b) -> [Maybe a] -> [b]
+swiftFlatMap f = (map f) . (map fromJust) . (filter isJust)
+--                 (3)          (2)               (1)
+```
 
+1. We filter out the `Nothing` values with `filter isJust`
+2. We convert from `Just a` to `a` with `fromJust` and map that over the array `map fromJust`.
+3. With `(map fromJust) . (filter isJust)` we've converted `[Maybe a] -> [a]` now we map the function passed in over the array `[a]` to give an array `[b]`
+
+-- see also
+[Scala's flatMap is not Haskell's >>=](http://igstan.ro/posts/2012-08-23-scala-s-flatmap-is-not-haskell-s.html)
 
 
 
