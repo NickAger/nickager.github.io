@@ -15,6 +15,16 @@ However I felt there should be some 3rd party service that at least would provid
 ### Logging libraries
 There are plenty of [logging libraries](https://github.com/matteocrippa/awesome-swift#logging) however none of these appear to complement a backend service. Also https://github.com/Nike-Inc/Willow
 
+Update:
+I've found:
+
+* http://www.fluentd.org
+* https://www.elastic.co/products/logstash
+* https://www.nagios.org
+* [List of BI tools](https://xebialabs.com/the-ultimate-devops-tool-chest/business-intelligence) - some of which may be relevant
+
+
+
 ### Crash reporting tools
 The granddaddy of these tools is Crashlytics  It does offer [enhanced crash reports](https://docs.fabric.io/apple/crashlytics/enhanced-reports.html) and [logging errors](https://docs.fabric.io/apple/crashlytics/logged-errors.html).
 
