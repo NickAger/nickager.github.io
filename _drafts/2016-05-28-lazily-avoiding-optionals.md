@@ -17,7 +17,7 @@ lazy private var baseMessageHandler: BaseMessageHandler = {
 
 see https://github.com/apple/swift-evolution/blob/master/proposals/0030-property-behavior-decls.md
 
-> lazy properties as a primitive language feature, since lazy initialization is common and is often necessary to avoid having properties be exposed as Optional. Without this language support, it takes a lot of boilerplate to get the same effect:
+> ... lazy initialization is common and is often necessary to avoid having properties be exposed as Optional. Without this language support, it takes a lot of boilerplate to get the same effect:
 
 ```swift
 class Foo {
