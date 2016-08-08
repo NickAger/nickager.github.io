@@ -23,3 +23,8 @@ to have an unlimited set of choices (you don't know what the choices are in adva
 * In OO model changing the behaviour breaks things / in the functional model changing the choices breaks things.
 * In most real domains - eg payment methods, adding a new payment method shouldn't be as simple as adding a new class, rather you'd want your code to break eg
 how do I do refunds, how do I report payments etc. eg in the functional model when you change the choices all your code will break - but often that is a good thing
+
+
+from [A Small Adventure In Functors](http://okigiveup.net/a-small-adventure-in-functors/):
+
+> Functional programming is more than being able to pass functions as arguments; it's about treating behavior the same way as data structures, in fact turning functions into structures that we can reason about as we do with data.
