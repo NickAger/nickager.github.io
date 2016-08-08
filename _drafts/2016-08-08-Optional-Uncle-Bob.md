@@ -1,5 +1,5 @@
 ---
-title: "flatMaps evil twin OR valuable twin?"
+title: "Uncle Bob considered Optional"
 date: 2018-08-08
 tags: [grump old-git, Uncle Bob, Haskell, Swift, functional programming, null]
 layout: post
@@ -26,4 +26,6 @@ Rather than the tools causing us to stick to one language, Elicpse IntelliJ have
 
 But that said the tooling in many languages is poor compared to Java.
 
-Surely we should be aiming for the LLVM of IDE's rather than sticking to C/C++ before LLVM was a thing, because writing good optimising compilers is hard. 
+Surely we should be aiming for the LLVM of IDE's rather than sticking to C/C++ before LLVM was a thing, because writing good optimising compilers is hard.
+
+Software development goes in waves, you have to learn new things on occasions then have periods of high-productivity in the new technology before slowing down again to learn a new technology.
