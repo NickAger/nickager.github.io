@@ -5,6 +5,8 @@ tags: [grump old-git, Uncle Bob, Haskell, Swift, functional programming, null]
 layout: post
 ---
 
+OH: “Uncle Bob is the Donald Trump of the software industry.”
+
 [The Churn](http://blog.cleancoder.com/uncle-bob/2016/07/27/TheChurn.html)
 
 Or it could have read - "the older we get the more we become naturally resistant to new technologies which can help us"
@@ -42,3 +44,7 @@ Gannt chart showing strict statically typed languages, what can be expressed in 
 Richard on tests + types + immutability
 
 Then again he has a point - I'm amazed that PHP survives so long - Workpress, Kieren - doesn't seem to have given me better abilities - I'm confident it will (multicore future etc)
+
+See also:
+
+* [On Dynamism](https://www.noodlesoft.com/blog/2016/05/23/on-dynamism/)
