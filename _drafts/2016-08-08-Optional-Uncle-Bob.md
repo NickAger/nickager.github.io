@@ -5,6 +5,8 @@ tags: [grump old-git, Uncle Bob, Haskell, Swift, functional programming, null]
 layout: post
 ---
 
+"You live and learn - when you get to my age you've done enough learning and you just want to do some living"
+
 OH: “Uncle Bob is the Donald Trump of the software industry.”
 
 [The Churn](http://blog.cleancoder.com/uncle-bob/2016/07/27/TheChurn.html)
