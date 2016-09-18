@@ -28,3 +28,7 @@ On a purely analytical survey, [Promise Kit](http://promisekit.org) appears to b
 However looking at the APIs I really liked [Bright Futures](https://github.com/Thomvis/BrightFutures) clear understanding and focus on [functional composition](https://github.com/Thomvis/BrightFutures#functional-composition) which I didn't see as clearly articulated in other libraries.
 
 My choice was [Bright Futures](https://github.com/Thomvis/BrightFutures)
+
+### See also
+
+* [From Callback to Future -> Functor -> Monad](https://medium.com/@yelouafi/from-callback-to-future-functor-monad-6c86d9c16cb5#.tp71xzufg)

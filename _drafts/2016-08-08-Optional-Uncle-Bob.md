@@ -50,3 +50,13 @@ Then again he has a point - I'm amazed that PHP survives so long - Workpress, Ki
 See also:
 
 * [On Dynamism](https://www.noodlesoft.com/blog/2016/05/23/on-dynamism/)
+
+Null
+http://guide.elm-lang.org/error_handling/
+Any time you think you have a String you just might have a null instead. Should you check? Did the person giving you the value check? Maybe it will be fine? Maybe it will crash your servers? I guess we will find out later!
+
+The inventor, Tony Hoare, has this to say about it:
+
+I call it my billion-dollar mistake. It was the invention of the null reference in 1965. At that time, I was designing the first comprehensive type system for references in an object oriented language (ALGOL W). My goal was to ensure that all use of references should be absolutely safe, with checking performed automatically by the compiler. But I couldn't resist the temptation to put in a null reference, simply because it was so easy to implement. This has led to innumerable errors, vulnerabilities, and system crashes, which have probably caused a billion dollars of pain and damage in the last forty years.
+
+As we will see soon, the point of Maybe is to avoid this problem in a pleasant way.

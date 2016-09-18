@@ -119,3 +119,4 @@ For `Optional` values, I think the idiomatic version wins by virtue of being und
 * [`Optional` type on Apple's GitHub repository](https://github.com/apple/swift/blob/master/stdlib/public/core/Optional.swift)
 * Higher-kinded types in [Completing Generics](https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20160229/011666.html)
 * [Functor and Monad in Swift](http://www.javiersoto.me/post/106875422394)
+* [From Callback to Future -> Functor -> Monad](https://medium.com/@yelouafi/from-callback-to-future-functor-monad-6c86d9c16cb5#.tp71xzufg)

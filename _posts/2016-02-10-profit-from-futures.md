@@ -118,3 +118,4 @@ extension Future {
 * [Bright Futures](https://github.com/Thomvis/BrightFutures)
 * [Searching for a Swift Future library]({% post_url 2016-01-20-searching-for-a-future-library %})
 * Wikipedia entry on: [Futures and Promises](https://en.wikipedia.org/wiki/Futures_and_promises)
+* [From Callback to Future -> Functor -> Monad](https://medium.com/@yelouafi/from-callback-to-future-functor-monad-6c86d9c16cb5#.tp71xzufg)

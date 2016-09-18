@@ -48,3 +48,6 @@ Of course we could rewrite the whole lot in haskell as:
 See:
 
 [Future Proofing](https://github.com/Thomvis/FutureProofing) - extensions to CocoaTouch that provide a Future based interface to asynchronous API's
+
+See also:
+http://commandshift.co.uk/blog/2014/03/19/using-dispatch-groups-to-wait-for-multiple-web-services/
