@@ -28,3 +28,16 @@ I plan a blog post on this subject but in the mean-time consider:
 > Software developers as a species tend to be convinced that programming languages have a grip on the mind strong enough to change the way you approach problems—even to change which problems you think to solve. It’s how they size up companies, products, their peers: “What language do you use?”
 
 .. but you need to have critical mass in your area of interest, so you don't spend all your time building libraries that already exist in more popular languages.
+
+>  Language shapes the way we think, and determines what we can think about.
+
+Benjamin Lee Whorf
+
+
+> The limits of my language mean the limits of my world
+
+Ludwig Wittgenstein
+
+> A language that doesn’t affect the way you think about programming, is not worth knowing.
+
+Alan Perlis
