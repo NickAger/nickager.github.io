@@ -1,0 +1,1 @@
+Compare F# |> pipe operator with Haskell $ and '.' composition
