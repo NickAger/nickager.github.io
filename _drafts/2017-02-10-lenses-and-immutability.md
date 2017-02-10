@@ -3,4 +3,3 @@
 * Lenses in [Switz](https://github.com/typelift/Swiftz)
 * http://narf.pl/posts/lenses-in-swift
 * https://www.youtube.com/watch?v=ofjehH9f-CU
-
