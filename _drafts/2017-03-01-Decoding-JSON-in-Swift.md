@@ -8,3 +8,5 @@ layout: post
 Revisit JSON parsing. Why - too much boilerplate, doesn't tell us why the parsing is failing.
 
 See http://khanlou.com/2016/04/decoding-json/ for a better method.
+
+Also compare with protocol buffers.
