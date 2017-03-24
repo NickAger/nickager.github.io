@@ -9,4 +9,6 @@ Revisit JSON parsing. Why - too much boilerplate, doesn't tell us why the parsin
 
 See http://khanlou.com/2016/04/decoding-json/ for a better method.
 
+also: http://chris.eidhof.nl/post/json-parsing-in-swift/
+
 Also compare with protocol buffers.
