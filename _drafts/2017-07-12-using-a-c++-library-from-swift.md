@@ -5,6 +5,17 @@ tags: [Swift, C++]
 layout: post
 ---
 
+Pattern is:
+
+1) Create an objective-c wrapper (using Objective-C++)
+2) import the objective-c wrapper in your bridging header
+3) call the wrapper from swift as you would any other objective-c library.
+
+Some tricks
+
+Don't expose C++ types in the header for the wrapper; keep them private within the `.mm` file.
+
+
 ```objc
 //
 //  OpenCVWrapper.h
