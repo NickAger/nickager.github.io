@@ -357,3 +357,16 @@ Note the `.mm` extension:
 
 @end
 ```
+
+then remember to import into your bridging header:
+
+```
+#import "OpenCVWrapper.h"
+```
+
+then you can just use the wrapped calls in Swift like:
+
+```swift
+let result1 = OpenCVWrapper.laplaceVariance(image)
+let result2 = OpenCVWrapper.laplaceMax(image)
+```
