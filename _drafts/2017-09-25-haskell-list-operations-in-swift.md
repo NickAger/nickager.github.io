@@ -19,3 +19,6 @@ How from:  https://github.com/apple/swift/blob/master/docs/StringManifesto.md "s
 Examples:
 
 (in Haskell, so you will see what a cool syntax it has)
+
+See also:
+* [Swift Evolution: Rationalizing Sequence end-operation names](https://github.com/apple/swift-evolution/blob/9cf2685293108ea3efcbebb7ee6a8618b83d4a90/proposals/0132-sequence-end-ops.md)

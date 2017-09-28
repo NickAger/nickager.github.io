@@ -28,6 +28,7 @@ Some potentially useful Swift libraries:
 |Dependency Injection|[Dip](https://github.com/AliSoftware/Dip)|"Dip is inspired by .NET's Unity Container". See also: "Function programming in Swift" [2015 conference](http://2015.funswiftconf.com) - DI in Swift [ video](https://youtu.be/2--pYf1T6Xc). I'm sure there are other DI frameworks out there... |
 |Autolayout|[PureLayout](https://github.com/PureLayout/PureLayout)|PureLayout extends UIView/NSView, NSArray, and NSLayoutConstraint with a comprehensive Auto Layout API that is modeled after Apple's own frameworks. PureLayout is a cross-platform Objective-C library that works (and looks!) great in Swift|
 |AttributedStrings|[BonMot](https://github.com/Raizlabs/BonMot)|BonMot is a Swift attributed string library|
+|Threading|[Async](https://github.com/duemunk/async)|Syntactic sugar in Swift for asynchronous dispatches in Grand Central Dispatch|
 
 <br />
 
